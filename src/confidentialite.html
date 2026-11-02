@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mentions et confidentialité · Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#f8f5fc;--surface:#ffffff;--ink:#2a2535;--muted:#6c6680;--line:#e7e0f0;--navy:#1d2c5e;--navy-ink:#ffffff;--head:#1d2c5e;--accent:#5b3fc4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000000;--surface:#0e0d12;--ink:#efebf6;--muted:#aaa3bb;--line:#26232f;--navy:#9fb3ec;--navy-ink:#0f0f15;--head:#e3e8f8;--accent:#a993f5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000000;--surface:#0e0d12;--ink:#efebf6;--muted:#aaa3bb;--line:#26232f;--navy:#9fb3ec;--navy-ink:#0f0f15;--head:#e3e8f8;--accent:#a993f5;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:720px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px)) 48px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;margin-bottom:22px}
+.mark{width:34px;height:34px;border-radius:10px;background:var(--navy);color:var(--navy-ink);display:grid;place-items:center;font-weight:800;font-size:14px}
+.brand b{color:var(--head);font-weight:800;font-size:1.15rem}
+h1{color:var(--head);font-size:1.6rem;line-height:1.2;margin:0 0 6px}
+h2{color:var(--head);font-size:1.1rem;margin:0 0 6px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-top:14px}
+section p,section ul{margin:0 0 8px}section>:last-child{margin-bottom:0}
+ul{padding-left:20px}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+</style>
+<script>
+__CONFIG__
+</script>
+<script>try{const s=JSON.parse(localStorage.getItem('annales-tours')||'null');if(s&&(s.theme==='dark'||s.theme==='light'))document.documentElement.setAttribute('data-theme',s.theme)}catch(e){}</script>
+</head>
+<body>
+<main>
+<a class="brand" href="./"><span class="mark" aria-hidden="true">A</span><b>Atlas</b></a>
+<h1>Mentions et confidentialité</h1>
+<p class="muted">Atlas est un site d'annales corrigées du S1, réservé aux membres inscrits.</p>
+
+<section>
+<h2>Qui gère le site</h2>
+<p>L'équipe Atlas<span data-org></span>. Le site est gratuit et sans publicité.</p>
+<p data-contact-line hidden>Contact : <span data-mail></span></p>
+<p>Hébergement des pages : GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis).</p>
+</section>
+
+<section>
+<h2>Les données gardées</h2>
+<ul>
+<li><b>Ton adresse e-mail</b> : elle est sur la liste des membres et sert à te connecter.</li>
+<li><b>Ta progression</b> : tes réponses, tes notes perso, tes favoris, tes révisions et tes réglages.</li>
+<li><b>Tes signalements d'erreur</b>, si tu en envoies : la question et ton message.</li>
+</ul>
+<p>Rien d'autre. Pas de mot de passe, pas de nom, pas de publicité, pas de mesure d'audience.</p>
+</section>
+
+<section>
+<h2>À quoi elles servent</h2>
+<ul>
+<li>Réserver le site aux membres inscrits.</li>
+<li>T'envoyer le code de connexion par e-mail.</li>
+<li>Retrouver ta progression sur tous tes appareils.</li>
+<li>Corriger les erreurs signalées.</li>
+</ul>
+<p>Elles ne sont ni vendues ni transmises à d'autres. Seuls les administrateurs d'Atlas voient la liste des adresses et les signalements. Personne ne regarde ta progression.</p>
+</section>
+
+<section>
+<h2>Où elles sont stockées</h2>
+<ul>
+<li><b>Supabase</b> : liste des membres, connexion, progression et signalements.</li>
+<li><b>Gmail (Google)</b> : envoi des e-mails avec le code.</li>
+<li><b>Ton navigateur</b> : une copie de ta progression et ta session de connexion. Elles sont effacées quand tu te déconnectes.</li>
+</ul>
+<p>Le site charge aussi sa police (Google Fonts) et deux bibliothèques (jsDelivr, cdnjs). Ces services voient ton adresse IP, comme pour tout site web.</p>
+</section>
+
+<section>
+<h2>Combien de temps</h2>
+<p>Tant que tu es membre. Quand tu n'es plus sur la liste, tu ne peux plus te connecter. Ton compte et ta progression peuvent alors être supprimés.</p>
+</section>
+
+<section>
+<h2>Supprimer tes données</h2>
+<p>Demande-le à l'équipe Atlas<span data-mail-sep></span><span data-mail></span>. On supprime ton adresse, ton compte et ta progression. Tu peux aussi demander à voir ou corriger ce qu'on garde.</p>
+<p>Pour effacer seulement tes réponses, va dans Réglages, puis « Effacer ma progression ».</p>
+<p class="muted">Plus d'infos sur tes droits : cnil.fr.</p>
+</section>
+
+<p class="muted" style="margin-top:22px"><a href="./">← Retour à Atlas</a></p>
+<script>
+// Nom de l'association et adresse de contact : réglages dans src/config.js
+{const org=String(CONFIG.ORG_NAME||'').trim(),mail=String(CONFIG.CONTACT_EMAIL||'').trim();
+ if(org)document.querySelectorAll('[data-org]').forEach(e=>e.textContent=', pour '+org);
+ if(mail){document.querySelectorAll('[data-mail]').forEach(e=>{const a=document.createElement('a');a.href='mailto:'+mail;a.textContent=mail;e.append(a)});
+  document.querySelectorAll('[data-mail-sep]').forEach(e=>e.textContent=' par e-mail : ');
+  document.querySelectorAll('[data-contact-line]').forEach(e=>e.hidden=false)}}
+</script>
+</main>
+</body>
+</html>

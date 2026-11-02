@@ -1,0 +1,3729 @@
+[
+{
+"id": "LAS25-1",
+"y": 2025,
+"mod": "L.AS",
+"q": 1,
+"type": "QRM",
+"stem": "Dans la fonction digestive, le système nerveux sympathique :",
+"items": [
+{
+"l": "A",
+"t": "augmente la production de salive",
+"v": false,
+"ex": "Le sympathique entraîne une diminution de la production de salive (arrêt des glandes salivaires majeures, salive plus riche en mucine : bouche sèche)."
+},
+{
+"l": "B",
+"t": "stimule la relaxation adaptative de l’estomac",
+"v": false,
+"ex": "La relaxation adaptative est un réflexe vago-vagal : elle passe par le nerf vague (parasympathique), pas par le sympathique."
+},
+{
+"l": "C",
+"t": "est impliqué dans la phase céphalique de la régulation de l’activité gastrique",
+"v": false,
+"ex": "La phase céphalique passe par les noyaux du nerf vague, donc par le parasympathique."
+},
+{
+"l": "D",
+"t": "diminue l’intensité des ondes lentes",
+"v": true,
+"ex": "Le sympathique inhibe les fonctions digestives ; les ondes lentes sont modulées par le SNA. Le cours ne le dit pas mot pour mot."
+},
+{
+"l": "E",
+"t": "diminue les sécrétions gastriques",
+"v": true,
+"ex": "L'activation du sympathique diminue la sécrétion gastrique (avec l'inhibition du parasympathique)."
+}
+],
+"ans": "DE",
+"orig": "DE",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie digestive » de la correction d'origine 2025-26 : système nerveux autonome, glandes salivaires, accommodation gastrique, phase céphalique",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physio Digestive",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-02",
+203,
+386
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-2",
+"y": 2025,
+"mod": "L.AS",
+"q": 2,
+"type": "QRU",
+"stem": "Parmi ces affirmations laquelle est vraie :",
+"items": [
+{
+"l": "A",
+"t": "la gastrine est produite par les cellules pariétales de l'estomac",
+"v": false,
+"ex": "La gastrine est produite par les cellules G (endocrinocytes), pas par les cellules pariétales."
+},
+{
+"l": "B",
+"t": "l’acide chlorhydrique est produit par les cellules principales de l'estomac",
+"v": false,
+"ex": "L'acide chlorhydrique est produit par les cellules pariétales ; les cellules principales sécrètent pepsinogène et lipase."
+},
+{
+"l": "C",
+"t": "la somatostatine stimule l’activité digestive",
+"v": false,
+"ex": "La somatostatine a un effet inhibiteur sur les sécrétions et l'activité digestives."
+},
+{
+"l": "D",
+"t": "la gastrine stimule la production de la lipase gastrique",
+"v": true,
+"ex": "La gastrine, sécrétée par les cellules G, stimule les cellules glandulaires gastriques, dont les cellules principales qui sécrètent la lipase gastrique."
+},
+{
+"l": "E",
+"t": "les cellules à mucus du collet produisent un mucus alcalin",
+"v": false,
+"ex": "Les cellules du collet produisent un mucus acide et soluble ; ce ne sont pas elles qui produisent le mucus épais et alcalin."
+}
+],
+"ans": "D",
+"orig": "D",
+"status": "À vérifier (cours)",
+"src": "Cours : 14- Physiologie digestive (partie 11) ; Physiologie digestive (partie 12)",
+"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"mat": "Physiologie",
+"ch": "Physio Digestive",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-02",
+380,
+564
+]
+],
+"pw": 1000,
+"ph": 1333,
+"exSrc": "cours"
+},
+{
+"id": "LAS25-3",
+"y": 2025,
+"mod": "L.AS",
+"q": 3,
+"type": "QRM",
+"stem": "En période post-prandiale :",
+"items": [
+{
+"l": "A",
+"t": "les complexes moteurs migrants sont arrêtés",
+"v": false,
+"ex": "En période post-prandiale, les CMM reprennent ; ils sont arrêtés pendant le repas."
+},
+{
+"l": "B",
+"t": "le pylore est relâché",
+"v": true,
+"ex": "Post-prandial : relaxation du pylore, ce qui permet la vidange."
+},
+{
+"l": "C",
+"t": "l’estomac proximal se relaxe",
+"v": false,
+"ex": "La relaxation adaptative de l'estomac proximal a lieu pendant le repas ; après le repas il présente des contractions phasiques."
+},
+{
+"l": "D",
+"t": "le péristaltisme de l’estomac distal reprend",
+"v": true,
+"ex": "Post-prandial : reprise du péristaltisme de l'estomac distal."
+},
+{
+"l": "E",
+"t": "les mouvements de segmentation de l’intestin grêle disparaissent",
+"v": false,
+"ex": "La segmentation de l'intestin grêle est active en période post-prandiale."
+}
+],
+"ans": "BD",
+"orig": "BD",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie digestive » de la correction d'origine 2025-26 : tableau récapitulatif de la motricité (interdigestive, prandiale, post-prandiale) et intestin grêle",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physio Digestive",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-02",
+560,
+747
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-4",
+"y": 2025,
+"mod": "L.AS",
+"q": 4,
+"type": "QRM",
+"stem": "Chez les mammifères, le transport de l’oxygène dans l’organisme :",
+"items": [
+{
+"l": "A",
+"t": "s'effectue par convection",
+"v": true,
+"ex": "Convection ventilatoire puis convection circulatoire (pompe cardiaque)."
+},
+{
+"l": "B",
+"t": "s'effectue par diffusion",
+"v": true,
+"ex": "Diffusion air-sang à travers la membrane alvéolo-capillaire, puis diffusion sang-tissu."
+},
+{
+"l": "C",
+"t": "n'implique pas l'appareil circulatoire",
+"v": false,
+"ex": "Chez les mammifères, appareils respiratoire et circulatoire sont branchés en série : la convection circulatoire apporte le sang oxygéné aux tissus."
+},
+{
+"l": "D",
+"t": "dépend de l'hémoglobinémie",
+"v": true,
+"ex": "Le contenu en O₂ = Hb × SaO₂ × 1,34 + PaO₂ × 0,0034 : il dépend de l'hémoglobinémie."
+},
+{
+"l": "E",
+"t": "dépend de la bicarbonatémie",
+"v": false,
+"ex": "Le bicarbonate concerne le transport du CO₂ (60-65 %), pas celui de l'O₂."
+}
+],
+"ans": "ABD",
+"orig": "ABD",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : modalités de déplacement d'un gaz, transport des gaz dans le sang",
+"note": "",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-02",
+747,
+937
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-5",
+"y": 2025,
+"mod": "L.AS",
+"q": 5,
+"type": "QRM",
+"stem": "Le volume pulmonaire dépend de :",
+"items": [
+{
+"l": "A",
+"t": "la compliance pulmonaire",
+"v": true,
+"ex": "La compliance relie la variation de volume à la variation de pression : à pression donnée, le volume dépend d'elle."
+},
+{
+"l": "B",
+"t": "la pression pleurale",
+"v": true,
+"ex": "Le volume du poumon dépend de la différence entre pression alvéolaire et pression pleurale ; par exemple, si la pression pleurale devient égale à l'atmosphérique, le volume du poumon diminue."
+},
+{
+"l": "C",
+"t": "la pression alvéolaire",
+"v": true,
+"ex": "La pression alvéolaire intervient dans la pression transpulmonaire (Palv - Ppl) qui détermine le volume."
+},
+{
+"l": "D",
+"t": "la pression atmosphérique",
+"v": false,
+"ex": "La pression atmosphérique sert de référence (pression nulle) : seules les différences de pression comptent, elle ne détermine donc pas le volume."
+},
+{
+"l": "E",
+"t": "la résistance des voies aériennes",
+"v": false,
+"ex": "La résistance des voies aériennes détermine le débit d'air (donc la vitesse du cycle), pas le volume atteint à l'équilibre."
+}
+],
+"ans": "ABC",
+"orig": "ABC",
+"status": "À vérifier (cours)",
+"src": "Cours : 4. Respiration (partie 9) ; 2-Respiration 1et2 p.56 ; 2-Physiologie respiratoire (partie 22)",
+"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-02",
+937,
+1134
+]
+],
+"pw": 1000,
+"ph": 1333,
+"exSrc": "cours"
+},
+{
+"id": "LAS25-6",
+"y": 2025,
+"mod": "L.AS",
+"q": 6,
+"type": "QRU",
+"stem": "Dans le cadre d’un écoulement laminaire au travers d’un tube :",
+"items": [
+{
+"l": "A",
+"t": "Débit = (pression d’entrée + pression de sortie) / résistance du tube",
+"v": false,
+"ex": "En écoulement laminaire : Débit = ΔP / R, avec ΔP = P1 − P2 (différence et non somme)."
+},
+{
+"l": "B",
+"t": "Débit = (pression d’entrée + pression de sortie) x résistance du tube",
+"v": false,
+"ex": "Débit = ΔP / R (division par la résistance, différence de pressions)."
+},
+{
+"l": "C",
+"t": "Débit = (pression d’entrée – pression de sortie) / résistance du tube",
+"v": true,
+"ex": "Débit = (P entrée − P sortie) / résistance."
+},
+{
+"l": "D",
+"t": "Débit = (pression d’entrée – pression de sortie) x résistance du tube",
+"v": false,
+"ex": "On divise par la résistance, on ne multiplie pas."
+},
+{
+"l": "E",
+"t": "Débit = (pression d’entrée – pression de sortie) / calibre du tube",
+"v": false,
+"ex": "On divise par la résistance ; le calibre (rayon) intervient dans la résistance (loi de Poiseuille)."
+}
+],
+"ans": "C",
+"orig": "C",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : relation entre résistance, débit et pression",
+"note": "",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-03",
+107,
+294
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-7",
+"y": 2025,
+"mod": "L.AS",
+"q": 7,
+"type": "QRM",
+"stem": "A l’inspiration :",
+"items": [
+{
+"l": "A",
+"t": "le diaphragme se contracte",
+"v": true,
+"ex": "Le diaphragme est le principal muscle inspiratoire."
+},
+{
+"l": "B",
+"t": "les muscles intercostaux internes se contractent",
+"v": false,
+"ex": "Les intercostaux internes abaissent les côtes (expiration) ; ce sont les intercostaux externes qui élèvent les côtes à l'inspiration."
+},
+{
+"l": "C",
+"t": "la pression transmurale des voies aériennes extrathoraciques est négative",
+"v": true,
+"ex": "À l'inspiration, Pva < Patm en extrathoracique : Ptm < 0, tendance à la fermeture."
+},
+{
+"l": "D",
+"t": "le calibre des voies aériennes intrapleurales diminue",
+"v": false,
+"ex": "En intrapleural, Pva > Ppl : Ptm > 0, le calibre augmente."
+},
+{
+"l": "E",
+"t": "le calibre des voies aériennes intrapulmonaires augmente",
+"v": true,
+"ex": "En intrapulmonaire, Pva > Palv : Ptm > 0, le calibre augmente."
+}
+],
+"ans": "ACE",
+"orig": "ACE",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : muscles respiratoires, variations de la pression transmurale au cours du cycle ventilatoire",
+"note": "",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-03",
+293,
+484
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-8",
+"y": 2025,
+"mod": "L.AS",
+"q": 8,
+"type": "QRU",
+"stem": "Identifiez la composition normale du sang veineux mêlé :",
+"items": [
+{
+"l": "A",
+"t": "PaO₂ = 40 mmHg, PaCO₂= 40 mmHg",
+"v": false,
+"ex": "Sang veineux mêlé : PO₂ 40 mmHg mais PCO₂ 45 mmHg."
+},
+{
+"l": "B",
+"t": "PaO₂ = 40 mmHg, PaCO₂= 45 mmHg",
+"v": true,
+"ex": "Sang veineux mêlé : pH 7,38, PO₂ 40 mmHg, PCO₂ 45 mmHg."
+},
+{
+"l": "C",
+"t": "PaO₂ = 45 mmHg, PaCO₂= 40 mmHg",
+"v": false,
+"ex": "PO₂ 40 et PCO₂ 45 dans le sang veineux mêlé."
+},
+{
+"l": "D",
+"t": "PaO₂ = 85 mmHg, PaCO₂= 40 mmHg",
+"v": false,
+"ex": "PO₂ 85 / PCO₂ 40 correspond au sang artériel."
+},
+{
+"l": "E",
+"t": "PaO₂ = 85 mmHg, PaCO₂= 45 mmHg",
+"v": false,
+"ex": "Sang veineux mêlé : PO₂ 40 mmHg."
+}
+],
+"ans": "B",
+"orig": "B",
+"status": "Cours (sans correction d'origine)",
+"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : gaz du sang normaux",
+"note": "",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-03",
+483,
+681
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-9",
+"y": 2025,
+"mod": "L.AS",
+"q": 9,
+"type": "QRU",
+"stem": "Un sportif soulève un objet de 50 cm puis le repose, 20 fois par minute pendant 15 minutes. La force exercée est de 200 N. Pendant la même période, il a consommé 15 L d’O₂. On considère que l’équivalent énergétique de l’O₂ est de 20 kJ.L⁻¹. Quel est le rendement brut?",
+"items": [
+{
+"l": "A",
+"t": "60 kJ",
+"v": false,
+"ex": "60 kJ est le travail mécanique, pas le rendement : 300 répétitions (20/min × 15 min) × 200 N × 0,5 m × 2 = 60 kJ."
+},
+{
+"l": "B",
+"t": "300 kJ",
+"v": false,
+"ex": "300 kJ est la dépense énergétique : 15 L × 20 kJ/L."
+},
+{
+"l": "C",
+"t": "240 kJ",
+"v": false,
+"ex": "240 kJ ne correspond à aucune grandeur du calcul."
+},
+{
+"l": "D",
+"t": "10%",
+"v": false,
+"ex": "10 % correspondrait à un travail de 30 kJ, sans compter la descente (facteur 2)."
+},
+{
+"l": "E",
+"t": "20 %",
+"v": true,
+"ex": "Rendement brut = W / Q effort = 60 / 300 = 20 %."
+}
+],
+"ans": "E",
+"orig": "E",
+"status": "Cours (sans correction d'origine)",
+"src": "Physiologie, bioénergétique : formule du travail W = N × F × H × 2 quand l'objet est soulevé puis reposé ; rendement brut = W / Q effort",
+"note": "",
+"mat": "Physiologie",
+"ch": "Bioénergétique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-03",
+673,
+964
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-10",
+"y": 2025,
+"mod": "L.AS",
+"q": 10,
+"type": "QRM",
+"stem": "Concernant l’équilibre acido-basique :",
+"items": [
+{
+"l": "A",
+"t": "la concentration normale de H⁺ dans le sang artériel est de l’ordre de 7,4 µmol.L⁻¹",
+"v": false,
+"ex": "La concentration plasmatique normale des H⁺ est de l'ordre de 40 nmol/L, pas 7,4 µmol/L."
+},
+{
+"l": "B",
+"t": "la production quotidienne de CO₂ est de l’ordre de 12 moles",
+"v": true,
+"ex": "Le CO₂ est rejeté dans l'atmosphère : environ 12 moles/j (270 L STPD)."
+},
+{
+"l": "C",
+"t": "il existe une production endogène d’acide sulfurique (H₂SO₄)",
+"v": true,
+"ex": "Production endogène d'acides fixes forts : H₂SO₄, H₃PO₄ (métabolisme des protéines, acides gras, acides nucléiques)."
+},
+{
+"l": "D",
+"t": "le bicarbonate HCO₃⁻ est une base forte",
+"v": false,
+"ex": "Le CO₂ se comporte comme un acide faible dont la base conjuguée est HCO₃⁻ : c'est une base faible."
+},
+{
+"l": "E",
+"t": "l’anhydrase carbonique catalyse l’hydratation du CO₂ en acide carbonique H₂CO₃",
+"v": true,
+"ex": "L'anhydrase carbonique catalyse l'hydratation (et la déshydratation) du CO₂ en H₂CO₃."
+}
+],
+"ans": "BCE",
+"orig": "BCE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Équilibre acido-basique » : grandeur régulée, charge acide quotidienne, anhydrase carbonique",
+"note": "",
+"mat": "Physiologie",
+"ch": "Équilibre acido-basique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-03",
+960,
+1171
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-11",
+"y": 2025,
+"mod": "L.AS",
+"q": 11,
+"type": "QRM",
+"stem": "A propos de la physiologie :",
+"items": [
+{
+"l": "A",
+"t": "la méthode hypothéticodéductive permet d’établir des faits scientifiques",
+"v": true,
+"ex": "Claude Bernard, médecine expérimentale : la méthode hypothético-déductive vérifie l'hypothèse par l'expérience."
+},
+{
+"l": "B",
+"t": "la physiologie humaine est la seule physiologie du vivant",
+"v": false,
+"ex": "La physiologie concerne l'ensemble du vivant : physiologie humaine, animale et végétale."
+},
+{
+"l": "C",
+"t": "l’organe est la plus petite entité de l’organisme possédant les propriétés du vivant",
+"v": false,
+"ex": "C'est la cellule, unité fonctionnelle du vivant, qui est la plus petite entité capable de manifester les propriétés du vivant."
+},
+{
+"l": "D",
+"t": "le maintien de l’homéostasie est interrompu pendant le sommeil",
+"v": false,
+"ex": "L'homéostasie est une constance dynamique maintenue en permanence, avec des variations cycliques (rythmes circadiens) : elle n'est pas interrompue pendant le sommeil."
+},
+{
+"l": "E",
+"t": "le rétrocontrôle négatif est un mécanisme de maintien de l’homéostasie",
+"v": true,
+"ex": "Le rétrocontrôle négatif est un système de contrôle qui maintient l'homéostasie."
+}
+],
+"ans": "AE",
+"orig": "AE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Introduction à la physiologie » : Claude Bernard, niveaux d'organisation, maintien de l'homéostasie",
+"note": "",
+"mat": "Physiologie",
+"ch": "Introduction à la physiologie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-04",
+107,
+291
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-12",
+"y": 2025,
+"mod": "L.AS",
+"q": 12,
+"type": "QRM",
+"stem": "A propos de l’intégration synaptique :",
+"items": [
+{
+"l": "A",
+"t": "la transmission synaptique chimique directe est plus lente que la transmission synaptique électrique",
+"v": true,
+"ex": "Synapse électrique : quelques µs ; synapse chimique : 0,3 à 0,5 ms (succession d'étapes)."
+},
+{
+"l": "B",
+"t": "la force de la transmission synaptique chimique est constante",
+"v": false,
+"ex": "L'efficacité ou puissance d'une synapse n'est pas constante (inhibition/facilitation présynaptique…)."
+},
+{
+"l": "C",
+"t": "la plasticité cérébrale développementale dépend de l’expérience",
+"v": true,
+"ex": "Neuroplasticité spontanée au cours du développement : elle « dépend de l'âge, de la génétique et de l'expérience »."
+},
+{
+"l": "D",
+"t": "l’arrimage des vésicules à la grille présynaptique précède l’exocytose",
+"v": true,
+"ex": "L'entrée de Ca²⁺ permet l'arrimage des vésicules (SNARE) à la grille présynaptique, puis l'exocytose."
+},
+{
+"l": "E",
+"t": "c’est la nature du neurotransmetteur qui définit si une synapse est excitatrice ou inhibitrice",
+"v": false,
+"ex": "C'est la nature du récepteur, et non celle du neurotransmetteur, qui détermine si la synapse est excitatrice ou inhibitrice."
+}
+],
+"ans": "ACD",
+"orig": "ACD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Intégration synaptique » et « Organisation du système nerveux » (plasticité cérébrale)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Transmission synaptique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-04",
+290,
+511
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-13",
+"y": 2025,
+"mod": "L.AS",
+"q": 13,
+"type": "QRM",
+"stem": "A propos de la vision :",
+"items": [
+{
+"l": "A",
+"t": "l’anatomie de l’œil impacte la fonction visuelle",
+"v": true,
+"ex": "Lien structure-fonction : l'œil sphérique facilite la convergence des rayons ; une cataracte empêche de voir."
+},
+{
+"l": "B",
+"t": "le signal est de nature mécanique après la transduction",
+"v": false,
+"ex": "La transduction convertit l'énergie lumineuse en potentiel d'action : le signal est électrique."
+},
+{
+"l": "C",
+"t": "l’implantation frontale des globes oculaires impacte le champ visuel",
+"v": true,
+"ex": "Lien structure-fonction : yeux frontaux (prédateurs) ou latéraux (proies) ne donnent pas le même champ visuel ; le cours l'évoque à propos des émotions."
+},
+{
+"l": "D",
+"t": "la voie dorsale permet le traitement du « où »",
+"v": true,
+"ex": "Voie dorsale = « où » (information visuo-spatiale) ; voie ventrale = « quoi »."
+},
+{
+"l": "E",
+"t": "l’étape thalamique est absente",
+"v": false,
+"ex": "Il existe une étape intermédiaire au niveau du thalamus qui filtre l'information avant le cortex."
+}
+],
+"ans": "ACD",
+"orig": "ACD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Extéroception » (vision, transmission du récepteur au cortex, cortex visuel) ; cours « Émotions » (yeux frontaux des prédateurs, yeux latéraux des proies)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Extéroception",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-04",
+507,
+704
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-14",
+"y": 2025,
+"mod": "L.AS",
+"q": 14,
+"type": "QRM",
+"stem": "A propos des émotions :",
+"items": [
+{
+"l": "A",
+"t": "la sérotonine est un neurotransmetteur du traitement des émotions",
+"v": true,
+"ex": "Les récepteurs métabotropiques (dont ceux de la sérotonine) interviennent dans les émotions et l'humeur ; les antidépresseurs IRS agissent sur la sérotonine."
+},
+{
+"l": "B",
+"t": "l’amygdale est une structure du système limbique",
+"v": true,
+"ex": "L'amygdale appartient au système limbique, réseau profond (sous-cortical) des émotions."
+},
+{
+"l": "C",
+"t": "le cas Phineas Gage a mis en évidence le rôle du lobe temporal dans les émotions",
+"v": false,
+"ex": "Phineas Gage a eu une lésion du lobe frontal, plus précisément du cortex préfrontal : pas du lobe temporal."
+},
+{
+"l": "D",
+"t": "la reconnaissance des émotions dépend du contexte",
+"v": true,
+"ex": "La reconnaissance des émotions est très influencée par le contexte."
+},
+{
+"l": "E",
+"t": "l’accélération de la fréquence cardiaque en cas de peur appartient à la composante physiologique de cette émotion",
+"v": true,
+"ex": "Les émotions activent des ajustements physiologiques globaux : la tachycardie relève de la composante physiologique."
+}
+],
+"ans": "ABDE",
+"orig": "ABDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Émotions » et « Intégration synaptique » (récepteurs de la sérotonine, transmission indirecte : émotions, humeur)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Émotions",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-04",
+703,
+931
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-15",
+"y": 2025,
+"mod": "L.AS",
+"q": 15,
+"type": "QRM",
+"stem": "A propos de la planification de l’action :",
+"items": [
+{
+"l": "A",
+"t": "les mouvements visuoguidés sont peu fréquents dans le quotidien",
+"v": false,
+"ex": "Les aires prémotrices sélectionnent le programme moteur selon les informations extéroceptives (action guidée de façon externe) : c'est très fréquent au quotidien."
+},
+{
+"l": "B",
+"t": "le cortex moteur primaire reçoit des efférences sensorielles corticales",
+"v": false,
+"ex": "Le cortex moteur primaire reçoit des AFFÉRENCES corticales (aires somesthésiques, aire pariétale 5), pas des efférences."
+},
+{
+"l": "C",
+"t": "le cortex prémoteur s’active en amont du cortex moteur primaire",
+"v": true,
+"ex": "Le cortex prémoteur s'active avant le cortex moteur primaire."
+},
+{
+"l": "D",
+"t": "l’attention est une étape nécessaire avant la programmation motrice",
+"v": true,
+"ex": "Étapes de la planification : motivation, attention aux indices externes, mémoire, puis programme."
+},
+{
+"l": "E",
+"t": "la motricité volontaire est initiée au niveau médullaire",
+"v": false,
+"ex": "La motricité volontaire est initiée au niveau cortical ; le message descend ensuite par la voie pyramidale jusqu'à la moelle."
+}
+],
+"ans": "CD",
+"orig": "CD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cortex moteur et planification de l'action »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Planification de l’action",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-04",
+927,
+1141
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-16",
+"y": 2025,
+"mod": "L.AS",
+"q": 16,
+"type": "QRM",
+"stem": "A propos de la cognition :",
+"items": [
+{
+"l": "A",
+"t": "les aires associatives corticales représentent plus de 60 % de la surface corticale",
+"v": true,
+"ex": "Les aires associatives représentent 75 % du tissu cérébral."
+},
+{
+"l": "B",
+"t": "la cognition correspond au traitement élémentaire des informations",
+"v": false,
+"ex": "La cognition regroupe des fonctions cérébrales complexes, prises en charge par les aires associatives (informations « raffinées »), pas un traitement élémentaire."
+},
+{
+"l": "C",
+"t": "les fonctions exécutives permettent le contrôle des comportements",
+"v": true,
+"ex": "Fonctions exécutives : contrôle cognitif et comportemental (planifier, inhiber les comportements inadaptés, flexibilité)."
+},
+{
+"l": "D",
+"t": "la fonction langagière est une fonction cognitive latéralisée",
+"v": true,
+"ex": "Le langage est une fonction instrumentale ; les hémisphères sont symétriques anatomiquement mais pas fonctionnellement (aire de Broca)."
+},
+{
+"l": "E",
+"t": "l’attention modifie la perception",
+"v": true,
+"ex": "L'attention est une capacité de sélection qui facilite le traitement prioritaire de certaines informations."
+}
+],
+"ans": "ACDE",
+"orig": "ACDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cognition » et « Organisation du système nerveux »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Cognition",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+133,
+311
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-17",
+"y": 2025,
+"mod": "L.AS",
+"q": 17,
+"type": "QRM",
+"stem": "A propos du Système Nerveux Orthosympathique :",
+"items": [
+{
+"l": "A",
+"t": "il est ergotrope",
+"v": true,
+"ex": "Le sympathique est ergotrope (fuite, attaque, production d'énergie) ; le parasympathique est trophotrope."
+},
+{
+"l": "B",
+"t": "il permet la sécrétion de salive visqueuse",
+"v": true,
+"ex": "Le sympathique diminue la salive et augmente la mucine : salive visqueuse, bouche sèche."
+},
+{
+"l": "C",
+"t": "il prépare l’organisme à la fuite",
+"v": true,
+"ex": "Rôle du sympathique : fuite, attaque, activité."
+},
+{
+"l": "D",
+"t": "il permet l’initiation de la miction",
+"v": false,
+"ex": "La miction est déclenchée par le parasympathique (contraction du détrusor)."
+},
+{
+"l": "E",
+"t": "il est organisé avec un ganglion relais",
+"v": true,
+"ex": "Le SNA a un relais par un ganglion : neurone connecteur du SNC, puis neurone effecteur du ganglion relais vers l'organe."
+}
+],
+"ans": "ABCE",
+"orig": "ABCE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Système nerveux autonome », « Physiologie digestive » (salive) et « Physiologie rénale » (miction)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Système nerveux végétatif",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+307,
+491
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-18",
+"y": 2025,
+"mod": "L.AS",
+"q": 18,
+"type": "QRU",
+"stem": "Concernant le système endocrinien :",
+"items": [
+{
+"l": "A",
+"t": "les hormones peptidiques sont liposolubles",
+"v": false,
+"ex": "Les hormones peptidiques sont hydrosolubles ; ce sont les hormones stéroïdes qui sont liposolubles."
+},
+{
+"l": "B",
+"t": "la thyroïde sécrète la TSH",
+"v": false,
+"ex": "La TSH est sécrétée par l'adénohypophyse ; la thyroïde sécrète T3 et T4."
+},
+{
+"l": "C",
+"t": "l'aldostérone est une hormone stéroïde",
+"v": true,
+"ex": "L'aldostérone (corticosurrénale) est une hormone stéroïde."
+},
+{
+"l": "D",
+"t": "la glande médullosurrénale sécrète le cortisol",
+"v": false,
+"ex": "Le cortisol est sécrété par la corticosurrénale ; la médullosurrénale sécrète l'adrénaline et la noradrénaline."
+},
+{
+"l": "E",
+"t": "la CRH stimule la sécrétion de FSH",
+"v": false,
+"ex": "La CRH stimule la sécrétion d'ACTH, pas de FSH (stimulée par la GnRH)."
+}
+],
+"ans": "C",
+"orig": "C",
+"status": "Cours (sans correction d'origine)",
+"src": "Fiche de la correction d'origine « Système endocrinien » 2025-26 et cours de physiologie",
+"note": "",
+"mat": "Physiologie",
+"ch": "Système endocrinien",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+487,
+671
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-19",
+"y": 2025,
+"mod": "L.AS",
+"q": 19,
+"type": "QRM",
+"stem": "Concernant la filtration glomérulaire :",
+"items": [
+{
+"l": "A",
+"t": "la membrane de filtration est chargée",
+"v": true,
+"ex": "La membrane basale contient des glycoprotéines anioniques : la membrane de filtration est chargée négativement."
+},
+{
+"l": "B",
+"t": "les protéines plasmatiques passent librement la membrane de filtration",
+"v": false,
+"ex": "Le filtrat glomérulaire ne contient pas de protéines plasmatiques."
+},
+{
+"l": "C",
+"t": "la membrane de filtration est imperméable à l’urée",
+"v": false,
+"ex": "Les molécules < 10 kDa (glucose, acides aminés, urée…) passent librement."
+},
+{
+"l": "D",
+"t": "la pression hydrostatique glomérulaire favorise la filtration glomérulaire",
+"v": true,
+"ex": "La pression hydrostatique glomérulaire favorise la filtration."
+},
+{
+"l": "E",
+"t": "une vasoconstriction de l’artériole afférente entraîne une diminution du débit de filtration glomérulaire",
+"v": true,
+"ex": "Vasoconstriction de l'artériole afférente : moins de sang arrive au glomérule, le DFG diminue."
+}
+],
+"ans": "ADE",
+"orig": "ADE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Physiologie rénale »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physiologie rénale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+670,
+884
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-20",
+"y": 2025,
+"mod": "L.AS",
+"q": 20,
+"type": "QRM",
+"stem": "Concernant la réabsorption tubulaire :",
+"items": [
+{
+"l": "A",
+"t": "chez un sujet sain, le glucose est totalement réabsorbé dans le tubule contourné proximal",
+"v": true,
+"ex": "Chez le sujet sain, le glucose est entièrement réabsorbé (clairance nulle), dans le tubule contourné proximal."
+},
+{
+"l": "B",
+"t": "la créatinine est totalement réabsorbée dans le tubule contourné proximal",
+"v": false,
+"ex": "Les déchets ne sont pas réabsorbés (ex : créatinine), sauf l'urée réabsorbée à 50 %."
+},
+{
+"l": "C",
+"t": "la branche descendante de l’anse de Henlé est perméable à l’eau",
+"v": true,
+"ex": "La branche descendante de l'anse de Henlé est perméable à l'eau."
+},
+{
+"l": "D",
+"t": "la réabsorption du glucose se fait par un antiport apical Na⁺/glucose",
+"v": false,
+"ex": "Le glucose est réabsorbé par un symport apical Na⁺/glucose (transport actif secondaire), pas un antiport."
+},
+{
+"l": "E",
+"t": "l’aldostérone augmente la réabsorption de Na⁺",
+"v": true,
+"ex": "L'aldostérone augmente la réabsorption rénale du sodium (et la sécrétion de potassium)."
+}
+],
+"ans": "ACE",
+"orig": "ACE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Physiologie rénale »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physiologie rénale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+883,
+1081
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-21",
+"y": 2025,
+"mod": "L.AS",
+"q": 21,
+"type": "QRM",
+"stem": "Concernant l’ADH :",
+"items": [
+{
+"l": "A",
+"t": "elle est libérée par l’adénohypophyse",
+"v": false,
+"ex": "L'ADH est produite par l'hypothalamus et libérée par la neurohypophyse (posthypophyse)."
+},
+{
+"l": "B",
+"t": "sa sécrétion est stimulée par une baisse de l’osmolarité plasmatique",
+"v": false,
+"ex": "La sécrétion d'ADH augmente lors d'une augmentation de l'osmolarité plasmatique."
+},
+{
+"l": "C",
+"t": "elle augmente la perméabilité à l’eau du tube collecteur",
+"v": true,
+"ex": "L'ADH permet la réabsorption d'eau dans la 2ᵉ partie du TCD et le tube collecteur, qui devient perméable à l'eau."
+},
+{
+"l": "D",
+"t": "elle augmente la concentration des urines",
+"v": true,
+"ex": "En réabsorbant l'eau, l'ADH concentre les urines."
+},
+{
+"l": "E",
+"t": "sa sécrétion est inhibée par l’angiotensine II",
+"v": false,
+"ex": "L'angiotensine II agit sur la neurohypophyse et augmente la libération d'ADH."
+}
+],
+"ans": "CD",
+"orig": "CD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Physiologie rénale »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physiologie rénale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-05",
+1080,
+1277
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-22",
+"y": 2025,
+"mod": "L.AS",
+"q": 22,
+"type": "QRM",
+"stem": "Concernant la miction :",
+"items": [
+{
+"l": "A",
+"t": "le sphincter urétral externe est sous le contrôle du système nerveux somatique",
+"v": true,
+"ex": "Le sphincter externe (strié) est sous contrôle somatique volontaire (nerf pudendal)."
+},
+{
+"l": "B",
+"t": "les neurones parasympathiques déclenchent la contraction du détrusor",
+"v": true,
+"ex": "Les neurones parasympathiques déclenchent la contraction du détrusor."
+},
+{
+"l": "C",
+"t": "le sphincter urétral interne est contracté durant la miction",
+"v": false,
+"ex": "Le sphincter urétral interne est relâché durant la miction."
+},
+{
+"l": "D",
+"t": "la continence est la phase de vidange vésicale",
+"v": false,
+"ex": "La continence est la capacité de rétention urinaire ; la vidange est la miction."
+},
+{
+"l": "E",
+"t": "l'albumine est la principale protéine présente dans les urines",
+"v": false,
+"ex": "L'albumine n'est pas présente dans les urines en condition physiologique."
+}
+],
+"ans": "AB",
+"orig": "AB",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Physiologie rénale »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physiologie rénale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-06",
+113,
+294
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-23",
+"y": 2025,
+"mod": "L.AS",
+"q": 23,
+"type": "QRM",
+"stem": "A propos des échanges capillaires :",
+"items": [
+{
+"l": "A",
+"t": "La pression hydrostatique capillaire favorise la sortie de liquide vers le secteur interstitiel",
+"v": true,
+"ex": "La pression hydrostatique provoque le passage de liquide vers l'extérieur des vaisseaux."
+},
+{
+"l": "B",
+"t": "La pression oncotique plasmatique dépend en grande partie de l'albuminémie",
+"v": true,
+"ex": "L'albumine, très présente, génère l'essentiel de la pression oncotique (25-30 mmHg)."
+},
+{
+"l": "C",
+"t": "L'urée diffuse librement entre secteur interstitiel et secteur plasmatique",
+"v": true,
+"ex": "L'urée a un coefficient de perméabilité élevé : elle diffuse librement à travers la membrane capillaire."
+},
+{
+"l": "D",
+"t": "Les protéines interstitielles exercent une pression oncotique importante",
+"v": false,
+"ex": "Les protéines sont dans le plasma : c'est la pression oncotique plasmatique qui aspire les liquides vers les capillaires ; les protéines interstitielles sont peu abondantes."
+},
+{
+"l": "E",
+"t": "Un obstacle lymphatique peut favoriser l'apparition d'un oedème",
+"v": true,
+"ex": "Une obstruction lymphatique (ganglion, tumeur, chirurgie) est une cause d'œdème localisé."
+}
+],
+"ans": "ABCE",
+"orig": "ABCE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Compartiments liquidiens » (paroi capillaire, urée, pressions oncotique et hydrostatique, œdèmes)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Compartiments liquidiens",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-06",
+293,
+481
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-24",
+"y": 2025,
+"mod": "L.AS",
+"q": 24,
+"type": "QRM",
+"stem": "A propos des différentes phases du cycle cardiaque :",
+"items": [
+{
+"l": "A",
+"t": "La systole atriale précède la systole ventriculaire",
+"v": true,
+"ex": "La systole atriale (auriculaire) précède la systole ventriculaire."
+},
+{
+"l": "B",
+"t": "La contraction isovolumique précède l’ouverture des sigmoïdes aortiques",
+"v": true,
+"ex": "Protosystole (contraction isovolumique) : fermeture de la valve mitrale puis montée de pression jusqu'à l'ouverture de la valve aortique."
+},
+{
+"l": "C",
+"t": "La télédiastole correspond à la phase de remplissage ventriculaire rapide",
+"v": false,
+"ex": "La télédiastole est contemporaine de la systole atriale ; le remplissage rapide fait partie de la mésodiastole."
+},
+{
+"l": "D",
+"t": "L’onde T enregistrée sur l’électrocardiogramme est contemporaine de la repolarisation ventriculaire",
+"v": true,
+"ex": "L'onde T traduit la repolarisation ventriculaire, en fin d'éjection."
+},
+{
+"l": "E",
+"t": "La protodiastole est une phase active de relaxation ventriculaire",
+"v": true,
+"ex": "Protodiastole = relaxation isovolumique : phase de relâchement actif des ventricules (propriétés lusitropes)."
+}
+],
+"ans": "ABDE",
+"orig": "ABDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cycle cardiaque et hémodynamique »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Cycle cardiaque",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-06",
+477,
+694
+]
+],
+"pw": 1000,
+"ph": 1333,
+"manual": true
+},
+{
+"id": "LAS25-25",
+"y": 2025,
+"mod": "L.AS",
+"q": 25,
+"type": "QRU",
+"stem": "La phase ascendante du potentiel d'action des cardiomyocytes ventriculaires est due :",
+"items": [
+{
+"l": "A",
+"t": "à l’entrée de Na⁺",
+"v": true,
+"ex": "La dépolarisation (phase ascendante) est due à l'entrée de Na⁺ par les canaux sodiques voltage-dépendants."
+},
+{
+"l": "B",
+"t": "à l’entrée de Ca²⁺",
+"v": false,
+"ex": "L'entrée de Ca²⁺ (canaux de type L) est responsable du plateau."
+},
+{
+"l": "C",
+"t": "à la sortie de K⁺",
+"v": false,
+"ex": "La sortie de K⁺ correspond à la repolarisation."
+},
+{
+"l": "D",
+"t": "à l’inactivation des canaux sodiques",
+"v": false,
+"ex": "L'inactivation des canaux sodiques met fin à la dépolarisation."
+},
+{
+"l": "E",
+"t": "à l'ouverture massive des canaux potassiques",
+"v": false,
+"ex": "L'ouverture des canaux potassiques entraîne la repolarisation."
+}
+],
+"ans": "A",
+"orig": "A",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours de physiologie cardiaque et annales corrigées de la correction d'origine (potentiel d'action des cardiomyocytes)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Couplage excitation-contraction",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-06",
+677,
+887
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-26",
+"y": 2025,
+"mod": "L.AS",
+"q": 26,
+"type": "QRU",
+"stem": "Dans le cadre du couplage excitation/contraction, quelle structure assure la recapture du calcium intracellulaire ?",
+"items": [
+{
+"l": "A",
+"t": "Récepteur à la Ryanodine",
+"v": false,
+"ex": "Le récepteur à la ryanodine libère le Ca²⁺ du réticulum sarcoplasmique."
+},
+{
+"l": "B",
+"t": "SERCA",
+"v": true,
+"ex": "SERCA (Ca²⁺-ATPase du réticulum sarcoplasmique) recapte le calcium intracellulaire dans le réticulum."
+},
+{
+"l": "C",
+"t": "Canal calcique voltage-dépendant de type L",
+"v": false,
+"ex": "Le canal calcique de type L permet l'entrée de Ca²⁺ à l'arrivée du potentiel d'action."
+},
+{
+"l": "D",
+"t": "Échangeur Na⁺/Ca²⁺",
+"v": false,
+"ex": "L'échangeur Na⁺/Ca²⁺ exclut une partie du Ca²⁺ hors de la cellule : ce n'est pas une recapture."
+},
+{
+"l": "E",
+"t": "Troponine C",
+"v": false,
+"ex": "La troponine C fixe le Ca²⁺ pour déclencher la contraction."
+}
+],
+"ans": "B",
+"orig": "B",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Couplage excitation-contraction »",
+"note": "",
+"mat": "Physiologie",
+"ch": "Couplage excitation-contraction",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-06",
+867,
+1124
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-27",
+"y": 2025,
+"mod": "L.AS",
+"q": 27,
+"type": "QRU",
+"stem": "Selon la loi de Frank-Starling, une augmentation du retour veineux entraîne :",
+"items": [
+{
+"l": "A",
+"t": "Une diminution de la précharge",
+"v": false,
+"ex": "Le retour veineux est associé à la précharge : elle augmente."
+},
+{
+"l": "B",
+"t": "Une augmentation du volume d’éjection systolique",
+"v": true,
+"ex": "Frank-Starling : plus le VTD augmente, plus le VES augmente (le cœur éjecte tout le sang qui lui parvient)."
+},
+{
+"l": "C",
+"t": "Une baisse de la contractilité ventriculaire",
+"v": false,
+"ex": "L'étirement des fibres augmente la force de contraction."
+},
+{
+"l": "D",
+"t": "Une diminution des résistances vasculaires systémiques",
+"v": false,
+"ex": "Les résistances vasculaires systémiques déterminent la postcharge ; elles ne sont pas modifiées par le retour veineux."
+},
+{
+"l": "E",
+"t": "Une diminution du débit cardiaque",
+"v": false,
+"ex": "Q = FC × VES : le débit cardiaque augmente."
+}
+],
+"ans": "B",
+"orig": "B",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Débit cardiaque » (loi de Frank-Starling, précharge, postcharge)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Débit cardiaque",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-07",
+120,
+291
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-28",
+"y": 2025,
+"mod": "L.AS",
+"q": 28,
+"type": "QRM",
+"stem": "La paroxétine est une substance active inhibitrice du transporteur de la sérotonine (SERT)",
+"items": [
+{
+"l": "A",
+"t": "elle bloque la recapture de la sérotonine par le neurone présynaptique",
+"v": true,
+"ex": "Un inhibiteur du SERT bloque la recapture de la sérotonine par le neurone présynaptique."
+},
+{
+"l": "B",
+"t": "elle bloque la libération de sérotonine dans la fente synaptique",
+"v": false,
+"ex": "Il ne bloque pas la libération : il empêche la recapture."
+},
+{
+"l": "C",
+"t": "elle augmente la dégradation de la sérotonine dans la fente synaptique",
+"v": false,
+"ex": "Il n'augmente pas la dégradation de la sérotonine."
+},
+{
+"l": "D",
+"t": "elle diminue la concentration de sérotonine dans la fente synaptique",
+"v": false,
+"ex": "La recapture étant bloquée, la concentration de sérotonine augmente dans la fente synaptique."
+},
+{
+"l": "E",
+"t": "elle augmente la neurotransmission sérotoninergique",
+"v": true,
+"ex": "Plus de sérotonine dans la fente : la neurotransmission sérotoninergique augmente."
+}
+],
+"ans": "AE",
+"orig": "AE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cibles et mécanismes d'action des médicaments » et fiche de révision (Prozac : bloque la recapture de la sérotonine)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Cibles et mécanismes d’action des médicaments",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-07",
+347,
+567
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-29",
+"y": 2025,
+"mod": "L.AS",
+"q": 29,
+"type": "QRM",
+"stem": "Un antagoniste compétitif",
+"items": [
+{
+"l": "A",
+"t": "a pour cible un récepteur",
+"v": true,
+"ex": "Un antagoniste a pour cible un récepteur."
+},
+{
+"l": "B",
+"t": "s’oppose à la liaison de l’agoniste physiologique sur le récepteur",
+"v": true,
+"ex": "L'antagoniste s'oppose à la fixation de l'agoniste."
+},
+{
+"l": "C",
+"t": "se fixe sur le même site de liaison que l’agoniste physiologique",
+"v": true,
+"ex": "Agoniste et antagoniste compétitif se fixent sur le même site de liaison (simple rapport de concentration)."
+},
+{
+"l": "D",
+"t": "diminue l’effet maximal induit par l’agoniste physiologique",
+"v": false,
+"ex": "Antagoniste compétitif : déplacement des courbes vers la droite, mais l'effet maximal de l'agoniste est conservé (antagonisme surmontable)."
+},
+{
+"l": "E",
+"t": "augmente l’activité enzymatique du récepteur",
+"v": false,
+"ex": "Un antagoniste n'augmente pas l'activité du récepteur."
+}
+],
+"ans": "ABC",
+"orig": "ABC",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacodynamie » : antagoniste compétitif",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Caractérisation des principes actifs et de leurs cibles",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-07",
+563,
+747
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-30",
+"y": 2025,
+"mod": "L.AS",
+"q": 30,
+"type": "QRM",
+"stem": "Une substance active a un K<sub>D</sub> de 0.6 nM pour les récepteurs sérotoninergiques 5-HT2, 60 nM pour les récepteurs dopaminergiques D2, 1200 nM pour les récepteurs histaminergiques H1. Cette substance active",
+"items": [
+{
+"l": "A",
+"t": "ne se fixe pas sur les récepteurs sérotoninergiques 5-HT2",
+"v": false,
+"ex": "KD = 0,6 nM : très forte affinité pour 5-HT2, donc il s'y fixe."
+},
+{
+"l": "B",
+"t": "a une activité 10 fois plus élevée sur les récepteurs dopaminergiques D2",
+"v": false,
+"ex": "Le KD mesure l'affinité, pas l'activité ; et l'affinité pour D2 (60 nM) est 100 fois plus faible que pour 5-HT2."
+},
+{
+"l": "C",
+"t": "est sélective des récepteurs histaminergiques H1",
+"v": false,
+"ex": "KD de 1200 nM pour H1 : très faible affinité, il n'est pas sélectif de H1."
+},
+{
+"l": "D",
+"t": "a une affinité plus grande pour les récepteurs sérotoninergiques 5HT2 que pour les récepteurs dopaminergiques D2",
+"v": true,
+"ex": "Plus le KD est petit, plus l'affinité est élevée : 0,6 nM (5-HT2) < 60 nM (D2)."
+},
+{
+"l": "E",
+"t": "peut induire des effets indésirables via les récepteurs sérotoninergiques 5-HT2, si les effets thérapeutiques recherchés sont liés à l’activation des récepteurs dopaminergiques D2",
+"v": true,
+"ex": "Pour atteindre les récepteurs D2, il faudra des concentrations qui occupent déjà les 5-HT2 : risque d'effets indésirables via 5-HT2."
+}
+],
+"ans": "DE",
+"orig": "DE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacodynamie » : études de liaison, KD, réceptogramme et sélectivité",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Caractérisation des principes actifs et de leurs cibles",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-07",
+730,
+1027
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-31",
+"y": 2025,
+"mod": "L.AS",
+"q": 31,
+"type": "QRU",
+"stem": "L'inhibition d'un canal ionique",
+"items": [
+{
+"l": "A",
+"t": "à perméabilité sodique entraîne une dépolarisation cellulaire",
+"v": false,
+"ex": "Inhiber un canal sodique empêche l'entrée de Na⁺ : pas de dépolarisation."
+},
+{
+"l": "B",
+"t": "à perméabilité sodique s’oppose au déclenchement d’un potentiel d’action",
+"v": true,
+"ex": "Sans entrée de Na⁺, la dépolarisation nécessaire au potentiel d'action ne peut pas se produire."
+},
+{
+"l": "C",
+"t": "à perméabilité calcique entraîne une augmentation du calcium intracellulaire",
+"v": false,
+"ex": "Inhiber un canal calcique diminue l'entrée de calcium."
+},
+{
+"l": "D",
+"t": "à perméabilité calcique entraîne une dépolarisation cellulaire",
+"v": false,
+"ex": "Inhiber un canal calcique s'oppose à la dépolarisation."
+},
+{
+"l": "E",
+"t": "entraine une activation directe d’une protéine G",
+"v": false,
+"ex": "Un canal ionique n'active pas directement de protéine G (ce sont les récepteurs couplés aux protéines G)."
+}
+],
+"ans": "B",
+"orig": "B",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cibles et mécanismes d'action des médicaments » (récepteurs canaux)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Cibles et mécanismes d’action des médicaments",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-07",
+1020,
+1211
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-32",
+"y": 2025,
+"mod": "L.AS",
+"q": 32,
+"type": "QRM",
+"stem": "Les substances actives agissant via des récepteurs reliés à une activité enzymatique de type kinase peuvent",
+"items": [
+{
+"l": "A",
+"t": "entrainer la migration du récepteur dans le noyau",
+"v": false,
+"ex": "La migration dans le noyau concerne les récepteurs nucléaires, pas les récepteurs kinases membranaires."
+},
+{
+"l": "B",
+"t": "inhiber l’activité enzymatique du récepteur",
+"v": true,
+"ex": "Certaines substances inhibent l'activité kinase du récepteur."
+},
+{
+"l": "C",
+"t": "être des anticorps thérapeutiques",
+"v": true,
+"ex": "Des anticorps thérapeutiques peuvent cibler ces récepteurs."
+},
+{
+"l": "D",
+"t": "s’opposer à la fixation de l’agoniste physiologique",
+"v": true,
+"ex": "Ils peuvent s'opposer à la fixation de l'agoniste physiologique."
+},
+{
+"l": "E",
+"t": "induire des effets avec une cinétique de l’ordre de la milliseconde",
+"v": false,
+"ex": "La milliseconde est la cinétique des récepteurs canaux ; les récepteurs enzymatiques agissent plus lentement."
+}
+],
+"ans": "BCD",
+"orig": "BCD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Cibles et mécanismes d'action des médicaments » (récepteurs à activité enzymatique)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Cibles et mécanismes d’action des médicaments",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-08",
+77,
+281
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-33",
+"y": 2025,
+"mod": "L.AS",
+"q": 33,
+"type": "QRM",
+"stem": "La clairance d'une substance active",
+"items": [
+{
+"l": "A",
+"t": "est la quantité de substance active éliminée par unité de temps",
+"v": false,
+"ex": "La clairance n'est PAS la quantité de médicament éliminée par unité de temps : c'est un volume épuré par unité de temps."
+},
+{
+"l": "B",
+"t": "est un paramètre d'absorption",
+"v": false,
+"ex": "C'est un paramètre d'élimination."
+},
+{
+"l": "C",
+"t": "est d'autant plus faible que la demi-vie d'élimination est courte",
+"v": false,
+"ex": "T½ = ln2 × Vd / CL : plus la demi-vie est courte, plus la clairance est élevée."
+},
+{
+"l": "D",
+"t": "permet de quantifier la capacité de l'organisme à éliminer la substance active",
+"v": true,
+"ex": "Plus la clairance est grande, plus le produit est éliminé rapidement."
+},
+{
+"l": "E",
+"t": "est le produit de la constante d'élimination et du volume de distribution",
+"v": true,
+"ex": "CL = ke × Vd."
+}
+],
+"ans": "DE",
+"orig": "DE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacocinétique » et « Devenir des médicaments dans l'organisme » : clairance, demi-vie",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Devenir du médicament et pharmacocinétique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-08",
+273,
+451
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-34",
+"y": 2025,
+"mod": "L.AS",
+"q": 34,
+"type": "QRM",
+"stem": "Administrer un inducteur du cytochrome P450 3A4 à un patient traité par une substance active métabolisée par ce même cytochrome entraine une augmentation",
+"items": [
+{
+"l": "A",
+"t": "de l'absorption de la substance active",
+"v": false,
+"ex": "L'induction du CYP3A4 n'augmente pas l'absorption."
+},
+{
+"l": "B",
+"t": "du métabolisme de la substance active",
+"v": true,
+"ex": "L'inducteur augmente l'activité du CYP3A4 : le métabolisme augmente."
+},
+{
+"l": "C",
+"t": "de l'excrétion rénale de la substance active",
+"v": false,
+"ex": "La substance active est davantage métabolisée : son excrétion rénale sous forme inchangée n'augmente pas."
+},
+{
+"l": "D",
+"t": "de la clairance de la substance active",
+"v": true,
+"ex": "L'élimination par métabolisme hépatique augmente : la clairance augmente."
+},
+{
+"l": "E",
+"t": "de la demi-vie d'élimination de la substance active",
+"v": false,
+"ex": "La demi-vie diminue quand la clairance augmente (T½ = ln2 × Vd / CL)."
+}
+],
+"ans": "BD",
+"orig": "BD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacocinétique » et « Devenir des médicaments dans l'organisme » : cytochromes P450, inducteurs ; annales corrigées (un inducteur accélère l'élimination, l'AUC diminue)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Devenir du médicament et pharmacocinétique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-08",
+447,
+651
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-35",
+"y": 2025,
+"mod": "L.AS",
+"q": 35,
+"type": "QRM",
+"stem": "La procédure centralisée de l’autorisation de mise sur le marché (AMM) communautaire",
+"items": [
+{
+"l": "A",
+"t": "est obligatoire pour les médicaments des cancers",
+"v": true,
+"ex": "Procédure centralisée obligatoire pour : biotechnologies, VIH, cancer, diabète, maladies neurodégénératives, dysfonctionnements immunitaires, maladies virales, thérapies innovantes, médicaments orphelins."
+},
+{
+"l": "B",
+"t": "est obligatoire pour les médicaments du diabète",
+"v": true,
+"ex": "Elle est obligatoire pour les médicaments du diabète."
+},
+{
+"l": "C",
+"t": "est obligatoire pour les médicaments dans l’infarctus du myocarde",
+"v": false,
+"ex": "L'infarctus du myocarde ne fait pas partie de la liste obligatoire."
+},
+{
+"l": "D",
+"t": "est obligatoire si le médicament a déjà une AMM dans un pays européen",
+"v": false,
+"ex": "Si le médicament a déjà une AMM dans un État membre, c'est la reconnaissance mutuelle qui est obligatoire."
+},
+{
+"l": "E",
+"t": "est évaluée par le comité des médicaments à usage humain (CHMP)",
+"v": true,
+"ex": "Le CHMP évalue le dossier et transmet ses conclusions à la Commission européenne."
+}
+],
+"ans": "ABE",
+"orig": "ABE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Structure et régulation du médicament » et fiche de la correction d'origine « Procédures d'enregistrement »",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Structures de régulation du médicament",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-08",
+647,
+864
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-36",
+"y": 2025,
+"mod": "L.AS",
+"q": 36,
+"type": "QRM",
+"stem": "Au cours de l’évaluation d’un médicament",
+"items": [
+{
+"l": "A",
+"t": "la population étudiée dans les essais cliniques représente la population cible",
+"v": true,
+"ex": "La population étudiée dans les essais représente la population cible."
+},
+{
+"l": "B",
+"t": "la population rejointe représente la population réellement traitée après l’AMM",
+"v": true,
+"ex": "La population rejointe est celle réellement traitée après l'AMM."
+},
+{
+"l": "C",
+"t": "les essais cliniques permettent de prédire tous les types d’effets indésirables",
+"v": false,
+"ex": "Les essais cliniques (effectifs et durée limités) ne permettent pas de prédire tous les effets indésirables, notamment rares ou tardifs."
+},
+{
+"l": "D",
+"t": "les effets indésirables sont évalués par la pharmacovigilance",
+"v": true,
+"ex": "La pharmacovigilance évalue les effets indésirables après l'AMM."
+},
+{
+"l": "E",
+"t": "les effets indésirables sont évalués par des études de pharmacoépidémiologie",
+"v": true,
+"ex": "Les études de pharmacoépidémiologie évaluent aussi les effets indésirables en vie réelle."
+}
+],
+"ans": "ABDE",
+"orig": "ABDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacoépidémiologie » et « Développement clinique des médicaments »",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Pharmacoépidémiologie et niveau de preuve",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-08",
+860,
+1054
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-37",
+"y": 2025,
+"mod": "L.AS",
+"q": 37,
+"type": "QRM",
+"stem": "La médecine factuelle (‘evidence based medicine’)",
+"items": [
+{
+"l": "A",
+"t": "a plus de 100 ans d’existence",
+"v": false,
+"ex": "La médecine factuelle (EBM) est récente (années 1990), elle n'a pas 100 ans."
+},
+{
+"l": "B",
+"t": "examine les faits scientifiques",
+"v": true,
+"ex": "Elle examine les faits scientifiques (données de la recherche)."
+},
+{
+"l": "C",
+"t": "intègre l’expérience clinique du médecin",
+"v": true,
+"ex": "Elle intègre l'expérience clinique du médecin."
+},
+{
+"l": "D",
+"t": "tient compte des préférences du patient",
+"v": true,
+"ex": "Elle tient compte des préférences du patient."
+},
+{
+"l": "E",
+"t": "considère que l’expérience du médecin est suffisante pour la décision médicale",
+"v": false,
+"ex": "L'expérience du médecin seule ne suffit pas : elle est combinée aux données scientifiques et aux préférences du patient."
+}
+],
+"ans": "BCD",
+"orig": "BCD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacoépidémiologie et niveau de preuve » (médecine factuelle)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Pharmacoépidémiologie et niveau de preuve",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-09",
+107,
+287
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-38",
+"y": 2025,
+"mod": "L.AS",
+"q": 38,
+"type": "QRU",
+"stem": "Les essais cliniques de phase III chez l’Homme",
+"items": [
+{
+"l": "A",
+"t": "ont lieu seulement dans des centres agréés",
+"v": false,
+"ex": "Ce sont les essais de phase 1 qui sont réalisés dans des centres agréés."
+},
+{
+"l": "B",
+"t": "font appel à des sujets volontaires inscrits dans un fichier national",
+"v": false,
+"ex": "Le fichier national concerne les volontaires sains (phase 1)."
+},
+{
+"l": "C",
+"t": "incluent des petits effectifs de sujets volontaires malades",
+"v": false,
+"ex": "Les petits effectifs de malades caractérisent la phase 2 (100 à 500 patients) ; la phase 3 porte sur de grands effectifs."
+},
+{
+"l": "D",
+"t": "étudient l’efficacité d’un nouveau médicament par rapport au médicament de référence",
+"v": true,
+"ex": "Phase 3 : comparaison au médicament de référence (ou au placebo s'il n'en existe pas)."
+},
+{
+"l": "E",
+"t": "s’appelent également des études « pilotes »",
+"v": false,
+"ex": "Les études « pilotes » sont les études de phase 2 ; la phase 3 comprend les « études pivots »."
+}
+],
+"ans": "D",
+"orig": "D",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Développement clinique des médicaments »",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Développement clinique des médicaments",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-09",
+280,
+451
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-39",
+"y": 2025,
+"mod": "L.AS",
+"q": 39,
+"type": "QRM",
+"stem": "Une étude de cohorte",
+"items": [
+{
+"l": "A",
+"t": "étudie l’association entre une exposition et la survenue d’une maladie",
+"v": true,
+"ex": "Elle étudie l'association entre une exposition et la survenue ultérieure d'une maladie."
+},
+{
+"l": "B",
+"t": "permet d’étudier l’incidence de survenue d’une maladie",
+"v": true,
+"ex": "On compare l'incidence de survenue chez les exposés et les non exposés."
+},
+{
+"l": "C",
+"t": "permet d’estimer un rapport des risques et une différence des risques",
+"v": true,
+"ex": "On estime le rapport des risques (RR) et la différence (excès) de risque."
+},
+{
+"l": "D",
+"t": "a un meilleur niveau de preuve qu’un essai clinique bien mené",
+"v": false,
+"ex": "L'essai clinique randomisé bien mené a un meilleur niveau de preuve que la cohorte."
+},
+{
+"l": "E",
+"t": "est particulièrement adaptée pour des maladies rares",
+"v": false,
+"ex": "Pour les maladies rares, on utilise plutôt les études cas-témoins."
+}
+],
+"ans": "ABC",
+"orig": "ABC",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacoépidémiologie » : études de cohorte",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Pharmacoépidémiologie et niveau de preuve",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-09",
+450,
+627
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-40",
+"y": 2025,
+"mod": "L.AS",
+"q": 40,
+"type": "QRM",
+"stem": "Concernant la définition et le statut juridique du médicament",
+"items": [
+{
+"l": "A",
+"t": "une substance utilisée chez l'Homme en vue de restaurer une fonction physiologique est un médicament",
+"v": true,
+"ex": "Médicament par fonction : substance utilisée chez l'Homme pour restaurer, corriger ou modifier ses fonctions physiologiques (par une action pharmacologique, immunologique ou métabolique)."
+},
+{
+"l": "B",
+"t": "une substance utilisée <i>in vitro</i> dans le but d'établir un diagnostic est un médicament",
+"v": false,
+"ex": "L'utilisation in vitro pour un diagnostic relève des dispositifs médicaux de diagnostic in vitro, pas du médicament."
+},
+{
+"l": "C",
+"t": "les médicaments contenant des substances vénéneuses de Liste II sont soumis à prescription médicale",
+"v": true,
+"ex": "Les médicaments de la liste II sont soumis à prescription médicale (ordonnance simple)."
+},
+{
+"l": "D",
+"t": "un produit présenté sur son emballage comme traitant les symptômes d’une maladie humaine doit suivre la réglementation afférente aux médicaments",
+"v": true,
+"ex": "Médicament par présentation : un produit présenté comme ayant des propriétés curatives ou préventives suit la réglementation du médicament."
+},
+{
+"l": "E",
+"t": "une seringue préremplie d’insuline prête à l'emploi est un dispositif médical",
+"v": false,
+"ex": "Une seringue vide est un dispositif médical, mais une seringue pleine (préremplie) est un médicament."
+}
+],
+"ans": "ACD",
+"orig": "ACD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Définition et statut des médicaments et autres produits de santé » et « Règles de prescription »",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Définitions, statut et description des médicaments",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-09",
+623,
+881
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-41",
+"y": 2025,
+"mod": "L.AS",
+"q": 41,
+"type": "QRU",
+"stem": "Concernant les notions de dose et dosage",
+"items": [
+{
+"l": "A",
+"t": "dans le cas des formes pharmaceutiques unitaires, le patient doit mesurer lui-même la dose à administrer",
+"v": false,
+"ex": "Avec les formes unitaires, la dose est déjà répartie ; c'est pour les formes multidoses que le patient mesure lui-même la dose."
+},
+{
+"l": "B",
+"t": "les seringues-mesures utilisées chez l'enfant sont interchangeables tant qu’il s’agit d’administrer des antibiotiques",
+"v": false,
+"ex": "Les seringues-mesures pédiatriques ne sont pas interchangeables : elles sont spécifiques d'un médicament."
+},
+{
+"l": "C",
+"t": "la dose d’une solution injectable est exprimée sous la forme d'une concentration",
+"v": false,
+"ex": "La dose est une quantité de SA administrée (mg, UI…) ; la concentration exprime le dosage."
+},
+{
+"l": "D",
+"t": "la dose du médicament doit être inscrite sur le conditionnement des spécialités pharmaceutiques",
+"v": false,
+"ex": "C'est le dosage (fixe) qui figure sur le conditionnement ; la dose est déterminée par le prescripteur."
+},
+{
+"l": "E",
+"t": "le dosage d’une solution buvable est exprimé sous la forme d’une concentration",
+"v": true,
+"ex": "Formes multidoses liquides : le dosage est une concentration (% m/V)."
+}
+],
+"ans": "E",
+"orig": "E",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Les formes pharmaceutiques » : doses et dosages",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Introduction aux formes pharmaceutiques",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-09",
+873,
+1144
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-42",
+"y": 2025,
+"mod": "L.AS",
+"q": 42,
+"type": "QRM",
+"stem": "Concernant les comprimés",
+"items": [
+{
+"l": "A",
+"t": "leur utilisation est réservée à la voie orale",
+"v": false,
+"ex": "Il existe des comprimés pour d'autres voies : sublinguaux, bucco-gingivaux, comprimés gynécologiques (voie vaginale)."
+},
+{
+"l": "B",
+"t": "leur dosage est exprimé en pourcentage de substance active par rapport à la masse totale",
+"v": false,
+"ex": "Pour les formes unitaires, le dosage est la quantité de SA par unité de prise (ex. 500 mg) ; le pourcentage concerne les formes multidoses."
+},
+{
+"l": "C",
+"t": "ils sont constitués d'un corps et d'une coiffe délimitant un volume donné de poudre",
+"v": false,
+"ex": "Un corps et une coiffe contenant de la poudre décrivent une gélule."
+},
+{
+"l": "D",
+"t": "ils permettent l'administration d' une grande quantité de substance active tout en préservant le confort du patient",
+"v": true,
+"ex": "Le comprimé, forme la plus fréquente, permet une forte quantité de SA dans une petite taille."
+},
+{
+"l": "E",
+"t": "ce sont des formes pharmaceutiques dites unitaires",
+"v": true,
+"ex": "Les comprimés sont des formes unidoses (unitaires)."
+}
+],
+"ans": "DE",
+"orig": "DE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Les formes pharmaceutiques »",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Introduction aux formes pharmaceutiques",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-10",
+97,
+301
+]
+],
+"pw": 1000,
+"ph": 1333,
+"manual": true
+},
+{
+"id": "LAS25-43",
+"y": 2025,
+"mod": "L.AS",
+"q": 43,
+"type": "QRM",
+"stem": "Concernant les voies d'administrations et les formes pharmaceutiques associées",
+"items": [
+{
+"l": "A",
+"t": "les aérosols sont uniquement administrés par voie nasale",
+"v": false,
+"ex": "Les aérosols peuvent aussi être administrés par voie pulmonaire."
+},
+{
+"l": "B",
+"t": "les collyres sont des formes liquides déposées sur la muqueuse oropharyngée",
+"v": false,
+"ex": "Les collyres sont déposés sur l'oeil (voie oculaire), pas sur la muqueuse oropharyngée."
+},
+{
+"l": "C",
+"t": "les capsules molles sont des formes adaptées à la voie vaginale",
+"v": true,
+"ex": "Les capsules molles vaginales existent parmi les formes de la voie vaginale."
+},
+{
+"l": "D",
+"t": "les formes semi-solides sont épaissies pour augmenter le temps de résidence du médicament sur le site d’action",
+"v": true,
+"ex": "L'épaississement augmente le temps de contact et de résidence sur le site d'action."
+},
+{
+"l": "E",
+"t": "Les émulsions sont constituées de particules solides dispersées dans un liquide aqueux ou huileux",
+"v": false,
+"ex": "Une émulsion associe deux liquides non miscibles ; des particules solides dispersées dans un liquide forment une suspension."
+}
+],
+"ans": "CD",
+"orig": "CD",
+"status": "À vérifier (cours)",
+"src": "Cours : INTROF_4 p.18 ; INTROF_4 p.26",
+"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"mat": "Initiation aux médicaments",
+"ch": "Introduction aux formes pharmaceutiques",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-10",
+297,
+534
+]
+],
+"pw": 1000,
+"ph": 1333,
+"exSrc": "cours"
+},
+{
+"id": "LAS25-44",
+"y": 2025,
+"mod": "L.AS",
+"q": 44,
+"type": "QRM",
+"stem": "A propos du Médecin Généraliste",
+"items": [
+{
+"l": "A",
+"t": "Il est un acteur de soins primaires",
+"v": true,
+"ex": "Les soins primaires (premier recours) incluent le médecin généraliste."
+},
+{
+"l": "B",
+"t": "Il possède six compétences définies dans son référentiel métier",
+"v": true,
+"ex": "La médecine générale regroupe six compétences."
+},
+{
+"l": "C",
+"t": "Sa démarche décisionnelle est centrée sur la maladie",
+"v": false,
+"ex": "Il adopte une approche centrée sur le patient, pas sur la maladie."
+},
+{
+"l": "D",
+"t": "Il joue un rôle en prévention et en santé publique",
+"v": true,
+"ex": "Il éduque, dépiste et applique la prévention, individuellement et collectivement."
+},
+{
+"l": "E",
+"t": "Il ne prend pas en compte la médecine basée sur les preuves (EBM)",
+"v": false,
+"ex": "Le médecin pratique une médecine basée sur les preuves (EBM)."
+}
+],
+"ans": "ABD",
+"orig": "ABD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Médecine » (métiers de la santé) : niveaux de soins, compétences du médecin généraliste",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Médecine",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-10",
+600,
+794
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-45",
+"y": 2025,
+"mod": "L.AS",
+"q": 45,
+"type": "QRM",
+"stem": "A propos de la médecine basée sur les preuves (EBM)",
+"items": [
+{
+"l": "A",
+"t": "Elle repose sur trois piliers : science, clinique, patient",
+"v": true,
+"ex": "La décision s'appuie sur l'état clinique, les préférences du patient et les données de la science."
+},
+{
+"l": "B",
+"t": "Les essais randomisés correspondent à un niveau de preuve faible",
+"v": false,
+"ex": "Les essais comparatifs randomisés de forte puissance sont de niveau 1 (preuve établie), donc pas faible."
+},
+{
+"l": "C",
+"t": "Les méta-analyses d'essais comparatifs randomisés apportent le niveau de preuve le plus fort",
+"v": true,
+"ex": "Les méta-analyses d'essais comparatifs randomisés ont un niveau de preuve fort (niveau 1)."
+},
+{
+"l": "D",
+"t": "Les séries de cas correspondent à un niveau de preuve faible",
+"v": true,
+"ex": "Les séries de cas sont de niveau 4 (faible niveau de preuve)."
+},
+{
+"l": "E",
+"t": "Les recommandations professionnelles sont indépendantes des données scientifiques",
+"v": false,
+"ex": "Les recommandations professionnelles sont faites à partir des études scientifiques."
+}
+],
+"ans": "ACD",
+"orig": "ACD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Médecine » (métiers de la santé) : piliers de la décision et niveaux de preuve",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Médecine",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-10",
+777,
+1007
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-46",
+"y": 2025,
+"mod": "L.AS",
+"q": 46,
+"type": "QRU",
+"stem": "Quel article du code déontologie concerne le secret professionnel :",
+"items": [
+{
+"l": "A",
+"t": "R 4127-303",
+"v": true,
+"ex": "Article 4127-303 du CSP (code de déontologie des sages-femmes) : le secret professionnel. Le cours l'écrit « L-4127-303 »."
+},
+{
+"l": "B",
+"t": "R 4127-304",
+"v": false,
+"ex": "Ce n'est pas l'article cité par le cours pour le secret professionnel."
+},
+{
+"l": "C",
+"t": "L 4151-1",
+"v": false,
+"ex": "L.4151-1 et suivants définissent les compétences de la sage-femme."
+},
+{
+"l": "D",
+"t": "L 4151-2",
+"v": false,
+"ex": "Les articles L.4151-1 et suivants définissent les compétences de la sage-femme, pas le secret professionnel."
+},
+{
+"l": "E",
+"t": "L 4151-3",
+"v": false,
+"ex": "Les articles L.4151-1 et suivants définissent les compétences de la sage-femme, pas le secret professionnel."
+}
+],
+"ans": "A",
+"orig": "A",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Maïeutique » : code de déontologie des sages-femmes",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Maïeutique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-10",
+983,
+1221
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-47",
+"y": 2025,
+"mod": "L.AS",
+"q": 47,
+"type": "QRM",
+"stem": "A propos du suivi gynécologique, les sages-femmes peuvent assurer :",
+"items": [
+{
+"l": "A",
+"t": "La prescription d'une contraception hormonale",
+"v": true,
+"ex": "La sage-femme prescrit la contraception, orale ou locale."
+},
+{
+"l": "B",
+"t": "La pose et le retrait d'un dispositif intra-utérin",
+"v": true,
+"ex": "Elle peut poser ou retirer des DIU."
+},
+{
+"l": "C",
+"t": "La réalisation d'une biopsie et colposcopie",
+"v": false,
+"ex": "En cas de résultat pathologique, la prise en charge (biopsie, colposcopie) ne relève plus de la sage-femme."
+},
+{
+"l": "D",
+"t": "La réalisation d'un frottis cervico-vaginal",
+"v": true,
+"ex": "Elle dépiste le cancer du col par frottis cervico-vaginal et test HPV."
+},
+{
+"l": "E",
+"t": "Le suivi des femmes ménopausées",
+"v": true,
+"ex": "Les consultations de gynécologie de prévention concernent les femmes ménopausées ou non."
+}
+],
+"ans": "ABDE",
+"orig": "ABDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Maïeutique » : suivi gynécologique de prévention",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Maïeutique",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-11",
+77,
+261
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-48",
+"y": 2025,
+"mod": "L.AS",
+"q": 48,
+"type": "QRU",
+"stem": "A propos de l'exercice des chirurgiens-dentistes en 2025 :",
+"items": [
+{
+"l": "A",
+"t": "49000 chirurgiens-dentistes sont inscrits au tableau de l'ordre",
+"v": true,
+"ex": "Un peu plus de 49 000 chirurgiens-dentistes en exercice (CNOCD, octobre 2025)."
+},
+{
+"l": "B",
+"t": "3 % sont des spécialistes en médecine bucco-dentaire",
+"v": false,
+"ex": "La médecine bucco-dentaire est exercée par 0,7 % des CD."
+},
+{
+"l": "C",
+"t": "2 % sont des spécialistes en chirurgie orale",
+"v": false,
+"ex": "La chirurgie orale est exercée par 0,7 % des CD."
+},
+{
+"l": "D",
+"t": "Il y a plus de femmes que d'hommes inscrites au tableau de l'ordre",
+"v": false,
+"ex": "Le taux de féminisation est de l'ordre de 50 %."
+},
+{
+"l": "E",
+"t": "10 % des chirurgiens-dentistes ont plus de 65 ans",
+"v": false,
+"ex": "La part des CD de plus de 65 ans est de l'ordre de 8,6 %."
+}
+],
+"ans": "A",
+"orig": "A",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Odontologie » : démographie des chirurgiens-dentistes",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Odontologie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-11",
+260,
+467
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-49",
+"y": 2025,
+"mod": "L.AS",
+"q": 49,
+"type": "QRM",
+"stem": "A propos des disciplines de l'odontologie :",
+"items": [
+{
+"l": "A",
+"t": "Les prothèses dentaires fixes, sont aussi nommées prothèses adjointes",
+"v": false,
+"ex": "Les prothèses fixes sont dites conjointes ; les prothèses amovibles sont dites adjointes."
+},
+{
+"l": "B",
+"t": "Les prothèses totales sont des prothèses amovibles",
+"v": true,
+"ex": "La prothèse complète (totale) est une prothèse amovible."
+},
+{
+"l": "C",
+"t": "La pédodontie est la discipline qui se consacre aux soins des enfants",
+"v": true,
+"ex": "La pédodontie (odontologie pédiatrique) se consacre aux soins des enfants."
+},
+{
+"l": "D",
+"t": "La parodontologie se consacre au traitement des tissus de soutien de la dent",
+"v": true,
+"ex": "La parodontologie étudie et traite les tissus de soutien de la dent (parodonte)."
+},
+{
+"l": "E",
+"t": "L'odontologie conservatrice se consacre aux restaurations prothétiques",
+"v": false,
+"ex": "L'odontologie conservatrice traite les tissus calcifiés (émail, dentine) : lésions carieuses et fractures."
+}
+],
+"ans": "BCD",
+"orig": "BCD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Odontologie » : disciplines de l'odontologie",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Odontologie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-11",
+467,
+657
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-50",
+"y": 2025,
+"mod": "L.AS",
+"q": 50,
+"type": "QRM",
+"stem": "Parmi les missions du pharmacien biologiste figurent :",
+"items": [
+{
+"l": "A",
+"t": "La réalisation de prélèvements d’échantillons biologiques",
+"v": true,
+"ex": "Le biologiste effectue les prélèvements des échantillons biologiques."
+},
+{
+"l": "B",
+"t": "La réalisation d’examens d’imagerie médicale",
+"v": false,
+"ex": "L'imagerie médicale relève du médecin."
+},
+{
+"l": "C",
+"t": "L’examen clinique du patient",
+"v": false,
+"ex": "L'examen clinique n'est pas une mission du biologiste."
+},
+{
+"l": "D",
+"t": "L’interprétation des résultats des analyses biologiques",
+"v": true,
+"ex": "Il interprète et valide les résultats."
+},
+{
+"l": "E",
+"t": "La réalisation du diagnostic suite aux résultats des analyses",
+"v": false,
+"ex": "Il participe au suivi jusqu'à l'élaboration du diagnostic, mais c'est le médecin qui pose le diagnostic."
+}
+],
+"ans": "AD",
+"orig": "AD",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacie » : pharmacien biologiste médical",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Pharmacie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-11",
+647,
+847
+]
+],
+"pw": 1000,
+"ph": 1333,
+"noFig": true,
+"manual": true
+},
+{
+"id": "LAS25-51",
+"y": 2025,
+"mod": "L.AS",
+"q": 51,
+"type": "QRM",
+"stem": "Parmi les missions du pharmacien dans l’industrie pharmaceutique figurent :",
+"items": [
+{
+"l": "A",
+"t": "La délivrance des médicaments",
+"v": false,
+"ex": "La délivrance est une mission du pharmacien d'officine."
+},
+{
+"l": "B",
+"t": "La constitution du dossier d’Autorisation de Mise sur le Marché (AMM) des médicaments",
+"v": true,
+"ex": "L'assurance qualité sous sa responsabilité est nécessaire à la constitution du dossier d'AMM."
+},
+{
+"l": "C",
+"t": "Le contrôle de la liste des médicaments remboursés par la sécurité sociale",
+"v": false,
+"ex": "Ce n'est pas une mission du pharmacien industriel."
+},
+{
+"l": "D",
+"t": "La production de médicaments",
+"v": true,
+"ex": "Il intervient dans la production des médicaments."
+},
+{
+"l": "E",
+"t": "La pharmacovigilance",
+"v": true,
+"ex": "La pharmacovigilance fait partie de ses missions."
+}
+],
+"ans": "BDE",
+"orig": "BDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Pharmacie » : pharmacien d'industrie",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Pharmacie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-11",
+820,
+1044
+]
+],
+"pw": 1000,
+"ph": 1333,
+"noFig": true,
+"manual": true
+},
+{
+"id": "LAS25-52",
+"y": 2025,
+"mod": "L.AS",
+"q": 52,
+"type": "QRM",
+"stem": "Cochez les actes et techniques utilisés par les masseurs kinésithérapeutes selon le Code de la santé publique :",
+"items": [
+{
+"l": "A",
+"t": "Rééducation de la personne amputée",
+"v": true,
+"ex": "Rééducation lors d'une amputation (séquelles)."
+},
+{
+"l": "B",
+"t": "Rééducation des troubles de la déglutition",
+"v": true,
+"ex": "Rééducation de la déglutition (fonction particulière)."
+},
+{
+"l": "C",
+"t": "Injection de toxine botulique",
+"v": false,
+"ex": "Les injections ne font pas partie des actes autorisés du kinésithérapeute."
+},
+{
+"l": "D",
+"t": "Injection de plasma intra-articulaire",
+"v": false,
+"ex": "Les injections ne font pas partie des actes autorisés."
+},
+{
+"l": "E",
+"t": "Injection d'anti-inflammatoires en intra-articulaire",
+"v": false,
+"ex": "Les injections ne font pas partie des actes autorisés."
+}
+],
+"ans": "AB",
+"orig": "AB",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Kinésithérapie » : articles R4321-5, R4321-7 et R4321-8 du CSP",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Kinésithérapie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-12",
+147,
+377
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-53",
+"y": 2025,
+"mod": "L.AS",
+"q": 53,
+"type": "QRU",
+"stem": "Cochez la phrase juste concernant la démographie des masseurs kinésithérapeutes en région Centre-Val de Loire selon le rapport de l'Ordre de 2024 :",
+"items": [
+{
+"l": "A",
+"t": "La densité de la région est plus haute que la région Bourgogne Franche-Comté",
+"v": false,
+"ex": "Centre-Val de Loire 101,9 MK / 100 000 hab., Bourgogne-Franche-Comté plus élevée."
+},
+{
+"l": "B",
+"t": "La densité de la région est plus haute que la région Grand-Est",
+"v": false,
+"ex": "Le Grand Est a une densité plus élevée."
+},
+{
+"l": "C",
+"t": "La densité de la région est plus haute que la région Hauts-de-France",
+"v": false,
+"ex": "Les Hauts-de-France ont une densité plus élevée."
+},
+{
+"l": "D",
+"t": "La densité de la région est plus haute que la région Normandie",
+"v": false,
+"ex": "La Normandie (106,8) est au-dessus du Centre-Val de Loire (101,9)."
+},
+{
+"l": "E",
+"t": "La densité de la région est la plus faible de la France métropolitaine",
+"v": true,
+"ex": "Avec 101,9 MK pour 100 000 habitants, le Centre-Val de Loire est la région la moins dotée de France métropolitaine."
+}
+],
+"ans": "E",
+"orig": "E",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Kinésithérapie » (démographie) et rapport démographique 2024 de l'Ordre des masseurs-kinésithérapeutes (ordremk.fr)",
+"note": "",
+"mat": "Découverte des métiers",
+"ch": "Kinésithérapie",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-12",
+353,
+577
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-54",
+"y": 2025,
+"mod": "L.AS",
+"q": 54,
+"type": "QRM",
+"stem": "Concernant les données massives en santé :",
+"items": [
+{
+"l": "A",
+"t": "Elles doivent être uniquement manipulées par des spécialistes de l’informatique",
+"v": false,
+"ex": "Les données massives de santé sont exploitées par des profils variés (cliniciens, chercheurs, statisticiens), pas seulement par des informaticiens."
+},
+{
+"l": "B",
+"t": "Elles peuvent être regroupées dans des entrepôts de données de santé",
+"v": true,
+"ex": "Les entrepôts de données de santé sont des concentrateurs qui regroupent ces données massives."
+},
+{
+"l": "C",
+"t": "Elles servent à la gestion des bases de données",
+"v": true,
+"ex": "Les données massives sont stockées et gérées dans des bases et entrepôts de données."
+},
+{
+"l": "D",
+"t": "Elles suivent la règle des 8V",
+"v": false,
+"ex": "Le big data repose sur 3V (volume, variété, vélocité) et non sur 8V."
+},
+{
+"l": "E",
+"t": "Elles sont multi-domaines",
+"v": true,
+"ex": "Ces données sont hétérogènes, multi-domaines et multi-échelles."
+}
+],
+"ans": "BCE",
+"orig": "BCE",
+"status": "À vérifier (cours)",
+"src": "Cours : 5-Big data en santé p.19 ; 5-Big data en santé p.21",
+"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"mat": "Santé publique",
+"ch": "Big data en santé",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-12",
+640,
+827
+]
+],
+"pw": 1000,
+"ph": 1333,
+"exSrc": "cours"
+},
+{
+"id": "LAS25-55",
+"y": 2025,
+"mod": "L.AS",
+"q": 55,
+"type": "QRU",
+"stem": "Le risque relatif (RR) est :",
+"items": [
+{
+"l": "A",
+"t": "La mesure d’association entre une intervention et l’éradication d’une maladie",
+"v": false,
+"ex": "Le RR mesure l'association entre une exposition et une maladie."
+},
+{
+"l": "B",
+"t": "L’estimation de la relation de cause à effet",
+"v": false,
+"ex": "Le RR mesure la force d'une association, pas une relation de cause à effet."
+},
+{
+"l": "C",
+"t": "L’identification d’un facteur de risque si RR>1",
+"v": true,
+"ex": "Si RR > 1, le facteur est un facteur de risque."
+},
+{
+"l": "D",
+"t": "Un indicateur de morbidité",
+"v": false,
+"ex": "Le RR est une mesure d'association, pas un indicateur de morbidité."
+},
+{
+"l": "E",
+"t": "Un indicateur de mortalité",
+"v": false,
+"ex": "Le RR n'est pas un indicateur de mortalité."
+}
+],
+"ans": "C",
+"orig": "C",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Surveillance sanitaire » (épidémiologie analytique, mesures d'association)",
+"note": "",
+"mat": "Santé publique",
+"ch": "Surveillance sanitaire",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-12",
+827,
+1017
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-56",
+"y": 2025,
+"mod": "L.AS",
+"q": 56,
+"type": "QRM",
+"stem": "L’analyse étiologique dans une enquête observationnelle :",
+"items": [
+{
+"l": "A",
+"t": "Démontre la relation causale",
+"v": false,
+"ex": "Le facteur de risque augmente la probabilité de la maladie mais n'en est pas la cause : l'association ne démontre pas la causalité."
+},
+{
+"l": "B",
+"t": "Identifie les facteurs associés à l’évènement de santé d’intérêt",
+"v": true,
+"ex": "L'épidémiologie étiologique étudie les facteurs de risque d'une maladie."
+},
+{
+"l": "C",
+"t": "Nécessite d’avoir un groupe de personnes d’ethnies différentes",
+"v": false,
+"ex": "On compare des groupes selon l'exposition ou le statut malade, pas selon l'ethnie."
+},
+{
+"l": "D",
+"t": "Ne peut pas être due au hasard",
+"v": false,
+"ex": "Une association observée peut être due au hasard (ou à des biais)."
+},
+{
+"l": "E",
+"t": "S’appuie sur l’étude d’expositions à des facteurs dans des groupes d’individus",
+"v": true,
+"ex": "On compare des groupes (au moins deux) exposés ou non à un facteur."
+}
+],
+"ans": "BE",
+"orig": "BE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Surveillance sanitaire » (épidémiologie analytique, mesures d'association)",
+"note": "",
+"mat": "Santé publique",
+"ch": "Surveillance sanitaire",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-12",
+1007,
+1214
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-57",
+"y": 2025,
+"mod": "L.AS",
+"q": 57,
+"type": "QRM",
+"stem": "Parmi les propositions suivantes, quelles sont celles qui correspondent à une prestation en espèces ?",
+"items": [
+{
+"l": "A",
+"t": "Remboursement des frais de consultation médicale",
+"v": false,
+"ex": "La consultation est une prestation en nature (accès à un service)."
+},
+{
+"l": "B",
+"t": "Pension de retraite",
+"v": true,
+"ex": "La retraite est un revenu de remplacement : prestation en espèces."
+},
+{
+"l": "C",
+"t": "Revenu de solidarité active",
+"v": true,
+"ex": "Le RSA est un transfert versé aux ménages (champ pauvreté-exclusion)."
+},
+{
+"l": "D",
+"t": "Indemnité journalière maladie",
+"v": true,
+"ex": "L'indemnité journalière remplace le salaire : prestation en espèces."
+},
+{
+"l": "E",
+"t": "Allocation chômage",
+"v": true,
+"ex": "Le chômage remplace un salaire : prestation en espèces."
+}
+],
+"ans": "BCDE",
+"orig": "BCDE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Protection sociale » : types de prestations",
+"note": "",
+"mat": "Santé publique",
+"ch": "Protection sociale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-13",
+143,
+364
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-58",
+"y": 2025,
+"mod": "L.AS",
+"q": 58,
+"type": "QRU",
+"stem": "Parmi les propositions suivantes, quel est le champ de la protection sociale le plus important en France, en 2023, quant au montant des prestations sociales versées ?",
+"items": [
+{
+"l": "A",
+"t": "Famille",
+"v": false,
+"ex": "La famille suit les deux grands risques (vieillesse-survie et santé)."
+},
+{
+"l": "B",
+"t": "Santé",
+"v": true,
+"ex": "Deux grands risques se distinguent : vieillesse-survie et santé. Vieillesse n'étant pas proposée, c'est la santé."
+},
+{
+"l": "C",
+"t": "Pauvreté - exclusion sociale",
+"v": false,
+"ex": "Le champ pauvreté-exclusion est plus petit."
+},
+{
+"l": "D",
+"t": "Emploi",
+"v": false,
+"ex": "L'emploi a fortement baissé après la fin du chômage partiel."
+},
+{
+"l": "E",
+"t": "Logement",
+"v": false,
+"ex": "Le logement fait partie des plus petits champs."
+}
+],
+"ans": "B",
+"orig": "B",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Protection sociale » : données chiffrées de 2023",
+"note": "",
+"mat": "Santé publique",
+"ch": "Protection sociale",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-13",
+363,
+574
+]
+],
+"pw": 1000,
+"ph": 1333
+},
+{
+"id": "LAS25-59",
+"y": 2025,
+"mod": "L.AS",
+"q": 59,
+"type": "QRM",
+"stem": "Parmi les mesures de santé publique, quelles sont les propositions vraies concernant la lutte contre le tabagisme en France ?",
+"items": [
+{
+"l": "A",
+"t": "Etre en mesure de refuser sa première cigarette fait appel à des compétences dites « psychosociales »",
+"v": true,
+"ex": "Avec les compétences psychosociales, il serait plus facile de refuser sa première cigarette."
+},
+{
+"l": "B",
+"t": "Les compétences dites « psychosociales » peuvent être renforcées pour réduire l’entrée dans le tabagisme",
+"v": true,
+"ex": "Les programmes de prévention (Unplugged) renforcent les compétences psychosociales."
+},
+{
+"l": "C",
+"t": "Les comportements individuels sont fortement influencés par les normes sociales et les comportements de son entourage",
+"v": true,
+"ex": "Les comportements de santé dépendent des facteurs environnementaux et de l'entourage."
+},
+{
+"l": "D",
+"t": "Le nombre de fumeurs quotidiens en France reste stable depuis plusieurs années",
+"v": false,
+"ex": "De 2014 à 2019, le nombre de fumeurs a considérablement diminué."
+},
+{
+"l": "E",
+"t": "Le tabac est le premier facteur de risque modifiable à l’origine des cancers en France",
+"v": true,
+"ex": "Le tabac est le premier facteur de risque (évitable) des cancers en France."
+}
+],
+"ans": "ABCE",
+"orig": "ABCE",
+"status": "Cours (sans correction d'origine)",
+"src": "Cours « Déterminants de la santé » (compétences psychosociales, tabac, cancers)",
+"note": "",
+"mat": "Santé publique",
+"ch": "Déterminants de la santé",
+"ocr": false,
+"ok": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lasbio"
+],
+"crop": [
+[
+"las2025-13",
+570,
+854
+]
+],
+"pw": 1000,
+"ph": 1333
+}
+]
