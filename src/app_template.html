@@ -318,6 +318,7 @@ button.item:hover:not(:disabled){border-color:var(--accent)}
 .sheet h3{font-size:1.2rem;color:var(--head)}
 .sheet .opt2{display:flex;flex-direction:column;gap:8px}
 .sheet .seg{display:flex}.sheet .seg button{flex:1}
+.edq{max-height:88vh;overflow-y:auto;width:min(560px,100%)}.edq .edi{display:flex;flex-direction:column;gap:6px}.edq label{display:flex;gap:8px;align-items:flex-start;line-height:1.35}.edq label input{margin-top:3px;width:18px;height:18px;flex:none}
 .sheet small{color:var(--muted);font-size:.82rem}
 .qtools{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
 .qtools button{display:inline-flex;align-items:center;gap:6px}
@@ -1021,6 +1022,8 @@ function resultHTML(q,sel){const err=discord(q,sel),s=sel?score(q,sel):0,blank=!
   else if(st.startsWith('Cours (sans'))h+=`<div class="notice acc"><b>Corrigée sur le cours.</b> Pas encore de correction pour ce sujet : correction faite à partir des cours.<span class="src">Source : ${esc(q.src)}</span></div>`;
   else if(st.startsWith('Cours'))h+=`<div class="notice acc"><b>Corrigée sur le cours.</b> Cette question n'existe qu'en L.AS : il n'y a pas de première correction, la correction a été faite à partir du cours.${st.includes('confirmer')&&q.note?' '+esc(q.note):''}<span class="src">Source : ${esc(q.src)}</span></div>`;
   else if(st.startsWith('Non comparée'))h+=`<div class="notice neutral"><b>Correction non comparée.</b> Pas de seconde correction disponible pour ce sujet.</div>`;
+
+  if(typeof isAdmin==='function'&&isAdmin())h+=`<div class="row" style="margin-top:10px"><button class="sm ghost" data-editq="${esc(q.id)}">Modifier la correction</button></div>`;
   return h}
 /* ---------- export PDF ---------- */
 const imgCache={};

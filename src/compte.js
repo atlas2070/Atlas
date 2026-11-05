@@ -82,7 +82,7 @@ function grant(acc,offline){
   lsSet(ACC_KEY,{email:acc.email,role:acc.role,uid:acc.uid,at:acc.at||Date.now()});ssSet(PEND_KEY,null);
   if(was&&was!==acc.uid){location.replace(location.pathname);return}
   document.body.classList.remove('locked');buildTabs();
-  startApp();
+  startApp();loadCorrections();
 }
 
 /* ---------- progression synchronisée (table progress) ----------
@@ -270,6 +270,60 @@ async function sendReport(qid,message){
   const {error}=await sb.from('reports').insert({user_id:AUTH.uid,question_id:qid,message:String(message).slice(0,2000)});
   if(error)throw error}
 const qRef=q=>q?sess(q)+' · '+q.mod+' · Q'+q.q:'';
+
+/* ---------- corrections modifiées depuis le site (table corrections, voir supabase/corrections.sql) ----------
+   Les admins corrigent une question (bonnes réponses, explications, note) ; tous les membres voient la version
+   modifiée. Les données d'origine du site ne bougent pas : « Revenir à l'original » efface la modification.
+   Chaque changement est gardé dans corrections_log (qui, quand, avant / après). */
+const BASE={}; // état d'origine des questions modifiées
+function applyCorr(c){const q=BYID[c.question_id];if(!q)return;
+  if(!BASE[q.id])BASE[q.id]={ans:q.ans,orig:q.orig,status:q.status,note:q.note,src:q.src,ex:q.items.map(i=>i.ex),v:q.items.map(i=>i.v)};
+  const b=BASE[q.id],L=q.items.map(i=>i.l);
+  q.ans=[...String(c.ans||'')].filter(l=>L.includes(l)).sort().join('');
+  q.items.forEach((it,k)=>{it.v=q.ans.includes(it.l);const e=c.ex&&c.ex[it.l];it.ex=typeof e==='string'&&e.trim()?e.trim():b.ex[k]});
+  const d=c.updated_at?' le '+new Date(c.updated_at).toLocaleDateString('fr-FR'):'';
+  if(q.ans!==b.ans){q.orig=b.orig||b.ans;q.status='Rectification proposée';q.src='Correction de l\'équipe Atlas'+d}
+  else{q.orig=b.orig;q.status=b.status;q.src=b.src}
+  q.note=String(c.note||'').trim()||b.note;q.edited=true}
+function resetCorr(id){const q=BYID[id],b=BASE[id];if(!q||!b)return;
+  Object.assign(q,{ans:b.ans,orig:b.orig,status:b.status,note:b.note,src:b.src});q.items.forEach((it,k)=>{it.ex=b.ex[k];it.v=b.v[k]});delete q.edited;delete BASE[id]}
+async function loadCorrections(){
+  if(!AUTH.ok||!await ensureSb())return;
+  try{const {data,error}=await sb.from('corrections').select('question_id,ans,ex,note,updated_at');
+    if(error||!data||!data.length)return;data.forEach(applyCorr);if(view!=='quiz')render()}catch(e){}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-editq]');if(b&&isAdmin())editCorr(b.dataset.editq)});
+function editCorr(id){const q=BYID[id];if(!q)return;
+  const b=BASE[id],baseEx=k=>b?b.ex[k]:q.items[k].ex,baseAns=b?b.ans:q.ans;
+  const bg=document.createElement('div');bg.className='sheet-bg';
+  bg.innerHTML=`<div class="sheet edq" role="dialog" aria-modal="true" aria-label="Modifier la correction">
+    <div><h3>Modifier la correction</h3><small>${esc(qRef(q))} · coche les propositions vraies${isU(q)?' (une seule)':''}</small></div>
+    ${q.items.map(it=>`<div class="edi"><label><input type="checkbox" data-l="${it.l}" ${it.v?'checked':''}> <b>${it.l}</b> <span>${esc(untag(it.t||'(proposition en image)'))}</span></label>
+      <textarea data-x="${it.l}" rows="3" maxlength="1500" aria-label="Explication ${it.l}" placeholder="Explication">${esc(it.ex||'')}</textarea></div>`).join('')}
+    <div class="edi"><b>Note</b><small class="muted">Obligatoire si la réponse change : ce qui justifie le changement (cours, chapitre, page).</small>
+      <textarea id="edN" rows="2" maxlength="1500">${esc(q.edited?q.note||'':'')}</textarea></div>
+    <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px">${q.edited?'<button class="ghost" id="edR" style="color:var(--bad)">Revenir à l\'original</button>':'<span></span>'}
+      <span class="row"><button class="ghost" id="edX">Annuler</button><button class="primary" id="edS">Enregistrer</button></span></div></div>`;
+  const close=()=>{bg.remove();document.removeEventListener('keydown',esck)};const esck=ev=>{if(ev.key==='Escape')close()};
+  bg.onclick=ev=>{if(ev.target===bg)close()};document.addEventListener('keydown',esck);document.body.appendChild(bg);
+  bg.querySelector('#edX').onclick=close;
+  if(bg.querySelector('#edR'))bg.querySelector('#edR').onclick=async ev=>{ev.target.disabled=true;
+    const {error}=await sb.from('corrections').delete().eq('question_id',id);
+    if(error){toast('Modification impossible');ev.target.disabled=false;return}
+    resetCorr(id);close();render();toast('Correction d\'origine rétablie')};
+  bg.querySelector('#edS').onclick=async ev=>{
+    const ans=[...bg.querySelectorAll('[data-l]')].filter(c=>c.checked).map(c=>c.dataset.l).join('');
+    if(isU(q)&&ans.length!==1){toast('Coche une seule bonne réponse');return}
+    const note=bg.querySelector('#edN').value.trim();
+    if(ans!==baseAns&&note.length<10){toast('Explique dans la note pourquoi la réponse change');return}
+    const ex={};bg.querySelectorAll('[data-x]').forEach((t,k)=>{const v=t.value.trim();if(v&&v!==(baseEx(k)||''))ex[t.dataset.x]=v});
+    if(ans===baseAns&&!Object.keys(ex).length&&!note){toast('Rien n\'a changé');return}
+    if(!await ensureSb()){toast('Hors ligne : réessaie plus tard');return}
+    ev.target.disabled=true;
+    const row={question_id:id,ans,ex,note:note||null,updated_by:AUTH.email,updated_at:new Date().toISOString()};
+    const {error}=await sb.from('corrections').upsert(row);
+    if(error){toast('Enregistrement impossible');ev.target.disabled=false;return}
+    applyCorr(row);close();render();toast('Correction enregistrée pour tout le monde')};
+  setTimeout(()=>bg.querySelector('[data-l]')?.focus(),0)}
 function showQuestion(id){const q=BYID[id];if(!q){toast('Question introuvable');return}
   // aperçu en lecture : correction affichée, rien n'est compté dans les statistiques
   run={ids:[id],i:0,from:'membres',label:'Signalement',mode:'fin',sel:{},res:{},done:true,summary:false,confirm:false,chrono:false,limit:60,el:0};go('quiz')}

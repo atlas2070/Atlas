@@ -207,3 +207,9 @@ Sources consultées (novembre 2026) :
 [Supabase – Production checklist (limites d'e-mails)](https://supabase.com/docs/guides/deployment/going-into-prod) ·
 [Guide Brevo pour le SMTP Supabase](https://developers.brevo.com/docs/supabase-smtp-integration) ·
 [Réglages SMTP Gmail (Nylas)](https://developer.nylas.com/docs/cookbook/email/gmail-smtp-settings/)
+
+## Modifier une correction depuis le site (admins)
+1. Une seule fois : Supabase → SQL Editor → New query → coller le contenu de `supabase/corrections.sql` → Run.
+2. Sur le site, un admin ouvre une question (par exemple avec « Voir la question » sous un signalement), affiche la correction, puis clique sur « Modifier la correction ».
+3. Il coche les bonnes réponses, corrige les explications et écrit une note (obligatoire si la réponse change : ce qui la justifie dans le cours). La modification est visible par tous les membres dès leur prochain chargement.
+4. « Revenir à l'original » efface la modification. L'historique (qui, quand, avant / après) est dans la table `corrections_log`.

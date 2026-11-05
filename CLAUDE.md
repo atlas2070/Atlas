@@ -42,3 +42,4 @@ Site d'annales du S1 (première année santé, Tours) pour l'association (le nom
 - Ne jamais mettre la clé `service_role` dans le dépôt (la clé `anon` est publique par nature).
 Voir `docs/PASSATION.md` et `docs/DEPLOIEMENT.md`.
 - Ne jamais citer le nom de l’équipe de la première correction sur le site ni dans la doc : dire « première correction » ou « correction d'origine ».
+- Corrections modifiées par les admins depuis le site : table Supabase `corrections` (`supabase/corrections.sql`, historique dans `corrections_log`). Elles s'appliquent par-dessus `data/*.json` au chargement. Avant de retoucher une question dans `data/`, demander à un admin d'exporter la table `corrections` pour intégrer ces changements (puis les retirer de la table).
