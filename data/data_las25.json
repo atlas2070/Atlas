@@ -104,9 +104,9 @@
 ],
 "ans": "D",
 "orig": "D",
-"status": "À vérifier (cours)",
+"status": "Maintenue (correction d'origine)",
 "src": "Cours : 14- Physiologie digestive (partie 11) ; Physiologie digestive (partie 12)",
-"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"note": "Relue en novembre 2026 : réponse cohérente avec le cours et les connaissances actuelles.",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -125,7 +125,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"exSrc": "cours"
+"exSrc": "cours",
+"tranche": true
 },
 {
 "id": "LAS25-3",
@@ -138,8 +139,8 @@
 {
 "l": "A",
 "t": "les complexes moteurs migrants sont arrêtés",
-"v": false,
-"ex": "En période post-prandiale, les CMM reprennent ; ils sont arrêtés pendant le repas."
+"v": true,
+"ex": "Les complexes moteurs migrants apparaissent à jeun, en période interdigestive ; la prise alimentaire les interrompt, ils sont donc arrêtés en période post-prandiale."
 },
 {
 "l": "B",
@@ -166,11 +167,11 @@
 "ex": "La segmentation de l'intestin grêle est active en période post-prandiale."
 }
 ],
-"ans": "BD",
+"ans": "ABD",
 "orig": "BD",
-"status": "À vérifier (désaccord avec le cours)",
-"src": "Cours : 14- Physiologie digestive (partie 26) ; 3- Le système digestif (partie 10)",
-"note": "Proposition A : Le cours (E3) place les complexes moteurs migrants en période interdigestive, interrompus par la prise d'aliments : ils sont donc arrêtés en post-prandial, alors que la proposition est notée fausse.",
+"status": "Rectification proposée",
+"src": "Cours : PASS_UE3_Physio_Hum_Digestion p.28",
+"note": "Le cours décrit les complexes moteurs migrants comme un péristaltisme de la période interdigestive (à jeun) : en post-prandial ils sont arrêtés, A est vraie.",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -189,7 +190,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"exSrc": "cours"
+"exSrc": "cours",
+"tranche": true
 },
 {
 "id": "LAS25-4",
@@ -296,9 +298,9 @@
 ],
 "ans": "ABC",
 "orig": "ABC",
-"status": "À vérifier (cours)",
+"status": "Maintenue (correction d'origine)",
 "src": "Cours : 4. Respiration (partie 9) ; 2-Respiration 1et2 p.56 ; 2-Physiologie respiratoire (partie 22) ; Respiration - PR p.19",
-"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"note": "Relue en novembre 2026 : réponse cohérente avec le cours et les connaissances actuelles.",
 "mat": "Physiologie",
 "ch": "Respiration",
 "ocr": false,
@@ -317,7 +319,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"exSrc": "cours"
+"exSrc": "cours",
+"tranche": true
 },
 {
 "id": "LAS25-6",
@@ -2728,9 +2731,9 @@
 ],
 "ans": "CD",
 "orig": "CD",
-"status": "À vérifier (cours)",
+"status": "Maintenue (correction d'origine)",
 "src": "Cours : INTROF_4 p.18 ; INTROF_4 p.26 ; INTROF_4 p.15",
-"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"note": "Relue en novembre 2026 : réponse cohérente avec le cours et les connaissances actuelles.",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
 "ocr": false,
@@ -2749,7 +2752,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"exSrc": "cours"
+"exSrc": "cours",
+"tranche": true
 },
 {
 "id": "LAS25-44",
@@ -3432,9 +3436,9 @@
 ],
 "ans": "BCE",
 "orig": "BCE",
-"status": "À vérifier (cours)",
+"status": "Maintenue (correction d'origine)",
 "src": "Cours : 5-Big data en santé p.19 ; 5-Big data en santé p.21",
-"note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
+"note": "Relue en novembre 2026 : réponse cohérente avec le cours et les connaissances actuelles.",
 "mat": "Santé publique",
 "ch": "Big data en santé",
 "ocr": false,
@@ -3453,7 +3457,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"exSrc": "cours"
+"exSrc": "cours",
+"tranche": true
 },
 {
 "id": "LAS25-55",

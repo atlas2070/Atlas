@@ -9,10 +9,10 @@ Rapport produit par `python3 tools/coherence.py` (relançable ; le script ne mod
 | a) | 0 | 0 | 0 | 0 |
 | b) | 2 | 0 | 0 | 2 |
 | c) | 1 | 1 | 0 | 0 |
-| d) | 2 | 0 | 2 | 0 |
+| d) | 1 | 0 | 1 | 0 |
 | e) | 0 | 0 | 0 | 0 |
 | f) | 8 | 0 | 3 | 5 |
-| d) écartés d'office (sens ou contexte différent) | 242 | 0 | 0 | 242 |
+| d) écartés d'office (sens ou contexte différent) | 239 | 0 | 0 | 239 |
 
 ## a) Réponse (`ans`) différente des propositions marquées vraies (`v`)
 
@@ -39,7 +39,6 @@ Similarité du texte > 90 % (comparaison caractère par caractère, balises et p
 
 | Question | Problème | Extrait | Classement | Relecture |
 |---|---|---|---|---|
-| LASSP-2023-50 C / HB-2023-9 C | même proposition, même énoncé (« Concernant les indicateurs de santé : ») : LASSP-2023-50 C = faux, HB-2023-9 C = vrai | La mortalité évitable correspond à la mortalité avant l’âge de 75 ans | à vérifier dans le cours | Les deux questions passent en « À vérifier » : seul le cours peut dire laquelle est juste. |
 | 2020-M4-32 B / 2022-M4-41 B | même proposition, même énoncé (« Le pharmacien hospitalier peut avoir comme mi… ») : 2020-M4-32 B = vrai, 2022-M4-41 B = faux | la production des chimiothérapies ; | à vérifier dans le cours | Les deux questions passent en « À vérifier » : seul le cours peut dire laquelle est juste. |
 
 Cas écartés d'office (pas une anomalie) :
@@ -217,7 +216,7 @@ Cas écartés d'office (pas une anomalie) :
 
 </details>
 
-<details><summary>même texte, énoncé différent : 56</summary>
+<details><summary>même texte, énoncé différent : 53</summary>
 
 - HB-2021-45 D (V) / HB-2024-47 E (F) : « le calibre des voies aériennes intrapulmonaires au… »
 - HB-2024-47 E (F) / LAS25-7 E (V) : « le calibre des voies aériennes intrapulmonaires au… »
@@ -229,8 +228,6 @@ Cas écartés d'office (pas une anomalie) :
 - 2022-M4-24 E (V) / 2022-M4-25 B (F) : « L’estimation de la relation de cause à effet. »
 - 2022-M4-24 E (V) / LAS25-55 B (F) : « L’estimation de la relation de cause à effet. »
 - 2021-M2-33 E (V) / 2024-M2-40 C (F) : « Le nombre d'électrons transférés est de 2. »
-- LASSP-2022-49 C (F) / HB-2023-9 C (V) : « La mortalité évitable correspond à la mortalité av… »
-- HB-2022-8 C (F) / HB-2023-9 C (V) : « La mortalité évitable correspond à la mortalité av… »
 - 2020-M2-6 B (V) / HB-2021-40 B (F) : « La molécule F est de configuration R »
 - 2020-M2-6 B (V) / HB-2022-29 D (F) : « La molécule F est de configuration R »
 - 2020-M2-6 B (V) / HB-2023-39 D (F) : « La molécule F est de configuration R »
@@ -244,7 +241,6 @@ Cas écartés d'office (pas une anomalie) :
 - 2020-M2-19 B (F) / 2023-M2-22 B (V) : « Le composé G intermédiaire a pour structure : »
 - 2020-M2-17 E (V) / 2021-M2-17 E (F) : « Le composé I a pour structure : »
 - 2020-M2-17 E (V) / 2024-M2-20 E (F) : « Le composé I a pour structure : »
-- 2020-M4-50 A (V) / 2023-M4-24 D (F) : « la mortalité prématurée fait partie des déterminan… »
 - 2022-M2-22 C (V) / 2024-M2-27 C (F) : « est un acide aminé essentiel »
 - 2022-M2-22 C (V) / HB-2024-34 D (F) : « est un acide aminé essentiel »
 - 2022-M1-43 E (F) / HB-2022-43 A (V) : « est d'autant plus élevée que la dose est élevée »

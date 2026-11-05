@@ -1016,6 +1016,7 @@ function resultHTML(q,sel){const err=discord(q,sel),s=sel?score(q,sel):0,blank=!
   else if(st.startsWith('Validée'))h+=`<div class="notice ok"><b>Correction vérifiée.</b> Deux corrections indépendantes donnent la même réponse.</div>`;
   else if(st.startsWith('À vérifier (désaccord'))h+=`<div class="notice"><b>À vérifier.</b> Le cours semble contredire la correction : la réponse affichée n'est pas encore tranchée. ${esc(q.note||'')}${q.src?`<span class="src">Source : ${esc(q.src)}</span>`:''}</div>`;
   else if(st.startsWith('À vérifier (cohérence)'))h+=`<div class="notice"><b>À vérifier.</b> Les données de cette correction se contredisent : la réponse affichée n'est pas encore tranchée. ${esc(q.note||'')}${q.src?`<span class="src">Source : ${esc(q.src)}</span>`:''}</div>`;
+  else if(st.startsWith('À vérifier (conn')||st.startsWith('À vérifier (calc'))h+=`<div class="notice"><b>À vérifier.</b> La réponse affichée est peut-être fausse : elle n'est pas encore tranchée. ${esc(q.note||'')}</div>`;
   else if(st.startsWith('À vérifier'))h+=`<div class="notice"><b>À vérifier.</b> Pas encore de correction pour ce sujet : correction faite à partir des cours. ${esc(q.note||'')}<span class="src">Source : ${esc(q.src)}</span></div>`;
   else if(st.startsWith('Cours (sans'))h+=`<div class="notice acc"><b>Corrigée sur le cours.</b> Pas encore de correction pour ce sujet : correction faite à partir des cours.<span class="src">Source : ${esc(q.src)}</span></div>`;
   else if(st.startsWith('Cours'))h+=`<div class="notice acc"><b>Corrigée sur le cours.</b> Cette question n'existe qu'en L.AS : il n'y a pas de première correction, la correction a été faite à partir du cours.${st.includes('confirmer')&&q.note?' '+esc(q.note):''}<span class="src">Source : ${esc(q.src)}</span></div>`;
@@ -1045,6 +1046,7 @@ async function exportPDF(list,title='Carnet d\'erreurs',fname='carnet-erreurs.pd
     else if(q.status.startsWith('Incertaine'))line('Correction incertaine : première correction retenue.',8,'italic',2);
     else if(q.status.startsWith('À vérifier (désaccord'))line('À vérifier : le cours semble contredire la correction, réponse pas encore tranchée.',8,'italic',2);
     else if(q.status.startsWith('À vérifier (cohérence)'))line('À vérifier : les données de cette correction se contredisent, réponse pas encore tranchée.',8,'italic',2);
+    else if(q.status.startsWith('À vérifier (conn')||q.status.startsWith('À vérifier (calc'))line('À vérifier : la réponse affichée est peut-être fausse, pas encore tranchée.',8,'italic',2);
     else if(q.status.startsWith('À vérifier'))line('À vérifier : corrigée à partir des cours, sans autre correction.',8,'italic',2);
     if(state.notes[q.id])line('Ma note : '+state.notes[q.id],9,'italic',2,[91,63,196]);
     y+=10}
