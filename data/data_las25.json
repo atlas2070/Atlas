@@ -41,7 +41,7 @@
 "ans": "DE",
 "orig": "DE",
 "status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie digestive » de la correction d'origine 2025-26 : système nerveux autonome, glandes salivaires, accommodation gastrique, phase céphalique",
+"src": "Cours : PASS_UE3_Physio_Hum_Digestion_support_partieI2 p.16 ; Physiologie digestive (partie 10) ; 14- Physiologie digestive (partie 13)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
@@ -60,7 +60,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-2",
@@ -167,9 +168,9 @@
 ],
 "ans": "BD",
 "orig": "BD",
-"status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie digestive » de la correction d'origine 2025-26 : tableau récapitulatif de la motricité (interdigestive, prandiale, post-prandiale) et intestin grêle",
-"note": "",
+"status": "À vérifier (désaccord avec le cours)",
+"src": "Cours : 14- Physiologie digestive (partie 26) ; 3- Le système digestif (partie 10)",
+"note": "Proposition A : Le cours (E3) place les complexes moteurs migrants en période interdigestive, interrompus par la prise d'aliments : ils sont donc arrêtés en post-prandial, alors que la proposition est notée fausse.",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -187,7 +188,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-4",
@@ -231,7 +233,7 @@
 "ans": "ABD",
 "orig": "ABD",
 "status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : modalités de déplacement d'un gaz, transport des gaz dans le sang",
+"src": "Cours : 2020_LAS hors bio_PhysioRespi_1 p.3 ; 4. Respiration (partie 2) ; 2-Respiration 1et2 p.16",
 "note": "",
 "mat": "Physiologie",
 "ch": "Respiration",
@@ -250,7 +252,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-5",
@@ -294,7 +297,7 @@
 "ans": "ABC",
 "orig": "ABC",
 "status": "À vérifier (cours)",
-"src": "Cours : 4. Respiration (partie 9) ; 2-Respiration 1et2 p.56 ; 2-Physiologie respiratoire (partie 22)",
+"src": "Cours : 4. Respiration (partie 9) ; 2-Respiration 1et2 p.56 ; 2-Physiologie respiratoire (partie 22) ; Respiration - PR p.19",
 "note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
 "mat": "Physiologie",
 "ch": "Respiration",
@@ -357,8 +360,8 @@
 ],
 "ans": "C",
 "orig": "C",
-"status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : relation entre résistance, débit et pression",
+"status": "Confirmée par le cours",
+"src": "Cours : 2-Respiration 3et4 p.4",
 "note": "",
 "mat": "Physiologie",
 "ch": "Respiration",
@@ -377,7 +380,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-7",
@@ -421,7 +425,7 @@
 "ans": "ACE",
 "orig": "ACE",
 "status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : muscles respiratoires, variations de la pression transmurale au cours du cycle ventilatoire",
+"src": "Cours : Respiration - PR p.25 ; Respiration - PR p.28",
 "note": "",
 "mat": "Physiologie",
 "ch": "Respiration",
@@ -440,7 +444,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-8",
@@ -483,8 +488,8 @@
 ],
 "ans": "B",
 "orig": "B",
-"status": "Cours (sans correction d'origine)",
-"src": "Poly « Physiologie respiratoire » de la correction d'origine 2025-26 : gaz du sang normaux",
+"status": "Confirmée par le cours",
+"src": "Cours : 2020_LAS hors bio_PhysioRespi_1 p.13",
 "note": "",
 "mat": "Physiologie",
 "ch": "Respiration",
@@ -503,7 +508,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-9",
@@ -546,8 +552,8 @@
 ],
 "ans": "E",
 "orig": "E",
-"status": "Cours (sans correction d'origine)",
-"src": "Physiologie, bioénergétique : formule du travail W = N × F × H × 2 quand l'objet est soulevé puis reposé ; rendement brut = W / Q effort",
+"status": "Confirmée par le cours",
+"src": "Cours : 1-Bioénergétique p.75 ; 1-Bioénergétique p.74",
 "note": "",
 "mat": "Physiologie",
 "ch": "Bioénergétique",
@@ -566,7 +572,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-10",
@@ -580,7 +587,7 @@
 "l": "A",
 "t": "la concentration normale de H⁺ dans le sang artériel est de l’ordre de 7,4 µmol.L⁻¹",
 "v": false,
-"ex": "La concentration plasmatique normale des H⁺ est de l'ordre de 40 nmol/L, pas 7,4 µmol/L."
+"ex": "Avec un pH de 7,4, [H+] = 10^-7,4 mol/L, soit environ 40 nmol/L et non 7,4 µmol/L."
 },
 {
 "l": "B",
@@ -609,8 +616,8 @@
 ],
 "ans": "BCE",
 "orig": "BCE",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Équilibre acido-basique » : grandeur régulée, charge acide quotidienne, anhydrase carbonique",
+"status": "Confirmée par le cours",
+"src": "Cours : LAS hors bio_PLANTIER_Acidobasique p.8 ; 4-Equilibre Acido-Basique p.10 ; LAS hors bio_PLANTIER_Acidobasique p.10",
 "note": "",
 "mat": "Physiologie",
 "ch": "Équilibre acido-basique",
@@ -629,7 +636,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-11",
@@ -673,7 +681,7 @@
 "ans": "AE",
 "orig": "AE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Introduction à la physiologie » : Claude Bernard, niveaux d'organisation, maintien de l'homéostasie",
+"src": "Cours : 1. Intro à la physiologie (partie 3)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Introduction à la physiologie",
@@ -692,7 +700,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-12",
@@ -736,7 +745,7 @@
 "ans": "ACD",
 "orig": "ACD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Intégration synaptique » et « Organisation du système nerveux » (plasticité cérébrale)",
+"src": "Cours : 3. l’intégration synaptique (partie 6) ; 3-Intégration Synaptique (partie 12) ; 2-L_organisme en relation avec son environnement (partie 7) ; 3-Intégration Synaptique (partie 4)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Transmission synaptique",
@@ -755,7 +764,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-13",
@@ -799,7 +809,7 @@
 "ans": "ACD",
 "orig": "ACD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Extéroception » (vision, transmission du récepteur au cortex, cortex visuel) ; cours « Émotions » (yeux frontaux des prédateurs, yeux latéraux des proies)",
+"src": "Cours : 6-Extéroception (partie 2) ; 2-Cogniton (partie 8)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Extéroception",
@@ -818,7 +828,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-14",
@@ -862,7 +873,7 @@
 "ans": "ABDE",
 "orig": "ABDE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Émotions » et « Intégration synaptique » (récepteurs de la sérotonine, transmission indirecte : émotions, humeur)",
+"src": "Cours : 2-Cogniton (partie 9) ; 9_Emotions_modif_2023 p.3",
 "note": "",
 "mat": "Physiologie",
 "ch": "Émotions",
@@ -881,7 +892,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-15",
@@ -925,7 +937,7 @@
 "ans": "CD",
 "orig": "CD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cortex moteur et planification de l'action »",
+"src": "Cours : 4-Plannification de l_action (partie 3) ; 4-Plannification de l_action (partie 4) ; 5-Controle spinal-réflexes (partie 2)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Planification de l’action",
@@ -944,7 +956,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-16",
@@ -988,7 +1001,7 @@
 "ans": "ACDE",
 "orig": "ACDE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cognition » et « Organisation du système nerveux »",
+"src": "Cours : 8-cognition (partie 3) ; 2-Cogniton (partie 1) ; 8-cognition (partie 6)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Cognition",
@@ -1007,7 +1020,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-17",
@@ -1051,7 +1065,7 @@
 "ans": "ABCE",
 "orig": "ABCE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Système nerveux autonome », « Physiologie digestive » (salive) et « Physiologie rénale » (miction)",
+"src": "Cours : 7-Système nerveux végétatif (partie 7) ; PASS_UE3_Physio_Hum_Digestion_support_partieI2 p.16 ; 2.1-Système rénal (partie 20)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Système nerveux végétatif",
@@ -1070,7 +1084,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-18",
@@ -1114,7 +1129,7 @@
 "ans": "C",
 "orig": "C",
 "status": "Cours (sans correction d'origine)",
-"src": "Fiche de la correction d'origine « Système endocrinien » 2025-26 et cours de physiologie",
+"src": "Cours : 1- Le système endocrinien (partie 8) ; 1- Introduction Endocrinologie - Boucles endocriniennes p.34 ; 1- Introduction Endocrinologie - Boucles endocriniennes p.9",
 "note": "",
 "mat": "Physiologie",
 "ch": "Système endocrinien",
@@ -1133,7 +1148,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-19",
@@ -1177,7 +1193,7 @@
 "ans": "ADE",
 "orig": "ADE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Physiologie rénale »",
+"src": "Cours : 2-physiologie rénale p.17 ; VF LAS NON BIO Physiologie rénale 2021-22(1) p.27 ; 2.1-Système rénal (partie 6)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physiologie rénale",
@@ -1196,7 +1212,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-20",
@@ -1240,7 +1257,7 @@
 "ans": "ACE",
 "orig": "ACE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Physiologie rénale »",
+"src": "Cours : 2.1-Système rénal (partie 11) ; 2-physiologie rénale p.41 ; 2-physiologie rénale p.54 ; VF LAS NON BIO Physiologie rénale 2021-22(1) p.36",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physiologie rénale",
@@ -1259,7 +1276,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-21",
@@ -1302,8 +1320,8 @@
 ],
 "ans": "CD",
 "orig": "CD",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Physiologie rénale »",
+"status": "Confirmée par le cours",
+"src": "Cours : 2-physiologie rénale p.63 ; VF LAS NON BIO Physiologie rénale 2021-22(1) p.55 ; 2-physiologie rénale p.88",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physiologie rénale",
@@ -1322,7 +1340,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-22",
@@ -1366,7 +1385,7 @@
 "ans": "AB",
 "orig": "AB",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Physiologie rénale »",
+"src": "Cours : 2.1-Système rénal (partie 20) ; 2-physiologie rénale p.97 ; 2-physiologie rénale p.99",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physiologie rénale",
@@ -1385,7 +1404,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-23",
@@ -1429,7 +1449,7 @@
 "ans": "ABCE",
 "orig": "ABCE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Compartiments liquidiens » (paroi capillaire, urée, pressions oncotique et hydrostatique, œdèmes)",
+"src": "Cours : Compartiments liquidiens 2(1) p.24 ; Compartiments liquidiens 2(1) p.21",
 "note": "",
 "mat": "Physiologie",
 "ch": "Compartiments liquidiens",
@@ -1448,7 +1468,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-24",
@@ -1492,7 +1513,7 @@
 "ans": "ABDE",
 "orig": "ABDE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cycle cardiaque et hémodynamique »",
+"src": "Cours : L.AS non bio Hémodynamique(1) p.12 ; L.AS non bio Hémodynamique(1) p.15 ; L.AS non bio Hémodynamique(1) p.18",
 "note": "",
 "mat": "Physiologie",
 "ch": "Cycle cardiaque",
@@ -1512,7 +1533,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"manual": true
+"manual": true,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-25",
@@ -1618,8 +1640,8 @@
 ],
 "ans": "B",
 "orig": "B",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Couplage excitation-contraction »",
+"status": "Confirmée par le cours",
+"src": "Cours : L.AS non bio couplage excitation contraction (3) p.14 ; L.AS non bio couplage excitation contraction (3) p.15 ; L.AS non bio couplage excitation contraction (3) p.13",
 "note": "",
 "mat": "Physiologie",
 "ch": "Couplage excitation-contraction",
@@ -1638,7 +1660,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-27",
@@ -1682,7 +1705,7 @@
 "ans": "B",
 "orig": "B",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Débit cardiaque » (loi de Frank-Starling, précharge, postcharge)",
+"src": "Cours : L.AS non bio Débit cardiaque(2) p.9 ; L.AS non bio Débit cardiaque(2) p.8",
 "note": "",
 "mat": "Physiologie",
 "ch": "Débit cardiaque",
@@ -1701,7 +1724,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-28",
@@ -1745,7 +1769,7 @@
 "ans": "AE",
 "orig": "AE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cibles et mécanismes d'action des médicaments » et fiche de révision (Prozac : bloque la recapture de la sérotonine)",
+"src": "Cours : 1- Cibles et mécanismes d_action des médicaments (partie 20) ; 1. Cibles et mécanismes d_action médicaments (partie 26)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Cibles et mécanismes d’action des médicaments",
@@ -1764,7 +1788,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-29",
@@ -1807,8 +1832,8 @@
 ],
 "ans": "ABC",
 "orig": "ABC",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacodynamie » : antagoniste compétitif",
+"status": "Confirmée par le cours",
+"src": "Cours : 1- Cibles et mécanismes d_action des médicaments (partie 5) ; 2. Pharmacodynamie(1) (partie 9)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
@@ -1827,7 +1852,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-30",
@@ -1871,7 +1897,7 @@
 "ans": "DE",
 "orig": "DE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacodynamie » : études de liaison, KD, réceptogramme et sélectivité",
+"src": "Cours : 2. Pharmacodynamie(1) (partie 4) ; M1 Cours Caractérisation PA-cibles 24 p.3",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
@@ -1890,7 +1916,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-31",
@@ -1934,7 +1961,7 @@
 "ans": "B",
 "orig": "B",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cibles et mécanismes d'action des médicaments » (récepteurs canaux)",
+"src": "Cours : 1. Cibles et mécanismes d_action médicaments (partie 19) ; 1- Cibles et mécanismes d_action des médicaments (partie 16)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Cibles et mécanismes d’action des médicaments",
@@ -1953,7 +1980,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-32",
@@ -1997,7 +2025,7 @@
 "ans": "BCD",
 "orig": "BCD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Cibles et mécanismes d'action des médicaments » (récepteurs à activité enzymatique)",
+"src": "Cours : 1 - Cibles et mécanismes d_action des médicaments diapo prof p.8",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Cibles et mécanismes d’action des médicaments",
@@ -2016,7 +2044,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-33",
@@ -2059,8 +2088,8 @@
 ],
 "ans": "DE",
 "orig": "DE",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacocinétique » et « Devenir des médicaments dans l'organisme » : clairance, demi-vie",
+"status": "Confirmée par le cours",
+"src": "Cours : 3- Paramètres pharmacocinétique diapo prof p.27 ; 2. Paramètres pharmacocinétiques (partie 6)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Devenir du médicament et pharmacocinétique",
@@ -2079,7 +2108,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-34",
@@ -2186,7 +2216,7 @@
 "ans": "ABE",
 "orig": "ABE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Structure et régulation du médicament » et fiche de la correction d'origine « Procédures d'enregistrement »",
+"src": "Cours : 6- Structures de régulation du médicament p.14 ; 6- Structures de régulation du médicament p.17",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Structures de régulation du médicament",
@@ -2205,7 +2235,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-36",
@@ -2248,8 +2279,8 @@
 ],
 "ans": "ABDE",
 "orig": "ABDE",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacoépidémiologie » et « Développement clinique des médicaments »",
+"status": "Confirmée par le cours",
+"src": "Cours : 7- Pharmacovigilance (partie 1) ; 7- PharmacoVigilance p.6 ; 7- PharmacoVigilance p.52",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Pharmacoépidémiologie et niveau de preuve",
@@ -2268,7 +2299,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-37",
@@ -2311,8 +2343,8 @@
 ],
 "ans": "BCD",
 "orig": "BCD",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacoépidémiologie et niveau de preuve » (médecine factuelle)",
+"status": "Confirmée par le cours",
+"src": "Cours : 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.61 ; 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.62",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Pharmacoépidémiologie et niveau de preuve",
@@ -2331,7 +2363,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-38",
@@ -2375,7 +2408,7 @@
 "ans": "D",
 "orig": "D",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Développement clinique des médicaments »",
+"src": "Cours : diapo prof p.14 ; DIAPO-PDF-DÇveloppement-clinique-des-mÇdicaments p.11 ; diapo prof p.28",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Développement clinique des médicaments",
@@ -2394,7 +2427,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-39",
@@ -2438,7 +2472,7 @@
 "ans": "ABC",
 "orig": "ABC",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacoépidémiologie » : études de cohorte",
+"src": "Cours : 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.29 ; 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.32 ; 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.33 ; 10 - Pharmacoépidémiologie - Niveau de preuve - Iatrogénie (1) p.69",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Pharmacoépidémiologie et niveau de preuve",
@@ -2457,7 +2491,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-40",
@@ -2501,7 +2536,7 @@
 "ans": "ACD",
 "orig": "ACD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Définition et statut des médicaments et autres produits de santé » et « Règles de prescription »",
+"src": "Cours : 6- Structures de régulation du médicament p.5 ; 4-Définition et statut des médicaments p.8 ; G Paintaud Prescription PASS-LAS Bio 2023-2024 p.25",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Définitions, statut et description des médicaments",
@@ -2520,7 +2555,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-41",
@@ -2563,8 +2599,8 @@
 ],
 "ans": "E",
 "orig": "E",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Les formes pharmaceutiques » : doses et dosages",
+"status": "Confirmée par le cours",
+"src": "Cours : 5-Introduction aux formes pharmaceutiques p.2 ; N°2 p.9 ; N°2 p.4 ; N°2 p.3",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
@@ -2583,7 +2619,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-42",
@@ -2627,7 +2664,7 @@
 "ans": "DE",
 "orig": "DE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Les formes pharmaceutiques »",
+"src": "Cours : INTROF_4 p.10 ; N°2 p.11 ; INTROF_1 p.9 ; 5-Introduction aux formes pharmaceutiques (partie 2)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
@@ -2647,7 +2684,8 @@
 ],
 "pw": 1000,
 "ph": 1333,
-"manual": true
+"manual": true,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-43",
@@ -2691,7 +2729,7 @@
 "ans": "CD",
 "orig": "CD",
 "status": "À vérifier (cours)",
-"src": "Cours : INTROF_4 p.18 ; INTROF_4 p.26",
+"src": "Cours : INTROF_4 p.18 ; INTROF_4 p.26 ; INTROF_4 p.15",
 "note": "Au moins une proposition ne figure pas clairement dans les cours disponibles : la réponse retenue est la plus probable.",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
@@ -2755,7 +2793,7 @@
 "ans": "ABD",
 "orig": "ABD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Médecine » (métiers de la santé) : niveaux de soins, compétences du médecin généraliste",
+"src": "Cours : 1-Médecine (partie 2) ; Presentation metiers de la sante Médecine_2021 logo FM p.21",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Médecine",
@@ -2774,7 +2812,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-45",
@@ -2818,7 +2857,7 @@
 "ans": "ACD",
 "orig": "ACD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Médecine » (métiers de la santé) : piliers de la décision et niveaux de preuve",
+"src": "Cours : Presentation metiers de la sante Médecine_2021 logo FM p.11 ; Presentation metiers de la sante Médecine_2021 logo FM p.12",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Médecine",
@@ -2837,7 +2876,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-46",
@@ -3070,7 +3110,7 @@
 "ans": "BCD",
 "orig": "BCD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Odontologie » : disciplines de l'odontologie",
+"src": "Cours : Présentation métiers Chir Dentiste 2023 p.19 ; Présentation métiers Chir Dentiste 2023 p.20 ; Présentation métiers Chir Dentiste 2023 p.23 ; Présentation métiers Chir Dentiste 2023 p.27",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Odontologie",
@@ -3089,7 +3129,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-50",
@@ -3133,7 +3174,7 @@
 "ans": "AD",
 "orig": "AD",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacie » : pharmacien biologiste médical",
+"src": "Cours : 1-Profession pharmacien p.4",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Pharmacie",
@@ -3154,7 +3195,8 @@
 "pw": 1000,
 "ph": 1333,
 "noFig": true,
-"manual": true
+"manual": true,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-51",
@@ -3198,7 +3240,7 @@
 "ans": "BDE",
 "orig": "BDE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Pharmacie » : pharmacien d'industrie",
+"src": "Cours : 1-Pharmacie (partie 4)",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Pharmacie",
@@ -3219,7 +3261,8 @@
 "pw": 1000,
 "ph": 1333,
 "noFig": true,
-"manual": true
+"manual": true,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-52",
@@ -3263,7 +3306,7 @@
 "ans": "AB",
 "orig": "AB",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Kinésithérapie » : articles R4321-5, R4321-7 et R4321-8 du CSP",
+"src": "Cours : 1.kinesitherapeute p.21",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Kinésithérapie",
@@ -3282,7 +3325,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-53",
@@ -3452,8 +3496,8 @@
 ],
 "ans": "C",
 "orig": "C",
-"status": "Cours (sans correction d'origine)",
-"src": "Cours « Surveillance sanitaire » (épidémiologie analytique, mesures d'association)",
+"status": "Confirmée par le cours",
+"src": "Cours : surveillance sanitaire p.55 ; 2-Epidémiologie p.50",
 "note": "",
 "mat": "Santé publique",
 "ch": "Surveillance sanitaire",
@@ -3472,7 +3516,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-56",
@@ -3516,7 +3561,7 @@
 "ans": "BE",
 "orig": "BE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Surveillance sanitaire » (épidémiologie analytique, mesures d'association)",
+"src": "Cours : 2-Epidémiologie p.56 ; surveillance sanitaire p.43 ; 2-Epidémiologie p.39",
 "note": "",
 "mat": "Santé publique",
 "ch": "Surveillance sanitaire",
@@ -3535,7 +3580,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-57",
@@ -3579,7 +3625,7 @@
 "ans": "BCDE",
 "orig": "BCDE",
 "status": "Cours (sans correction d'origine)",
-"src": "Cours « Protection sociale » : types de prestations",
+"src": "Cours : protection sociale p.22",
 "note": "",
 "mat": "Santé publique",
 "ch": "Protection sociale",
@@ -3598,7 +3644,8 @@
 ]
 ],
 "pw": 1000,
-"ph": 1333
+"ph": 1333,
+"exSrc": "cours"
 },
 {
 "id": "LAS25-58",
