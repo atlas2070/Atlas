@@ -213,3 +213,9 @@ Sources consultées (novembre 2026) :
 2. Sur le site, un admin ouvre une question (par exemple avec « Voir la question » sous un signalement), affiche la correction, puis clique sur « Modifier la correction ».
 3. Il coche les bonnes réponses, corrige les explications et écrit une note (obligatoire si la réponse change : ce qui la justifie dans le cours). La modification est visible par tous les membres dès leur prochain chargement.
 4. « Revenir à l'original » efface la modification. L'historique (qui, quand, avant / après) est dans la table `corrections_log`.
+
+## Version 2 : avis, suivi des signalements, stats du projet
+1. Une seule fois : Supabase → SQL Editor → New query → coller `supabase/v2.sql` → Run.
+2. Onglet **Avis** (tout le monde) : donner un avis, une idée ou signaler un problème ; suivre ses signalements et avis (statut + réponse de l'équipe). Une pastille rouge apparaît sur l'onglet quand une réponse arrive.
+3. Onglet **Membres** (admins) : « Stats du projet » (totaux anonymes calculés par la fonction `project_stats`, jamais de ligne par élève), statut + réponse pour chaque signalement et chaque avis.
+4. Le temps passé est compté depuis le 8 novembre 2026 (`state.time`), seulement quand une question est à l'écran et qu'il y a eu une action dans les 2 dernières minutes. Un élève peut sortir des statistiques dans Réglages (`state.noStats`).

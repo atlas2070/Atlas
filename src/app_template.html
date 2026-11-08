@@ -489,6 +489,15 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .reports{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .reports .rp{display:flex;flex-direction:column;gap:6px}
 .reports .rp.done{opacity:.6}
+.annonce{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;padding:14px 16px;border-radius:16px;background:var(--accent-soft);color:var(--ink);font-size:.92rem;line-height:1.45}
+.annonce b{color:var(--accent)}.annonce .row{margin-top:8px}.annonce .x{margin-left:auto;flex:none;border:0;background:transparent;font-size:1.3rem;line-height:1;color:var(--muted);padding:2px 6px}
+.stars{display:flex;gap:4px}.stars button{border:0;background:transparent;font-size:1.6rem;line-height:1;padding:2px;color:var(--line)}.stars button[aria-pressed="true"]{color:#f2b33d}
+.suivi{display:flex;flex-direction:column;gap:10px;margin-top:10px}.suivi .si{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:14px}
+.suivi .si .rep{background:var(--sunken);border-radius:10px;padding:8px 11px;font-size:.88rem}.suivi .si .top{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.adm{display:flex;flex-direction:column;gap:6px}.adm select{max-width:220px}
+.pstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:10px}.pstats div{background:var(--sunken);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}.pstats b{font-family:var(--mono);font-size:1.25rem;color:var(--head)}.pstats span{font-size:.8rem;color:var(--muted)}
+.bars{display:flex;flex-direction:column;gap:6px;margin-top:8px}.bars .br{display:grid;grid-template-columns:minmax(80px,30%) 1fr auto;gap:8px;align-items:center;font-size:.84rem}.bars .bt{height:8px;border-radius:99px;background:var(--sunken);overflow:hidden}.bars .bt i{display:block;height:100%;background:var(--accent);border-radius:99px}
+nav#tabs a.dot{position:relative}nav#tabs a.dot::after{content:"";position:absolute;top:7px;right:calc(50% - 16px);width:8px;height:8px;border-radius:50%;background:var(--bad)}
 .mlist{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-top:10px}
 .mrow{display:grid;grid-template-columns:minmax(0,1fr) 150px auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .mrow .me{overflow-wrap:anywhere;font-weight:600;font-size:.92rem}
@@ -587,6 +596,7 @@ body.locked header{display:none}
       <a href="#annales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20v-3"/><path d="M8 7h8M8 11h6"/></svg>Annales</a>
       <a href="#erreurs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span class="tab-desk">Révisions</span><span class="tab-mob">Révisions</span></a>
       <a href="#stats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span class="tab-desk">Statistiques</span><span class="tab-mob">Stats</span></a>
+      <a href="#avis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg>Avis</a>
     </nav>
   </div>
 </header>
@@ -640,6 +650,7 @@ const rt=s=>esc(s).replace(/&lt;(\/?)(sub|sup|i|u)&gt;/g,'<$1$2>');
 const fr=n=>String(n).replace('.',',');
 const sCls=s=>s===1?'s1':s>0?'sp':'s0';
 const isU=q=>q.type==='QRU'||q.type==='QCS';
+const fmtTemps=sec=>{const m=Math.round(sec/60),h=Math.floor(m/60);return h?h+' h'+(m%60?' '+String(m%60).padStart(2,'0'):''):m+' min'};
 function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(e._t);e._t=setTimeout(()=>e.hidden=true,2400)}
 function discord(q,sel){const s=new Set(sel),a=new Set(q.ans.split(''));let err=0;for(const it of q.items){if(s.has(it.l)!==a.has(it.l))err++}return err}
 function score(q,sel){const err=discord(q,sel);if(isU(q))return err===0?1:0;return err===0?1:err===1?.8:err===2?.25:0}
@@ -685,7 +696,7 @@ parsel.innerHTML=PARCOURS.map(p=>`<option value="${p.id}" ${p.ok?'':'disabled'}>
 function setParcours(p){state.parcours=p;fA.open='';fA.list='';persist();if(view==='quiz'){run=null;view='annales';location.hash='annales'}render()}
 parsel.onchange=e=>setParcours(e.target.value);
 /* ---------- routage ---------- */
-const VIEWS=['accueil','cours','annales','erreurs','stats','reglages','quiz','membres'];
+const VIEWS=['accueil','cours','annales','erreurs','stats','avis','reglages','quiz','membres'];
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1).replace('entrainement','cours');view=VIEWS.includes(h)?h:'accueil';if(view==='quiz'&&!run)view='annales';render()});
 function go(v){if(location.hash==='#'+v)render();else location.hash=v}
 function render(){
@@ -695,7 +706,7 @@ function render(){
   const cur=(view==='quiz'?(run?.from||'annales'):view).replace('entrainement','cours');
   document.querySelectorAll('#tabs a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+cur?'page':'false'));
   $('#gear').setAttribute('aria-current',cur==='reglages'?'page':'false');
-  const f={accueil:vAccueil,annales:vAnnales,cours:vCours,erreurs:vErreurs,stats:vStats,reglages:vReglages,quiz:vQuiz,membres:vMembres}[view];
+  const f={accueil:vAccueil,annales:vAnnales,cours:vCours,erreurs:vErreurs,stats:vStats,avis:vAvis,reglages:vReglages,quiz:vQuiz,membres:vMembres}[view];
   $('#view').innerHTML='';f($('#view'));window.scrollTo(0,0)}
 /* ---------- vues ---------- */
 function done(){return Object.keys(state.ans).filter(k=>BYID[k]&&inP(BYID[k]))}
@@ -720,6 +731,7 @@ function vAccueil(el){
    <button class="bx b-search" id="bS"><span class="lab">Rechercher</span><span class="sfake">${IC.search}<span>Un mot de l'énoncé…</span></span><span class="ts">ex. aldostérone, Nernst</span></button>
    <section class="bx b-mats"><div class="mh"><span class="lab">Tes matières</span><span class="ts" id="syncInfo">${esc(syncText)}</span></div><div class="ml">${M.map(x=>{const st=statOf(QQ.filter(q=>q.mat===x)),p=st.t?Math.round(st.d/st.t*100):0;return `<button data-m="${esc(x)}" style="${mc(x)}"><span class="dotm">${esc(mini(x))}</span><span class="mn">${esc(x)}</span><span class="track"><i style="width:${p}%"></i></span><span class="n">${p} %</span></button>`}).join('')}</div></section>
   </div>`;
+  if(typeof homeExtra==='function')homeExtra(el);
   el.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
   if($('#resY')){$('#resY').onclick=resumeRun;$('#resN').onclick=()=>{run=null;state.run=null;persist();toast('Série abandonnée');render()}}
   if($('#goR'))$('#goR').onclick=()=>startRun(due,'erreurs','À revoir aujourd\'hui');
@@ -848,7 +860,7 @@ function vStats(el){
   const tbl=(rows,lab)=>`<div class="scroll"><table><thead><tr><th>${lab}</th><th>Faites</th><th>Moyenne</th><th style="width:38%">Réussite</th></tr></thead><tbody>${rows.map(([g,v])=>`<tr><td>${esc(g)}</td><td class="num">${v.n} / ${v.t}</td><td class="num">${v.n?fr((v.s/v.n*20).toFixed(1))+' /20':'–'}</td><td><div class="bar-h"><div class="track"><i style="width:${v.n?Math.round(v.s/v.n*100):0}%"></i></div><span class="num muted" style="min-width:42px;text-align:right">${v.n?Math.round(v.s/v.n*100)+' %':''}</span></div></td></tr>`).join('')}</tbody></table></div>`;
   const so=Object.fromEntries(SESS().map(([k,l],i)=>[l,i]));
   el.innerHTML=`<div class="head"><div><h2>Statistiques</h2></div></div>
-  ${d.length?`<div class="tiles"><div class="panel"><b>${d.length}</b><span>questions faites sur ${QQ.length}</span></div><div class="panel"><b>${fmtMoy(m)}</b><span>moyenne sur 20</span></div><div class="panel"><b>${Math.round(full/d.length*100)} %</b><span>questions sans erreur</span></div></div>
+  ${d.length?`<div class="tiles"><div class="panel"><b>${d.length}</b><span>questions faites sur ${QQ.length}</span></div><div class="panel"><b>${fmtMoy(m)}</b><span>moyenne sur 20</span></div><div class="panel"><b>${Math.round(full/d.length*100)} %</b><span>questions sans erreur</span></div>${state.time&&state.time.tot>=60?`<div class="panel"><b>${fmtTemps(state.time.tot)}</b><span>passées sur les questions</span></div>`:''}</div>
   <div class="stack"><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par matière</h3>${tbl(agg(q=>q.mat).sort((a,b)=>cmp(a[0],b[0])),'Matière')}</div><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par session</h3>${tbl(agg(q=>q.gl||sess(q)).sort((a,b)=>so[a[0]]-so[b[0]]),'Session')}</div></div>`:'<div class="empty"><b>Pas encore de statistiques</b>Fais quelques questions pour voir ta moyenne par matière et par session.</div>'}`;
 }
 function vReglages(el){
@@ -945,7 +957,7 @@ function openReport(q){const box=$('#rep');if(box.innerHTML){box.innerHTML='';re
   $('#repX').onclick=()=>{box.innerHTML=''};
   $('#repF').onsubmit=async e=>{e.preventDefault();const msg=$('#repM').value.trim();if(!msg)return;const item=$('#repI').value;
     const ref=sess(q)+' · '+q.mod+' · Q'+q.q;
-    try{await sendReport(q.id,item+' : '+msg.slice(0,1000));box.innerHTML='<p class="muted" style="font-size:.88rem;margin:0">Merci, signalement envoyé.</p>';toast('Signalement envoyé')}
+    try{await sendReport(q.id,item+' : '+msg.slice(0,1000));box.innerHTML='<p class="muted" style="font-size:.88rem;margin:0">Merci, signalement envoyé. Tu peux suivre où il en est dans l\'onglet Avis.</p>';toast('Signalement envoyé')}
     catch(err){const txt=`Erreur signalée : ${ref} (${q.mat}) · ${item} · ${msg}`;box.innerHTML=`<div class="notice neutral"><b>Envoi impossible pour le moment</b> (hors ligne ?). Réessaie plus tard, ou copie ce message et envoie-le à l'équipe Atlas${CONFIG.CONTACT_EMAIL?' ('+esc(CONFIG.CONTACT_EMAIL)+')':''} :<textarea readonly rows="3" style="margin-top:8px" id="repT">${esc(txt)}</textarea><div class="row" style="margin-top:8px"><button class="sm" id="repC">Copier</button></div></div>`;
       $('#repC').onclick=async()=>{try{await navigator.clipboard.writeText(txt);toast('Copié')}catch(_){const t=$('#repT');t.focus();t.select()}}}}}
 function actionWord(q,shown){if(run.mode==='fin'&&!run.done)return run.i===run.ids.length-1?'terminer':'suivante';return shown||q.annul?'suivante':'valider'}

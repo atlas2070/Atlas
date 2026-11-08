@@ -82,7 +82,7 @@ function grant(acc,offline){
   lsSet(ACC_KEY,{email:acc.email,role:acc.role,uid:acc.uid,at:acc.at||Date.now()});ssSet(PEND_KEY,null);
   if(was&&was!==acc.uid){location.replace(location.pathname);return}
   document.body.classList.remove('locked');buildTabs();
-  startApp();loadCorrections();
+  startApp();loadCorrections();loadSuivi(true);
 }
 
 /* ---------- progression synchronisée (table progress) ----------
@@ -250,8 +250,12 @@ function compteHTML(){
   if(!AUTH.ok)return'';
   return `<div class="panel"><h3 style="margin-bottom:6px">Compte</h3><p style="margin:0 0 4px">Connecté avec <b>${esc(AUTH.email)}</b>${isAdmin()?' · administration':''}</p>
    <p class="muted" style="margin:0 0 12px">${AUTH.offline?'Hors ligne pour le moment. ':''}Se déconnecter efface ta progression de cet appareil. Elle reste sur ton compte.</p>
-   <div id="outZone"><button id="signOut">Se déconnecter</button></div></div>`}
-function wireCompte(el){const b=el.querySelector('#signOut');if(b)b.onclick=()=>signOut(false)}
+   <div id="outZone"><button id="signOut">Se déconnecter</button></div></div>
+  <div class="panel"><h3 style="margin-bottom:6px">Statistiques du projet</h3>
+   <label class="row" style="gap:10px;align-items:flex-start"><input type="checkbox" id="shareStats" ${state.noStats?'':'checked'} style="width:18px;height:18px;margin-top:2px;flex:none"> <span>Compter mes réponses et mon temps dans les statistiques anonymes du projet</span></label>
+   <p class="muted" style="margin:8px 0 0">L'équipe ne voit que des totaux (nombre de questions faites, réussite moyenne, heures passées), jamais tes réponses ni ton nom.</p></div>`}
+function wireCompte(el){const b=el.querySelector('#signOut');if(b)b.onclick=()=>signOut(false);
+  const c=el.querySelector('#shareStats');if(c)c.onchange=()=>{if(c.checked)delete state.noStats;else state.noStats=true;persist();toast(c.checked?'Tes réponses comptent dans les statistiques anonymes':'Tes réponses ne sont plus comptées')}}
 async function signOut(force){
   if(!force&&typeof syncPending==='function'&&await syncPending()){
     const z=$('#outZone');if(!z)return;
@@ -327,19 +331,60 @@ function editCorr(id){const q=BYID[id];if(!q)return;
 function showQuestion(id){const q=BYID[id];if(!q){toast('Question introuvable');return}
   // aperçu en lecture : correction affichée, rien n'est compté dans les statistiques
   run={ids:[id],i:0,from:'membres',label:'Signalement',mode:'fin',sel:{},res:{},done:true,summary:false,confirm:false,chrono:false,limit:60,el:0};go('quiz')}
+const RST={nouveau:['Envoyé','plain'],en_cours:['En cours','warn'],corrige:['Corrigé','ok'],pas_erreur:['Pas d\'erreur','acc']};
+const FST={nouveau:['Envoyé','plain'],en_cours:['En cours','warn'],fait:['Fait','ok'],pas_retenu:['Pas retenu','acc']};
+const chipSt=(M,k)=>{const [t,c]=M[k]||M.nouveau;return `<span class="chip ${c}">${t}</span>`};
+const fmtD=d=>d?new Date(d).toLocaleDateString('fr-FR'):'';
+// Bloc admin : statut + réponse visible par l'auteur
+function admBox(kind,r,M){return `<div class="adm"><select data-st="${kind}:${esc(r.id)}" aria-label="Statut">${Object.entries(M).map(([k,[t]])=>`<option value="${k}" ${r.status===k?'selected':''}>${t}</option>`).join('')}</select>
+  <textarea data-rp="${kind}:${esc(r.id)}" rows="2" maxlength="2000" placeholder="Réponse (visible par la personne)">${esc(r.reponse||'')}</textarea>
+  <div class="row"><button class="sm primary" data-sv="${kind}:${esc(r.id)}">Enregistrer</button></div></div>`}
+function wireAdm(box,reload){box.querySelectorAll('[data-sv]').forEach(b=>b.onclick=async()=>{const [kind,id]=b.dataset.sv.split(':');
+  const st=box.querySelector(`[data-st="${b.dataset.sv}"]`).value,rp=box.querySelector(`[data-rp="${b.dataset.sv}"]`).value.trim()||null;
+  const row={status:st,reponse:rp,repondu_at:rp||st!=='nouveau'?new Date().toISOString():null};if(kind==='r')row.done=st==='corrige'||st==='pas_erreur';
+  b.disabled=true;const {error}=await sb.from(kind==='r'?'reports':'feedback').update(row).eq('id',id);
+  if(error){toast('Enregistrement impossible');b.disabled=false;return}toast('Enregistré : la personne verra la réponse');reload()})}
 async function loadReports(){const box=$('#reps');if(!box)return;
-  const {data,error}=await sb.from('reports').select('id,question_id,message,created_at,done').order('created_at',{ascending:false}).limit(300);
+  const {data,error}=await sb.from('reports').select('id,question_id,message,created_at,done,status,reponse').order('created_at',{ascending:false}).limit(300);
   if(!$('#reps'))return;
   if(error){box.innerHTML='<small>Signalements injoignables pour le moment.</small>';return}
-  const L=(data||[]).sort((a,b)=>a.done-b.done),open=L.filter(r=>!r.done).length;
+  const fin=r=>r.status==='corrige'||r.status==='pas_erreur',L=(data||[]).sort((a,b)=>fin(a)-fin(b)),open=L.filter(r=>!fin(r)).length;
   $('#repN').textContent=open?open+' à traiter':'Rien à traiter';
-  box.innerHTML=L.length?L.map(r=>{const q=BYID[r.question_id];return `<div class="rp${r.done?' done':''}"><span><b>${esc(q?qRef(q):r.question_id)}</b>${q?' · '+esc(q.mat):''}${r.done?' <span class="chip ok">traité</span>':''}</span>
-    <span>${esc(r.message)}</span><small>${new Date(r.created_at).toLocaleDateString('fr-FR')}</small>
-    <div class="row">${q?`<button class="sm" data-see="${esc(r.question_id)}">Voir la question</button>`:''}<button class="sm${r.done?' ghost':''}" data-done="${esc(r.id)}" data-v="${r.done?0:1}">${r.done?'Rouvrir':'Traité'}</button></div></div>`}).join(''):'<small>Aucun signalement pour l\'instant.</small>';
-  box.querySelectorAll('[data-see]').forEach(b=>b.onclick=()=>showQuestion(b.dataset.see));
-  box.querySelectorAll('[data-done]').forEach(b=>b.onclick=async()=>{b.disabled=true;
-    const {error}=await sb.from('reports').update({done:b.dataset.v==='1'}).eq('id',b.dataset.done);
-    if(error){toast('Modification impossible');b.disabled=false;return}loadReports()})}
+  box.innerHTML=L.length?L.map(r=>{const q=BYID[r.question_id];return `<div class="rp si${fin(r)?' done':''}"><span class="top"><span><b>${esc(q?qRef(q):r.question_id)}</b>${q?' · '+esc(q.mat):''}</span>${chipSt(RST,r.status)}</span>
+    <span>${esc(r.message)}</span><small>${fmtD(r.created_at)}</small>
+    ${q?`<div class="row"><button class="sm" data-see="${esc(r.question_id)}">Voir et corriger la question</button></div>`:''}${admBox('r',r,RST)}</div>`}).join(''):'<small>Aucun signalement pour l\'instant.</small>';
+  box.classList.add('suivi');
+  box.querySelectorAll('[data-see]').forEach(b=>b.onclick=()=>showQuestion(b.dataset.see));wireAdm(box,loadReports)}
+async function loadFeedbackAdmin(){const box=$('#avs');if(!box)return;
+  const {data,error}=await sb.from('feedback').select('id,kind,note,message,created_at,status,reponse').order('created_at',{ascending:false}).limit(300);
+  if(!$('#avs'))return;
+  if(error){box.innerHTML='<small>Avis injoignables pour le moment (le fichier supabase/v2.sql a-t-il été lancé ?).</small>';return}
+  const fin=r=>r.status==='fait'||r.status==='pas_retenu',L=(data||[]).sort((a,b)=>fin(a)-fin(b)),open=L.filter(r=>r.status==='nouveau').length;
+  $('#avN').textContent=open?open+' nouveau'+(open>1?'x':''):'Rien de nouveau';
+  box.innerHTML=L.length?L.map(r=>`<div class="si${fin(r)?' done':''}"><span class="top"><span><b>${KIND[r.kind]||'Avis'}</b>${r.note?' · '+'★'.repeat(r.note):''}</span>${chipSt(FST,r.status)}</span>
+    <span>${esc(r.message)}</span><small>${fmtD(r.created_at)}</small>${admBox('f',r,FST)}</div>`).join(''):'<small>Aucun avis pour l\'instant.</small>';
+  wireAdm(box,loadFeedbackAdmin)}
+
+/* ---------- Statistiques du projet (admins) : uniquement des totaux anonymes (fonction project_stats) ---------- */
+async function loadProjectStats(){const box=$('#pst');if(!box)return;
+  const {data:d,error}=await sb.rpc('project_stats');if(!$('#pst'))return;
+  if(error||!d||typeof d!=='object'){box.innerHTML='<small>Statistiques indisponibles (le fichier supabase/v2.sql a-t-il été lancé ?).</small>';return}
+  const n=x=>(+x||0).toLocaleString('fr-FR'),mats={};
+  for(const [qid,[c,m]] of Object.entries(d.par_question||{})){const q=BYID[qid];if(!q)continue;const k=mats[q.mat]||(mats[q.mat]={c:0,s:0});k.c+=c;k.s+=c*m}
+  const ML=Object.entries(mats).sort((a,b)=>b[1].c-a[1].c),maxC=Math.max(1,...ML.map(([,v])=>v.c));
+  const wk={};for(const [day,sec] of Object.entries(d.par_jour||{})){const t=new Date(day+'T12:00:00'),m=new Date(t);m.setDate(t.getDate()-((t.getDay()+6)%7));const k=m.toISOString().slice(0,10);wk[k]=(wk[k]||0)+(+sec||0)}
+  const WL=Object.entries(wk).sort((a,b)=>a[0]<b[0]?-1:1).slice(-8),maxW=Math.max(1,...WL.map(([,v])=>v));
+  const S=d.signalements||{},A=d.avis||{};
+  box.innerHTML=`<div class="pstats">
+    <div><b>${n(d.membres)}</b><span>membres sur la liste</span></div><div><b>${n(d.connectes)}</b><span>déjà connectés</span></div>
+    <div><b>${n(d.actifs7)}</b><span>actifs sur 7 jours</span></div><div><b>${n(d.actifs30)}</b><span>actifs sur 30 jours</span></div>
+    <div><b>${n(d.faites)}</b><span>questions faites</span></div><div><b>${n(d.tentatives)}</b><span>réponses données (essais compris)</span></div>
+    <div><b>${d.reussite!=null?fr((d.reussite*20).toFixed(1)):'–'}</b><span>moyenne sur 20</span></div><div><b>${fmtTemps(+d.secondes||0)}</b><span>passées sur les questions</span></div>
+    <div><b>${n(S.total)}</b><span>signalements · ${n(S.nouveau)} nouveau${S.nouveau>1?'x':''}, ${n(S.en_cours)} en cours, ${n(S.traites)} traité${S.traites>1?'s':''}</span></div>
+    <div><b>${n(A.total)}</b><span>avis${A.note_moy?' · note moyenne '+fr(String(A.note_moy))+' / 5':''}</span></div></div>
+   ${WL.length?`<h4 style="margin:16px 0 0">Temps passé par semaine</h4><div class="bars">${WL.map(([k,v])=>`<div class="br"><span>sem. du ${new Date(k+'T12:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'short'})}</span><span class="bt"><i style="width:${v/maxW*100}%"></i></span><span class="num">${fmtTemps(v)}</span></div>`).join('')}</div>`:''}
+   ${ML.length?`<h4 style="margin:16px 0 0">Par matière (questions faites · moyenne /20)</h4><div class="bars">${ML.map(([k,v])=>`<div class="br"><span>${esc(k)}</span><span class="bt"><i style="width:${v.c/maxC*100}%"></i></span><span class="num">${n(v.c)} · ${fr((v.s/v.c*20).toFixed(1))}</span></div>`).join('')}</div>`:''}
+   <p class="muted" style="margin:12px 0 0">Chiffres anonymes : ${n(d.partagent)} élève${d.partagent>1?'s':''} partage${d.partagent>1?'nt':''} ses statistiques. Le temps est compté depuis le 8 novembre 2026, seulement quand une question est à l'écran.</p>`}
 
 /* ---------- onglet Membres (administrateurs) ---------- */
 const MV={list:null,err:'',q:'',prev:null};
@@ -362,6 +407,7 @@ function vMembres(el){
   el.innerHTML=`<div class="head"><div><h2>Membres</h2><p class="muted" style="margin:0">${MV.list.length} adresse${MV.list.length>1?'s':''} sur la liste · ${na} admin${na>1?'s':''}</p></div></div>
   <div class="stack" style="max-width:860px">
    ${MV.err?`<div class="notice bad"><b>${esc(MV.err)}</b></div>`:''}
+   <div class="panel"><h3>Stats du projet</h3><div id="pst"><small>Chargement…</small></div></div>
    <div class="panel"><h3 style="margin-bottom:6px">Ajouter depuis un tableur</h3>
     <p class="muted" style="margin:0 0 12px">Colle une colonne d'e-mails ou un CSV. Les adresses sont mises en minuscules, sans espaces ni doublons. Aucun e-mail n'est envoyé : préviens les membres toi-même.</p>
     ${P?`<div class="stack" style="gap:10px">
@@ -374,8 +420,9 @@ function vMembres(el){
       <div class="row"><button class="primary" id="mCheck">Voir l'aperçu</button><span class="muted" id="mRes" role="status"></span></div></div>`}
    </div>
    <div class="panel"><div class="row" style="justify-content:space-between"><h3>Signalements</h3><span class="muted" id="repN"></span></div>
-    <p class="muted" style="margin:6px 0 0">Un signalement ne modifie jamais une correction. Vérifie dans le cours avant de corriger les données.</p>
+    <p class="muted" style="margin:6px 0 0">Choisis un statut et réponds : la personne voit ta réponse dans son onglet Avis. Pour changer la correction, ouvre la question puis « Modifier la correction ».</p>
     <div class="reports" id="reps"><small>Chargement…</small></div></div>
+   <div class="panel"><div class="row" style="justify-content:space-between"><h3>Avis et idées</h3><span class="muted" id="avN"></span></div><div class="suivi" id="avs"><small>Chargement…</small></div></div>
    <div class="panel"><div class="row" style="justify-content:space-between"><h3>Liste</h3><input type="search" id="mQ" placeholder="Chercher une adresse ou une note" aria-label="Chercher un membre" value="${esc(MV.q)}" style="flex:0 1 280px"></div>
     ${MV.list.length?`<div class="mlist">${MV.list.map(m=>{const me=m.email===AUTH.email;return `<div class="mrow" data-s="${esc(m.email+' '+(m.note||'').toLowerCase())}">
       <span class="me">${esc(m.email)}${m.role==='admin'?' <span class="chip plain" style="background:var(--navy-soft);color:var(--navy)">admin</span>':''}${me?' <span class="chip plain">toi</span>':''}<small>ajouté le ${m.added_at?new Date(m.added_at).toLocaleDateString('fr-FR'):'?'}</small></span>
@@ -383,7 +430,7 @@ function vMembres(el){
       ${me?'<span></span>':`<div class="macts"><button class="sm ghost" data-role="${esc(m.email)}" data-to="${m.role==='admin'?'member':'admin'}">${m.role==='admin'?'Retirer admin':'Rendre admin'}</button><button class="sm ghost" data-del="${esc(m.email)}" style="color:var(--bad)">Retirer</button></div>`}</div>`}).join('')}</div>
       <p class="muted" id="mNone" style="margin:10px 0 0" hidden>Aucune adresse ne correspond.</p>`:'<p class="muted" style="margin:10px 0 0">Personne sur la liste.</p>'}
    </div></div>`;
-  loadReports();
+  loadReports();loadFeedbackAdmin();loadProjectStats();
   const qi=$('#mQ'),filt=()=>{const q=normEmail(qi.value);MV.q=qi.value;let n=0;el.querySelectorAll('.mrow').forEach(r=>{const h=!!q&&!r.dataset.s.includes(q);r.hidden=h;if(!h)n++});const z=$('#mNone');if(z)z.hidden=!!n||!MV.list.length};
   qi.oninput=filt;filt();
   if($('#mCheck'))$('#mCheck').onclick=()=>{MV.raw=$('#mAdd').value;MV.note=$('#mNote').value.trim();
@@ -414,5 +461,72 @@ function vMembres(el){
     MV.list=MV.list.filter(x=>x.email!==b.dataset.del);b.closest('.mrow').remove();
     const h=el.querySelector('.head p');if(h)h.textContent=h.textContent.replace(/^\d+ adresses?/,n=>{const k=MV.list.length;return k+' adresse'+(k>1?'s':'')});toast('Retiré de la liste')}});
 }
+
+/* ---------- onglet Avis : donner son avis, suivre ses signalements et avis ---------- */
+const KIND={avis:'Avis',idee:'Idée',bug:'Problème'};
+const AV={kind:'avis',note:0,msg:'',mine:null};
+const seenKey=()=>'atlas-vu-'+AUTH.uid;
+async function loadSuivi(dotOnly){
+  if(!AUTH.ok||!await ensureSb())return;
+  try{const [r,f]=await Promise.all([
+      sb.from('reports').select('id,question_id,message,created_at,status,reponse,repondu_at').eq('user_id',AUTH.uid).order('created_at',{ascending:false}).limit(100),
+      sb.from('feedback').select('id,kind,note,message,created_at,status,reponse,repondu_at').eq('user_id',AUTH.uid).order('created_at',{ascending:false}).limit(100)]);
+    AV.mine=[...(r.data||[]).map(x=>Object.assign(x,{t:'r'})),...(f.data||[]).map(x=>Object.assign(x,{t:'f'}))].sort((a,b)=>a.created_at<b.created_at?1:-1);
+    AV.err=!!(r.error&&f.error)}catch(e){AV.err=true}
+  const seen=lsGet(seenKey())||0,news=(AV.mine||[]).some(x=>x.repondu_at&&Date.parse(x.repondu_at)>seen);
+  const a=document.querySelector('#tabs a[href="#avis"]');if(a)a.classList.toggle('dot',news&&view!=='avis');
+  if(!dotOnly&&view==='avis')drawSuivi()}
+function drawSuivi(){const box=$('#suivi');if(!box)return;const L=AV.mine;
+  if(!L){box.innerHTML='<small>Chargement…</small>';return}
+  if(!L.length){box.innerHTML='<small>Rien pour l\'instant. Pour signaler une erreur, utilise le bouton « Signaler » sous une question.</small>';return}
+  box.innerHTML=L.map(x=>{const q=x.t==='r'?BYID[x.question_id]:null;
+    return `<div class="si"><span class="top"><span><b>${x.t==='r'?'Signalement':KIND[x.kind]||'Avis'}</b>${q?' · '+esc(qRef(q)):''}${x.note?' · '+'★'.repeat(x.note):''}</span>${chipSt(x.t==='r'?RST:FST,x.status)}</span>
+    <span>${esc(x.message)}</span><small>Envoyé le ${fmtD(x.created_at)}</small>
+    ${x.reponse?`<div class="rep"><b>Réponse de l'équipe</b>${x.repondu_at?' · '+fmtD(x.repondu_at):''}<br>${esc(x.reponse)}</div>`:''}
+    ${q?`<div class="row"><button class="sm ghost" data-see="${esc(x.question_id)}">Voir la question</button></div>`:''}</div>`}).join('');
+  box.querySelectorAll('[data-see]').forEach(b=>b.onclick=()=>showQuestion(b.dataset.see))}
+function vAvis(el){
+  lsSet(seenKey(),Date.now());document.querySelector('#tabs a[href="#avis"]')?.classList.remove('dot');
+  el.innerHTML=`<div class="head"><div><h2>Avis</h2><p class="muted" style="margin:0">Ton avis aide l'équipe à améliorer Atlas.</p></div></div>
+  <div class="stack" style="max-width:720px">
+   <div class="panel"><h3 style="margin-bottom:12px">Donner mon avis</h3><div class="stack" style="gap:12px">
+    <div class="seg" role="group" aria-label="Type">${Object.entries(KIND).map(([k,t])=>`<button data-kind="${k}" aria-pressed="${AV.kind===k}">${k==='bug'?'Un problème':k==='idee'?'Une idée':'Un avis'}</button>`).join('')}</div>
+    ${AV.kind==='avis'?`<div><span class="muted" style="font-size:.85rem">Ta note (facultatif)</span><div class="stars" role="group" aria-label="Note sur 5">${[1,2,3,4,5].map(i=>`<button data-star="${i}" aria-pressed="${i<=AV.note}" aria-label="${i} sur 5">★</button>`).join('')}</div></div>`:''}
+    <textarea id="avMsg" rows="4" maxlength="2000" aria-label="Message" placeholder="${AV.kind==='bug'?'Qu\'est-ce qui ne marche pas ? Sur quel appareil ?':AV.kind==='idee'?'Qu\'est-ce qui t\'aiderait à mieux réviser ?':'Ce qui te plaît, ce qui te manque…'}">${esc(AV.msg)}</textarea>
+    <div class="row"><button class="primary" id="avGo">Envoyer</button><span class="muted" id="avRes" role="status"></span></div></div></div>
+   <div class="panel"><h3>Mes signalements et avis</h3><p class="muted" style="margin:6px 0 0">Tu vois ici où en est chaque envoi et la réponse de l'équipe.</p><div class="suivi" id="suivi"></div></div></div>`;
+  el.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{AV.msg=$('#avMsg').value;AV.kind=b.dataset.kind;render()});
+  el.querySelectorAll('[data-star]').forEach(b=>b.onclick=()=>{AV.msg=$('#avMsg').value;const v=+b.dataset.star;AV.note=AV.note===v?0:v;render()});
+  $('#avGo').onclick=async()=>{const msg=$('#avMsg').value.trim();if(msg.length<3){$('#avRes').textContent='Écris quelques mots.';return}
+    if(!await ensureSb()){$('#avRes').textContent='Hors ligne : réessaie quand tu as du réseau.';return}
+    $('#avGo').disabled=true;
+    const {error}=await sb.from('feedback').insert({user_id:AUTH.uid,kind:AV.kind,note:AV.kind==='avis'&&AV.note?AV.note:null,message:msg.slice(0,2000)});
+    if(error){$('#avGo').disabled=false;$('#avRes').textContent='Envoi impossible pour le moment.';return}
+    AV.msg='';AV.note=0;lsSet('atlas-annonce-v2-'+AUTH.uid,1);toast('Merci ! Ton message est envoyé');render();loadSuivi()};
+  drawSuivi();loadSuivi()}
+
+/* ---------- bannière « Amélioration » sur l'accueil (une fois, puis fermée) ---------- */
+function homeExtra(el){const k='atlas-annonce-v2-'+AUTH.uid;if(lsGet(k))return;
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<div><b>Amélioration :</b> nouvel onglet <b>Avis</b> pour donner ton avis, proposer une idée ou signaler un problème. Tu y suis aussi tes signalements : tu vois quand une question est corrigée, avec la réponse de l'équipe. Et le temps passé sur les questions s'affiche maintenant dans tes Statistiques.
+    <div class="row"><button class="sm primary" id="anGo">Donner mon avis</button></div></div><button class="x" id="anX" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  d.querySelector('#anX').onclick=()=>{lsSet(k,1);d.remove()};d.querySelector('#anGo').onclick=()=>{lsSet(k,1);go('avis')}}
+
+/* ---------- temps passé sur les questions ----------
+   Compté par tranches de 15 s, seulement quand une question est à l'écran, la page visible,
+   et qu'il y a eu une action dans les 2 dernières minutes. Gardé dans state.time (synchronisé). */
+let lastAct=Date.now(),tAcc=0;
+['click','keydown','touchstart','pointerdown','scroll'].forEach(ev=>addEventListener(ev,()=>{lastAct=Date.now()},{passive:true,capture:true}));
+function flushTime(){if(!tAcc||!AUTH.ok)return;
+  const t=state.time&&typeof state.time==='object'?state.time:(state.time={tot:0,d:{}});if(!t.d||typeof t.d!=='object')t.d={};
+  const n=new Date(),day=n.getFullYear()+'-'+String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0');
+  t.tot=(+t.tot||0)+tAcc;t.d[day]=(+t.d[day]||0)+tAcc;
+  const ks=Object.keys(t.d).sort();while(ks.length>120)delete t.d[ks.shift()];
+  tAcc=0;persist()}
+setInterval(()=>{if(!AUTH.ok||view!=='quiz'||document.visibilityState!=='visible'||Date.now()-lastAct>120000)return;
+  tAcc+=15;if(tAcc>=60)flushTime()},15000);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')flushTime()},true);
+addEventListener('hashchange',()=>{if(view!=='quiz')flushTime()});
 
 bootCompte();
