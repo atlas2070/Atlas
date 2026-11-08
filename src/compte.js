@@ -281,26 +281,34 @@ const qRef=q=>q?sess(q)+' · '+q.mod+' · Q'+q.q:'';
    Chaque changement est gardé dans corrections_log (qui, quand, avant / après). */
 const BASE={}; // état d'origine des questions modifiées
 function applyCorr(c){const q=BYID[c.question_id];if(!q)return;
-  if(!BASE[q.id])BASE[q.id]={ans:q.ans,orig:q.orig,status:q.status,note:q.note,src:q.src,ex:q.items.map(i=>i.ex),v:q.items.map(i=>i.v)};
+  if(!BASE[q.id])BASE[q.id]={ans:q.ans,orig:q.orig,status:q.status,note:q.note,src:q.src,ch:q.ch,type:q.type,ex:q.items.map(i=>i.ex),v:q.items.map(i=>i.v)};
   const b=BASE[q.id],L=q.items.map(i=>i.l);
   q.ans=[...String(c.ans||'')].filter(l=>L.includes(l)).sort().join('');
   q.items.forEach((it,k)=>{it.v=q.ans.includes(it.l);const e=c.ex&&c.ex[it.l];it.ex=typeof e==='string'&&e.trim()?e.trim():b.ex[k]});
   const d=c.updated_at?' le '+new Date(c.updated_at).toLocaleDateString('fr-FR'):'';
   if(q.ans!==b.ans){q.orig=b.orig||b.ans;q.status='Rectification proposée';q.src='Correction de l\'équipe Atlas'+d}
   else{q.orig=b.orig;q.status=b.status;q.src=b.src}
+  q.ch=c.ch&&String(c.ch).trim()?String(c.ch).trim():b.ch;q.type=['QCM','QCS','QRM','QRU'].includes(c.type)?c.type:b.type;
   q.note=String(c.note||'').trim()||b.note;q.edited=true}
 function resetCorr(id){const q=BYID[id],b=BASE[id];if(!q||!b)return;
-  Object.assign(q,{ans:b.ans,orig:b.orig,status:b.status,note:b.note,src:b.src});q.items.forEach((it,k)=>{it.ex=b.ex[k];it.v=b.v[k]});delete q.edited;delete BASE[id]}
+  Object.assign(q,{ans:b.ans,orig:b.orig,status:b.status,note:b.note,src:b.src,ch:b.ch,type:b.type});q.items.forEach((it,k)=>{it.ex=b.ex[k];it.v=b.v[k]});delete q.edited;delete BASE[id]}
 async function loadCorrections(){
   if(!AUTH.ok||!await ensureSb())return;
-  try{const {data,error}=await sb.from('corrections').select('question_id,ans,ex,note,updated_at');
+  try{let {data,error}=await sb.from('corrections').select('question_id,ans,ex,note,ch,type,updated_at');
+    if(error)({data,error}=await sb.from('corrections').select('question_id,ans,ex,note,updated_at'));
     if(error||!data||!data.length)return;data.forEach(applyCorr);if(view!=='quiz')render()}catch(e){}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-editq]');if(b&&isAdmin())editCorr(b.dataset.editq)});
 function editCorr(id){const q=BYID[id];if(!q)return;
-  const b=BASE[id],baseEx=k=>b?b.ex[k]:q.items[k].ex,baseAns=b?b.ans:q.ans;
+  const b=BASE[id],baseEx=k=>b?b.ex[k]:q.items[k].ex,baseAns=b?b.ans:q.ans,baseCh=b?b.ch:q.ch,baseType=b?b.type:q.type;
+  const R=/^QR/.test(baseType),T1=R?'QRU':'QCS',TM=R?'QRM':'QCM',single=t=>t==='QCS'||t==='QRU';
+  const chs=[...new Set(Q.filter(x=>x.mat===q.mat).map(x=>x.ch).filter(Boolean))];const CH=typeof chOrder==='function'?chOrder(q.mat,chs):chs.sort();
   const bg=document.createElement('div');bg.className='sheet-bg';
   bg.innerHTML=`<div class="sheet edq" role="dialog" aria-modal="true" aria-label="Modifier la correction">
-    <div><h3>Modifier la correction</h3><small>${esc(qRef(q))} · coche les propositions vraies${isU(q)?' (une seule)':''}</small></div>
+    <div><h3>Modifier la correction</h3><small>${esc(qRef(q))} · ${esc(q.mat)}</small></div>
+    <div class="edi"><b>Type de question</b><div class="seg" role="group" aria-label="Type de question"><button type="button" data-ty="${TM}" aria-pressed="${!single(q.type)}">Plusieurs réponses (${TM})</button><button type="button" data-ty="${T1}" aria-pressed="${single(q.type)}">Une seule réponse (${T1})</button></div></div>
+    <div class="edi"><label for="edC" style="display:block"><b>Chapitre</b></label><select id="edC">${CH.map(c=>`<option ${c===q.ch?'selected':''}>${esc(c)}</option>`).join('')}<option value="__new">Autre chapitre…</option></select>
+      <input type="text" id="edCn" maxlength="200" placeholder="Nom du nouveau chapitre" hidden autocomplete="off"></div>
+    <small class="muted">Coche les propositions vraies<span id="edOne">${single(q.type)?' (une seule)':''}</span>.</small>
     ${q.items.map(it=>`<div class="edi"><label><input type="checkbox" data-l="${it.l}" ${it.v?'checked':''}> <b>${it.l}</b> <span>${esc(untag(it.t||'(proposition en image)'))}</span></label>
       <textarea data-x="${it.l}" rows="3" maxlength="1500" aria-label="Explication ${it.l}" placeholder="Explication">${esc(it.ex||'')}</textarea></div>`).join('')}
     <div class="edi"><b>Note</b><small class="muted">Obligatoire si la réponse change : ce qui justifie le changement (cours, chapitre, page).</small>
@@ -310,22 +318,26 @@ function editCorr(id){const q=BYID[id];if(!q)return;
   const close=()=>{bg.remove();document.removeEventListener('keydown',esck)};const esck=ev=>{if(ev.key==='Escape')close()};
   bg.onclick=ev=>{if(ev.target===bg)close()};document.addEventListener('keydown',esck);document.body.appendChild(bg);
   bg.querySelector('#edX').onclick=close;
+  let ty=q.type;
+  bg.querySelectorAll('[data-ty]').forEach(x=>x.onclick=()=>{ty=x.dataset.ty;bg.querySelectorAll('[data-ty]').forEach(y=>y.setAttribute('aria-pressed',y===x));bg.querySelector('#edOne').textContent=single(ty)?' (une seule)':''});
+  const cs=bg.querySelector('#edC'),cn=bg.querySelector('#edCn');cs.onchange=()=>{cn.hidden=cs.value!=='__new';if(!cn.hidden)cn.focus()};
   if(bg.querySelector('#edR'))bg.querySelector('#edR').onclick=async ev=>{ev.target.disabled=true;
     const {error}=await sb.from('corrections').delete().eq('question_id',id);
     if(error){toast('Modification impossible');ev.target.disabled=false;return}
     resetCorr(id);close();render();toast('Correction d\'origine rétablie')};
   bg.querySelector('#edS').onclick=async ev=>{
     const ans=[...bg.querySelectorAll('[data-l]')].filter(c=>c.checked).map(c=>c.dataset.l).join('');
-    if(isU(q)&&ans.length!==1){toast('Coche une seule bonne réponse');return}
+    if(single(ty)&&ans.length!==1){toast('Une seule réponse : coche une seule proposition');return}
+    const ch=cs.value==='__new'?cn.value.trim():cs.value;if(!ch){toast('Écris le nom du chapitre');return}
     const note=bg.querySelector('#edN').value.trim();
     if(ans!==baseAns&&note.length<10){toast('Explique dans la note pourquoi la réponse change');return}
     const ex={};bg.querySelectorAll('[data-x]').forEach((t,k)=>{const v=t.value.trim();if(v&&v!==(baseEx(k)||''))ex[t.dataset.x]=v});
-    if(ans===baseAns&&!Object.keys(ex).length&&!note){toast('Rien n\'a changé');return}
+    if(ans===baseAns&&!Object.keys(ex).length&&!note&&ch===baseCh&&ty===baseType){toast('Rien n\'a changé');return}
     if(!await ensureSb()){toast('Hors ligne : réessaie plus tard');return}
     ev.target.disabled=true;
-    const row={question_id:id,ans,ex,note:note||null,updated_by:AUTH.email,updated_at:new Date().toISOString()};
+    const row={question_id:id,ans,ex,note:note||null,ch:ch!==baseCh?ch:null,type:ty!==baseType?ty:null,updated_by:AUTH.email,updated_at:new Date().toISOString()};
     const {error}=await sb.from('corrections').upsert(row);
-    if(error){toast('Enregistrement impossible');ev.target.disabled=false;return}
+    if(error){toast(/column|ch|type/i.test(error.message||'')?'Mise à jour Supabase manquante : lance supabase/v3.sql':'Enregistrement impossible');ev.target.disabled=false;return}
     applyCorr(row);close();render();toast('Correction enregistrée pour tout le monde')};
   setTimeout(()=>bg.querySelector('[data-l]')?.focus(),0)}
 function showQuestion(id){const q=BYID[id];if(!q){toast('Question introuvable');return}

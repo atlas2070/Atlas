@@ -213,6 +213,7 @@ Sources consultées (novembre 2026) :
 2. Sur le site, un admin ouvre une question (par exemple avec « Voir la question » sous un signalement), affiche la correction, puis clique sur « Modifier la correction ».
 3. Il coche les bonnes réponses, corrige les explications et écrit une note (obligatoire si la réponse change : ce qui la justifie dans le cours). La modification est visible par tous les membres dès leur prochain chargement.
 4. « Revenir à l'original » efface la modification. L'historique (qui, quand, avant / après) est dans la table `corrections_log`.
+5. Une seule fois aussi : coller `supabase/v3.sql` (même chemin) pour pouvoir changer le chapitre et le type (QCM / QCS) d'une question.
 
 ## Version 2 : avis, suivi des signalements, stats du projet
 1. Une seule fois : Supabase → SQL Editor → New query → coller `supabase/v2.sql` → Run.
