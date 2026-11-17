@@ -254,6 +254,8 @@ button.item:hover:not(:disabled){border-color:var(--accent)}
 .sumgrid span{font-size:.8rem;color:var(--muted)}
 .big20{color:var(--head);font-family:var(--mono);font-size:3.2rem;font-weight:600;line-height:1}
 .big20 small{font-size:1.2rem;color:var(--muted);font-weight:500}
+.annonce .nb{display:inline-block;background:var(--bad);color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:1px}
+.sheet .notice{margin:0}.notice a{color:var(--accent);font-weight:600;overflow-wrap:anywhere}
 .hist{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin:14px 0 0;padding:12px 14px;background:var(--sunken);border-radius:12px}
 .hist-t{flex:1 1 220px;min-width:0}.hist-t b{display:block;font-family:var(--mono);font-size:1.25rem}.hist-t span{font-size:.86rem;color:var(--muted)}
 .hist-n{font-size:.8rem}.spark{display:block;flex:none;overflow:visible}
@@ -646,7 +648,7 @@ function SG(){const QQ=QP();
     return {k,l,y,num:true,warn:y<=2021,note:y<=2021?'basée sur le sujet PASS':'',mods:LASBIO.filter(m=>qs.some(q=>q.mat===m)).map(m=>({md:m,qs:qs.filter(q=>q.mat===m).sort((x,y)=>x.mod.localeCompare(y.mod)||x.q-y.q)}))}});}
 
 const MODS=()=>[...new Set(QP().map(q=>q.mod))].sort();
-const DEF_STATE=()=>({parcours:'pass',ans:{},mode:'direct',fav:{},notes:{},srs:{},chrono:false,hist:[]});
+const DEF_STATE=()=>({parcours:'pass',ans:{},mode:'direct',fav:{},notes:{},srs:{},chrono:false,hist:[],seen:{}});
 let state=DEF_STATE(), run=null, view='accueil', saveTimer=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -693,7 +695,7 @@ function saveLocal(){clearTimeout(saveTimer);try{localStorage.setItem('annales-t
 let syncText='Progression gardée sur cet appareil';
 function setSync(t){syncText=t;$('#syncState').textContent=t;const e=$('#syncInfo');if(e)e.textContent=t}
 function fixState(){if(!PARCOURS.some(p=>p.ok&&p.id===state.parcours))state.parcours='pass';
-  for(const k of ['ans','fav','notes','srs'])if(!state[k]||typeof state[k]!=='object')state[k]={};
+  for(const k of ['ans','fav','notes','srs','seen'])if(!state[k]||typeof state[k]!=='object')state[k]={};
   if(!Array.isArray(state.hist))state.hist=[];
   migrateSrs()}
 try{const s=JSON.parse(localStorage.getItem('annales-tours')||'null');if(s&&s.ans)state=Object.assign(state,s)}catch(e){}
@@ -716,6 +718,8 @@ function render(){
   const cur=(view==='quiz'?(run?.from||'annales'):view).replace('entrainement','cours');
   document.querySelectorAll('#tabs a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+cur?'page':'false'));
   $('#gear').setAttribute('aria-current',cur==='reglages'?'page':'false');
+  if(view==='stats'&&!state.seen.prog1){state.seen.prog1=Date.now();persist()}
+  document.querySelector('#tabs a[href="#stats"]')?.classList.toggle('dot',!state.seen.prog1);
   const f={accueil:vAccueil,annales:vAnnales,cours:vCours,erreurs:vErreurs,stats:vStats,avis:vAvis,reglages:vReglages,quiz:vQuiz,membres:vMembres}[view];
   $('#view').innerHTML='';f($('#view'));window.scrollTo(0,0)}
 /* ---------- vues ---------- */
@@ -898,9 +902,11 @@ function cropHTML(q){return `<div class="orig">${q.crop.map(([pg,t,b])=>`<div cl
 function stemHTML(q){if(imgMode(q))return cropHTML(q)+'<p class="orignote muted">Énoncé original du sujet : réponds avec les cases ci-dessous. Touche l\'image pour l\'agrandir.</p>';
   return `<p class="stem">${rt(q.stem)}</p>${q.crop?`<details class="origd"><summary>Voir l'énoncé original</summary>${cropHTML(q)}</details>`:''}`}
 function startRun(list,from,label,idx=0){if(!list.length)return;
-  const n=list.length,lim=Math.max(60,Math.round(n*5400/55));
+  const n=list.length,lim=Math.max(60,Math.round(n*5400/55)),mail=CONFIG.CONTACT_EMAIL;
+  const ask=!state.seen.sess2&&mail?`<div class="notice acc"><b>Tu as d'autres sujets ?</b> Session 2, rattrapages, autres années… Envoie-les à <a href="mailto:${esc(mail)}?subject=${encodeURIComponent('Sujets pour Atlas')}">${esc(mail)}</a> et on les ajoutera au site.</div>`:'';
+  if(ask){state.seen.sess2=Date.now();persist()}
   const bg=document.createElement('div');bg.className='sheet-bg';
-  const draw=()=>{bg.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Lancer la série"><div><h3>${esc(label)}</h3><small>${n} question${n>1?'s':''}</small></div>
+  const draw=()=>{bg.innerHTML=`<div class="sheet" role="dialog" aria-modal="true" aria-label="Lancer la série"><div><h3>${esc(label)}</h3><small>${n} question${n>1?'s':''}</small></div>${ask}
     <div class="opt2"><span class="lbl">Correction</span><div class="seg"><button data-mode="direct" aria-pressed="${state.mode!=='fin'}">Après chaque question</button><button data-mode="fin" aria-pressed="${state.mode==='fin'}">À la fin</button></div></div>
     <div class="opt2"><span class="lbl">Chrono</span><div class="seg"><button data-chrono="0" aria-pressed="${!state.chrono}">Sans</button><button data-chrono="1" aria-pressed="${!!state.chrono}">Avec · ${fmtDur(lim)}</button></div></div>
     <div class="row" style="justify-content:flex-end"><button class="ghost" id="shX">Annuler</button><button class="primary" id="shGo">Commencer</button></div></div>`;

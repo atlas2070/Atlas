@@ -105,7 +105,7 @@ async function fetchRemote(){
   if(r.error)throw r.error;return r.data}
 function applyRemote(st,rt){state=Object.assign(DEF_STATE(),st||{});fixState();setMeta({t:rt,dirty:false,base:true});saveLocal();applyTheme();if(view!=='quiz')render()}
 function mergeInto(remote,local){const r=Object.assign(DEF_STATE(),remote||{});
-  for(const k of ['ans','fav','notes','srs'])r[k]=Object.assign({},r[k],local[k]);
+  for(const k of ['ans','fav','notes','srs','seen'])r[k]=Object.assign({},r[k],local[k]);
   const hs=new Map();for(const h of [...(Array.isArray(r.hist)?r.hist:[]),...(Array.isArray(local.hist)?local.hist:[])])if(h&&h.k)hs.set(h.k+'@'+h.t,h);
   r.hist=[...hs.values()].sort((a,b)=>a.t-b.t).slice(-400);
   if(local.run&&(!r.run||(local.run.t||0)>(r.run.t||0)))r.run=local.run;return r}
@@ -520,12 +520,13 @@ function vAvis(el){
   drawSuivi();loadSuivi()}
 
 /* ---------- bannière « Amélioration » sur l'accueil (une fois, puis fermée) ---------- */
-function homeExtra(el){const k='atlas-annonce-v2-'+AUTH.uid;if(lsGet(k))return;
+function homeExtra(el){if(state.seen.prog1)return; // annonce affichée tant que l'onglet Stats n'a pas été ouvert (ou que « OK » n'a pas été touché)
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
-  d.innerHTML=`<div><b>Amélioration :</b> nouvel onglet <b>Avis</b> pour donner ton avis, proposer une idée ou signaler un problème. Tu y suis aussi tes signalements : tu vois quand une question est corrigée, avec la réponse de l'équipe. Et le temps passé sur les questions s'affiche maintenant dans tes Statistiques.
-    <div class="row"><button class="sm primary" id="anGo">Donner mon avis</button></div></div><button class="x" id="anX" aria-label="Fermer">×</button>`;
+  d.innerHTML=`<div><span class="nb">Nouveau</span><b>Suis ta progression.</b> Quand tu refais une annale ou un chapitre, ta note est comparée à la précédente. Toute ton évolution est dans l'onglet <b>Stats</b>.
+    <div class="row"><button class="sm primary" id="anGo">Voir mes stats</button><button class="sm ghost" id="anOk">OK</button></div></div><button class="x" id="anX" aria-label="Fermer">×</button>`;
   el.prepend(d);
-  d.querySelector('#anX').onclick=()=>{lsSet(k,1);d.remove()};d.querySelector('#anGo').onclick=()=>{lsSet(k,1);go('avis')}}
+  const ok=()=>{state.seen.prog1=Date.now();persist();render()};
+  d.querySelector('#anX').onclick=ok;d.querySelector('#anOk').onclick=ok;d.querySelector('#anGo').onclick=()=>go('stats')}
 
 /* ---------- temps passé sur les questions ----------
    Compté par tranches de 15 s, seulement quand une question est à l'écran, la page visible,
