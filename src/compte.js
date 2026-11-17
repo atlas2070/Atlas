@@ -106,6 +106,8 @@ async function fetchRemote(){
 function applyRemote(st,rt){state=Object.assign(DEF_STATE(),st||{});fixState();setMeta({t:rt,dirty:false,base:true});saveLocal();applyTheme();if(view!=='quiz')render()}
 function mergeInto(remote,local){const r=Object.assign(DEF_STATE(),remote||{});
   for(const k of ['ans','fav','notes','srs'])r[k]=Object.assign({},r[k],local[k]);
+  const hs=new Map();for(const h of [...(Array.isArray(r.hist)?r.hist:[]),...(Array.isArray(local.hist)?local.hist:[])])if(h&&h.k)hs.set(h.k+'@'+h.t,h);
+  r.hist=[...hs.values()].sort((a,b)=>a.t-b.t).slice(-400);
   if(local.run&&(!r.run||(local.run.t||0)>(r.run.t||0)))r.run=local.run;return r}
 async function startApp(){
   const m=lsGet(SYNC_KEY),mine=!!(m&&m.uid===AUTH.uid),legacy=!m&&hasLocalSave();

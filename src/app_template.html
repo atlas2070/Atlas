@@ -254,6 +254,11 @@ button.item:hover:not(:disabled){border-color:var(--accent)}
 .sumgrid span{font-size:.8rem;color:var(--muted)}
 .big20{color:var(--head);font-family:var(--mono);font-size:3.2rem;font-weight:600;line-height:1}
 .big20 small{font-size:1.2rem;color:var(--muted);font-weight:500}
+.hist{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin:14px 0 0;padding:12px 14px;background:var(--sunken);border-radius:12px}
+.hist-t{flex:1 1 220px;min-width:0}.hist-t b{display:block;font-family:var(--mono);font-size:1.25rem}.hist-t span{font-size:.86rem;color:var(--muted)}
+.hist-n{font-size:.8rem}.spark{display:block;flex:none;overflow:visible}
+.up{color:var(--ok)}.down{color:var(--bad)}
+.progt td{vertical-align:middle}
 .orig{display:flex;flex-direction:column;max-width:780px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
 .cropbox{position:relative;width:100%;overflow:hidden;max-width:100%}
 .cropbox img{position:absolute;left:0;width:100%;max-width:none}
@@ -641,7 +646,7 @@ function SG(){const QQ=QP();
     return {k,l,y,num:true,warn:y<=2021,note:y<=2021?'basée sur le sujet PASS':'',mods:LASBIO.filter(m=>qs.some(q=>q.mat===m)).map(m=>({md:m,qs:qs.filter(q=>q.mat===m).sort((x,y)=>x.mod.localeCompare(y.mod)||x.q-y.q)}))}});}
 
 const MODS=()=>[...new Set(QP().map(q=>q.mod))].sort();
-const DEF_STATE=()=>({parcours:'pass',ans:{},mode:'direct',fav:{},notes:{},srs:{},chrono:false});
+const DEF_STATE=()=>({parcours:'pass',ans:{},mode:'direct',fav:{},notes:{},srs:{},chrono:false,hist:[]});
 let state=DEF_STATE(), run=null, view='accueil', saveTimer=null;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -689,6 +694,7 @@ let syncText='Progression gardée sur cet appareil';
 function setSync(t){syncText=t;$('#syncState').textContent=t;const e=$('#syncInfo');if(e)e.textContent=t}
 function fixState(){if(!PARCOURS.some(p=>p.ok&&p.id===state.parcours))state.parcours='pass';
   for(const k of ['ans','fav','notes','srs'])if(!state[k]||typeof state[k]!=='object')state[k]={};
+  if(!Array.isArray(state.hist))state.hist=[];
   migrateSrs()}
 try{const s=JSON.parse(localStorage.getItem('annales-tours')||'null');if(s&&s.ans)state=Object.assign(state,s)}catch(e){}
 fixState();
@@ -865,8 +871,14 @@ function vStats(el){
   const so=Object.fromEntries(SESS().map(([k,l],i)=>[l,i]));
   el.innerHTML=`<div class="head"><div><h2>Statistiques</h2></div></div>
   ${d.length?`<div class="tiles"><div class="panel"><b>${d.length}</b><span>questions faites sur ${QQ.length}</span></div><div class="panel"><b>${fmtMoy(m)}</b><span>moyenne sur 20</span></div><div class="panel"><b>${Math.round(full/d.length*100)} %</b><span>questions sans erreur</span></div>${state.time&&state.time.tot>=60?`<div class="panel"><b>${fmtTemps(state.time.tot)}</b><span>passées sur les questions</span></div>`:''}</div>
-  <div class="stack"><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par matière</h3>${tbl(agg(q=>q.mat).sort((a,b)=>cmp(a[0],b[0])),'Matière')}</div><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par session</h3>${tbl(agg(q=>q.gl||sess(q)).sort((a,b)=>so[a[0]]-so[b[0]]),'Session')}</div></div>`:'<div class="empty"><b>Pas encore de statistiques</b>Fais quelques questions pour voir ta moyenne par matière et par session.</div>'}`;
+  <div class="stack"><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par matière</h3>${tbl(agg(q=>q.mat).sort((a,b)=>cmp(a[0],b[0])),'Matière')}</div><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par session</h3>${tbl(agg(q=>q.gl||sess(q)).sort((a,b)=>so[a[0]]-so[b[0]]),'Session')}</div>${progHTML()}</div>`:'<div class="empty"><b>Pas encore de statistiques</b>Fais quelques questions pour voir ta moyenne par matière et par session.</div>'}`;
 }
+function progHTML(){const g={};for(const h of state.hist){if(h.p&&h.p!==state.parcours)continue;(g[h.k]=g[h.k]||[]).push(h)}
+  const rows=Object.values(g).map(a=>a.sort((x,y)=>x.t-y.t)).sort((a,b)=>b[b.length-1].t-a[a.length-1].t);
+  const head='<h3 style="padding:14px 14px 4px">Progression sur tes séries</h3>';
+  if(!rows.length)return `<div class="panel" style="padding:4px 4px 14px">${head}<p class="muted" style="margin:0 14px">Termine une annale ou un chapitre : ta note est gardée à chaque tentative pour suivre ta progression.</p></div>`;
+  return `<div class="panel" style="padding:4px 4px 0">${head}<p class="muted" style="margin:0 14px 6px;font-size:.88rem">Chaque série terminée est gardée. Refais une annale pour comparer.</p><div class="scroll"><table class="progt"><thead><tr><th>Série</th><th>Évolution</th><th style="text-align:right">Dernière</th></tr></thead><tbody>${rows.map(a=>{const l=a[a.length-1],f=a[0],d=a.length>1?l.s-a[a.length-2].s:null;
+    return `<tr><td>${esc(l.l)}<small class="muted" style="display:block">${a.length>1?a.length+' tentatives · 1re : '+fr(f.s.toFixed(1))+' · meilleure : '+fr(Math.max(...a.map(x=>x.s)).toFixed(1)):'1 tentative, le '+fmtDate(l.t)}</small></td><td>${spark(a.slice(-10).map(x=>x.s),70,26)||'<span class="muted">–</span>'}</td><td class="num" style="text-align:right;white-space:nowrap"><b>${fr(l.s.toFixed(1))}</b> /20${d!=null?`<small class="${d>0.05?'up':d<-0.05?'down':'muted'}" style="display:block">${fmtDelta(d)}</small>`:''}</td></tr>`}).join('')}</tbody></table></div></div>`}
 function vReglages(el){
   el.innerHTML=`<div class="head"><div><h2>Réglages</h2></div></div><div class="stack" style="max-width:720px">
   <div class="panel"><h3 style="margin-bottom:12px">Affichage</h3><div class="field" style="max-width:260px"><label for="th">Thème</label><select id="th"><option value="system">Comme l'appareil</option><option value="light">Clair</option><option value="dark">Sombre</option></select></div></div>
@@ -877,7 +889,7 @@ function vReglages(el){
   wireCompte(el);
   $('#th').value=state.theme||'system';$('#th').onchange=e=>{state.theme=e.target.value;applyTheme();persist()};
   $('#reset').onclick=()=>{$('#resetZone').innerHTML='<p style="margin:0 0 10px">Toute ta progression sera effacée, sur cet appareil et sur ton compte. Continuer ?</p><div class="row"><button class="danger" id="yes">Oui, tout effacer</button><button id="no">Annuler</button></div>';
-   $('#yes').onclick=()=>{state.ans={};state.srs={};persist();toast('Progression effacée');render()};$('#no').onclick=()=>render()};
+   $('#yes').onclick=()=>{state.ans={};state.srs={};state.hist=[];persist();toast('Progression effacée');render()};$('#no').onclick=()=>render()};
 }
 /* ---------- série ---------- */
 const FIG=/ci-dessous|ci-contre|figure|schéma|tableau|graphique|courbe|molécule suivante|la molécule|enchaînements|relations de mésomérie|formule|structure suivante|représentée|réaction suivante|mol[ée]cules suivantes/i;
@@ -898,10 +910,10 @@ function startRun(list,from,label,idx=0){if(!list.length)return;
   const close=()=>{bg.remove();document.removeEventListener('keydown',esck)};const esck=e=>{if(e.key==='Escape')close()};
   bg.onclick=e=>{if(e.target===bg)close()};document.addEventListener('keydown',esck);draw();document.body.appendChild(bg)}
 function startRunNow(list,from,label,idx=0){run={ids:list.map(q=>q.id),i:Math.max(0,idx),from,label,mode:state.mode==='fin'?'fin':'direct',sel:{},res:{},done:false,summary:false,confirm:false,chrono:!!state.chrono,limit:Math.max(60,Math.round(list.length*5400/55)),el:0};saveRun();go('quiz')}
-function saveRun(){state.run=run?{ids:run.ids,i:run.i,from:run.from,label:run.label,mode:run.mode,sel:run.sel,res:run.res,done:run.done,chrono:run.chrono,limit:run.limit,el:run.el,t:Date.now()}:null;persist()}
+function saveRun(){state.run=run?{ids:run.ids,i:run.i,from:run.from,label:run.label,mode:run.mode,sel:run.sel,res:run.res,done:run.done,chrono:run.chrono,limit:run.limit,el:run.el,logged:!!run.logged,hk:run.hk,t:Date.now()}:null;persist()}
 function leaveRun(){const f=run.from;const complete=run.done||run.ids.every(id=>BYID[id].annul||id in run.res);if(complete){state.run=null;persist()}else saveRun();run=null;go(f)}
 function resumeRun(){if(!run){const r=state.run;if(!r)return;const ids=r.ids.filter(id=>BYID[id]);if(!ids.length){state.run=null;persist();render();return}
-  run={ids,i:Math.min(r.i||0,ids.length-1),from:r.from||'annales',label:r.label||'Série',mode:r.mode==='fin'?'fin':'direct',sel:r.sel||{},res:r.res||{},done:!!r.done,summary:false,confirm:false,chrono:!!r.chrono,limit:r.limit||3600,el:r.el||0}}go('quiz')}
+  run={ids,i:Math.min(r.i||0,ids.length-1),from:r.from||'annales',label:r.label||'Série',mode:r.mode==='fin'?'fin':'direct',sel:r.sel||{},res:r.res||{},done:!!r.done,summary:false,confirm:false,chrono:!!r.chrono,limit:r.limit||3600,el:r.el||0,logged:!!r.logged,hk:r.hk}}go('quiz')}
 function resumeBanner(){const r=run||state.run;if(!r||!r.ids)return '';const n=r.ids.length,k=r.mode==='fin'&&!r.done?Object.keys(r.sel||{}).length:Object.keys(r.res||{}).length;
   return `<div class="resume"><div class="t"><b>Tu as une série en cours</b><span>${esc(r.label)} · ${k} / ${n} ${r.mode==='fin'&&!r.done?'répondues · correction à la fin':'corrigées'} · question ${(r.i||0)+1}</span></div><div class="row"><button class="primary" id="resY">Reprendre</button><button class="ghost" id="resN">Abandonner</button></div></div>`}
 function bindResume(el){const y=el.querySelector('#resY');if(!y)return;y.onclick=resumeRun;el.querySelector('#resN').onclick=()=>{run=null;state.run=null;persist();toast('Série abandonnée');render()}}
@@ -912,6 +924,20 @@ function tick(){if(view!=='quiz'||!run||document.hidden)return;const active=!(ru
   run.el=(run.el||0)+1;const e=$('#timer');if(run.chrono&&e){const left=run.limit-run.el;e.textContent=fmtT(left);e.parentElement.classList.toggle('low',left<=run.limit*.1)}
   if(run.el%15===0)saveRun();
   if(run.chrono&&run.el===run.limit){if(run.mode==='fin'&&!run.done){toast('Temps écoulé : correction');run.confirm=false;finish()}else toast('Temps écoulé')}}
+/* Historique des tentatives : une ligne par série terminée (annales et cours), pour suivre sa progression sur un même sujet. */
+const HMAX=400;
+function runKey(ids){const t=[...ids].sort().join(',');let h=5381;for(let i=0;i<t.length;i++)h=(h*33^t.charCodeAt(i))>>>0;return h.toString(36)+'.'+ids.length}
+function runComplete(){return run.ids.every(id=>BYID[id].annul||id in run.res)}
+function logAttempt(){if(!run||run.logged||run.from==='erreurs'||/^Recherche/.test(run.label)||!runComplete())return;const ns=noteSerie();if(ns==null)return;
+  run.logged=true;run.hk=runKey(run.ids);const v=Object.values(run.res);
+  state.hist.push({k:run.hk,l:run.label,p:state.parcours,t:Date.now(),s:Math.round(ns*100)/100,n:v.length,j:v.filter(x=>x===1).length,el:run.el||0,m:run.mode});
+  if(state.hist.length>HMAX)state.hist=state.hist.slice(-HMAX)}
+const histOf=k=>state.hist.filter(h=>h.k===k).sort((a,b)=>a.t-b.t);
+const fmtDate=t=>new Date(t).toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'});
+const fmtDelta=d=>(d>0?'+':d<0?'−':'±')+fr(Math.abs(d).toFixed(1));
+function spark(v,w=120,h=30){if(v.length<2)return '';const mx=20,st=w/(v.length-1),y=x=>(h-3-(x/mx)*(h-6)).toFixed(1);
+  const pts=v.map((x,i)=>(i*st).toFixed(1)+','+y(x)).join(' ');
+  return `<svg class="spark" viewBox="-3 0 ${w+6} ${h}" width="${w}" height="${h}" aria-hidden="true"><polyline points="${pts}" fill="none" stroke="var(--head)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${v.map((x,i)=>`<circle cx="${(i*st).toFixed(1)}" cy="${y(x)}" r="${i===v.length-1?3.2:2.2}" fill="var(--head)"/>`).join('')}</svg>`}
 function noteSerie(){const v=Object.values(run.res);return v.length?v.reduce((a,b)=>a+b,0)/v.length*20:null}
 function vQuiz(el){
   el.innerHTML=`<div class="runhead"><button class="ghost" id="back">← ${esc(run.label)}</button><span class="t">${run.mode==='fin'?(run.done?'Corrigée':'Correction à la fin'):''}</span></div>
@@ -984,7 +1010,7 @@ function toggle(L){if(!run||run.summary)return;const q=curQ();if(q.annul||isShow
   let s=run.sel[q.id]||'';if(isU(q))s=s===L?'':L;else s=s.includes(L)?s.replace(L,''):[...s+L].sort().join('');
   if(s)run.sel[q.id]=s;else delete run.sel[q.id];saveRun();drawMain();drawSide()}
 function record(q,sel,s){state.ans[q.id]={s,sel,t:Date.now(),n:((state.ans[q.id]||{}).n||0)+1};srsUpdate(q.id,s)}
-function validate(){const q=curQ(),sel=run.sel[q.id]||'';if(!sel)return;const s=score(q,sel);run.res[q.id]=s;record(q,sel,s);saveRun();drawMain();drawSide()}
+function validate(){const q=curQ(),sel=run.sel[q.id]||'';if(!sel)return;const s=score(q,sel);run.res[q.id]=s;record(q,sel,s);logAttempt();saveRun();drawMain();drawSide()}
 function next(){if(run.mode==='fin'&&!run.done){goTo(Math.min(run.i+1,run.ids.length-1));return}
   if(run.i<run.ids.length-1)goTo(run.i+1);else{run.summary=true;drawMain();drawSide();window.scrollTo(0,0)}}
 function askFinish(){const miss=run.ids.filter(id=>!BYID[id].annul&&!run.sel[id]).length;if(!miss){finish();return}run.confirm=true;drawSide();const c=$('#conf');if(c)c.scrollIntoView({block:'nearest'})}
@@ -992,15 +1018,19 @@ function showConfirm(){const c=$('#conf');if(!c)return;const miss=run.ids.filter
   c.innerHTML=`<div class="confirm"><p>${miss} question${miss>1?'s':''} sans réponse ${miss>1?'compteront':'comptera'} 0. Corriger quand même ?</p><div class="row"><button class="primary" id="cy">Corriger</button><button id="cn">Continuer</button></div></div>`;
   $('#cy').onclick=finish;$('#cn').onclick=()=>{run.confirm=false;drawSide()}}
 function finish(){run.confirm=false;for(const id of run.ids){const q=BYID[id];if(q.annul)continue;const sel=run.sel[id]||'';const s=sel?score(q,sel):0;run.res[id]=s;record(q,sel,s)}
-  run.done=true;run.summary=true;saveRun();vQuiz($('#view'));window.scrollTo(0,0)}
+  run.done=true;run.summary=true;logAttempt();saveRun();vQuiz($('#view'));window.scrollTo(0,0)}
 function summaryHTML(){const ids=run.ids.filter(id=>id in run.res),v=ids.map(id=>run.res[id]),ns=noteSerie();
   const juste=v.filter(x=>x===1).length,part=v.filter(x=>x>0&&x<1).length,blank=ids.filter(id=>run.res[id]===0&&!run.sel[id]).length,faux=v.filter(x=>x===0).length-blank;
   const firstErr=run.ids.findIndex(id=>id in run.res&&run.res[id]<1);
   return `<article class="card"><p class="eyebrow">Bilan de la série</p><div class="big20">${ns==null?'–':fr(ns.toFixed(1))}<small> /20</small></div>
    
+   ${histBlock()}
    ${run.el?`<p class="muted" style="margin:8px 0 0">Temps : ${fmtDur(run.el)} · ${fmtDur(run.el/Math.max(1,ids.length))} par question${run.chrono?' (limite '+fmtDur(run.limit)+')':''}</p>`:''}
    <div class="sumgrid"><div><b style="color:var(--ok)">${juste}</b><span>justes</span></div><div><b style="color:var(--warn)">${part}</b><span>partielles</span></div><div><b style="color:var(--bad)">${faux}</b><span>fausses</span></div><div><b>${blank}</b><span>sans réponse</span></div></div>
    <div class="row"><button class="primary" id="rv">Voir la correction</button>${firstErr>=0?'<button id="re">Aller à ma première erreur</button>':''}<button class="ghost" id="rb">Retour</button></div></article>`}
+function histBlock(){if(!run.logged)return '';const h=histOf(run.hk);if(h.length<2)return '<p class="muted" style="margin:8px 0 0">Première tentative sur cette série. Refais-la plus tard pour voir ta progression.</p>';
+  const cur=h[h.length-1],prev=h[h.length-2],d=cur.s-prev.s,best=Math.max(...h.slice(0,-1).map(x=>x.s));
+  return `<div class="hist"><div class="hist-t"><b class="${d>0.05?'up':d<-0.05?'down':''}">${fmtDelta(d)} pt${Math.abs(d)>=2?'s':''}</b><span>par rapport à ta tentative du ${fmtDate(prev.t)} (${fr(prev.s.toFixed(1))} /20)${cur.s>best+0.05?' · nouveau record':''}</span></div>${spark(h.slice(-10).map(x=>x.s))}<span class="muted hist-n">${h.length}<sup>e</sup> tentative</span></div>`}
 function bindSummary(){$('#rv').onclick=()=>goTo(0);if($('#re'))$('#re').onclick=()=>goTo(run.ids.findIndex(id=>id in run.res&&run.res[id]<1));$('#rb').onclick=leaveRun}
 // Zoom sur l'énoncé scanné : un toucher ouvre l'image en grand, boutons − / + pour zoomer, on fait défiler pour lire.
 (function(){const Z=[100,160,230,320];let zi=0,box=null;

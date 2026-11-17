@@ -37,6 +37,7 @@ Site d'annales du S1 (première année santé, Tours) pour l'association (le nom
 ## Comptes et services
 - Connexion par code e-mail (Supabase), réservée aux adresses de la table `members`. Tant que la personne n'est pas connectée et membre, seul l'écran de connexion s'affiche.
 - Progression : `localStorage` (clé `annales-tours`) + table `progress` (la version la plus récente gagne).
+- Historique des tentatives : `state.hist` (une ligne par série terminée : clé `k` = empreinte des questions, libellé, parcours, date, note /20). Affiché dans le bilan de série et dans Statistiques. Fusionné par `mergeInto` (compte.js), 400 lignes max.
 - Signalements : table `reports` (ne modifient jamais une correction ; statut + réponse visibles par leur auteur). Avis : table `feedback`. Stats admin : fonction `project_stats()` (totaux anonymes uniquement, respecte `state.noStats`). Voir `supabase/v2.sql`.
 - Export PDF : `jsPDF` (CDN cdnjs) + `doc.save()`. Supabase JS : CDN jsDelivr, version figée.
 - Ne jamais mettre la clé `service_role` dans le dépôt (la clé `anon` est publique par nature).
