@@ -519,8 +519,25 @@ function vAvis(el){
     AV.msg='';AV.note=0;lsSet('atlas-annonce-v2-'+AUTH.uid,1);toast('Merci ! Ton message est envoyé');render();loadSuivi()};
   drawSuivi();loadSuivi()}
 
+/* ---------- annonce : sessions 2 ajoutées (prioritaire, une seule bannière à la fois) ---------- */
+function annonceS2(el){
+  const ks=state.parcours==='lashb'?['s2-2022']:state.parcours==='lasbio'?['s2-2026','s2-2022']:[];
+  const G=SG().filter(g=>ks.includes(g.k));if(!G.length)return false;
+  const n=G.reduce((t,g)=>t+(g.all||g.mods.flatMap(m=>m.qs)).length,0);
+  const lib=G.map(g=>g.k==='s2-2026'?'2026':'juillet 2022').join(' et ');
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>Les sessions 2 sont là</h3>
+    <p>${G.length>1?'Deux sujets':'Un sujet'} de session 2 ${G.length>1?'ont été ajoutés':'a été ajouté'} (${lib}) : <b>${n} questions</b> corrigées à partir du cours. Quelques corrections portent l'étiquette <span class="ex">Incertaine</span> : si tu as le passage du cours qui tranche, signale-le depuis la question.</p>
+    <div class="row"><button class="sm go" id="s2Go">Voir les sessions 2</button><button class="sm ok" id="s2Ok">J'ai compris</button></div>
+    <button class="x" id="s2X" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  const ok=()=>{state.seen.s2a=Date.now();persist();render()};
+  d.querySelector('#s2X').onclick=ok;d.querySelector('#s2Ok').onclick=ok;
+  d.querySelector('#s2Go').onclick=()=>{state.seen.s2a=Date.now();persist();fA.open='s|'+G[0].k;fA.focus='s-'+G[0].k;go('annales')};
+  return true}
+
 /* ---------- bannière « Nouveau » sur l'accueil (jusqu'à ce qu'elle soit fermée) ---------- */
-function homeExtra(el){if(state.seen.tombe1)return;
+function homeExtra(el){if(!state.seen.s2a&&annonceS2(el))return;if(state.seen.tombe1)return;
   const liste=Q.filter(q=>inP(q)&&!q.annul&&tombe(q)),n=liste.length;if(!n)return;
   const nb=q=>+((tombe(q).match(/(\d+)×/)||[0,0])[1]);
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
