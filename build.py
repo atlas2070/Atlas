@@ -2,8 +2,10 @@
 """Construit le site dans dist/ : dist/index.html (une seule page, avec src/config.js et src/compte.js intégrés)
 + dist/confidentialite.html + dist/pages/*.jpg.
 Usage : python3 build.py"""
-import json, os, shutil
+import json, os, shutil, sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import retombes  # questions qui retombent d'une année à l'autre (recalculées si les questions changent)
 D = lambda *p: os.path.join(ROOT, *p)
 FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json']
 qs = []
@@ -19,7 +21,8 @@ for nom, txt in (('compte.js', compte), ('config.js', config)):
 tpl = tpl.replace('__CONFIG__', config).replace('__COMPTE__', compte)
 html = (tpl.replace('__DATA__', json.dumps(qs, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/'))
            .replace('__LASS__', open(D('data', 'lass.json'), encoding='utf-8').read())
-           .replace('__HB__', open(D('data', 'hb.json'), encoding='utf-8').read()))
+           .replace('__HB__', open(D('data', 'hb.json'), encoding='utf-8').read())
+           .replace('__RT__', json.dumps(retombes.charger(qs), ensure_ascii=False, separators=(',', ':'))))
 out = D('dist')
 shutil.rmtree(out, ignore_errors=True)
 os.makedirs(out)

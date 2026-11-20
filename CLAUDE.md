@@ -3,12 +3,13 @@
 Site d'annales du S1 (première année santé, Tours) pour l'association (le nom n'est pas affiché : `ORG_NAME` dans `src/config.js`, vide par défaut). Trois parcours : PASS, L.AS bio, L.AS hors-bio. 1 088 questions corrigées, classées par session, matière et chapitre.
 
 ## Structure
-- `src/app_template.html` : l'appli (CSS + JS). Les marqueurs `__DATA__`, `__LASS__`, `__HB__` sont remplacés au build.
+- `src/app_template.html` : l'appli (CSS + JS). Les marqueurs `__DATA__`, `__LASS__`, `__HB__`, `__RT__` sont remplacés au build.
 - `src/config.js` : réglages (ORG_NAME, CONTACT_EMAIL, Supabase). Inséré au marqueur `__CONFIG__` dans la page et dans les mentions.
 - `src/compte.js` : connexion, progression synchronisée, onglet Membres, signalements (Supabase). Inséré au marqueur `__COMPTE__`.
 - `src/confidentialite.html` : page « Mentions et confidentialité ».
 - `supabase/setup.sql` : tables, fonctions et règles RLS. `docs/DEPLOIEMENT.md` : réglages Supabase et GitHub.
 - `data/*.json` : les questions (voir `docs/DONNEES.md`). `lass.json` = composition des sujets L.AS bio, `hb.json` = sujets L.AS hors-bio.
+- `data/retombes.json` : questions qui retombent d'une année à l'autre (pastille « Tombée n× »). Produit par `tools/retombes.py`, recalculé automatiquement par `build.py` dès que les questions changent (empreinte dans le fichier, ~1 min). Ne pas éditer à la main.
 - `public/pages/*.jpg` : pages scannées des sujets (énoncés avec figures, recadrées à l'affichage).
 - `build.py` → `dist/index.html` + `dist/confidentialite.html` + `dist/pages/`. Publié sur https://atlas2070.github.io/Atlas/ par `.github/workflows/pages.yml` (push sur `main`). Lancer : `python3 build.py`, puis servir `dist/` (ex. `python3 -m http.server -d dist`).
 

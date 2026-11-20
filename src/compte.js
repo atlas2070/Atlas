@@ -519,14 +519,19 @@ function vAvis(el){
     AV.msg='';AV.note=0;lsSet('atlas-annonce-v2-'+AUTH.uid,1);toast('Merci ! Ton message est envoyé');render();loadSuivi()};
   drawSuivi();loadSuivi()}
 
-/* ---------- bannière « Amélioration » sur l'accueil (une fois, puis fermée) ---------- */
-function homeExtra(el){if(state.seen.prog1)return; // annonce affichée tant que l'onglet Stats n'a pas été ouvert (ou que « OK » n'a pas été touché)
+/* ---------- bannière « Nouveau » sur l'accueil (jusqu'à ce qu'elle soit fermée) ---------- */
+function homeExtra(el){if(state.seen.tombe1)return;
+  const liste=Q.filter(q=>inP(q)&&!q.annul&&tombe(q)),n=liste.length;if(!n)return;
+  const nb=q=>+((tombe(q).match(/(\d+)×/)||[0,0])[1]);
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
-  d.innerHTML=`<div><span class="nb">Nouveau</span><b>Suis ta progression.</b> Quand tu refais une annale ou un chapitre, ta note est comparée à la précédente. Toute ton évolution est dans l'onglet <b>Stats</b>.
-    <div class="row"><button class="sm primary" id="anGo">Voir mes stats</button><button class="sm ghost" id="anOk">OK</button></div></div><button class="x" id="anX" aria-label="Fermer">×</button>`;
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>Repère les questions qui retombent</h3>
+    <p>Certaines questions reviennent presque à l'identique d'une année à l'autre. Elles ont maintenant une pastille <span class="ex">Tombée 3×</span> : le nombre d'années où elles sont tombées. <b>${n} questions</b> sont concernées dans ton parcours.</p>
+    <div class="row"><button class="sm go" id="anGo">Réviser ces ${n} questions</button><button class="sm ok" id="anOk">J'ai compris</button></div>
+    <button class="x" id="anX" aria-label="Fermer">×</button>`;
   el.prepend(d);
-  const ok=()=>{state.seen.prog1=Date.now();persist();render()};
-  d.querySelector('#anX').onclick=ok;d.querySelector('#anOk').onclick=ok;d.querySelector('#anGo').onclick=()=>go('stats')}
+  const ok=()=>{state.seen.tombe1=Date.now();persist();render()};
+  d.querySelector('#anX').onclick=ok;d.querySelector('#anOk').onclick=ok;
+  d.querySelector('#anGo').onclick=()=>{state.seen.tombe1=Date.now();persist();startRunNow(liste.sort((a,b)=>nb(b)-nb(a)),'annales','Questions retombées')}}
 
 /* ---------- temps passé sur les questions ----------
    Compté par tranches de 15 s, seulement quand une question est à l'écran, la page visible,

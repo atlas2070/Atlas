@@ -21,6 +21,9 @@
 | `annul` | question annulée |
 | `ocr`, `ok`, `chAuto`, `lasn` | marqueurs internes de construction (`ocr` sans `manual` = texte non relu, affiché en image) |
 
+## Questions qui retombent (`retombes.json`)
+`{empreinte, q: {id: [ids des autres années]}}`. Deux questions de même matière et d'années différentes sont « la même » si au moins 3 propositions sont quasi identiques, ou 2 avec un énoncé quasi identique. Affiché sur le site par la pastille « Tombée n× » (n = nombre d'années). Recalculé tout seul par `build.py` quand les questions changent (`tools/retombes.py`).
+
 ## Statuts (`status`)
 Toutes les réponses sont faites par l'équipe Atlas, à partir du cours ou, quand le cours ne suffit pas, de connaissances vérifiées. Aucune réponse ne vient d'une correction extérieure.
 - **Confirmée par le cours**, **Cours** : réponse prouvée par un passage du cours (source dans `src`).

@@ -186,6 +186,7 @@ button.sm{padding:7px 12px;font-size:.84rem}
 .chead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
 .chead .where{color:var(--muted);font-size:.9rem;min-width:0}
 .ref{font-family:var(--mono);font-size:.78rem;font-weight:600;background:var(--navy-soft);color:var(--navy);border-radius:999px;padding:4px 11px;white-space:nowrap}
+.tombe{display:inline-flex;align-items:center;font-family:var(--body);font-size:.78rem;font-weight:600;padding:3px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap;line-height:1.4;vertical-align:middle;margin-left:6px;cursor:help}
 .qnum{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.98rem;margin:0 0 6px}
 .stem{font-size:1.15rem;margin:0 0 10px;max-width:72ch;line-height:1.5;font-weight:500;white-space:pre-line}
 .qinfo{color:var(--muted);font-size:.88rem;margin:0 0 18px}
@@ -254,7 +255,7 @@ button.item:hover:not(:disabled){border-color:var(--accent)}
 .sumgrid span{font-size:.8rem;color:var(--muted)}
 .big20{color:var(--head);font-family:var(--mono);font-size:3.2rem;font-weight:600;line-height:1}
 .big20 small{font-size:1.2rem;color:var(--muted);font-weight:500}
-.annonce .nb{display:inline-block;background:var(--bad);color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:1px}
+
 .sheet .notice{margin:0}.notice a{color:var(--accent);font-weight:600;overflow-wrap:anywhere}
 .hist{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin:14px 0 0;padding:12px 14px;background:var(--sunken);border-radius:12px}
 .hist-t{flex:1 1 220px;min-width:0}.hist-t b{display:block;font-family:var(--mono);font-size:1.25rem}.hist-t span{font-size:.86rem;color:var(--muted)}
@@ -496,8 +497,16 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .reports{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .reports .rp{display:flex;flex-direction:column;gap:6px}
 .reports .rp.done{opacity:.6}
-.annonce{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;padding:14px 16px;border-radius:16px;background:var(--accent-soft);color:var(--ink);font-size:.92rem;line-height:1.45}
-.annonce b{color:var(--accent)}.annonce .row{margin-top:8px}.annonce .x{margin-left:auto;flex:none;border:0;background:transparent;font-size:1.3rem;line-height:1;color:var(--muted);padding:2px 6px}
+.annonce{position:relative;margin-bottom:16px;padding:18px 18px 16px;border-radius:18px;background:var(--accent);color:var(--accent-ink);font-size:.95rem;line-height:1.45;box-shadow:0 6px 22px rgba(91,63,196,.28)}
+.annonce .nb{display:inline-block;background:var(--sun);color:#fff;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.annonce h3{font-family:var(--display);font-size:1.22rem;font-weight:800;margin:0 34px 6px 0;color:inherit;line-height:1.25}
+.annonce p{margin:0}.annonce b{color:inherit;font-weight:700}
+.annonce .ex{display:inline-flex;align-items:center;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--accent-ink);color:var(--accent);white-space:nowrap;vertical-align:1px}
+.annonce .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.annonce .row button{border-radius:999px}
+.annonce .go{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--accent);font-weight:700}
+.annonce .ok{background:transparent;border:1.5px solid currentColor;color:inherit}
+.annonce .x{position:absolute;top:10px;right:10px;border:0;background:transparent;font-size:1.5rem;line-height:1;color:inherit;opacity:.8;padding:4px 8px}
 .stars{display:flex;gap:4px}.stars button{border:0;background:transparent;font-size:1.6rem;line-height:1;padding:2px;color:var(--line)}.stars button[aria-pressed="true"]{color:#f2b33d}
 .suivi{display:flex;flex-direction:column;gap:10px;margin-top:10px}.suivi .si{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:14px}
 .suivi .si .rep{background:var(--sunken);border-radius:10px;padding:8px 11px;font-size:.88rem}.suivi .si .top{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -617,6 +626,7 @@ __CONFIG__
 <script id="data" type="application/json">__DATA__</script>
 <script id="lass" type="application/json">__LASS__</script>
 <script id="hb" type="application/json">__HB__</script>
+<script id="rt" type="application/json">__RT__</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
@@ -662,6 +672,12 @@ function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeou
 function discord(q,sel){const s=new Set(sel),a=new Set(q.ans.split(''));let err=0;for(const it of q.items){if(s.has(it.l)!==a.has(it.l))err++}return err}
 function score(q,sel){const err=discord(q,sel);if(isU(q))return err===0?1:0;return err===0?1:err===1?.8:err===2?.25:0}
 function sess(q){return q.sl||('Déc. '+q.y)}
+// questions qui retombent d'une année à l'autre (data/retombes.json, tools/retombes.py)
+const RT=JSON.parse(document.getElementById('rt').textContent);
+let QID=null;
+function tombe(q){const o=RT[q.id];if(!o)return '';if(!QID){QID={};for(const x of Q)QID[x.id]=x}const byId=QID;
+  const yrs=[...new Set([q,...o.map(i=>byId[i]).filter(Boolean)].map(x=>x.y))].sort();if(yrs.length<2)return '';
+  return `<span class="tombe" title="Tombée en ${yrs.join(', ')}">Tombée ${yrs.length}×</span>`}
 function chips(q){if(q.annul)return '<span class="chip warn">Annulée</span>';const s=q.status;
   if(s.startsWith('À vérifier'))return '<span class="chip warn">À vérifier</span>';
   if(duCours(q))return '<span class="chip ok">Corrigé avec le cours</span>';
@@ -756,7 +772,7 @@ let fA={by:'sess',open:'',focus:''};
 const statOf=qs=>{const d=qs.filter(q=>state.ans[q.id]).map(q=>q.id);return {t:qs.length,d:d.length,m:moy(d)}};
 const rankQ=q=>q.sk==='paces'?q.y-100:q.y;
 const byOrder=(a,b)=>rankQ(b)-rankQ(a)||a.mod.localeCompare(b.mod)||a.q-b.q;
-function qrowHTML(q,num){const a=state.ans[q.id];return `<button class="qrow" data-id="${q.id}"><span class="qn">Q${num||q.q}</span><span class="qt"><b>${esc(untag(q.stem).slice(0,140))}</b><small>${q.sk==='paces'?'PACES '+q.y+' · ':''}${esc(q.mat)} · ${esc(q.ch)}</small></span><span class="qs">${chips(q)}<span class="score ${a?sCls(a.s):''}">${a?fr(a.s):'–'}</span></span></button>`}
+function qrowHTML(q,num){const a=state.ans[q.id];return `<button class="qrow" data-id="${q.id}"><span class="qn">Q${num||q.q}</span><span class="qt"><b>${esc(untag(q.stem).slice(0,140))}</b><small>${q.sk==='paces'?'PACES '+q.y+' · ':''}${esc(q.mat)} · ${esc(q.ch)}${tombe(q)}</small></span><span class="qs">${chips(q)}<span class="score ${a?sCls(a.s):''}">${a?fr(a.s):'–'}</span></span></button>`}
 function vAnnales(el){
   const QQ=QP(),S=SESS(),M=MATSP();const by='sess';const G=SG();
   const pr=st=>`<span class="pr"><span>${st.d} / ${st.t}</span><span class="track"><i style="width:${(st.d/st.t*100).toFixed(1)}%"></i></span></span>`;
@@ -970,7 +986,7 @@ function drawMain(){const m=$('#main');if(!m)return;
   else actions=`<button id="skip">Passer</button><button class="primary" id="val" ${sel?'':'disabled'}>Valider</button>`;
   m.innerHTML=`<article class="card">
    <div class="chead"><span class="where">${esc(q.mat)} · ${esc(q.ch)}</span><span class="rt"><span class="ref">${state.parcours!=='pass'?esc(sess(q).replace(/^L\.AS /,'')):esc(sess(q))+' · '+q.mod+' · Q'+q.q}</span><button class="star" id="fav" aria-pressed="${!!state.fav[q.id]}" aria-label="Question favorite" title="Question favorite">${STAR}</button></span></div>
-   <p class="qnum">Question ${run.i+1}${a&&!shown?` <span class="muted" style="font-weight:500;font-size:.85rem;font-family:var(--body)">· dernière note ${fr(a.s)}</span>`:''}</p>
+   <p class="qnum">Question ${run.i+1}${tombe(q)}${a&&!shown?` <span class="muted" style="font-weight:500;font-size:.85rem;font-family:var(--body)">· dernière note ${fr(a.s)}</span>`:''}</p>
    ${stemHTML(q)}
    <p class="qinfo">${info}</p>
    <div class="items">${items}</div>
