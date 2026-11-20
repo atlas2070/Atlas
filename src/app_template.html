@@ -634,6 +634,7 @@ const Q=JSON.parse(document.getElementById('data').textContent);
 const BYID=Object.fromEntries(Q.map(q=>[q.id,q]));
 const LASBIO=['Physiologie','Initiation aux médicaments','Santé publique','Découverte des métiers','Philosophie des sciences','Données d\'évidence'];
 const isS2=k=>String(k).startsWith('s2-'),skY=k=>+String(k).slice(-4);
+const NEWSK=['s2-2022','s2-2026']; // annales récemment ajoutées : pastille « Nouveau » dans l'onglet Annales
 const PARCOURS=[
  {id:'pass',nom:'PASS',long:'PASS majeure santé',ok:true},
  {id:'lasbio',nom:'L.AS bio',long:'L.AS bio',ok:true},
@@ -783,7 +784,7 @@ function vAnnales(el){
   if(by==='sess'){
     body=G.map((g,gi)=>{const all=g.all||g.mods.flatMap(m=>m.qs),st=statOf(all),key='s|'+g.k,op=fA.open===key,multi=g.mods.length>1;
       const sub=multi?g.mods.length+(state.parcours==='pass'?' modules':' matières'):'';
-      return `<div class="acc-i ${op?'open':''}" id="s-${g.k}"><button class="acc-h" data-acc="${key}" aria-expanded="${op}"><span><b>${esc(g.l.replace('Déc.','Décembre'))}</b><small>${st.t} questions${sub?' · '+sub:''}${g.note&&state.parcours!=='pass'?' · '+esc(g.note):''}</small></span>${pr(st)}<span class="chev">${IC.chev}</span></button>
+      return `<div class="acc-i ${op?'open':''}" id="s-${g.k}"><button class="acc-h" data-acc="${key}" aria-expanded="${op}"><span><b>${esc(g.l.replace('Déc.','Décembre'))}${NEWSK.includes(g.k)?'<span class="tombe" title="Annale ajoutée récemment">Nouveau</span>':''}</b><small>${st.t} questions${sub?' · '+sub:''}${g.note&&state.parcours!=='pass'?' · '+esc(g.note):''}</small></span>${pr(st)}<span class="chev">${IC.chev}</span></button>
        ${op?`<div class="acc-b"><div class="top"><button class="primary sm" data-all="${g.k}">${multi?'Toute l\'annale':'Faire le sujet'}</button><button class="ghost sm" data-list="${g.k}">${fA.list===g.k?'Masquer les questions':'Voir les questions'}</button></div>
         ${multi?`<div class="rows">${g.mods.map((m,mi)=>row(`data-run="${g.k}|${mi}"`,m.bonus?'Bonus métiers (hors sujet L.AS)':m.md,statOf(m.qs),m.bonus?'bon':'')).join('')}</div>`:''}
         ${fA.list===g.k?`<div class="qlist">${all.map((q,i)=>qrowHTML(q,g.num?i+1:0)).join('')}</div>`:''}</div>`:''}</div>`}).join('');
