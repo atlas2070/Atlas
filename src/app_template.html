@@ -917,9 +917,12 @@ function vReglages(el){
 }
 /* ---------- série ---------- */
 const FIG=/ci-dessous|ci-contre|figure|schéma|tableau|graphique|courbe|molécule suivante|la molécule|enchaînements|relations de mésomérie|formule|structure suivante|représentée|réaction suivante|mol[ée]cules suivantes/i;
+// texte d'une proposition : affiché même pour un énoncé en image, s'il a été relu sur le scan (manual) ; sinon renvoi au sujet
+const itTxt=(q,it)=>!imgMode(q)||(q.manual&&String(it.t||'').replace(/<[^>]+>/g,'').trim().length>=2);
+function itemHTML(q,it){return itTxt(q,it)?rt(it.t):'<span class="muted">'+it.l.toLowerCase()+') — lis la proposition sur le sujet ci-dessus</span>'}
 function imgMode(q){return !!q.crop&&(q.forceImg||q.ocr&&!q.manual||!q.noFig&&FIG.test(q.stem)||!q.ok)}
 function cropHTML(q){return `<div class="orig">${q.crop.map(([pg,t,b])=>`<div class="cropbox" style="aspect-ratio:${q.pw}/${b-t}"><img src="pages/${pg}.jpg" alt="Énoncé original, ${esc(sess(q))} ${q.mod} question ${q.q}" style="top:${-t/(b-t)*100}%;height:${q.ph/(b-t)*100}%" loading="lazy"></div>`).join('')}</div>`}
-function stemHTML(q){if(imgMode(q))return cropHTML(q)+'<p class="orignote muted">Énoncé original du sujet : réponds avec les cases ci-dessous. Touche l\'image pour l\'agrandir.</p>';
+function stemHTML(q){if(imgMode(q))return cropHTML(q)+'<p class="orignote muted">'+(q.items.every(it=>itTxt(q,it))?'Énoncé original du sujet, propositions recopiées ci-dessous.':'Énoncé original du sujet : réponds avec les cases ci-dessous.')+' Touche l\'image pour l\'agrandir.</p>';
   return `<p class="stem">${rt(q.stem)}</p>${q.crop?`<details class="origd"><summary>Voir l'énoncé original</summary>${cropHTML(q)}</details>`:''}`}
 function startRun(list,from,label,idx=0){if(!list.length)return;
   const n=list.length,lim=Math.max(60,Math.round(n*5400/55)),mail=CONFIG.CONTACT_EMAIL;
@@ -979,9 +982,9 @@ function drawMain(){const m=$('#main');if(!m)return;
   let items;
   if(shown&&!q.annul){
     items=`<div class="cols" aria-hidden="true"><span>TOI</span><span>CLÉ</span><span></span></div>`+q.items.map(it=>{const me=sel.includes(it.l),ok=me===it.v;
-      return `<div class="item corr ${ok?'':'miss'}"><span class="L toi ${me?'on':''}">${it.l}</span><span class="L cle ${it.v?'on':''}">${it.l}</span><div class="txt">${imgMode(q)?'<span class="muted">'+it.l.toLowerCase()+') — lis la proposition sur le sujet ci-dessus</span>':rt(it.t)}<div class="ex"><b>${it.v?'Vrai.':'Faux.'}</b> ${esc(it.ex||'')}</div></div><span class="mk ${ok?'y':'n'}" aria-label="${ok?'Bonne réponse':'Erreur'}">${ok?ICON.y:ICON.n}</span></div>`}).join('');
+      return `<div class="item corr ${ok?'':'miss'}"><span class="L toi ${me?'on':''}">${it.l}</span><span class="L cle ${it.v?'on':''}">${it.l}</span><div class="txt">${itemHTML(q,it)}<div class="ex"><b>${it.v?'Vrai.':'Faux.'}</b> ${esc(it.ex||'')}</div></div><span class="mk ${ok?'y':'n'}" aria-label="${ok?'Bonne réponse':'Erreur'}">${ok?ICON.y:ICON.n}</span></div>`}).join('');
   }else{
-    items=q.items.map(it=>`<button class="item" data-l="${it.l}" aria-pressed="${sel.includes(it.l)}" ${q.annul?'disabled':''}><span class="L">${it.l}</span><span class="txt">${imgMode(q)?'<span class="muted">'+it.l.toLowerCase()+') — lis la proposition sur le sujet ci-dessus</span>':rt(it.t)}</span></button>`).join('');
+    items=q.items.map(it=>`<button class="item" data-l="${it.l}" aria-pressed="${sel.includes(it.l)}" ${q.annul?'disabled':''}><span class="L">${it.l}</span><span class="txt">${itemHTML(q,it)}</span></button>`).join('');
   }
   const info=`${q.type} · ${q.items.length} propositions · ${isU(q)?'une seule réponse exacte':'une ou plusieurs réponses exactes'}${shown&&!q.annul?' · '+nTrue+' réponse'+(nTrue>1?'s':'')+' exacte'+(nTrue>1?'s':''):''}`;
   let actions;
@@ -995,7 +998,7 @@ function drawMain(){const m=$('#main');if(!m)return;
    <p class="qinfo">${info}</p>
    <div class="items">${items}</div>
    ${q.annul?'<div class="notice"><b>Question annulée</b> à l\'examen : elle ne compte pas dans la note.</div>':shown?resultHTML(q,sel):''}
-   <div class="qtools"><button class="ghost sm" id="noteB" aria-expanded="${!!state.notes[q.id]||!!run.noteOpen}">${IC.pen}${state.notes[q.id]?'Ma note':'Ajouter une note'}</button>${shown&&!q.annul?`<button class="ghost sm" id="repB">${IC.flag}Signaler une erreur</button>`:''}</div>
+   <div class="qtools"><button class="ghost sm" id="noteB" aria-expanded="${!!state.notes[q.id]||!!run.noteOpen}">${IC.pen}${state.notes[q.id]?'Ma note':'Ajouter une note'}</button>${shown&&!q.annul?`<button class="ghost sm" id="repB">${IC.flag}Signaler une erreur</button>`:''}${shown&&!q.annul&&run.res[q.id]<1&&!(run.added&&run.added[q.id])?`<button class="ghost sm" id="procB">${IC.plus||'+'} Travailler cette notion</button>`:''}</div>
    <div class="report" id="rep"></div>
    <div class="mynote" id="noteW" ${state.notes[q.id]||run.noteOpen?'':'hidden'}><textarea id="note" rows="2" aria-label="Ma note" placeholder="Ton astuce pour cette question">${esc(state.notes[q.id]||'')}</textarea></div>
    <div class="nav-q"><button class="ghost" id="prev" ${run.i?'':'disabled'}>← Précédente</button>
@@ -1004,7 +1007,7 @@ function drawMain(){const m=$('#main');if(!m)return;
   m.querySelectorAll('button.item').forEach(b=>b.onclick=()=>toggle(b.dataset.l));
   $('#fav').onclick=e=>{if(state.fav[q.id])delete state.fav[q.id];else state.fav[q.id]=1;e.currentTarget.setAttribute('aria-pressed',!!state.fav[q.id]);toast(state.fav[q.id]?'Ajoutée aux favorites':'Retirée des favorites');persist()};
   let nt;$('#note').oninput=e=>{clearTimeout(nt);const v=e.target.value;nt=setTimeout(()=>{if(v.trim())state.notes[q.id]=v;else delete state.notes[q.id];persist()},600)};
-  if($('#repB'))$('#repB').onclick=()=>openReport(q);
+  if($('#repB'))$('#repB').onclick=()=>openReport(q);if($('#procB'))$('#procB').onclick=()=>ajouterProches(q);
   $('#noteB').onclick=()=>{run.noteOpen=!$('#noteW').hidden?false:true;$('#noteW').hidden=!run.noteOpen&&!state.notes[q.id];if(!$('#noteW').hidden)$('#note').focus()};
   $('#prev').onclick=()=>goTo(run.i-1);
   if($('#next'))$('#next').onclick=next;if($('#val'))$('#val').onclick=validate;if($('#skip'))$('#skip').onclick=()=>goTo(run.i+1<run.ids.length?run.i+1:run.i);if($('#fin'))$('#fin').onclick=askFinish;
@@ -1036,6 +1039,20 @@ function toggle(L){if(!run||run.summary)return;const q=curQ();if(q.annul||isShow
   let s=run.sel[q.id]||'';if(isU(q))s=s===L?'':L;else s=s.includes(L)?s.replace(L,''):[...s+L].sort().join('');
   if(s)run.sel[q.id]=s;else delete run.sel[q.id];saveRun();drawMain();drawSide()}
 function record(q,sel,s){state.ans[q.id]={s,sel,t:Date.now(),n:((state.ans[q.id]||{}).n||0)+1};srsUpdate(q.id,s)}
+/* ---------- « même notion » : questions proches d'une question ratée ----------
+   Même matière ; score = mots-clés communs (énoncé + propositions) + même chapitre + question retombée.
+   Les questions jamais faites ou ratées passent devant. */
+const STOPW=new Set('alors aussi avec avoir cette comme dans donc elle elles entre est être fait faire font leur leurs lors mais même moins plus pour quand quel quelle quelles quels sans selon sont sous suivantes suivante propositions proposition parmi exacte exactes vrai vraie fausse concernant propos cela ceci celui celle ceux dont tous tout toute toutes très peut peuvent permet permettent chez après avant qui que quoi une des les aux par sur son ses ils lequel laquelle lesquelles lesquels identifiez'.split(' '));
+const KW={};function kw(q){if(KW[q.id])return KW[q.id];
+  const t=(q.stem+' '+q.items.map(i=>i.t).join(' ')).replace(/<[^>]+>/g,' ').toLowerCase();
+  return KW[q.id]=new Set((t.match(/[a-zà-ÿœ0-9]{4,}/g)||[]).filter(w=>!STOPW.has(w)))}
+function proches(q,n=5){const a=kw(q);if(!a.size)return [];const dans=new Set(run?run.ids:[]),rt=new Set(RT[q.id]||[]);
+  return Q.filter(x=>x.id!==q.id&&!dans.has(x.id)&&!x.annul&&x.mat===q.mat&&inP(x)).map(x=>{const b=kw(x);let c=0;for(const w of a)if(b.has(w))c++;
+    let sc=c/Math.sqrt(a.size*Math.max(b.size,1))+(x.ch===q.ch?.15:0)+(rt.has(x.id)?1:0);const r=state.ans[x.id];if(!r||r.s<1)sc+=.05;return [sc,x]})
+   .filter(([sc])=>sc>=.25).sort((u,v)=>v[0]-u[0]).slice(0,n).map(([,x])=>x)}
+function ajouterProches(q){const l=proches(q);if(!l.length){toast('Pas d\'autre question proche dans ton parcours');return}
+  run.ids.splice(run.i+1,0,...l.map(x=>x.id));run.added=run.added||{};run.added[q.id]=1;if(run.chrono)run.limit+=l.length*98;
+  saveRun();toast(l.length+' question'+(l.length>1?'s':'')+' sur cette notion ajoutée'+(l.length>1?'s':'')+' juste après');drawMain();drawSide()}
 function validate(){const q=curQ(),sel=run.sel[q.id]||'';if(!sel)return;const s=score(q,sel);run.res[q.id]=s;record(q,sel,s);logAttempt();saveRun();drawMain();drawSide()}
 function next(){if(run.mode==='fin'&&!run.done){goTo(Math.min(run.i+1,run.ids.length-1));return}
   if(run.i<run.ids.length-1)goTo(run.i+1);else{run.summary=true;drawMain();drawSide();window.scrollTo(0,0)}}

@@ -2,6 +2,8 @@
 """Repère les questions qui retombent d'une année à l'autre -> data/retombes.json ({id: [ids des autres années]}).
 Deux questions de même matière et d'années différentes sont « la même » si au moins 3 propositions sont quasi
 identiques (similarité >= 0,85), ou 2 avec un énoncé quasi identique (>= 0,8).
+Les questions dont l'énoncé est une figure (forceImg, ex. molécules en chimie) sont exclues : leurs propositions
+types (« la molécule F est de configuration R ») reviennent chaque année avec une figure différente.
 Lancé automatiquement par build.py dès que les questions changent (empreinte stockée dans le fichier) ; ~1 min.
 À la main : python3 tools/retombes.py"""
 import json, os, re, unicodedata, difflib, collections, hashlib
@@ -15,7 +17,7 @@ sim = lambda a, b: difflib.SequenceMatcher(None, a, b).ratio()
 
 def empreinte(qs):
     """Change dès qu'une question est ajoutée, retirée ou que son texte / sa matière / son année change."""
-    cle = sorted((q['id'], q['y'], q.get('mat'), q['stem'], [i['t'] for i in q['items']]) for q in qs)
+    cle = sorted((q['id'], q['y'], q.get('mat'), q['stem'], [i['t'] for i in q['items']], bool(q.get('forceImg'))) for q in qs)
     return hashlib.sha256(json.dumps(cle, ensure_ascii=False).encode()).hexdigest()[:16]
 
 def charger(qs):
@@ -34,7 +36,7 @@ def charger(qs):
     return r
 
 def calculer(qs):
-  qs = [dict(q) for q in qs]
+  qs = [dict(q) for q in qs if not q.get('forceImg')]
   for q in qs:
       q['_it'] = [x for x in (norm(i['t']) for i in q['items']) if len(x) >= 15]
       q['_st'] = norm(q['stem'])
@@ -54,7 +56,7 @@ def calculer(qs):
 
 if __name__ == '__main__':
     import sys; sys.path.insert(0, ROOT)
-    FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json']
+    FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json', 'data_s2.json']
     tout = [q for f in FILES for q in json.load(open(os.path.join(ROOT, 'data', f), encoding='utf-8'))]
     try: os.remove(OUT)
     except OSError: pass
