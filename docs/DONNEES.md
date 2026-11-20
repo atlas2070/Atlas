@@ -114,3 +114,14 @@ Lots 1 à 40 : les 785 questions affichées en scan avant la relecture. Lots mar
 | Santé publique | 101 | 57 | 101 | 0 |
 | Découverte des métiers | 110 | 69 | 110 | 0 |
 | **Total** | **1146** | **785** | **982** | **164** |
+
+## Sessions 2 (novembre 2026)
+- `data/data_s2.json` : 169 questions, corrigées par l'équipe à partir du cours (passages déjà cités dans Atlas) ou, à défaut, par connaissances générales (statut « Hors cours »).
+  - `S2-2022-B-n` : L.AS bio, session 2 du 5 juillet 2022 (55 Q), `sk` = `s2-2022`.
+  - `S2-2022-HB-n` : L.AS hors-bio, même date (54 Q). Les questions communes au sujet bio sont dupliquées avec la même correction.
+  - `S2-2026-n` : L.AS bio, session 2 2025-2026 (60 Q), `sk` = `s2-2026`.
+- `lass.json` : les entrées de session 2 ont un champ `sk` ; `hb.json` : clé `2022s2`.
+- Appli : les clés de session `s2-AAAA` sont rangées juste avant le décembre de la même année (`isS2`, `skY`).
+- Nouvelles matières (L.AS bio 2022) : « Philosophie des sciences », « Données d'évidence ».
+- Les scans du sujet bio 2022 et les photos du sujet 2026 portent les croix d'un étudiant : ils ne sont pas publiés. Seules les pages de chimie du sujet hors-bio (scan propre) sont dans `public/pages/hb2022s2-*.jpg`.
+- Questions « Incertaine (équipe) » : à relire avec le cours (liste dans le PDF de relecture).

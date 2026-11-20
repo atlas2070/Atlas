@@ -5,7 +5,7 @@ Usage : python3 build.py"""
 import json, os, shutil
 ROOT = os.path.dirname(os.path.abspath(__file__))
 D = lambda *p: os.path.join(ROOT, *p)
-FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json']
+FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json', 'data_s2.json']
 qs = []
 for f in FILES:
     qs += json.load(open(D('data', f), encoding='utf-8'))

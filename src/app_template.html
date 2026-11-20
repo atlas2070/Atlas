@@ -622,7 +622,8 @@ __CONFIG__
 <script>
 const Q=JSON.parse(document.getElementById('data').textContent);
 const BYID=Object.fromEntries(Q.map(q=>[q.id,q]));
-const LASBIO=['Physiologie','Initiation aux médicaments','Santé publique','Découverte des métiers'];
+const LASBIO=['Physiologie','Initiation aux médicaments','Santé publique','Découverte des métiers','Philosophie des sciences','Données d\'évidence'];
+const isS2=k=>String(k).startsWith('s2-'),skY=k=>+String(k).slice(-4);
 const PARCOURS=[
  {id:'pass',nom:'PASS',long:'PASS majeure santé',ok:true},
  {id:'lasbio',nom:'L.AS bio',long:'L.AS bio',ok:true},
@@ -633,19 +634,19 @@ const inP=q=>state.parcours==='lashb'?HBSET.has(q.id):q.par?q.par.includes(state
 const QP=()=>Q.filter(inP);
 const MATSP=()=>[...new Set(QP().map(q=>q.mat))].sort((a,b)=>matSort(a,b));
 Q.forEach(q=>{if(!q.sk){q.sk='dec'+q.y;q.sl='Déc. '+q.y}});
-const SESS=()=>{const m=new Map();QP().forEach(q=>m.set(q.sk,[q.gl||q.sl,q.sk==='paces'?0:q.y]));return [...m.entries()].sort((x,y)=>y[1][1]-x[1][1]).map(([k,v])=>[k,v[0]])};
+const SESS=()=>{const m=new Map();QP().forEach(q=>m.set(q.sk,[q.gl||q.sl,q.sk==='paces'?0:q.y-(isS2(q.sk)?.5:0)]));return [...m.entries()].sort((x,y)=>y[1][1]-x[1][1]).map(([k,v])=>[k,v[0]])};
 const LASS=JSON.parse(document.getElementById('lass').textContent);
 function SG(){const QQ=QP();
-  const fromSk=(k,l,note)=>{const qs=QQ.filter(q=>q.sk===k);return {k,l,note,num:false,y:k.startsWith('dec')?+k.slice(3):0,las:false,mods:[...new Set(qs.map(q=>q.mod))].sort().map(md=>({md,qs:qs.filter(q=>q.mod===md).sort((x,y)=>y.y-x.y||x.q-y.q)}))}};
-  if(state.parcours==='lashb')return Object.keys(HB).sort((a,b)=>b-a).map(y=>{const qs=HB[y].map(id=>BYID[id]).filter(Boolean);const HBO=['Découverte des métiers','Santé publique','Biologie cellulaire','Histologie','Biologie de la reproduction','Génétique','Chimie organique','Biochimie','Biophysique (BAME)','Biophysique (BMI)','Physiologie','Initiation aux médicaments'];const mats=HBO.filter(m=>qs.some(q=>q.mat===m));
-    return {k:'dec'+y,l:'Déc. '+y,y:+y,num:true,note:'sujet officiel L.AS hors-bio',all:qs,mods:mats.map(m=>({md:m,qs:qs.filter(q=>q.mat===m)}))}});
+  const fromSk=(k,l,note)=>{const qs=QQ.filter(q=>q.sk===k);return {k,l,note,num:false,y:k.startsWith('dec')||isS2(k)?skY(k):0,las:false,mods:[...new Set(qs.map(q=>q.mod))].sort().map(md=>({md,qs:qs.filter(q=>q.mod===md).sort((x,y)=>y.y-x.y||x.q-y.q)}))}};
+  if(state.parcours==='lashb')return Object.keys(HB).sort((a,b)=>(parseInt(b)-(/s2$/.test(b)?.5:0))-(parseInt(a)-(/s2$/.test(a)?.5:0))).map(hk=>{const y=parseInt(hk),s2=/s2$/.test(hk);const qs=HB[hk].map(id=>BYID[id]).filter(Boolean);const HBO=['Découverte des métiers','Santé publique','Biologie cellulaire','Histologie','Biologie de la reproduction','Génétique','Chimie organique','Biochimie','Biophysique (BAME)','Biophysique (BMI)','Physiologie','Initiation aux médicaments'];const mats=HBO.filter(m=>qs.some(q=>q.mat===m));
+    return {k:s2?'s2-'+y:'dec'+y,l:s2?'Session 2 · juillet '+y:'Déc. '+y,y:+y,num:true,note:'sujet officiel L.AS hors-bio'+(s2?' · session 2':''),all:qs,mods:mats.map(m=>({md:m,qs:qs.filter(q=>q.mat===m)}))}});
   if(state.parcours!=='lasbio')return SESS().map(([k,l])=>fromSk(k,l,''));
-  return SESS().filter(([k])=>k.startsWith('dec')).map(([k,l])=>{const y=+k.slice(3),L=LASS.find(g=>g.y===y);
+  return SESS().filter(([k])=>k.startsWith('dec')||isS2(k)).map(([k,l])=>{const y=skY(k),L=LASS.find(g=>(g.sk||'dec'+g.y)===k);
     if(L){const qs=L.ids.map(id=>BYID[id]).filter(Boolean);const mods=LASBIO.filter(m=>qs.some(q=>q.mat===m)).map(m=>({md:m,qs:qs.filter(q=>q.mat===m)}));
       if(L.bonus.length)mods.push({md:'Bonus métiers',qs:L.bonus.map(id=>BYID[id]).filter(Boolean),bonus:true});
       return {k,l,y,num:true,note:'sujet officiel L.AS bio'+(L.note?' · '+L.note:''),mods,all:qs}}
     const qs=QQ.filter(q=>q.sk===k);
-    return {k,l,y,num:true,warn:y<=2021,note:y<=2021?'basée sur le sujet PASS':'',mods:LASBIO.filter(m=>qs.some(q=>q.mat===m)).map(m=>({md:m,qs:qs.filter(q=>q.mat===m).sort((x,y)=>x.mod.localeCompare(y.mod)||x.q-y.q)}))}});}
+    return {k,l,y,num:true,warn:!isS2(k)&&y<=2021,note:y<=2021?'basée sur le sujet PASS':'',mods:LASBIO.filter(m=>qs.some(q=>q.mat===m)).map(m=>({md:m,qs:qs.filter(q=>q.mat===m).sort((x,y)=>x.mod.localeCompare(y.mod)||x.q-y.q)}))}});}
 
 const MODS=()=>[...new Set(QP().map(q=>q.mod))].sort();
 const DEF_STATE=()=>({parcours:'pass',ans:{},mode:'direct',fav:{},notes:{},srs:{},chrono:false,hist:[],seen:{}});
@@ -800,9 +801,9 @@ function vAnnales(el){
   if(fA.focus){const f=fA.focus;fA.focus='';setTimeout(()=>{const e=document.getElementById(f);if(e){const r=e.getBoundingClientRect();if(r.top<120||r.top>innerHeight*.6)e.scrollIntoView({block:'start'})}},0)}
 }
 /* ---------- cours : matières → chapitres ---------- */
-const GROUPS=[['Sciences du vivant',['Physiologie','Biologie cellulaire','Histologie','Biologie de la reproduction','Génétique']],['Chimie',['Chimie organique','Biochimie']],['Physique',['Biophysique (BAME)','Biophysique (BMI)']],['Médicament et santé publique',['Initiation aux médicaments','Santé publique']],['Ouverture',['Découverte des métiers','Anglais']]];
+const GROUPS=[['Sciences du vivant',['Physiologie','Biologie cellulaire','Histologie','Biologie de la reproduction','Génétique']],['Chimie',['Chimie organique','Biochimie']],['Physique',['Biophysique (BAME)','Biophysique (BMI)']],['Médicament et santé publique',['Initiation aux médicaments','Santé publique','Données d\'évidence']],['Ouverture',['Découverte des métiers','Philosophie des sciences','Anglais']]];
 const MORD=GROUPS.flatMap(g=>g[1]);
-const MCOL={'Physiologie':'#e0604f','Biologie cellulaire':'#d9577f','Histologie':'#b8609a','Biologie de la reproduction':'#e07a95','Génétique':'#8b6cc8','Chimie organique':'#d98a1c','Biochimie':'#2f9a6a','Biophysique (BAME)':'#2f86c4','Biophysique (BMI)':'#4b63c9','Initiation aux médicaments':'#c2547a','Santé publique':'#1f9a9a','Découverte des métiers':'#e07b3c','Anglais':'#7a68c8'};
+const MCOL={'Physiologie':'#e0604f','Biologie cellulaire':'#d9577f','Histologie':'#b8609a','Biologie de la reproduction':'#e07a95','Génétique':'#8b6cc8','Chimie organique':'#d98a1c','Biochimie':'#2f9a6a','Biophysique (BAME)':'#2f86c4','Biophysique (BMI)':'#4b63c9','Initiation aux médicaments':'#c2547a','Santé publique':'#1f9a9a','Découverte des métiers':'#e07b3c','Anglais':'#7a68c8','Philosophie des sciences':'#6b7fa6','Données d\'évidence':'#3f8fb5'};
 const mc=m=>`--c:${MCOL[m]||'#1d2c5e'}`;
 const mini=m=>m.startsWith('Biophysique')?m.slice(13,-1):m.slice(0,2);
 const matSort=(a,b)=>((MORD.indexOf(a)+1||99)-(MORD.indexOf(b)+1||99))||cmp(a,b);
