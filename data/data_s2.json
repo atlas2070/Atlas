@@ -359,7 +359,7 @@
 "l": "C",
 "t": "la peau,",
 "v": false,
-"ex": "Lors d'un effort prolongé, le débit cutané augmente pour la thermolyse ; il n'est donc pas réduit."
+"ex": "Le cours : vasoconstriction cutanée au début, puis vasodilatation cutanée lors d'un exercice prolongé (thermolyse) : le débit cutané n'est pas réduit."
 },
 {
 "l": "D",
@@ -375,9 +375,9 @@
 }
 ],
 "ans": "DE",
-"status": "Incertaine (équipe)",
-"src": "Cours : 5-Adaptation cardiovasculaire à l_effort p.15",
-"note": "Débit cutané : il peut baisser au tout début de l'effort, mais lors d'un effort prolongé (marathon) il augmente pour évacuer la chaleur. Réponse retenue : tube digestif et reins.",
+"status": "Cours",
+"src": "Cours : 5-Adaptation cardiovasculaire à l'effort (redistribution du débit)",
+"note": "",
 "mat": "Physiologie",
 "ch": "Adaptation cardiovasculaire à l’effort",
 "ocr": false,
@@ -386,7 +386,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -403,37 +403,37 @@
 "l": "A",
 "t": "il s'agit une hyperhydratation hypertonique,",
 "v": false,
-"ex": "Une osmolarité de 280 mOsm/L n'est pas élevée : ce n'est pas une hyperhydratation hypertonique."
+"ex": "280 mOsm/L est inférieur à la normale du cours (300) : hyperhydratation hypotonique, pas hypertonique."
 },
 {
 "l": "B",
 "t": "son pourcentage d'eau est habituellement égal à 60%,",
 "v": false,
-"ex": "Chez le sujet âgé, la part d'eau est plus faible que les 60 % de l'homme adulte jeune."
+"ex": "Le cours donne 45 % d'eau pour une personne âgée, pas 60 %."
 },
 {
 "l": "C",
 "t": "son capital hydrique habituel est de 35L,",
 "v": false,
-"ex": "Même avec 60 %, le capital hydrique habituel serait de 60 L pour 100 kg, pas 35 L."
+"ex": "Avec 45 %, le capital hydrique habituel est de 45 L (100 kg × 0,45), pas 35 L."
 },
 {
 "l": "D",
 "t": "son capital osmolaire intracellulaire actuel est de 3920 mOsmol,",
 "v": false,
-"ex": "Aucun calcul cohérent avec les données (eau actuelle, 2/3 en intracellulaire, 280 mOsm/L) ne donne 3920 mOsmol."
+"ex": "3920 mOsmol = 14 L × 280 : c'est un tiers de 42 L, donc un capital extracellulaire, pas intracellulaire."
 },
 {
 "l": "E",
 "t": "il présente une hyponatrémie vraie.",
-"v": true,
-"ex": "La natrémie basse avec prise de poids (rétention d'eau de l'insuffisance cardiaque) correspond à une hyponatrémie de dilution, vraie (hypotonique)."
+"v": false,
+"ex": "Pour le cours, l'hyponatrémie vraie accompagne une déshydratation ; un patient qui prend du poids (hyperhydraté) a une hyponatrémie de dilution."
 }
 ],
-"ans": "E",
-"status": "Incertaine (équipe)",
-"src": "Cours : 1.1 - Compartiments liquidiens",
-"note": "Le pourcentage d'eau retenu pour un homme de 87 ans dépend du cours (adulte 60 %, sujet âgé moins). Le capital de 3920 mOsmol ne correspond à aucun calcul cohérent. Correction à relire.",
+"ans": "",
+"status": "À vérifier (cohérence)",
+"src": "Cours : 1.1-Compartiments liquidiens (Dr Ivanes)",
+"note": "Avec les valeurs du cours (personne âgée : 45 % d'eau ; osmolarité normale 300 mOsm/L ; hyponatrémie vraie = déshydratation), aucune proposition n'est exacte. Les chiffres du sujet (35 L, 3920 mOsmol) supposent 35 % d'eau, valeur absente du cours.",
 "mat": "Physiologie",
 "ch": "Compartiments liquidiens",
 "ocr": false,
@@ -655,8 +655,8 @@
 }
 ],
 "ans": "D",
-"status": "Équipe Atlas",
-"src": "Cours : 1-Bioénergétique p.74-75",
+"status": "Cours",
+"src": "Cours : 1-Bioénergétique (spirométrie en circuit ouvert, 20 kJ/L d'O₂)",
 "note": "",
 "mat": "Physiologie",
 "ch": "Bioénergétique",
@@ -666,7 +666,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -795,7 +795,7 @@
 "l": "A",
 "t": "le système myokinase a une grande capacité",
 "v": false,
-"ex": "La myokinase n'assure que quelques secondes d'effort : sa capacité est faible."
+"ex": "Phosphocréatine et myokinase : capacité très faible (≈ 40 kJ)."
 },
 {
 "l": "B",
@@ -806,26 +806,26 @@
 {
 "l": "C",
 "t": "la glycolyse anaérobie lactique a une faible capacité",
-"v": false,
-"ex": "La glycolyse anaérobie lactique a une capacité intermédiaire, supérieure aux systèmes immédiats."
+"v": true,
+"ex": "Le tableau du cours classe la capacité de la glycolyse anaérobie lactique comme faible (≈ 495 kJ)."
 },
 {
 "l": "D",
 "t": "la glycolyse aérobie a une grande capacité",
 "v": true,
-"ex": "La glycolyse aérobie a une grande capacité."
+"ex": "Glycolyse aérobie : capacité ++ (≈ 7200 kJ)."
 },
 {
 "l": "E",
 "t": "la lipolyse aérobie a une très grande capacité",
 "v": true,
-"ex": "La lipolyse aérobie a la plus grande capacité (réserves lipidiques), mais la plus faible puissance."
+"ex": "Lipolyse aérobie : capacité ++++ (≈ 570 000 kJ)."
 }
 ],
-"ans": "BDE",
-"status": "Incertaine (équipe)",
-"src": "Cours : LAS hors bio_PLANTIER_Bioénergétique p.22",
-"note": "La capacité de la glycolyse anaérobie est classée « moyenne/limitée » selon les sources : proposition C jugée fausse, à relire avec le tableau du cours.",
+"ans": "BCDE",
+"status": "Cours",
+"src": "Cours : 1-Bioénergétique (Pr Plantier), tableau des formes de stockage de l'énergie",
+"note": "",
 "mat": "Physiologie",
 "ch": "Bioénergétique",
 "ocr": false,
@@ -834,7 +834,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -857,31 +857,31 @@
 "l": "B",
 "t": "d'apports extérieurs de chaleur",
 "v": true,
-"ex": "Les gains de chaleur venus de l'extérieur (rayonnement, contact) entrent aussi dans le bilan thermique."
+"ex": "Le cours cite les apports extérieurs de chaleur parmi les déterminants de la température centrale."
 },
 {
 "l": "C",
 "t": "de l'activité du système nerveux sympathique",
 "v": true,
-"ex": "Le sympathique règle la vasomotricité cutanée, la sudation et la thermogenèse."
+"ex": "Le sympathique assure la vasoconstriction cutanée et la thermogenèse sans frisson."
 },
 {
 "l": "D",
 "t": "de l'activité du système nerveux parasympathique",
-"v": false,
-"ex": "Le parasympathique n'intervient pas dans la thermorégulation."
+"v": true,
+"ex": "Dans le cours, la vasodilatation cutanée et la sudation (thermolyse) relèvent du parasympathique."
 },
 {
 "l": "E",
 "t": "de la température ambiante",
 "v": false,
-"ex": "Chez l'homéotherme, la température centrale est maintenue constante, indépendamment de la température ambiante (dans certaines limites)."
+"ex": "Chez l'homéotherme, la température centrale est indépendante du milieu ambiant (température de consigne)."
 }
 ],
-"ans": "ABC",
-"status": "Incertaine (équipe)",
-"src": "",
-"note": "Pour un homéotherme, la température centrale est régulée et reste stable malgré la température ambiante : E jugée fausse. Les apports extérieurs (rayonnement) entrent dans le bilan thermique : B jugée vraie. À relire avec le cours de thermorégulation.",
+"ans": "ABCD",
+"status": "Cours",
+"src": "Cours : 3-Thermorégulation (PASS/LAS 2021-2022), « Déterminants généraux de la température centrale »",
+"note": "",
 "mat": "Physiologie",
 "ch": "Thermorégulation",
 "ocr": false,
@@ -890,7 +890,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -1024,8 +1024,8 @@
 {
 "l": "B",
 "t": "de l'eau se fait tout au long du tube digestif",
-"v": false,
-"ex": "L'eau est absorbée surtout dans l'intestin grêle et le côlon, pas tout au long du tube digestif."
+"v": true,
+"ex": "Le cours : l'eau est absorbée tout au long du tube digestif (95 %, passivement selon le gradient du Na⁺)."
 },
 {
 "l": "C",
@@ -1046,9 +1046,9 @@
 "ex": "L'absorption est maximale dans l'intestin grêle, pas dans l'estomac."
 }
 ],
-"ans": "CD",
-"status": "Équipe Atlas",
-"src": "",
+"ans": "BCD",
+"status": "Cours",
+"src": "Cours : Physiologie digestive PASS 2021-2022 (Pr Aguillon-Hernandez), digestion et absorption",
 "note": "",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
@@ -1058,7 +1058,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -1104,8 +1104,8 @@
 ],
 "ans": "CDE",
 "status": "Incertaine (équipe)",
-"src": "Cours : Physiologie digestive (partie 15) ; 3-système digestif p.32",
-"note": "D : la bile ne contient pas d'enzyme, mais ses sels biliaires sont indispensables à la digestion des lipides (émulsion). Proposition jugée vraie.",
+"src": "Cours : Physiologie digestive PASS 2021-2022 ; 3-système digestif (Pr Mahéo)",
+"note": "Cours : le suc intestinal contient surtout eau et mucus ; ce sont les enzymes de la bordure en brosse (sucrase, lactase, maltase) qui achèvent la digestion des glucides. E jugée vraie dans ce sens.",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -1551,8 +1551,8 @@
 }
 ],
 "ans": "BD",
-"status": "Équipe Atlas",
-"src": "Cours : DIAPO-PDF-Définition-statut-des-médicaments p.11",
+"status": "Cours",
+"src": "Cours : 4-Définition et statut des médicaments (dénominations)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Définitions, statut et description des médicaments",
@@ -1562,7 +1562,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -1775,9 +1775,9 @@
 }
 ],
 "ans": "ADE",
-"status": "Incertaine (équipe)",
-"src": "Cours : 1 - Cibles et mécanismes d_action des médicaments diapo prof",
-"note": "E suppose que le principe actif active aussi les récepteurs D2 : comme il s'y fixe à plus faible concentration, des effets D2 apparaîtront avant les effets 5HT2. Proposition jugée vraie, à relire.",
+"status": "Cours",
+"src": "Cours : 1.2-Caractérisation des PA et de leurs cibles (exemple de l'halopéridol : D2 4 nM, 5-HT2 36 nM, H1 2 µM)",
+"note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
 "ocr": false,
@@ -1786,7 +1786,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -1887,9 +1887,9 @@
 }
 ],
 "ans": "AB",
-"status": "Incertaine (équipe)",
-"src": "Cours : 1 - Cibles et mécanismes d_action des médicaments diapo prof",
-"note": "D : les effets sur l'ADN apparaissent plutôt en jours (division cellulaire) ; proposition jugée fausse, à relire avec le tableau des cinétiques.",
+"status": "Cours",
+"src": "Cours : 1.2-Caractérisation des PA et de leurs cibles (agents alkylants : liaison covalente, effets sur plusieurs jours)",
+"note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Cibles et mécanismes d’action des médicaments",
 "ocr": false,
@@ -1898,7 +1898,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -5646,8 +5646,8 @@
 {
 "l": "B",
 "t": "comprennent les anses intestinales",
-"v": false,
-"ex": "Les niveaux de replis sont les plis circulaires, les villosités et les microvillosités."
+"v": true,
+"ex": "Le cours compte les anses intestinales parmi les niveaux de replis."
 },
 {
 "l": "C",
@@ -5659,7 +5659,7 @@
 "l": "D",
 "t": "accélèrent le transit",
 "v": false,
-"ex": "Ils n'accélèrent pas le transit."
+"ex": "Les plis circulaires ralentissent le chyme : ils n'accélèrent pas le transit."
 },
 {
 "l": "E",
@@ -5668,10 +5668,10 @@
 "ex": "En augmentant la surface, ils facilitent l'absorption."
 }
 ],
-"ans": "ACE",
+"ans": "ABCE",
 "status": "Incertaine (équipe)",
-"src": "Cours : 3-système digestif",
-"note": "B : les anses intestinales ne sont en général pas citées comme un niveau de repli de la paroi (plis circulaires, villosités, microvillosités). À relire avec le cours.",
+"src": "Cours : Physiologie digestive PASS 2021-2022",
+"note": "Le cours liste 4 niveaux de replis : anses intestinales, plis circulaires (qui ralentissent le chyme), villosités, microvillosités. La géométrie fractale n'a pas été retrouvée dans le texte du cours.",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -6005,8 +6005,8 @@
 }
 ],
 "ans": "ABC",
-"status": "Équipe Atlas",
-"src": "Cours : 2. Pharmacodynamie",
+"status": "Cours",
+"src": "Cours : 1.2-Caractérisation des PA et de leurs cibles",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
@@ -6016,7 +6016,7 @@
 "sk": "s2-2022",
 "sl": "Session 2 · juillet 2022",
 "gl": "Session 2 · juillet 2022",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lashb"
 ]
@@ -6789,9 +6789,9 @@
 }
 ],
 "ans": "ADE",
-"status": "Incertaine (équipe)",
-"src": "",
-"note": "Liste classique des organes annexes : dents, langue, glandes salivaires, foie, vésicule biliaire, pancréas. À relire avec la liste du cours (la langue n'y figure pas toujours).",
+"status": "Cours",
+"src": "Cours : 3-système digestif (Bouche et organes associés : langue, dents, glandes salivaires)",
+"note": "",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -6800,7 +6800,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -6896,14 +6896,14 @@
 {
 "l": "E",
 "t": "ont générés par le \"pace maker\" gastrique",
-"v": false,
-"ex": "Ils dépendent du système nerveux entérique et de la motiline, pas du pacemaker gastrique."
+"v": true,
+"ex": "Le cours : le CMM naît au niveau du pacemaker gastrique et se propage jusqu'à la valvule iléo-cæcale."
 }
 ],
-"ans": "ACD",
-"status": "Incertaine (équipe)",
-"src": "Cours : PASS_UE3_Physio_Hum_Digestion p.28 ; 3- Le système digestif (partie 2)",
-"note": "E : les CMM sont sous contrôle entérique et hormonal (motiline) ; le pacemaker gastrique génère les ondes lentes. Proposition jugée fausse, à relire.",
+"ans": "ACDE",
+"status": "Cours",
+"src": "Cours : 3-système digestif (Pr Mahéo) ; Physiologie digestive PASS 2021-2022",
+"note": "",
 "mat": "Physiologie",
 "ch": "Physio Digestive",
 "ocr": false,
@@ -6912,7 +6912,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -7276,8 +7276,8 @@
 {
 "l": "C",
 "t": "la glycolyse anaérobie lactique a une faible capacité",
-"v": false,
-"ex": "La glycolyse anaérobie a une capacité intermédiaire, supérieure aux systèmes immédiats."
+"v": true,
+"ex": "Le tableau du cours classe la capacité de la glycolyse anaérobie lactique comme faible (≈ 495 kJ)."
 },
 {
 "l": "D",
@@ -7292,10 +7292,10 @@
 "ex": "La lipolyse aérobie a la plus grande capacité."
 }
 ],
-"ans": "ABDE",
-"status": "Incertaine (équipe)",
-"src": "Cours : LAS hors bio_PLANTIER_Bioénergétique p.22",
-"note": "La capacité de la glycolyse anaérobie est classée intermédiaire : C jugée fausse, à relire avec le tableau du cours (même point que la session 2 de 2022).",
+"ans": "ABCDE",
+"status": "Cours",
+"src": "Cours : 1-Bioénergétique (Pr Plantier), tableau des formes de stockage de l'énergie",
+"note": "",
 "mat": "Physiologie",
 "ch": "Bioénergétique",
 "ocr": false,
@@ -7304,7 +7304,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -7741,9 +7741,9 @@
 }
 ],
 "ans": "ABC",
-"status": "Incertaine (équipe)",
-"src": "Cours : 2. Pharmacodynamie",
-"note": "DE50 (in vivo) et CE50 (in vitro) : la DE50 s'emploie pour une réponse graduelle comme pour une réponse quantale. À relire avec le cours.",
+"status": "Cours",
+"src": "Cours : 1.2-Caractérisation des PA et de leurs cibles",
+"note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
 "ocr": false,
@@ -7752,7 +7752,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -7853,8 +7853,8 @@
 }
 ],
 "ans": "CE",
-"status": "Équipe Atlas",
-"src": "Cours : 1 - Cibles et mécanismes d_action des médicaments diapo prof",
+"status": "Cours",
+"src": "Cours : 1.2-Caractérisation des PA et de leurs cibles",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Caractérisation des principes actifs et de leurs cibles",
@@ -7864,7 +7864,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -8357,9 +8357,9 @@
 }
 ],
 "ans": "ABC",
-"status": "Incertaine (équipe)",
-"src": "Cours : DIAPO-PDF-Définition-statut-des-médicaments p.13 ; 1. définition et statut des médicaments (partie 4)",
-"note": "C : la préparation hospitalière est faite par la PUI et dispensée sur prescription d'un médecin de l'établissement. Proposition jugée vraie, à relire.",
+"status": "Cours",
+"src": "Cours : 4-Définition et statut des médicaments (préparation hospitalière)",
+"note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Définitions, statut et description des médicaments",
 "ocr": false,
@@ -8368,7 +8368,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
@@ -8413,9 +8413,9 @@
 }
 ],
 "ans": "D",
-"status": "Incertaine (équipe)",
+"status": "À vérifier",
 "src": "Cours : INTROF_4 ; 5-Introduction aux formes pharmaceutiques",
-"note": "Le cours rattache l'aérosol à la voie aérienne (nasale et pulmonaire) ; les autres formes servent à plusieurs voies. À relire.",
+"note": "D'après le cours, comprimé, capsule molle, pommade et émulsion servent à plusieurs voies ; l'aérosol est la seule réponse possible, mais la partie du cours sur la voie pulmonaire n'a pas pu être relue.",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
 "ocr": false,
@@ -8526,7 +8526,7 @@
 ],
 "ans": "ABC",
 "status": "Cours",
-"src": "Cours : INTROF_4 p.15-26",
+"src": "Cours : 5-Introduction aux formes pharmaceutiques (implants : voie sous-cutanée)",
 "note": "",
 "mat": "Initiation aux médicaments",
 "ch": "Introduction aux formes pharmaceutiques",
@@ -9000,14 +9000,14 @@
 {
 "l": "A",
 "t": "Ondes mécaniques",
-"v": true,
-"ex": "Les ondes mécaniques font partie des techniques autorisées."
+"v": false,
+"ex": "Les ondes mécaniques sont une technique (article R4321-7), pas un traitement listé à l'article R4321-5."
 },
 {
 "l": "B",
 "t": "Rééducation vestibulaire",
 "v": true,
-"ex": "La rééducation vestibulaire (troubles de l'équilibre) fait partie des actes de rééducation."
+"ex": "L'article R4321-5 cite la rééducation des troubles de l'équilibre (vestibulaire)."
 },
 {
 "l": "C",
@@ -9019,19 +9019,19 @@
 "l": "D",
 "t": "Rééducation des lésions osseuses",
 "v": true,
-"ex": "La rééducation des affections de l'appareil locomoteur (dont les lésions osseuses) est un acte du kinésithérapeute."
+"ex": "L'article cite la rééducation des affections traumatiques ou non de l'appareil locomoteur, dont les lésions osseuses."
 },
 {
 "l": "E",
 "t": "Pressothérapie",
-"v": true,
-"ex": "La pressothérapie fait partie des techniques autorisées."
+"v": false,
+"ex": "La pressothérapie est une technique (article R4321-7), pas un traitement listé à l'article R4321-5."
 }
 ],
-"ans": "ABDE",
+"ans": "BD",
 "status": "Incertaine (équipe)",
-"src": "Cours : 1.kinesitherapeute p.23",
-"note": "Les ondes mécaniques et la pressothérapie sont des techniques autorisées au kinésithérapeute ; leur rattachement exact à l'article R4321-5 (ou R4321-7) est à relire. Les troubles des apprentissages relèvent de l'orthophonie.",
+"src": "Article R4321-5 du code de la santé publique",
+"note": "L'article R4321-5 liste des traitements de rééducation (dont les troubles de l'équilibre et les affections de l'appareil locomoteur) ; les ondes mécaniques et la pressothérapie sont des techniques citées à un autre article (R4321-7). D (lésions osseuses) rattachée à l'appareil locomoteur, à relire.",
 "mat": "Découverte des métiers",
 "ch": "Kinésithérapie",
 "ocr": false,
@@ -9085,8 +9085,8 @@
 }
 ],
 "ans": "B",
-"status": "Équipe Atlas",
-"src": "",
+"status": "Cours",
+"src": "Cours : présentation du métier de kinésithérapeute (les 11 compétences)",
 "note": "",
 "mat": "Découverte des métiers",
 "ch": "Kinésithérapie",
@@ -9096,7 +9096,7 @@
 "sk": "s2-2026",
 "sl": "Session 2 · 2026",
 "gl": "Session 2 · 2026",
-"exSrc": "equipe",
+"exSrc": "cours",
 "par": [
 "lasbio"
 ]
