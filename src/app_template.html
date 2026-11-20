@@ -506,6 +506,9 @@ textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .annonce .row button{border-radius:999px}
 .annonce .go{background:var(--accent-ink);border-color:var(--accent-ink);color:var(--accent);font-weight:700}
 .annonce .ok{background:transparent;border:1.5px solid currentColor;color:inherit}
+@media (max-width:600px){.annonce.mini{padding:12px 14px;margin-bottom:10px}.annonce.mini .nb{margin-bottom:4px}.annonce.mini h3{font-size:1.02rem;margin-bottom:0;cursor:pointer}
+.annonce.mini h3::after{content:"";display:inline-block;width:.5em;height:.5em;margin-left:.45em;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-.2em);transition:transform .15s}
+.annonce.mini.open h3::after{transform:rotate(-135deg)}.annonce.mini.open h3{margin-bottom:6px}.annonce.mini:not(.open) p,.annonce.mini:not(.open) .row{display:none}.annonce.mini .x{top:4px;right:4px}}
 .annonce .x{position:absolute;top:10px;right:10px;border:0;background:transparent;font-size:1.5rem;line-height:1;color:inherit;opacity:.8;padding:4px 8px}
 .stars{display:flex;gap:4px}.stars button{border:0;background:transparent;font-size:1.6rem;line-height:1;padding:2px;color:var(--line)}.stars button[aria-pressed="true"]{color:#f2b33d}
 .suivi{display:flex;flex-direction:column;gap:10px;margin-top:10px}.suivi .si{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:14px}
@@ -785,7 +788,7 @@ function vAnnales(el){
     body=G.map((g,gi)=>{const all=g.all||g.mods.flatMap(m=>m.qs),st=statOf(all),key='s|'+g.k,op=fA.open===key,multi=g.mods.length>1;
       const sub=multi?g.mods.length+(state.parcours==='pass'?' modules':' matières'):'';
       return `<div class="acc-i ${op?'open':''}" id="s-${g.k}"><button class="acc-h" data-acc="${key}" aria-expanded="${op}"><span><b>${esc(g.l.replace('Déc.','Décembre'))}${NEWSK.includes(g.k)?'<span class="tombe" title="Annale ajoutée récemment">Nouveau</span>':''}</b><small>${st.t} questions${sub?' · '+sub:''}${g.note&&state.parcours!=='pass'?' · '+esc(g.note):''}</small></span>${pr(st)}<span class="chev">${IC.chev}</span></button>
-       ${op?`<div class="acc-b"><div class="top"><button class="primary sm" data-all="${g.k}">${multi?'Toute l\'annale':'Faire le sujet'}</button><button class="ghost sm" data-list="${g.k}">${fA.list===g.k?'Masquer les questions':'Voir les questions'}</button></div>
+       ${op?`<div class="acc-b">${g.warn&&state.parcours==='lasbio'?'<div class="warnbox" style="margin:0 0 14px">Pour '+g.y+', il n\'existe pas de sujet officiel L.AS bio : ce sont les questions du sujet PASS des matières communes, d\'où le nombre important de questions en découverte des métiers. Le jour du concours, il n\'y en aura pas autant.</div>':''}<div class="top"><button class="primary sm" data-all="${g.k}">${multi?'Toute l\'annale':'Faire le sujet'}</button><button class="ghost sm" data-list="${g.k}">${fA.list===g.k?'Masquer les questions':'Voir les questions'}</button></div>
         ${multi?`<div class="rows">${g.mods.map((m,mi)=>row(`data-run="${g.k}|${mi}"`,m.bonus?'Bonus métiers (hors sujet L.AS)':m.md,statOf(m.qs),m.bonus?'bon':'')).join('')}</div>`:''}
         ${fA.list===g.k?`<div class="qlist">${all.map((q,i)=>qrowHTML(q,g.num?i+1:0)).join('')}</div>`:''}</div>`:''}</div>`}).join('');
   }else{
@@ -796,7 +799,6 @@ function vAnnales(el){
   }
   el.innerHTML=`<div class="head toolbar"><div><h2>Annales</h2><p class="sub">Les sujets complets, pour t'entraîner comme le jour de l'examen.</p></div><button class="ghost sbtn" id="sT">${IC.search}Rechercher</button></div>
    <div class="search" id="sbox" ${fA.q||fA.sopen?'':'hidden'}><input id="srch" type="search" placeholder="Un mot de l'énoncé, ex. aldostérone" value="${esc(fA.q||'')}" aria-label="Rechercher"><div class="res" id="sres"></div></div>
-   ${state.parcours==='lasbio'&&by==='sess'?'<div class="warnbox">Pour les annales 2020 et 2021, les sujets officiels ne sont pas disponibles. Comme les questions sont communes aux PASS et aux L.AS, ce sont les annales de PASS qui ont été reprises, d\'où le nombre important de questions en découverte des métiers. Mais pas d\'inquiétude, le jour du concours, il n\'y en aura pas autant.</div>':''}
    <div class="acc">${body}</div>`;
   const doSearch=()=>{const box=$('#sres'),t=nrm(fA.q||'').trim();if(t.length<3){box.innerHTML='';return}
     const toks=t.split(/\s+/),hits=QQ.filter(q=>toks.every(w=>q._s.includes(w))).sort(byOrder);

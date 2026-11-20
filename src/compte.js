@@ -537,7 +537,7 @@ function annonceS2(el){
   return true}
 
 /* ---------- bannière « Nouveau » sur l'accueil (jusqu'à ce qu'elle soit fermée) ---------- */
-function homeExtra(el){if(state.seen.tombe1){if(!state.seen.s2a)annonceS2(el);return}
+function homeExtra0(el){if(state.seen.tombe1){if(!state.seen.s2a)annonceS2(el);return}
   const liste=Q.filter(q=>inP(q)&&!q.annul&&tombe(q)),n=liste.length;if(!n){if(!state.seen.s2a)annonceS2(el);return}
   const nb=q=>+((tombe(q).match(/(\d+)×/)||[0,0])[1]);
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
@@ -550,6 +550,14 @@ function homeExtra(el){if(state.seen.tombe1){if(!state.seen.s2a)annonceS2(el);re
   d.querySelector('#anX').onclick=ok;d.querySelector('#anOk').onclick=ok;
   d.querySelector('#anGo').onclick=()=>{state.seen.tombe1=Date.now();persist();startRunNow(liste.sort((a,b)=>nb(b)-nb(a)),'annales','Questions retombées')};
   if(!state.seen.s2a)annonceS2(el)}
+
+/* annonces de l'accueil : sur téléphone, repliées sur leur titre (toucher le titre pour lire) */
+function homeExtra(el){homeExtra0(el);
+  if(!matchMedia('(max-width:600px)').matches)return;
+  el.querySelectorAll('.annonce').forEach(a=>{a.classList.add('mini');const h=a.querySelector('h3');if(!h)return;
+    h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
+    const t=()=>{const o=a.classList.toggle('open');h.setAttribute('aria-expanded',o)};
+    h.onclick=t;h.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}}})}
 
 /* ---------- temps passé sur les questions ----------
    Compté par tranches de 15 s, seulement quand une question est à l'écran, la page visible,
