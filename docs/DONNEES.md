@@ -128,3 +128,7 @@ Lots 1 à 40 : les 785 questions affichées en scan avant la relecture. Lots mar
 - Nouvelles matières (L.AS bio 2022) : « Philosophie des sciences », « Données d'évidence ».
 - Les scans du sujet bio 2022 et les photos du sujet 2026 portent les croix d'un étudiant : ils ne sont pas publiés. Seules les pages de chimie du sujet hors-bio (scan propre) sont dans `public/pages/hb2022s2-*.jpg`.
 - Questions « Incertaine (équipe) » : à relire avec le cours (liste dans le PDF de relecture).
+
+## 20 novembre 2026 — calculs de pH (Biophysique)
+- 2023-M2-56 (acide pyruvique) et HB-2023-36 (acide salicylique) : réponse passée de C (pH = −log C) à B (pH = ½(pKa − log C)), comme le cours 2.ph p.35-38 (acide faible, 10⁻⁵ < [H+] < 10⁻² M). L'ancienne correction utilisait un critère (pH ≤ pKa − 1) absent du cours, et ses explications se contredisaient. Note ajoutée : le calcul exact donne ≈ 4, mais le cours attend la formule de l'acide faible.
+- Relecture des 60 questions de Biophysique : pas d'autre erreur de réponse ; explication C de 2020-M2-24 reformulée.
