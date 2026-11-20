@@ -519,7 +519,7 @@ function vAvis(el){
     AV.msg='';AV.note=0;lsSet('atlas-annonce-v2-'+AUTH.uid,1);toast('Merci ! Ton message est envoyé');render();loadSuivi()};
   drawSuivi();loadSuivi()}
 
-/* ---------- annonce : sessions 2 ajoutées (prioritaire, une seule bannière à la fois) ---------- */
+/* ---------- annonce : sessions 2 ajoutées (affichée au-dessus de celle des questions qui retombent) ---------- */
 function annonceS2(el){
   const ks=state.parcours==='lashb'?['s2-2022']:state.parcours==='lasbio'?['s2-2026','s2-2022']:[];
   const G=SG().filter(g=>ks.includes(g.k));if(!G.length)return false;
@@ -537,8 +537,8 @@ function annonceS2(el){
   return true}
 
 /* ---------- bannière « Nouveau » sur l'accueil (jusqu'à ce qu'elle soit fermée) ---------- */
-function homeExtra(el){if(!state.seen.s2a&&annonceS2(el))return;if(state.seen.tombe1)return;
-  const liste=Q.filter(q=>inP(q)&&!q.annul&&tombe(q)),n=liste.length;if(!n)return;
+function homeExtra(el){if(state.seen.tombe1){if(!state.seen.s2a)annonceS2(el);return}
+  const liste=Q.filter(q=>inP(q)&&!q.annul&&tombe(q)),n=liste.length;if(!n){if(!state.seen.s2a)annonceS2(el);return}
   const nb=q=>+((tombe(q).match(/(\d+)×/)||[0,0])[1]);
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
   d.innerHTML=`<span class="nb">Nouveau</span><h3>Repère les questions qui retombent</h3>
@@ -548,7 +548,8 @@ function homeExtra(el){if(!state.seen.s2a&&annonceS2(el))return;if(state.seen.to
   el.prepend(d);
   const ok=()=>{state.seen.tombe1=Date.now();persist();render()};
   d.querySelector('#anX').onclick=ok;d.querySelector('#anOk').onclick=ok;
-  d.querySelector('#anGo').onclick=()=>{state.seen.tombe1=Date.now();persist();startRunNow(liste.sort((a,b)=>nb(b)-nb(a)),'annales','Questions retombées')}}
+  d.querySelector('#anGo').onclick=()=>{state.seen.tombe1=Date.now();persist();startRunNow(liste.sort((a,b)=>nb(b)-nb(a)),'annales','Questions retombées')};
+  if(!state.seen.s2a)annonceS2(el)}
 
 /* ---------- temps passé sur les questions ----------
    Compté par tranches de 15 s, seulement quand une question est à l'écran, la page visible,
