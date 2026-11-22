@@ -363,20 +363,21 @@ async function loadReports(){const box=$('#reps');if(!box)return;
   if(!$('#reps'))return;
   if(error){box.innerHTML='<small>Signalements injoignables pour le moment.</small>';return}
   const fin=r=>r.status==='corrige'||r.status==='pas_erreur',L=(data||[]).sort((a,b)=>fin(a)-fin(b)),open=L.filter(r=>!fin(r)).length;
-  $('#repN').textContent=open?open+' à traiter':'Rien à traiter';
-  box.innerHTML=L.length?L.map(r=>{const q=BYID[r.question_id];return `<div class="rp si${fin(r)?' done':''}"><span class="top"><span><b>${esc(q?qRef(q):r.question_id)}</b>${q?' · '+esc(q.mat):''}</span>${chipSt(RST,r.status)}</span>
+  const one=r=>{const q=BYID[r.question_id];return `<div class="rp si${fin(r)?' done':''}"><span class="top"><span><b>${esc(q?qRef(q):r.question_id)}</b>${q?' · '+esc(q.mat):''}</span>${chipSt(RST,r.status)}</span>
     <span>${esc(r.message)}</span><small>${fmtD(r.created_at)}</small>
-    ${q?`<div class="row"><button class="sm" data-see="${esc(r.question_id)}">Voir et corriger la question</button></div>`:''}${admBox('r',r,RST)}</div>`}).join(''):'<small>Aucun signalement pour l\'instant.</small>';
-  box.classList.add('suivi');
+    ${q?`<div class="row"><button class="sm" data-see="${esc(r.question_id)}">Voir et corriger la question</button></div>`:''}${admBox('r',r,RST)}</div>`};
+  box.innerHTML=L.length?splitDone(L,fin,one,'r-done','Aucun signalement à traiter.'):'<small>Aucun signalement pour l\'instant.</small>';
+  box.classList.add('suivi');wireOpen(box);secBadge('repN',open,open?open+' à traiter':(L.length?'tout est traité':''));
   box.querySelectorAll('[data-see]').forEach(b=>b.onclick=()=>showQuestion(b.dataset.see));wireAdm(box,loadReports)}
 async function loadFeedbackAdmin(){const box=$('#avs');if(!box)return;
   const {data,error}=await sb.from('feedback').select('id,kind,note,message,created_at,status,reponse').order('created_at',{ascending:false}).limit(300);
   if(!$('#avs'))return;
   if(error){box.innerHTML='<small>Avis injoignables pour le moment (le fichier supabase/v2.sql a-t-il été lancé ?).</small>';return}
   const fin=r=>r.status==='fait'||r.status==='pas_retenu',L=(data||[]).sort((a,b)=>fin(a)-fin(b)),open=L.filter(r=>r.status==='nouveau').length;
-  $('#avN').textContent=open?open+' nouveau'+(open>1?'x':''):'Rien de nouveau';
-  box.innerHTML=L.length?L.map(r=>`<div class="si${fin(r)?' done':''}"><span class="top"><span><b>${KIND[r.kind]||'Avis'}</b>${r.note?' · '+'★'.repeat(r.note):''}</span>${chipSt(FST,r.status)}</span>
-    <span>${esc(r.message)}</span><small>${fmtD(r.created_at)}</small>${admBox('f',r,FST)}</div>`).join(''):'<small>Aucun avis pour l\'instant.</small>';
+  const one=r=>`<div class="si${fin(r)?' done':''}"><span class="top"><span><b>${KIND[r.kind]||'Avis'}</b>${r.note?' · '+'★'.repeat(r.note):''}</span>${chipSt(FST,r.status)}</span>
+    <span>${esc(r.message)}</span><small>${fmtD(r.created_at)}</small>${admBox('f',r,FST)}</div>`;
+  box.innerHTML=L.length?splitDone(L,fin,one,'f-done','Aucun avis à traiter.'):'<small>Aucun avis pour l\'instant.</small>';
+  wireOpen(box);secBadge('avN',open,open?open+' nouveau'+(open>1?'x':''):(L.length?'rien de nouveau':''));
   wireAdm(box,loadFeedbackAdmin)}
 
 /* ---------- Statistiques du projet (admins) : uniquement des totaux anonymes (fonction project_stats) ---------- */
@@ -401,7 +402,14 @@ async function loadProjectStats(){const box=$('#pst');if(!box)return;
    <p class="muted" style="margin:12px 0 0">Chiffres anonymes : ${n(d.partagent)} élève${d.partagent>1?'s':''} partage${d.partagent>1?'nt':''} ses statistiques. Le temps est compté depuis le 8 novembre 2026, seulement quand une question est à l'écran.</p>`}
 
 /* ---------- onglet Membres (administrateurs) ---------- */
-const MV={list:null,err:'',q:'',prev:null};
+const MV={list:null,err:'',q:'',prev:null,open:new Set()};
+// Rubrique repliable (menu déroulant) : l'état ouvert/fermé est gardé quand la page se redessine
+const sec=(id,title,body,badge)=>`<details class="panel msec" data-open="${id}"${MV.open.has(id)?' open':''}><summary><h3>${title}</h3>${badge?`<span class="chip plain sbadge" id="${badge}" hidden></span>`:''}<span class="chev" aria-hidden="true"></span></summary><div class="msec-b">${body}</div></details>`;
+function wireOpen(root){root.querySelectorAll('details[data-open]').forEach(d=>{if(d._w)return;d._w=1;d.ontoggle=()=>{d.open?MV.open.add(d.dataset.open):MV.open.delete(d.dataset.open)}})}
+function secBadge(id,hot,txt){const b=$('#'+id);if(!b)return;b.textContent=txt;b.hidden=!txt;b.classList.toggle('hot',!!hot)}
+// À traiter en premier ; les éléments déjà traités sont repliés à part
+function splitDone(L,fin,one,key,none){const a=L.filter(r=>!fin(r)),d=L.filter(fin);
+  return (a.length?a.map(one).join(''):`<small>${none}</small>`)+(d.length?`<details class="mdone" data-open="${key}"${MV.open.has(key)?' open':''}><summary>Déjà traités (${d.length})</summary><div class="suivi">${d.map(one).join('')}</div></details>`:'')}
 async function loadMembers(){const {data,error}=await sb.from('members').select('email,role,note,added_at').order('email');if(error)throw error;MV.list=data||[]}
 // Colle une colonne d'e-mails ou un CSV : on garde ce qui ressemble à une adresse, en minuscules, sans doublon.
 function parseEmails(raw,existing){
@@ -421,9 +429,16 @@ function vMembres(el){
   el.innerHTML=`<div class="head"><div><h2>Membres</h2><p class="muted" style="margin:0">${MV.list.length} adresse${MV.list.length>1?'s':''} sur la liste · ${na} admin${na>1?'s':''}</p></div></div>
   <div class="stack" style="max-width:860px">
    ${MV.err?`<div class="notice bad"><b>${esc(MV.err)}</b></div>`:''}
-   <div class="panel"><h3>Stats du projet</h3><div id="pst"><small>Chargement…</small></div></div>
-   <div class="panel"><h3 style="margin-bottom:6px">Ajouter depuis un tableur</h3>
-    <p class="muted" style="margin:0 0 12px">Colle une colonne d'e-mails ou un CSV. Les adresses sont mises en minuscules, sans espaces ni doublons. Aucun e-mail n'est envoyé : préviens les membres toi-même.</p>
+   ${sec('avis','Avis et idées',`<div class="suivi" id="avs"><small>Chargement…</small></div>`,'avN')}
+   ${sec('reps','Signalements',`<p class="muted" style="margin:0">Choisis un statut et réponds : la personne voit ta réponse dans son onglet Avis. Pour changer la correction, ouvre la question puis « Modifier la correction ».</p>
+    <div class="reports" id="reps"><small>Chargement…</small></div>`,'repN')}
+   ${sec('liste','Liste des membres',`<div class="row"><input type="search" id="mQ" placeholder="Chercher une adresse ou une note" aria-label="Chercher un membre" value="${esc(MV.q)}" style="flex:1 1 280px"></div>
+    ${MV.list.length?`<div class="mlist">${MV.list.map(m=>{const me=m.email===AUTH.email;return `<div class="mrow" data-s="${esc(m.email+' '+(m.note||'').toLowerCase())}">
+      <span class="me">${esc(m.email)}${m.role==='admin'?' <span class="chip plain" style="background:var(--navy-soft);color:var(--navy)">admin</span>':''}${me?' <span class="chip plain">toi</span>':''}<small>ajouté le ${m.added_at?new Date(m.added_at).toLocaleDateString('fr-FR'):'?'}</small></span>
+      <input type="text" data-note="${esc(m.email)}" value="${esc(m.note||'')}" placeholder="Note" aria-label="Note pour ${esc(m.email)}" autocomplete="off">
+      ${me?'<span></span>':`<div class="macts"><button class="sm ghost" data-role="${esc(m.email)}" data-to="${m.role==='admin'?'member':'admin'}">${m.role==='admin'?'Retirer admin':'Rendre admin'}</button><button class="sm ghost" data-del="${esc(m.email)}" style="color:var(--bad)">Retirer</button></div>`}</div>`}).join('')}</div>
+      <p class="muted" id="mNone" style="margin:10px 0 0" hidden>Aucune adresse ne correspond.</p>`:'<p class="muted" style="margin:10px 0 0">Personne sur la liste.</p>'}`,'mlN')}
+   ${sec('ajout','Ajouter des membres',`<p class="muted" style="margin:0 0 12px">Colle une colonne d'e-mails ou un CSV. Les adresses sont mises en minuscules, sans espaces ni doublons. Aucun e-mail n'est envoyé : préviens les membres toi-même.</p>
     ${P?`<div class="stack" style="gap:10px">
       <p style="margin:0"><b>${P.neu.length} nouvelle${P.neu.length>1?'s':''} adresse${P.neu.length>1?'s':''}</b>${P.have.length?` · ${P.have.length} déjà sur la liste`:''}${P.dup?` · ${P.dup} doublon${P.dup>1?'s':''} retiré${P.dup>1?'s':''}`:''}${P.skipped?` · ${P.skipped} ligne${P.skipped>1?'s':''} sans adresse ignorée${P.skipped>1?'s':''}`:''}${P.note?` · note « ${esc(P.note)} »`:''}</p>
       ${P.bad.length?`<div class="notice bad"><b>${P.bad.length} adresse${P.bad.length>1?'s':''} invalide${P.bad.length>1?'s':''}, non ajoutée${P.bad.length>1?'s':''} :</b> ${P.bad.map(esc).join(', ')}</div>`:''}
@@ -431,19 +446,10 @@ function vMembres(el){
       <div class="row"><button class="primary" id="mOk" ${P.neu.length?'':'disabled'}>Ajouter ${P.neu.length} membre${P.neu.length>1?'s':''}</button><button id="mBack">Modifier</button><span class="muted" id="mRes" role="status"></span></div></div>`
     :`<div class="stack mimp" style="gap:10px"><div class="field"><label for="mAdd">Adresses e-mail</label><textarea id="mAdd" rows="6" autocapitalize="off" spellcheck="false" placeholder="prenom.nom@exemple.fr">${esc(MV.raw||'')}</textarea></div>
       <div class="field" style="max-width:260px"><label for="mNote">Note pour toutes (facultatif)</label><input type="text" id="mNote" placeholder="ex. 2026-2027" value="${esc(MV.note||'')}" autocomplete="off"></div>
-      <div class="row"><button class="primary" id="mCheck">Voir l'aperçu</button><span class="muted" id="mRes" role="status"></span></div></div>`}
-   </div>
-   <div class="panel"><div class="row" style="justify-content:space-between"><h3>Signalements</h3><span class="muted" id="repN"></span></div>
-    <p class="muted" style="margin:6px 0 0">Choisis un statut et réponds : la personne voit ta réponse dans son onglet Avis. Pour changer la correction, ouvre la question puis « Modifier la correction ».</p>
-    <div class="reports" id="reps"><small>Chargement…</small></div></div>
-   <div class="panel"><div class="row" style="justify-content:space-between"><h3>Avis et idées</h3><span class="muted" id="avN"></span></div><div class="suivi" id="avs"><small>Chargement…</small></div></div>
-   <div class="panel"><div class="row" style="justify-content:space-between"><h3>Liste</h3><input type="search" id="mQ" placeholder="Chercher une adresse ou une note" aria-label="Chercher un membre" value="${esc(MV.q)}" style="flex:0 1 280px"></div>
-    ${MV.list.length?`<div class="mlist">${MV.list.map(m=>{const me=m.email===AUTH.email;return `<div class="mrow" data-s="${esc(m.email+' '+(m.note||'').toLowerCase())}">
-      <span class="me">${esc(m.email)}${m.role==='admin'?' <span class="chip plain" style="background:var(--navy-soft);color:var(--navy)">admin</span>':''}${me?' <span class="chip plain">toi</span>':''}<small>ajouté le ${m.added_at?new Date(m.added_at).toLocaleDateString('fr-FR'):'?'}</small></span>
-      <input type="text" data-note="${esc(m.email)}" value="${esc(m.note||'')}" placeholder="Note" aria-label="Note pour ${esc(m.email)}" autocomplete="off">
-      ${me?'<span></span>':`<div class="macts"><button class="sm ghost" data-role="${esc(m.email)}" data-to="${m.role==='admin'?'member':'admin'}">${m.role==='admin'?'Retirer admin':'Rendre admin'}</button><button class="sm ghost" data-del="${esc(m.email)}" style="color:var(--bad)">Retirer</button></div>`}</div>`}).join('')}</div>
-      <p class="muted" id="mNone" style="margin:10px 0 0" hidden>Aucune adresse ne correspond.</p>`:'<p class="muted" style="margin:10px 0 0">Personne sur la liste.</p>'}
-   </div></div>`;
+      <div class="row"><button class="primary" id="mCheck">Voir l'aperçu</button><span class="muted" id="mRes" role="status"></span></div></div>`}`)}
+   ${sec('stats','Stats du projet',`<div id="pst"><small>Chargement…</small></div>`)}
+  </div>`;
+  wireOpen(el);secBadge('mlN',0,MV.list.length+' adresse'+(MV.list.length>1?'s':''));
   loadReports();loadFeedbackAdmin();loadProjectStats();
   const qi=$('#mQ'),filt=()=>{const q=normEmail(qi.value);MV.q=qi.value;let n=0;el.querySelectorAll('.mrow').forEach(r=>{const h=!!q&&!r.dataset.s.includes(q);r.hidden=h;if(!h)n++});const z=$('#mNone');if(z)z.hidden=!!n||!MV.list.length};
   qi.oninput=filt;filt();
@@ -473,7 +479,7 @@ function vMembres(el){
     b.disabled=true;const {error}=await sb.from('members').delete().eq('email',b.dataset.del);
     if(error){toast('Le retrait a échoué');b.disabled=false;return}
     MV.list=MV.list.filter(x=>x.email!==b.dataset.del);b.closest('.mrow').remove();
-    const h=el.querySelector('.head p');if(h)h.textContent=h.textContent.replace(/^\d+ adresses?/,n=>{const k=MV.list.length;return k+' adresse'+(k>1?'s':'')});toast('Retiré de la liste')}});
+    const h=el.querySelector('.head p');if(h)h.textContent=h.textContent.replace(/^\d+ adresses?/,n=>{const k=MV.list.length;return k+' adresse'+(k>1?'s':'')});secBadge('mlN',0,MV.list.length+' adresse'+(MV.list.length>1?'s':''));toast('Retiré de la liste')}});
 }
 
 /* ---------- onglet Avis : donner son avis, suivre ses signalements et avis ---------- */
