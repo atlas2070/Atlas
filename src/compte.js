@@ -551,8 +551,24 @@ function homeExtra0(el){if(state.seen.tombe1){if(!state.seen.s2a)annonceS2(el);r
   d.querySelector('#anGo').onclick=()=>{state.seen.tombe1=Date.now();persist();startRunNow(liste.sort((a,b)=>nb(b)-nb(a)),'annales','Questions retombées')};
   if(!state.seen.s2a)annonceS2(el)}
 
+/* ---------- annonce : sujet PASS décembre 2025 ajouté (parcours PASS) ---------- */
+function annonceP25(el){
+  const G=SG().find(g=>g.k==='dec2025');if(!G)return false;
+  const n=(G.all||G.mods.flatMap(m=>m.qs)).length;
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>Le sujet de décembre 2025 est disponible</h3>
+    <p>Le sujet PASS de décembre 2025 est en ligne : <b>${n} questions</b> (M1, M2 et M4) corrigées par l'équipe à partir du cours. Quelques corrections portent l'étiquette <span class="ex">Incertaine</span> : si tu as le passage du cours qui tranche, signale-le depuis la question.</p>
+    <div class="row"><button class="sm go" id="p25Go">Voir le sujet 2025</button><button class="sm ok" id="p25Ok">J'ai compris</button></div>
+    <button class="x" id="p25X" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  const ok=()=>{state.seen.p25=Date.now();persist();render()};
+  d.querySelector('#p25X').onclick=ok;d.querySelector('#p25Ok').onclick=ok;
+  d.querySelector('#p25Go').onclick=()=>{state.seen.p25=Date.now();persist();fA.open='s|dec2025';fA.focus='s-dec2025';go('annales')};
+  return true}
+
 /* annonces de l'accueil : sur téléphone, repliées sur leur titre (toucher le titre pour lire) */
 function homeExtra(el){homeExtra0(el);
+  if(state.parcours==='pass'&&!state.seen.p25)annonceP25(el);
   if(!matchMedia('(max-width:600px)').matches)return;
   el.querySelectorAll('.annonce').forEach(a=>{a.classList.add('mini');const h=a.querySelector('h3');if(!h)return;
     h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
