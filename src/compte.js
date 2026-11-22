@@ -557,7 +557,7 @@ function annonceP25(el){
   const n=(G.all||G.mods.flatMap(m=>m.qs)).length;
   const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
   d.innerHTML=`<span class="nb">Nouveau</span><h3>Le sujet de décembre 2025 est disponible</h3>
-    <p>Le sujet PASS de décembre 2025 est en ligne : <b>${n} questions</b> (M1, M2 et M4) corrigées par l'équipe à partir du cours. Quelques corrections portent l'étiquette <span class="ex">Incertaine</span> : si tu as le passage du cours qui tranche, signale-le depuis la question.</p>
+    <p>Le sujet PASS de décembre 2025 est en ligne : <b>${n} questions</b> (M1, M2 et M4) corrigées par l'équipe à partir du cours. Si un passage du cours contredit une correction, signale-le depuis la question.</p>
     <div class="row"><button class="sm go" id="p25Go">Voir le sujet 2025</button><button class="sm ok" id="p25Ok">J'ai compris</button></div>
     <button class="x" id="p25X" aria-label="Fermer">×</button>`;
   el.prepend(d);

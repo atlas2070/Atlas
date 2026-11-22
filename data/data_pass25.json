@@ -2336,9 +2336,9 @@
    }
   ],
   "ans": "AD",
-  "status": "Incertaine (équipe)",
+  "status": "Équipe Atlas",
   "src": "Cours : 1-Hemodynamique 2020 (les systèmes, précharge, loi de Starling)",
-  "note": "D : le cours dit que la contraction dépend du volume de remplissage (Starling), mais ne parle pas mot pour mot de « distensibilité » augmentée. Réponse retenue comme pour 2022-M1-38, pas sûre.",
+  "note": "D : même enseignant et même lecture qu'en 2022-M1-38 (« le volume de la précharge conditionne la distensibilité cardiaque »).",
   "mat": "Biophysique (BAME)",
   "ch": "Hémodynamique",
   "exSrc": "cours",
@@ -4170,17 +4170,17 @@
    {
     "l": "E",
     "t": "Le traitement de F par 1) H<sub>2</sub>SO<sub>4</sub> dilué ; 2) CrO<sub>3</sub>, pyridine ; 3) CF<sub>3</sub>COOOH, H<sup>+</sup> conduit à un ester.",
-    "v": false,
-    "ex": "L'hydratation acide de F passe par un carbocation qui se réarrange en tertiaire : l'alcool tertiaire n'est pas oxydé par CrO3/pyridine, donc pas de cétone ni d'ester (Baeyer-Villiger)."
+    "v": true,
+    "ex": "Hydratation selon Markovnikov (3-méthylbutan-2-ol), oxydation de l'alcool secondaire en cétone, puis Baeyer-Villiger (peracide) : on obtient un ester."
    }
   ],
-  "ans": "ACD",
-  "status": "Incertaine (équipe)",
-  "src": "",
-  "note": "E : réponse « faux » si on tient compte du réarrangement du carbocation (transposition d'hydrure vers le carbocation tertiaire). Sans réarrangement, on obtiendrait une cétone puis un ester. Pas sûr de ce que le cours attend.",
+  "ans": "ACDE",
+  "status": "Cours",
+  "src": "Cours : 2 - Alcènes (hydratation en milieu acide, règle de Markovnikov)",
+  "note": "Le cours ne traite pas les réarrangements de carbocation dans l'hydratation des alcènes : on applique Markovnikov, comme pour A.",
   "mat": "Chimie organique",
   "ch": "7. Alcènes",
-  "exSrc": "equipe",
+  "exSrc": "cours",
   "ocr": false,
   "ok": true,
   "manual": true,
@@ -4415,12 +4415,12 @@
    }
   ],
   "ans": "ABE",
-  "status": "Incertaine (équipe)",
-  "src": "",
-  "note": "B : l'alcène de G n'est pas conjugué au cycle ; la proposition est vraie seulement en comptant les formes mésomères du noyau benzénique. Pas sûr de l'intention du sujet.",
+  "status": "Cours",
+  "src": "Cours : Effet mésomère (liaisons conjuguées ; aryle donneur +M)",
+  "note": "B : l'alcène de G n'est pas conjugué au cycle, mais le noyau benzénique (liaisons conjuguées) a bien des formes mésomères.",
   "mat": "Chimie organique",
   "ch": "13. Aldéhydes et cétones",
-  "exSrc": "equipe",
+  "exSrc": "cours",
   "ocr": false,
   "ok": true,
   "manual": true,
@@ -5781,12 +5781,12 @@
    }
   ],
   "ans": "BC",
-  "status": "Incertaine (équipe)",
-  "src": "",
-  "note": "Question à réponse unique, mais B et C sont toutes les deux exactes. La question a peut-être été annulée ou acceptée avec deux réponses.",
+  "status": "Cours",
+  "src": "Cours : 1-Les lipides (nomenclature ω ; voie malonique à partir de l’acétyl-CoA ; température de fusion)",
+  "note": "Question à réponse unique, mais le cours rend B et C exactes toutes les deux (ω = dernier carbone ; acétyl-CoA précurseur des acides gras). La question a sans doute été annulée ou acceptée avec deux réponses.",
   "mat": "Biochimie",
   "ch": "Lipides",
-  "exSrc": "equipe",
+  "exSrc": "cours",
   "ocr": false,
   "ok": true,
   "manual": true,
@@ -6903,12 +6903,12 @@
    }
   ],
   "ans": "ADE",
-  "status": "Incertaine (équipe)",
-  "src": "",
-  "note": "A : la valeur 0,1 g.s⁻¹ est sûre ; le signe dépend de la convention d'écriture de la loi de Fick dans le cours.",
+  "status": "Cours",
+  "src": "Cours : 3-Propriétés cinétiques 2024 (1re loi de Fick, coefficient de réflexion σ)",
+  "note": "A : dans le cours, J = −D.S.ΔC/Δx, le signe moins traduisant « l'appauvrissement du milieu concentré » : −0,1 g.s⁻¹ vu du compartiment 1.",
   "mat": "Biophysique (BMI)",
   "ch": "Propriétés cinétiques des solutions",
-  "exSrc": "equipe",
+  "exSrc": "cours",
   "ocr": false,
   "ok": true,
   "manual": true,
@@ -8295,7 +8295,7 @@
     "l": "A",
     "t": "Elles doivent être uniquement manipulées par des spécialistes de l’informatique",
     "v": false,
-    "ex": "Les données massives de santé sont exploitées par des profils variés (cliniciens, chercheurs, statisticiens), pas seulement par des informaticiens."
+    "ex": "Le cours insiste sur un trépied de compétences (médecine, statistiques, informatique) : pas seulement des informaticiens."
    },
    {
     "l": "B",
@@ -8306,14 +8306,14 @@
    {
     "l": "C",
     "t": "Elles servent à la gestion des bases de données",
-    "v": true,
-    "ex": "Les données massives sont stockées et gérées dans des bases et entrepôts de données."
+    "v": false,
+    "ex": "Par définition, les données massives sont trop volumineuses pour être traitées par les outils classiques de gestion de bases de données : elles ne « servent » pas à gérer des bases de données."
    },
    {
     "l": "D",
     "t": "Elles suivent la règle des 8V",
     "v": false,
-    "ex": "Le big data repose sur 3V (volume, variété, vélocité) et non sur 8V."
+    "ex": "Le cours décrit la règle des 5V (volume, variété, vélocité, véracité, valeur), pas 8V."
    },
    {
     "l": "E",
@@ -8322,10 +8322,10 @@
     "ex": "Ces données sont hétérogènes, multi-domaines et multi-échelles."
    }
   ],
-  "ans": "BCE",
-  "status": "Incertaine (équipe)",
-  "src": "Cours : 5-Big data en santé p.19 ; 5-Big data en santé p.21",
-  "note": "Le cours dit que les données massives dépassent les outils classiques de gestion de bases de données : C est ambiguë.",
+  "ans": "BE",
+  "status": "Cours",
+  "src": "Cours : 5-Big data en santé (définition, règle des 5V, entrepôts de données, conclusion)",
+  "note": "Réponse revue en novembre 2026 avec le cours 2025-2026 (définition des données massives, règle des 5V).",
   "mat": "Santé publique",
   "ch": "Big data en santé",
   "exSrc": "cours",
@@ -8962,37 +8962,37 @@
     "l": "A",
     "t": "A l’échelle des pays, il existe une corrélation directe entre augmentation des dépenses de santé et amélioration de la santé des populations",
     "v": false,
-    "ex": "Pas de corrélation directe : certains pays dépensent beaucoup avec des résultats moyens."
+    "ex": "Le cours montre un lien global entre dépenses et espérance de vie, mais pas direct : les dépenses augmentent alors que l'espérance de vie plafonne, et les États-Unis dépensent plus que la France pour une moins bonne santé."
    },
    {
     "l": "B",
     "t": "A l’échelle des individus, le niveau de revenus est directement lié à un meilleur état de santé",
-    "v": true,
-    "ex": "Il existe un gradient social de santé : plus le revenu est élevé, meilleur est l'état de santé."
+    "v": false,
+    "ex": "Le revenu est le premier facteur des inégalités sociales de santé, mais le cours précise qu'un revenu élevé ne suffit pas : il agit à travers d'autres déterminants (travail, habitudes de vie). Le lien n'est pas direct."
    },
    {
     "l": "C",
     "t": "Il existe une forte adéquation entre la mortalité évitable par la prévention et les dépenses de prévention",
     "v": false,
-    "ex": "La prévention représente une faible part des dépenses alors que la mortalité évitable par la prévention est importante."
+    "ex": "Inadéquation : environ ¾ de la mortalité évitable relève de la prévention, qui ne représente que 2 à 3 % des dépenses."
    },
    {
     "l": "D",
     "t": "Les dépenses liées aux consommations de soins et biens médicaux constituent la majorité des dépenses de consommation totale de soin",
     "v": true,
-    "ex": "La consommation de soins et de biens médicaux est la plus grande part de la dépense de santé."
+    "ex": "La CSBM représente environ ¾ (77 %) de la consommation médicale totale."
    },
    {
     "l": "E",
     "t": "A l’échelle d’un pays, la bonne santé des individus contribue au développement économique d’un pays et inversement",
     "v": true,
-    "ex": "Santé et développement économique s'influencent dans les deux sens."
+    "ex": "Le cours décrit un cercle vertueux : une population en bonne santé produit des richesses, et la croissance améliore la santé."
    }
   ],
-  "ans": "BDE",
-  "status": "Incertaine (équipe)",
-  "src": "Cours : 6-Inégalités sociales de santé (gradient social, revenu)",
-  "note": "A, C, D et E relèvent du cours d'économie de la santé, que l'équipe n'a pas pu relire : réponse par connaissances générales.",
+  "ans": "DE",
+  "status": "Cours",
+  "src": "Cours : Économie de la santé 2025-2026 (richesse et santé, DCS, CSBM, mortalité évitable)",
+  "note": "Revue avec le cours 2025-2026 : A et B sont fausses à cause du mot « direct ».",
   "mat": "Santé publique",
   "ch": "Économie de la santé",
   "exSrc": "cours",
@@ -9021,19 +9021,19 @@
     "l": "A",
     "t": "Le processus décrit dans l’extrait correspond au processus de gentrification",
     "v": true,
-    "ex": "Hausse des prix immobiliers et départ des habitants modestes vers la périphérie : c'est la gentrification."
+    "ex": "Hausse des prix et départ des habitants modestes vers la périphérie, plus exposée aux pollutions : c'est la gentrification décrite dans le cours."
    },
    {
     "l": "B",
     "t": "Le processus décrit dans l’extrait illustre la loi inverse du soin",
     "v": false,
-    "ex": "La loi inverse des soins concerne l'offre de soins médicaux (moins de soins là où les besoins sont les plus grands), pas l'urbanisme."
+    "ex": "Loi inverse des soins : la disponibilité de soins médicaux de qualité varie à l'inverse des besoins. L'extrait ne parle pas de soins médicaux."
    },
    {
     "l": "C",
     "t": "Le processus décrit dans l’extrait illustre le principe d’équité inverse",
-    "v": true,
-    "ex": "Une amélioration collective (verdissement) profite d'abord aux plus favorisés et creuse les écarts : principe d'équité inverse."
+    "v": false,
+    "ex": "L'hypothèse de l'équité inverse concerne les nouvelles interventions sanitaires (vaccination, dépistage), adoptées d'abord par les plus favorisés. L'extrait décrit un déplacement des populations modestes (gentrification), pas l'adoption d'une intervention sanitaire."
    },
    {
     "l": "D",
@@ -9048,10 +9048,10 @@
     "ex": "Les inégalités « par omission » sont produites par le système de soins ; l'extrait ne parle pas du système de soins."
    }
   ],
-  "ans": "ACD",
-  "status": "Incertaine (équipe)",
-  "src": "Cours : 6-Inégalités sociales de santé (déterminants, inégalités par omission)",
-  "note": "B et C : notions absentes des supports de cours dont dispose l'équipe ; réponse la plus probable.",
+  "ans": "AD",
+  "status": "Cours",
+  "src": "Cours : Inégalités de santé 2025-2026 (gradient social et gentrification ; loi inverse des soins ; hypothèse de l’équité inverse ; inégalités par omission)",
+  "note": "Revue avec le cours 2025-2026. C reste la proposition la plus discutable : réponse « faux » d'après la définition du cours.",
   "mat": "Santé publique",
   "ch": "Inégalités de santé",
   "exSrc": "cours",

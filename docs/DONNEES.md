@@ -137,5 +137,8 @@ Lots 1 à 40 : les 785 questions affichées en scan avant la relecture. Lots mar
 - `data/data_pass25.json` : 171 questions du sujet PASS du 12 décembre 2025 (M1 : 55, M2 : 60, M4 : 56), identifiants `2025-M1-n`, `2025-M2-n`, `2025-M4-n`, session `dec2025`. Pages scannées : `public/pages/2025-NN.jpg` (NN = page du PDF ; `2025-14` = annexe de la Q33 du M1, mise sur une page portrait).
 - 59 questions étaient déjà dans le sujet L.AS bio 2025 (`LAS25-n`) : leur correction est reprise telle quelle (champ `dup` = identifiant L.AS), avec `par: ['pass']` pour qu'un élève L.AS bio ne les voie pas en double. Une correction modifiée d'un côté doit l'être aussi de l'autre.
 - Les 112 autres sont corrigées par l'équipe : chimie et calculs refaits pas à pas (structures relues sur le scan agrandi), cours relus quand ils étaient disponibles (`src`), sinon statut « Équipe Atlas », « Hors cours » ou « Incertaine ».
-- À relire en priorité (statut « Incertaine ») : 2025-M1-38 (D), 2025-M2-13 (E, réarrangement du carbocation), 2025-M2-17 (B, mésomérie du noyau), 2025-M2-40 (QRU avec deux propositions exactes, B et C), 2025-M2-59 (signe du débit de Fick), 2025-M4-34 et 2025-M4-35 (notions du cours 2025-2026 absentes des supports de l'équipe).
+- Relecture des 8 questions douteuses (22 novembre 2026, avec les cours 2025-2026 quand ils existaient) :
+  - 2025-M4-34 : DE (et non BDE) ; 2025-M4-35 : AD (et non ACD) ; 2025-M4-23 = LAS25-54 : BE (et non BCE) ;
+  - 2025-M2-13 : ACDE (le cours n'aborde pas le réarrangement du carbocation dans l'hydratation) ;
+  - confirmées : 2025-M1-38 (AD), 2025-M2-17 (ABE), 2025-M2-59 (ADE, signe de Fick comme dans le cours), 2025-M2-40 (B et C exactes selon le cours, question à réponse unique probablement annulée).
 - Appli : `dec2025` ajouté à `NEWSK` (pastille « Nouveau »).
