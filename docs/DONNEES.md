@@ -132,3 +132,10 @@ Lots 1 à 40 : les 785 questions affichées en scan avant la relecture. Lots mar
 ## 20 novembre 2026 — calculs de pH (Biophysique)
 - 2023-M2-56 (acide pyruvique) et HB-2023-36 (acide salicylique) : réponse passée de C (pH = −log C) à B (pH = ½(pKa − log C)), comme le cours 2.ph p.35-38 (acide faible, 10⁻⁵ < [H+] < 10⁻² M). L'ancienne correction utilisait un critère (pH ≤ pKa − 1) absent du cours, et ses explications se contredisaient. Note ajoutée : le calcul exact donne ≈ 4, mais le cours attend la formule de l'acide faible.
 - Relecture des 60 questions de Biophysique : pas d'autre erreur de réponse ; explication C de 2020-M2-24 reformulée.
+
+## Décembre 2025 — sujet PASS (novembre 2026)
+- `data/data_pass25.json` : 171 questions du sujet PASS du 12 décembre 2025 (M1 : 55, M2 : 60, M4 : 56), identifiants `2025-M1-n`, `2025-M2-n`, `2025-M4-n`, session `dec2025`. Pages scannées : `public/pages/2025-NN.jpg` (NN = page du PDF ; `2025-14` = annexe de la Q33 du M1, mise sur une page portrait).
+- 59 questions étaient déjà dans le sujet L.AS bio 2025 (`LAS25-n`) : leur correction est reprise telle quelle (champ `dup` = identifiant L.AS), avec `par: ['pass']` pour qu'un élève L.AS bio ne les voie pas en double. Une correction modifiée d'un côté doit l'être aussi de l'autre.
+- Les 112 autres sont corrigées par l'équipe : chimie et calculs refaits pas à pas (structures relues sur le scan agrandi), cours relus quand ils étaient disponibles (`src`), sinon statut « Équipe Atlas », « Hors cours » ou « Incertaine ».
+- À relire en priorité (statut « Incertaine ») : 2025-M1-38 (D), 2025-M2-13 (E, réarrangement du carbocation), 2025-M2-17 (B, mésomérie du noyau), 2025-M2-40 (QRU avec deux propositions exactes, B et C), 2025-M2-59 (signe du débit de Fick), 2025-M4-34 et 2025-M4-35 (notions du cours 2025-2026 absentes des supports de l'équipe).
+- Appli : `dec2025` ajouté à `NEWSK` (pastille « Nouveau »).

@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import retombes  # questions qui retombent d'une année à l'autre (recalculées si les questions changent)
 D = lambda *p: os.path.join(ROOT, *p)
-FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json', 'data_s2.json']
+FILES = ['data_S1.json', 'data_m2_23.json', 'data_new.json', 'data_las25.json', 'data_s2.json', 'data_pass25.json']
 qs = []
 for f in FILES:
     qs += json.load(open(D('data', f), encoding='utf-8'))

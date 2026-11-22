@@ -637,7 +637,7 @@ const Q=JSON.parse(document.getElementById('data').textContent);
 const BYID=Object.fromEntries(Q.map(q=>[q.id,q]));
 const LASBIO=['Physiologie','Initiation aux médicaments','Santé publique','Découverte des métiers','Philosophie des sciences','Données d\'évidence'];
 const isS2=k=>String(k).startsWith('s2-'),skY=k=>+String(k).slice(-4);
-const NEWSK=['s2-2022','s2-2026']; // annales récemment ajoutées : pastille « Nouveau » dans l'onglet Annales
+const NEWSK=['s2-2022','s2-2026','dec2025']; // annales récemment ajoutées : pastille « Nouveau » dans l'onglet Annales
 const PARCOURS=[
  {id:'pass',nom:'PASS',long:'PASS majeure santé',ok:true},
  {id:'lasbio',nom:'L.AS bio',long:'L.AS bio',ok:true},
