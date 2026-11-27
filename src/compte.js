@@ -572,9 +572,28 @@ function annonceP25(el){
   d.querySelector('#p25Go').onclick=()=>{state.seen.p25=Date.now();persist();fA.open='s|dec2025';fA.focus='s-dec2025';go('annales')};
   return true}
 
+/* ---------- annonce : sujets L.AS ajoutés (hors-bio déc. 2025, bio déc. 2021) ---------- */
+function annonceLAS(el){
+  const hb=state.parcours==='lashb',k=hb?'dec2025':'dec2021';
+  const G=SG().find(g=>g.k===k);if(!G)return false;
+  const n=(G.all||G.mods.flatMap(m=>m.qs)).length;
+  const txt=hb?`Le sujet L.AS hors-bio de décembre 2025 est en ligne : <b>${n} questions</b> corrigées par l'équipe à partir du cours.`
+    :`Le vrai sujet L.AS bio de décembre 2021 remplace la version reconstituée à partir du sujet PASS : <b>${n} questions</b>, dont 5 nouvelles (médicaments, philosophie des sciences, données d'évidence).`;
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>${hb?'Le sujet de décembre 2025 est disponible':'Le sujet officiel de décembre 2021 est là'}</h3>
+    <p>${txt} Quelques corrections portent l'étiquette <span class="ex">Incertaine</span> : si tu as le passage du cours qui tranche, signale-le depuis la question.</p>
+    <div class="row"><button class="sm go" id="lasGo">Voir le sujet</button><button class="sm ok" id="lasOk">J'ai compris</button></div>
+    <button class="x" id="lasX" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  const ok=()=>{state.seen['las1'+state.parcours]=Date.now();persist();render()};
+  d.querySelector('#lasX').onclick=ok;d.querySelector('#lasOk').onclick=ok;
+  d.querySelector('#lasGo').onclick=()=>{state.seen['las1'+state.parcours]=Date.now();persist();fA.open='s|'+k;fA.focus='s-'+k;go('annales')};
+  return true}
+
 /* annonces de l'accueil : sur téléphone, repliées sur leur titre (toucher le titre pour lire) */
 function homeExtra(el){homeExtra0(el);
   if(state.parcours==='pass'&&!state.seen.p25)annonceP25(el);
+  if(state.parcours!=='pass'&&!state.seen['las1'+state.parcours])annonceLAS(el);
   if(!matchMedia('(max-width:600px)').matches)return;
   el.querySelectorAll('.annonce').forEach(a=>{a.classList.add('mini');const h=a.querySelector('h3');if(!h)return;
     h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
