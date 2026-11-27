@@ -898,12 +898,13 @@ function vCours(el){
 }
 function vErreurs(el){
   const err=done().filter(k=>state.ans[k].s<1).map(k=>BYID[k]).sort((a,b)=>cmp(a.mat,b.mat)||b.y-a.y||a.q-b.q);
-  const due=dueQs(),soon=soonQs(),fav=favQs();
+  const due=dueQs(),soon=soonQs(),fav=favQs(),rt=retombQs(),rtKo=rt.filter(q=>state.ans[q.id]&&state.ans[q.id].s<1).length;
   el.innerHTML=`<div class="head"><div><h2>Révisions</h2></div></div>
   <div class="revgrid">
    <div class="panel revcard"><span class="lbl">À revoir aujourd'hui</span><b class="big">${due.length}</b><p>Une question ratée revient après 1, 3 puis 7 jours.${soon?' '+soon+' à venir.':''}</p><div class="row"><button class="primary" id="dGo" ${due.length?'':'disabled'}>Réviser</button></div></div>
    <div class="panel revcard"><span class="lbl">Questions favorites</span><b class="big">${fav.length}</b><p>Ajoute une question avec l'étoile pendant une série.</p><div class="row"><button class="primary" id="fGo" ${fav.length?'':'disabled'}>Refaire</button><button id="fPdf" ${fav.length?'':'disabled'}>PDF</button></div></div>
    <div class="panel revcard"><span class="lbl">Carnet d'erreurs</span><b class="big">${err.length}</b><p>Elles sortent dès que tu les réussis.</p><div class="row"><button class="primary" id="rGo" ${err.length?'':'disabled'}>Refaire</button><button id="pdf" ${err.length?'':'disabled'}>PDF</button></div></div>
+   <div class="panel revcard"><span class="lbl">Questions qui retombent</span><b class="big">${rt.length}</b><p>Elles sont tombées au moins deux années. Les plus fréquentes d'abord.${rtKo?' Tu en as raté '+rtKo+'.':''}</p><div class="row"><button class="primary" id="tGo" ${rt.length?'':'disabled'}>Réviser</button><button id="tPdf" ${rt.length?'':'disabled'}>PDF</button></div></div>
   </div>
   ${fav.length?`<section class="section"><div class="sh"><h2>Questions favorites</h2></div><div class="qlist" id="favl">${fav.map(q=>qrowHTML(q)).join('')}</div></section>`:''}
   <section class="section"><div class="sh"><h2>Carnet d'erreurs</h2></div>
@@ -911,6 +912,7 @@ function vErreurs(el){
   ${err.map(q=>`<tr data-id="${q.id}"><td class="num">${esc(sess(q))} ${q.mod} Q${q.q}</td><td>${esc(q.mat)}<br><span class="muted" style="font-size:.84rem">${esc(q.ch)}</span></td><td class="num">${state.ans[q.id].sel||'aucune'}</td><td class="num">${q.ans}</td><td class="num"><span class="score ${sCls(state.ans[q.id].s)}">${fr(state.ans[q.id].s)}</span></td></tr>`).join('')}</tbody></table></div></div>`
   :'<div class="empty"><b>Ton carnet est vide</b>Les questions ratées apparaîtront ici.</div>'}</section>`;
   if(due.length)$('#dGo').onclick=()=>startRun(due,'erreurs','À revoir aujourd\'hui');
+  if(rt.length){$('#tGo').onclick=()=>startRun(rt,'erreurs','Questions qui retombent');$('#tPdf').onclick=()=>exportPDF(rt,'Questions qui retombent','questions-qui-retombent.pdf')}
   if(fav.length){$('#fGo').onclick=()=>startRun(fav,'erreurs','Questions favorites');$('#fPdf').onclick=()=>exportPDF(fav,'Questions favorites','questions-favorites.pdf');
     el.querySelectorAll('#favl .qrow').forEach(b=>b.onclick=()=>startRun(fav,'erreurs','Questions favorites',fav.findIndex(q=>q.id===b.dataset.id)))}
   if(err.length){$('#rGo').onclick=()=>startRun(err,'erreurs','Carnet d\'erreurs');$('#pdf').onclick=()=>exportPDF(err,'Carnet d\'erreurs','carnet-erreurs.pdf');
@@ -945,6 +947,7 @@ function matTreeHTML(){const L=chapAll(),M=[...new Set(L.map(c=>c.mat))].sort(ma
     ${on.map(c=>`<button class="mtc lv" data-ck="${esc(c.mat+'|'+c.ch)}"><span class="mtt">${esc(c.ch)}<small>${c.n} / ${c.qs.length} faites · ${Math.round(c.r*100)} %</small>${segHTML(c)}</span>${tagHTML(c)}<span class="go">›</span></button>`).join('')}
     ${off.length?`<div class="mto">Pas encore commencé</div>${off.map(c=>`<button class="mtc" data-ck="${esc(c.mat+'|'+c.ch)}"><span class="dot n"></span><span class="mtt">${esc(c.ch)}<small>${c.qs.length} questions</small></span><span class="mtv muted">–</span><span class="go">›</span></button>`).join('')}`:''}</details>`}).join('')}<p class="muted lvleg">Découvert : moins de 50 % · Fragile : 50 à 70 % · Solide : 70 % et plus · Maîtrisé : au moins 80 % sur deux jours différents. À confirmer : moins de 5 questions faites.</p></div>`}
 function v2Bind(el){if($('#fxGo'))$('#fxGo').onclick=()=>{const L=chapAll(),T=L.filter(c=>c.n>=5&&c.r<.85).sort((a,b)=>b.p-a.p).slice(0,3);startRun(T.flatMap(c=>weakList(c).slice(0,10)),'stats','À revoir en priorité')}}
+function retombQs(){const nb=q=>+((tombe(q).match(/(\d+)×/)||[0,0])[1]);return QP().filter(q=>!q.annul&&tombe(q)).sort((a,b)=>nb(b)-nb(a)||b.y-a.y)}
 function weakList(c){const r=q=>state.ans[q.id];return [...c.qs.filter(q=>r(q)&&r(q).s<1).sort((a,b)=>r(a).s-r(b).s),...c.qs.filter(q=>!r(q))]}
 function vStats(el){
   const d=done(),QQ=QP(),m=moy(d),full=d.filter(k=>state.ans[k].s===1).length;
