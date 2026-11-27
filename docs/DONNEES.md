@@ -34,8 +34,8 @@ Toutes les réponses sont faites par l'équipe Atlas, à partir du cours ou, qua
 
 ## Sujets par parcours
 - PASS : toutes les sessions de décembre 2020 à 2024.
-- `lass.json` : `[{y, ids, bonus, note}]` sujets officiels L.AS bio (2022 à 2025). Pour 2020-2021 il n'y a pas de sujet L.AS officiel : ce sont les questions PASS des matières communes (message d'explication affiché sur la page Annales).
-- `hb.json` : `{année: [ids]}` sujets L.AS hors-bio 2021 à 2024 (mélange de questions PASS et de questions `HB-…`).
+- `lass.json` : `[{y, ids, bonus, note}]` sujets officiels L.AS bio (2021 à 2025). Pour 2020 il n'y a pas de sujet L.AS officiel : ce sont les questions PASS des matières communes (message d'explication affiché sur la page Annales).
+- `hb.json` : `{année: [ids]}` sujets L.AS hors-bio 2021 à 2025 (mélange de questions PASS et de questions `HB-…`).
 
 ## Historique utile
 - Novembre 2026 : toutes les réponses ont été refaites à l'aveugle (sans regarder une autre correction), en plusieurs passes, puis comparées et tranchées avec le cours. Les questions où le doute reste sont en « Incertaine (équipe) ».
@@ -142,3 +142,12 @@ Lots 1 à 40 : les 785 questions affichées en scan avant la relecture. Lots mar
   - 2025-M2-13 : ACDE (le cours n'aborde pas le réarrangement du carbocation dans l'hydratation) ;
   - confirmées : 2025-M1-38 (AD), 2025-M2-17 (ABE), 2025-M2-59 (ADE, signe de Fick comme dans le cours), 2025-M2-40 (B et C exactes selon le cours, question à réponse unique probablement annulée).
 - Appli : `dec2025` ajouté à `NEWSK` (pastille « Nouveau »).
+
+## 27 novembre 2026 — L.AS hors-bio décembre 2025 et L.AS bio décembre 2021
+- `data/data_ajout_2611.json` : 49 nouvelles questions, corrigées par l'équipe (cours du Drive quand il a été retrouvé, sinon « Équipe Atlas » ou « Incertaine »). Aucune correction extérieure utilisée (la copie reçue portait les croix d'un étudiant : elles ont été ignorées et le scan n'est pas publié).
+- **L.AS hors-bio, 12 décembre 2025** (`hb.json`, clé `2025`, 61 Q) : Q1 à Q17 = questions du sujet PASS déjà dans Atlas (`2025-M4-n`, correction reprise). Q18 à Q61 = `HB-2025-n` (`par: ['lashb']`, session `dec2025`).
+  - Figures Q40 et Q42 : `public/pages/hb2025-40.jpg` et `hb2025-42.jpg`, scan nettoyé des annotations (titre retapé). Q42 : F, G et H sont des chaînes ouvertes (le côté gauche n'est pas fermé sur le sujet).
+  - Retombées reprises après vérification : Q41 (= HB-2024-30), Q58 (= HB-2024-54), Q59 (= HB-2023-51), Q55 (= HB-2024-52, propositions dans un autre ordre). Q24 ressemble à HB-2022-18 mais la proposition A change (NADH,H+) : réponse AD.
+  - Incertaines : Q20 (E, cellules tumorales, hors cours), Q25 (E), Q39 (le sujet écrit « éthylène C2H2 »).
+- **L.AS bio, 11 décembre 2021** (`lass.json`, entrée `y: 2021`, 55 Q) : 50 questions identiques au sujet PASS 2021 (ids `2021-M1-n` / `2021-M4-n`). 5 nouvelles : `LAS21-40`, `LAS21-41`, `LAS21-53` à `LAS21-55` (`par: ['lasbio']`). Le message « pas de sujet officiel L.AS » ne s'affiche plus pour 2021.
+  - Incertaines : LAS21-41 (QCS, C ou D), LAS21-53 et LAS21-54 (philosophie des sciences, cours non retrouvé).

@@ -1,6 +1,6 @@
 # Atlas — consignes pour Claude Code
 
-Site d'annales du S1 (première année santé, Tours) pour l'association (le nom n'est pas affiché : `ORG_NAME` dans `src/config.js`, vide par défaut). Trois parcours : PASS, L.AS bio, L.AS hors-bio. 1 428 questions corrigées (dont 171 du PASS décembre 2025), classées par session, matière et chapitre.
+Site d'annales du S1 (première année santé, Tours) pour l'association (le nom n'est pas affiché : `ORG_NAME` dans `src/config.js`, vide par défaut). Trois parcours : PASS, L.AS bio, L.AS hors-bio. 1 477 questions corrigées (dont 171 du PASS décembre 2025, 44 du L.AS hors-bio décembre 2025 et 5 du L.AS bio décembre 2021), classées par session, matière et chapitre.
 
 ## Structure
 - `src/app_template.html` : l'appli (CSS + JS). Les marqueurs `__DATA__`, `__LASS__`, `__HB__`, `__RT__` sont remplacés au build.

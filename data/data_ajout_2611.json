@@ -1,0 +1,2717 @@
+[
+{
+"id": "HB-2025-18",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 18,
+"type": "QRM",
+"stem": "Les molécules de la vie :",
+"items": [
+{
+"l": "A",
+"t": "les nucléotides représentent les éléments de base des acides nucléiques comme l'ADN ;",
+"v": true,
+"ex": "Les nucléotides sont les monomères des acides nucléiques (ADN, ARN)."
+},
+{
+"l": "B",
+"t": "une glycoprotéine est constituée d'acides aminés et de sucres ;",
+"v": true,
+"ex": "Une glycoprotéine est une protéine (acides aminés) portant des chaînes de sucres."
+},
+{
+"l": "C",
+"t": "les polysaccharides sont des polymères de cholestérol ;",
+"v": false,
+"ex": "Les polysaccharides sont des polymères d'oses, pas de cholestérol (un lipide)."
+},
+{
+"l": "D",
+"t": "les acides gras correspondent à une catégorie d'acides aminés dit « hydrophobes » ;",
+"v": false,
+"ex": "Les acides gras sont des lipides, pas des acides aminés."
+},
+{
+"l": "E",
+"t": "l'ARN peut constituer le matériel génétique d'un virus.",
+"v": true,
+"ex": "Certains virus ont un génome à ARN (ex. grippe, VIH)."
+}
+],
+"ans": "ABE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Biologie cellulaire",
+"ch": "1. Introduction",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-19",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 19,
+"type": "QRU",
+"stem": "A propos de la membrane plasmique :",
+"items": [
+{
+"l": "A",
+"t": "les protéines périphériques traversent complètement la bicouche lipidique ;",
+"v": false,
+"ex": "Les protéines périphériques ne traversent jamais la membrane : elles sont liées de façon non covalente à des protéines transmembranaires."
+},
+{
+"l": "B",
+"t": "le modèle de Singer et Nicholson exclut toute mobilité protéique ;",
+"v": false,
+"ex": "Le modèle de la mosaïque fluide décrit au contraire des protéines mobiles dans la bicouche."
+},
+{
+"l": "C",
+"t": "les acides gras insaturés rendent la membrane plus rigide ;",
+"v": false,
+"ex": "Les insaturations créent des coudes qui écartent les chaînes : la membrane est plus fluide."
+},
+{
+"l": "D",
+"t": "le phénomène de flip-flop est plus fréquent que la diffusion latérale ;",
+"v": false,
+"ex": "Le flip-flop (passage d'un feuillet à l'autre) est rare ; la diffusion latérale est très fréquente."
+},
+{
+"l": "E",
+"t": "le ganglioside GM1 est un glycolipide complexe.",
+"v": true,
+"ex": "Le cours cite le ganglioside GM1 comme exemple de glycolipide complexe (plusieurs sucres dont l'acide sialique)."
+}
+],
+"ans": "E",
+"status": "Cours",
+"src": "Cours : 2.composition membranaire 1 (diapo « Glycolipide complexe Ganglioside GM1 » ; ronéo Blanchard 2023)",
+"note": "",
+"mat": "Biologie cellulaire",
+"ch": "2. Membranes biologiques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-20",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 20,
+"type": "QRM",
+"stem": "Le cell coat :",
+"items": [
+{
+"l": "A",
+"t": "est composé de glycoprotéines, glycolipides et protéoglycanes ;",
+"v": true,
+"ex": "Le cell coat est formé des sucres portés par les glycoprotéines, les glycolipides et les protéoglycanes."
+},
+{
+"l": "B",
+"t": "a une épaisseur variable selon le type cellulaire ;",
+"v": true,
+"ex": "Il est peu abondant sur l'hématie et très épais sur l'entérocyte (jusqu'à 200 nm)."
+},
+{
+"l": "C",
+"t": "attire massivement les cations cellulaires ;",
+"v": true,
+"ex": "Ses charges négatives (acide sialique, sulfates) en font un « piège à cations » (K+, Na+, Ca2+, Mg2+)."
+},
+{
+"l": "D",
+"t": "diminue la viscosité cellulaire ;",
+"v": false,
+"ex": "Les sucres attirent l'eau : le cell coat crée une surface visqueuse, il ne diminue pas la viscosité."
+},
+{
+"l": "E",
+"t": "est plus développé sur les cellules tumorales que sur les cellules physiologiques.",
+"v": true,
+"ex": "Non traité dans le cours. Les cellules tumorales ont en général un glycocalyx plus abondant (glycosylation et sialylation augmentées) : réponse la plus probable."
+}
+],
+"ans": "ABCE",
+"status": "Incertaine (équipe)",
+"src": "Cours : 2.composition membranaire 1 (diapo et ronéo Blanchard 2023, partie « Le cell-coat membranaire »)",
+"note": "A, B, C et D tranchés par le cours ; E non traitée dans le cours (connaissances générales), d'où le statut incertain.",
+"mat": "Biologie cellulaire",
+"ch": "2. Membranes biologiques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-21",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 21,
+"type": "QRU",
+"stem": "A propos du cycle cellulaire, en cas de dommages sur l'ADN :",
+"items": [
+{
+"l": "A",
+"t": "la protéine p53 bloque la cellule en phase G1 ;",
+"v": true,
+"ex": "p53 s'accumule et induit p21, qui bloque les complexes cycline-CDK : arrêt en G1 pour réparer l'ADN."
+},
+{
+"l": "B",
+"t": "la protéine Rb libère le facteur de transcription E2F ;",
+"v": false,
+"ex": "Rb reste non phosphorylée et garde E2F séquestré : la cellule ne passe pas en phase S."
+},
+{
+"l": "C",
+"t": "la concentration de la protéine Myc augmente ;",
+"v": false,
+"ex": "Myc est un facteur pro-prolifératif, il n'augmente pas en réponse aux dommages de l'ADN."
+},
+{
+"l": "D",
+"t": "l'activité de l'ADN polymérase est amplifiée d'un facteur 100 ;",
+"v": false,
+"ex": "Aucune amplification de ce type : la réplication est au contraire retardée."
+},
+{
+"l": "E",
+"t": "le facteur promoteur de la mitose (MPF) déclenche la machinerie mitotique.",
+"v": false,
+"ex": "En cas de dommages, l'entrée en mitose est bloquée : le MPF n'est pas activé."
+}
+],
+"ans": "A",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Biologie cellulaire",
+"ch": "5. Cycle cellulaire et cancer",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-22",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 22,
+"type": "QRU",
+"stem": "Modes de signalisation intercellulaire : lorsque des molécules signal locales sont sécrétées et agissent sur des cellules réceptrices situées à proximité des cellules émettrices, on parle de communication :",
+"items": [
+{
+"l": "A",
+"t": "paracrine ;",
+"v": true,
+"ex": "C'est la définition de la communication paracrine (action locale, cellules voisines)."
+},
+{
+"l": "B",
+"t": "contact-dépendante ;",
+"v": false,
+"ex": "La communication contact-dépendante passe par des molécules membranaires, sans sécrétion."
+},
+{
+"l": "C",
+"t": "synaptique",
+"v": false,
+"ex": "La communication synaptique passe par un neurotransmetteur libéré dans une synapse."
+},
+{
+"l": "D",
+"t": "humorale",
+"v": false,
+"ex": "Humorale = transport par les liquides de l'organisme (sang), à distance."
+},
+{
+"l": "E",
+"t": "endocrine.",
+"v": false,
+"ex": "Endocrine = hormone transportée par le sang vers des cellules éloignées."
+}
+],
+"ans": "A",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Biologie cellulaire",
+"ch": "10. Signalisation cellulaire",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-23",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 23,
+"type": "QRM",
+"stem": "La N-glycosylation des protéines :",
+"items": [
+{
+"l": "A",
+"t": "est réalisée sur l'atome d'oxygène de la chaîne latérale d'une thréonine ;",
+"v": false,
+"ex": "La N-glycosylation se fait sur l'azote d'une asparagine ; l'O-glycosylation se fait sur une sérine ou une thréonine."
+},
+{
+"l": "B",
+"t": "est réalisée dans le noyau, plus particulièrement au sein des nucléoles :",
+"v": false,
+"ex": "Elle débute dans le réticulum endoplasmique rugueux (puis maturation dans le Golgi), pas dans le noyau."
+},
+{
+"l": "C",
+"t": "peut être inhibée expérimentalement par la tunicamycine",
+"v": true,
+"ex": "La tunicamycine bloque la première étape de la N-glycosylation : c'est l'inhibiteur classique."
+},
+{
+"l": "D",
+"t": "conduit à l'addition d'un motif de glycosylation appelé « fraction core » ;",
+"v": true,
+"ex": "Un précurseur oligosaccharidique est ajouté en bloc ; il en reste un noyau commun (« core ») à toutes les N-glycoprotéines."
+},
+{
+"l": "E",
+"t": "induit l'apoptose des cellules.",
+"v": false,
+"ex": "La N-glycosylation est une modification normale des protéines ; elle n'induit pas l'apoptose."
+}
+],
+"ans": "CD",
+"status": "Équipe Atlas",
+"src": "Cours : CM Golgi Lysosome Peroxysome (« N glycosylation sur un résidu asparagine… Dans le RER »)",
+"note": "Points C et D : connaissances générales (le terme « fraction core » n'a pas été retrouvé tel quel dans les cours consultés).",
+"mat": "Biologie cellulaire",
+"ch": "6. Réticulum endoplasmique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-24",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 24,
+"type": "QRM",
+"stem": "A propos du complexe OXPHOS :",
+"items": [
+{
+"l": "A",
+"t": "le complexe I récupère les électrons du NADH, H<sup>+</sup> ;",
+"v": true,
+"ex": "Le complexe I (NADH déshydrogénase) reçoit les électrons du NADH,H+."
+},
+{
+"l": "B",
+"t": "le cytochrome c transfère des électrons au complexe III ;",
+"v": false,
+"ex": "Le cytochrome c reçoit les électrons du complexe III et les transfère au complexe IV."
+},
+{
+"l": "C",
+"t": "le complexe II récupère les électrons du coenzyme Q ;",
+"v": false,
+"ex": "Le complexe II récupère les électrons du FADH2 et les cède au coenzyme Q."
+},
+{
+"l": "D",
+"t": "le complexe IV permet un transfert de H<sup>+</sup> de la matrice vers l'espace intermembranaire ;",
+"v": true,
+"ex": "Le complexe IV pompe des protons de la matrice vers l'espace intermembranaire."
+},
+{
+"l": "E",
+"t": "l'ATP-synthase fonctionne grâce à un flux d'électrons.",
+"v": false,
+"ex": "L'ATP-synthase fonctionne grâce au flux de protons (H+) qui retournent vers la matrice."
+}
+],
+"ans": "AD",
+"status": "Cours",
+"src": "Cours : Mitochondries (endosymbionte) (partie 9)",
+"note": "Même question que HB-2022-18, sauf la proposition A (NADH,H+ au lieu de FADH2) : la question passe de 1 à 2 réponses exactes.",
+"mat": "Biologie cellulaire",
+"ch": "9. Mitochondrie",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-25",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 25,
+"type": "QRM",
+"stem": "A propos du tissu nerveux, on observe :",
+"items": [
+{
+"l": "A",
+"t": "des astrocytes dans la substance grise ;",
+"v": true,
+"ex": "Les astrocytes protoplasmiques sont dans la substance grise."
+},
+{
+"l": "B",
+"t": "des axones neuronaux dans la substance blanche ;",
+"v": true,
+"ex": "La substance blanche est faite surtout d'axones (myélinisés)."
+},
+{
+"l": "C",
+"t": "des corps cellulaires de neurones (péricaryons) dans la substance blanche",
+"v": false,
+"ex": "Les péricaryons sont dans la substance grise, pas dans la substance blanche."
+},
+{
+"l": "D",
+"t": "des oligodendrocytes dans la substance blanche ;",
+"v": true,
+"ex": "Les oligodendrocytes myélinisent les axones de la substance blanche."
+},
+{
+"l": "E",
+"t": "des oligodendrocytes dans la substance grise.",
+"v": true,
+"ex": "On trouve aussi des oligodendrocytes dans la substance grise (oligodendrocytes satellites des péricaryons)."
+}
+],
+"ans": "ABDE",
+"status": "Incertaine (équipe)",
+"src": "",
+"note": "E : oligodendrocytes satellites, à vérifier dans le cours d'histologie.",
+"mat": "Histologie",
+"ch": "Tissu nerveux",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-26",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 26,
+"type": "QRU",
+"stem": "A propos du tissu myocardique :",
+"items": [
+{
+"l": "A",
+"t": "le myocarde correspond à la couche la plus interne tapissant les cavités du cœur ;",
+"v": false,
+"ex": "La couche la plus interne est l'endocarde ; le myocarde est la couche musculaire intermédiaire."
+},
+{
+"l": "B",
+"t": "le myocarde correspond à un tissu musculaire lisse ;",
+"v": false,
+"ex": "Le myocarde est un tissu musculaire strié (cardiaque)."
+},
+{
+"l": "C",
+"t": "l'endomysium est un tissu épithélial spécialisé ;",
+"v": false,
+"ex": "L'endomysium est du tissu conjonctif entourant chaque cellule musculaire."
+},
+{
+"l": "D",
+"t": "le sarcoplasme des cardiomyocytes est riche en filaments de cytokératines ;",
+"v": false,
+"ex": "Les cellules musculaires contiennent de la desmine, pas des cytokératines (filaments des épithéliums)."
+},
+{
+"l": "E",
+"t": "les cardiomyocytes contractiles sont cernés par une lame basale.",
+"v": true,
+"ex": "Comme toute cellule musculaire, le cardiomyocyte est entouré d'une lame basale."
+}
+],
+"ans": "E",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Histologie",
+"ch": "Tissu musculaire",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-27",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 27,
+"type": "QRU",
+"stem": "La fraction organique du tissu osseux (ostéoïde) est majoritairement constituée :",
+"items": [
+{
+"l": "A",
+"t": "de cristaux d'hydroxyapatite ;",
+"v": false,
+"ex": "L'hydroxyapatite forme la fraction minérale, pas la fraction organique."
+},
+{
+"l": "B",
+"t": "de collagène de type 1 ;",
+"v": true,
+"ex": "Le collagène de type I représente environ 90 % de la matrice organique de l'os."
+},
+{
+"l": "C",
+"t": "de collagène de type 2 ;",
+"v": false,
+"ex": "Le collagène de type II est celui du cartilage."
+},
+{
+"l": "D",
+"t": "de protéines non collagéniques ;",
+"v": false,
+"ex": "Elles sont présentes mais minoritaires (environ 10 %)."
+},
+{
+"l": "E",
+"t": "d'eau.",
+"v": false,
+"ex": "L'eau n'est pas le constituant majoritaire de l'ostéoïde."
+}
+],
+"ans": "B",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Histologie",
+"ch": "Tissu conjonctif",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-28",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 28,
+"type": "QRM",
+"stem": "Un rhabdomyocyte de type 1 se caractérise par :",
+"items": [
+{
+"l": "A",
+"t": "son petit diamètre ;",
+"v": true,
+"ex": "Les fibres de type I (lentes, rouges) ont un petit diamètre."
+},
+{
+"l": "B",
+"t": "sa contraction très rapide",
+"v": false,
+"ex": "Les fibres de type I sont à contraction lente."
+},
+{
+"l": "C",
+"t": "sa résistance à la fatigue",
+"v": true,
+"ex": "Leur métabolisme oxydatif les rend résistantes à la fatigue."
+},
+{
+"l": "D",
+"t": "son métabolisme oxydatif",
+"v": true,
+"ex": "Métabolisme aérobie, riche en mitochondries."
+},
+{
+"l": "E",
+"t": "sa richesse en myoglobine.",
+"v": true,
+"ex": "Elles sont riches en myoglobine (fibres rouges)."
+}
+],
+"ans": "ACDE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Histologie",
+"ch": "Tissu musculaire",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-29",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 29,
+"type": "QRM",
+"stem": "Les cellules de Leydig :",
+"items": [
+{
+"l": "A",
+"t": "sont localisées au sein du tissu interstitiel",
+"v": true,
+"ex": "Elles sont dans le tissu interstitiel, entre les tubes séminifères."
+},
+{
+"l": "B",
+"t": "sont toujours organisées en amas cellulaires ;",
+"v": false,
+"ex": "Elles sont habituellement en amas (îlots), mais pas toujours : « toujours » rend la proposition fausse."
+},
+{
+"l": "C",
+"t": "présentent des récepteurs membranaires à la LH",
+"v": true,
+"ex": "La LH stimule les cellules de Leydig via des récepteurs membranaires."
+},
+{
+"l": "D",
+"t": "présentent des récepteurs membranaires à la FSH ;",
+"v": false,
+"ex": "Les récepteurs à la FSH sont sur les cellules de Sertoli."
+},
+{
+"l": "E",
+"t": "synthétisent des hormones stéroïdiennes à partir de cholestérol.",
+"v": true,
+"ex": "Elles produisent la testostérone à partir du cholestérol."
+}
+],
+"ans": "ACE",
+"status": "Équipe Atlas",
+"src": "Cours : 2. Spermatogenèse (partie 3) ; 2. Spermatogenèse (partie 4)",
+"note": "B : le cours dit « habituellement » en amas (voir HB-2023-23) ; le mot « toujours » la rend fausse.",
+"mat": "Biologie de la reproduction",
+"ch": "1. Spermatogenèse",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-30",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 30,
+"type": "QRM",
+"stem": "Un follicule tertiaire comprend les éléments suivants :",
+"items": [
+{
+"l": "A",
+"t": "un ovocyte au stade de métaphase II ;",
+"v": false,
+"ex": "Dans le follicule tertiaire, l'ovocyte est bloqué en prophase I ; la métaphase II n'est atteinte qu'à l'ovulation."
+},
+{
+"l": "B",
+"t": "un antrum ;",
+"v": true,
+"ex": "Le follicule tertiaire (cavitaire) se définit par l'apparition de l'antrum."
+},
+{
+"l": "C",
+"t": "une thèque interne ;",
+"v": true,
+"ex": "Il possède une thèque interne."
+},
+{
+"l": "D",
+"t": "une thèque externe ;",
+"v": true,
+"ex": "Et une thèque externe."
+},
+{
+"l": "E",
+"t": "une membrane basale de Slavjanski",
+"v": true,
+"ex": "La membrane de Slavjanski sépare la granulosa de la thèque interne."
+}
+],
+"ans": "BCDE",
+"status": "Équipe Atlas",
+"src": "Cours : 3. Ovogenèse (partie 2)",
+"note": "",
+"mat": "Biologie de la reproduction",
+"ch": "2. Folliculogenèse",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-31",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 31,
+"type": "QRU",
+"stem": "A propos de l'ADN chez l'Homme :",
+"items": [
+{
+"l": "A",
+"t": "l'ADN simple brin représente un enchainement de 3,2 x10<sup>6</sup> nucléotides ;",
+"v": false,
+"ex": "Le génome haploïde compte environ 3,2 × 10<sup>9</sup> nucléotides, pas 10<sup>6</sup>."
+},
+{
+"l": "B",
+"t": "les nucléotides comprennent un squelette d'acide oléique ;",
+"v": false,
+"ex": "Le squelette de l'ADN est fait de désoxyribose-phosphate ; l'acide oléique est un acide gras."
+},
+{
+"l": "C",
+"t": "la thymine forme trois liaisons hydrogène avec l'adénine",
+"v": false,
+"ex": "A–T : 2 liaisons hydrogène ; G–C : 3."
+},
+{
+"l": "D",
+"t": "la molécule d'ADN est soluble dans les solvants organiques ;",
+"v": false,
+"ex": "L'ADN, très polaire, est insoluble dans les solvants organiques (on le précipite à l'alcool)."
+},
+{
+"l": "E",
+"t": "à pH 8, l'ADN est chargé négativement.",
+"v": true,
+"ex": "Les groupements phosphate sont ionisés : l'ADN est un polyanion."
+}
+],
+"ans": "E",
+"status": "Cours",
+"src": "Cours : ADN gènes et mutations géniques Partie I p.15 ; p.16",
+"note": "",
+"mat": "Génétique",
+"ch": "1. ADN, gènes et mutations géniques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-32",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 32,
+"type": "QRM",
+"stem": "Un homme consulte dans un service hospitalier pour une suspicion de maladie génétique. Quels éléments cliniques ou familiaux orientent vers une transmission <u>autosomique dominante</u> ?",
+"items": [
+{
+"l": "A",
+"t": "un tableau clinique de neurofibromatose de type 1",
+"v": true,
+"ex": "La neurofibromatose de type 1 est une maladie autosomique dominante."
+},
+{
+"l": "B",
+"t": "la maladie est présente à chaque génération dans sa famille ;",
+"v": true,
+"ex": "Transmission verticale, sans saut de génération : évoque l'autosomique dominant."
+},
+{
+"l": "C",
+"t": "la transmission de la maladie se fait par les deux sexes",
+"v": true,
+"ex": "Autosomique : les deux sexes transmettent et sont atteints."
+},
+{
+"l": "D",
+"t": "la maladie apparaît uniquement chez les garçons",
+"v": false,
+"ex": "Une maladie touchant seulement les garçons évoque une transmission liée à l'X."
+},
+{
+"l": "E",
+"t": "le risque pour les enfants d'un parent atteint de présenter la maladie est de 50%.",
+"v": true,
+"ex": "Parent hétérozygote atteint : risque de 1/2 pour chaque enfant."
+}
+],
+"ans": "ABCE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Génétique",
+"ch": "2. Hérédité mendélienne",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-33",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 33,
+"type": "QRM",
+"stem": "A propos des oses :",
+"items": [
+{
+"l": "A",
+"t": "ils contiennent entre autres des fonctions alcool ;",
+"v": true,
+"ex": "Les oses portent plusieurs fonctions alcool et une fonction carbonyle."
+},
+{
+"l": "B",
+"t": "ils sont hydrophiles ;",
+"v": true,
+"ex": "Leurs nombreux OH les rendent hydrophiles."
+},
+{
+"l": "C",
+"t": "leur formule générale est C<sub>n</sub>H<sub>n</sub>O<sub>n</sub> ;",
+"v": false,
+"ex": "La formule générale est C<sub>n</sub>(H<sub>2</sub>O)<sub>n</sub>, soit C<sub>n</sub>H<sub>2n</sub>O<sub>n</sub>, pas C<sub>n</sub>H<sub>n</sub>O<sub>n</sub>."
+},
+{
+"l": "D",
+"t": "le plus petit ose possède 3 atomes de carbone",
+"v": true,
+"ex": "Les plus petits oses sont les trioses (glycéraldéhyde, dihydroxyacétone)."
+},
+{
+"l": "E",
+"t": "ils sont chargés négativement au pH physiologique.",
+"v": false,
+"ex": "Les oses simples ne sont pas ionisés au pH physiologique."
+}
+],
+"ans": "ABD",
+"status": "Équipe Atlas",
+"src": "",
+"note": "C : le sujet écrit CnHnOn (indices recopiés sur le scan) ; telle quelle, la formule est fausse.",
+"mat": "Biochimie",
+"ch": "Glucides",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-34",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 34,
+"type": "QRU",
+"stem": "Le galactose :",
+"items": [
+{
+"l": "A",
+"t": "est un aldohexose ;",
+"v": true,
+"ex": "Le galactose est un aldose à 6 carbones."
+},
+{
+"l": "B",
+"t": "est un isomère du glycéraldéhyde ;",
+"v": false,
+"ex": "Le glycéraldéhyde est un triose (C3) : pas la même formule brute."
+},
+{
+"l": "C",
+"t": "est un isomère du ribose ;",
+"v": false,
+"ex": "Le ribose est un pentose (C5)."
+},
+{
+"l": "D",
+"t": "est un diholoside",
+"v": false,
+"ex": "C'est un ose simple ; le lactose (galactose + glucose) est un diholoside."
+},
+{
+"l": "E",
+"t": "est l'ose le plus répandu sur terre.",
+"v": false,
+"ex": "C'est le glucose (notamment dans la cellulose)."
+}
+],
+"ans": "A",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Biochimie",
+"ch": "Glucides",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-35",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 35,
+"type": "QRM",
+"stem": "La liaison peptidique :",
+"items": [
+{
+"l": "A",
+"t": "s'établit entre une fonction acide carboxylique et un alcool",
+"v": false,
+"ex": "Elle unit la fonction acide carboxylique d'un acide aminé à la fonction amine du suivant (un acide + un alcool donne un ester)."
+},
+{
+"l": "B",
+"t": "est hydrolysable par des peptidases ;",
+"v": true,
+"ex": "Les peptidases (protéases) hydrolysent la liaison peptidique."
+},
+{
+"l": "C",
+"t": "maintient 6 atomes dans un même plan ;",
+"v": true,
+"ex": "Le caractère partiel de double liaison rend plans les 6 atomes Cα-C(=O)-N(H)-Cα."
+},
+{
+"l": "D",
+"t": "est polarisée ;",
+"v": true,
+"ex": "O porte une charge partielle négative et N-H une charge partielle positive : la liaison est polarisée."
+},
+{
+"l": "E",
+"t": "est synthétisée au cours de la transcription.",
+"v": false,
+"ex": "Elle est formée au cours de la traduction (ribosome), pas de la transcription."
+}
+],
+"ans": "BCD",
+"status": "Équipe Atlas",
+"src": "Cours : 4-peptides p.3 ; 3- Liaison peptidique et peptides _ logoFM p.12",
+"note": "",
+"mat": "Biochimie",
+"ch": "Peptides et liaison peptidique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-36",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 36,
+"type": "QRU",
+"stem": "L'adénosine triphosphate ou ATP :",
+"items": [
+{
+"l": "A",
+"t": "est un nucléoside ;",
+"v": false,
+"ex": "L'ATP est un nucléotide (nucléoside + phosphates)."
+},
+{
+"l": "B",
+"t": "porte des charges positives au pH physiologique ;",
+"v": false,
+"ex": "Les phosphates lui donnent des charges négatives."
+},
+{
+"l": "C",
+"t": "porte 2 liaisons riches en énergie ;",
+"v": true,
+"ex": "Les deux liaisons anhydride phosphorique (entre les phosphates) sont riches en énergie."
+},
+{
+"l": "D",
+"t": "porte 2 liaisons phosphoester ;",
+"v": false,
+"ex": "Une seule liaison phosphoester (ribose–phosphate α) ; les deux autres sont des liaisons anhydride."
+},
+{
+"l": "E",
+"t": "porte une liaison alpha glycosidique.",
+"v": false,
+"ex": "La liaison entre l'adénine et le ribose est N-glycosidique β."
+}
+],
+"ans": "C",
+"status": "Cours",
+"src": "Cours : 5. Nucléotides _ logoFM p.38 ; 3.1- Nucléotides (partie 9)",
+"note": "",
+"mat": "Biochimie",
+"ch": "Acides nucléiques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-37",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 37,
+"type": "QRU",
+"stem": "Le génome humain :",
+"items": [
+{
+"l": "A",
+"t": "est l'un des plus grands génomes du vivant ;",
+"v": false,
+"ex": "De nombreux organismes (certaines plantes, amphibiens) ont un génome bien plus grand."
+},
+{
+"l": "B",
+"t": "contient 50% de séquences répétées ;",
+"v": true,
+"ex": "Environ la moitié du génome humain est faite de séquences répétées."
+},
+{
+"l": "C",
+"t": "contient 100 000 gènes codant des protéines",
+"v": false,
+"ex": "Environ 20 000 gènes codant des protéines."
+},
+{
+"l": "D",
+"t": "contient 95% de séquences codant les protéines",
+"v": false,
+"ex": "Seulement 1 à 2 % du génome code des protéines."
+},
+{
+"l": "E",
+"t": "présente 30% de différences avec le génome du chimpanzé",
+"v": false,
+"ex": "Les génomes humain et du chimpanzé ne diffèrent que d'environ 1 à 2 %."
+}
+],
+"ans": "B",
+"status": "Cours",
+"src": "Cours : 7. génome et code génétique (partie 4)",
+"note": "",
+"mat": "Biochimie",
+"ch": "ADN : transmission de l’information",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-38",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 38,
+"type": "QRM",
+"stem": "Concernant l'atomistique.",
+"items": [
+{
+"l": "A",
+"t": "dans un atome, le noyau est constitué d'électrons chargés négativement",
+"v": false,
+"ex": "Le noyau contient protons et neutrons ; les électrons sont autour."
+},
+{
+"l": "B",
+"t": "selon la règle de Klechkowski, dans l'état fondamental des atomes neutres, le remplissage des orbitales atomiques \"4s\" se fait avant les orbitales \"3d\"",
+"v": true,
+"ex": "Ordre de Klechkowski : … 3p, 4s, 3d …"
+},
+{
+"l": "C",
+"t": "dans une même orbitale atomique, deux électrons peuvent avoir les nombres quantiques n, ℓ, m et s identiques",
+"v": false,
+"ex": "Principe d'exclusion de Pauli : deux électrons ne peuvent pas avoir les 4 nombres quantiques identiques."
+},
+{
+"l": "D",
+"t": "l'orbitale atomique \"p\" a une forme sphérique",
+"v": false,
+"ex": "L'orbitale s est sphérique ; l'orbitale p a deux lobes."
+},
+{
+"l": "E",
+"t": "l'énergie d'ionisation de l'atome d'hydrogène est de 13,6 eV",
+"v": true,
+"ex": "E = 13,6 eV pour l'hydrogène à l'état fondamental."
+}
+],
+"ans": "BE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Chimie organique",
+"ch": "1. Atome",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-39",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 39,
+"type": "QRM",
+"stem": "Atomistique. Dans la molécule d'éthylène C<sub>2</sub>H<sub>2</sub> (Z(C) = 6, Z(H) = 1) :",
+"items": [
+{
+"l": "A",
+"t": "à l'état fondamental, la structure électronique de l'atome de carbone est : 1s<sup>2</sup> 2s<sup>2</sup> 3s<sup>2</sup>",
+"v": false,
+"ex": "C : 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>2</sup>."
+},
+{
+"l": "B",
+"t": "l'atome de carbone possède 6 électrons sur sa couche de valence",
+"v": false,
+"ex": "6 électrons au total, dont 4 sur la couche de valence (2s<sup>2</sup> 2p<sup>2</sup>)."
+},
+{
+"l": "C",
+"t": "les atomes de carbone forment une liaison de type π entre eux",
+"v": true,
+"ex": "La double liaison C=C de l'éthylène comporte une liaison σ et une liaison π."
+},
+{
+"l": "D",
+"t": "la liaison π est obtenue par un recouvrement latéral entre deux orbitales atomiques \"p\" de la couche de valence",
+"v": true,
+"ex": "Une liaison π vient du recouvrement latéral de deux orbitales p."
+},
+{
+"l": "E",
+"t": "les atomes de carbone sont hybridés sp<sup>2</sup>",
+"v": true,
+"ex": "Dans l'éthylène (H<sub>2</sub>C=CH<sub>2</sub>), chaque carbone est sp<sup>2</sup>."
+}
+],
+"ans": "CDE",
+"status": "Incertaine (équipe)",
+"src": "",
+"note": "Le sujet écrit « éthylène C2H2 » : l'éthylène est C2H4 (C2H2 est l'acétylène, sp). Correction faite pour l'éthylène, comme le nom l'indique ; si on suit la formule C2H2, E serait fausse (sp) et C resterait vraie.",
+"mat": "Chimie organique",
+"ch": "2. Liaisons et orbitales moléculaires",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-40",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 40,
+"type": "QRM",
+"stem": "Les propositions suivantes concernent la molécule F.",
+"items": [
+{
+"l": "A",
+"t": "la molécule F présente un carbone hybridé sp<sup>2</sup>",
+"v": true,
+"ex": "Le carbone de la fonction C=O est hybridé sp<sup>2</sup>."
+},
+{
+"l": "B",
+"t": "la molécule F est de configuration <i>R</i>",
+"v": false,
+"ex": "Voir D."
+},
+{
+"l": "C",
+"t": "la molécule F est achirale",
+"v": false,
+"ex": "Le carbone portant Br est asymétrique (Br, H, propyle, CH<sub>2</sub>COCH<sub>3</sub>) : F est chirale."
+},
+{
+"l": "D",
+"t": "la molécule F est de configuration <i>S</i>",
+"v": true,
+"ex": "Priorités : Br > CH<sub>2</sub>C(=O)CH<sub>3</sub> > CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub> > H. H est en arrière (hachures) : Br → CH<sub>2</sub>CO → propyle tourne dans le sens inverse des aiguilles d'une montre : S."
+},
+{
+"l": "E",
+"t": "la molécule F possède une fonction cétone",
+"v": true,
+"ex": "F = 4-bromoheptan-2-one : C=O entre deux carbones, c'est une cétone."
+}
+],
+"ans": "ADE",
+"status": "Équipe Atlas",
+"src": "Cours : 1 - Isomérie (partie 2)",
+"note": "Même question que HB-2024-29 avec une autre molécule (dérivé bromé à 7 C) et « cétone » au lieu de « aldéhyde » en E. Figure : scan nettoyé des annotations d'un étudiant.",
+"mat": "Chimie organique",
+"ch": "13. Aldéhydes et cétones",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours",
+"crop": [
+[
+"hb2025-40",
+0,
+282
+]
+],
+"pw": 1000,
+"ph": 282,
+"forceImg": true
+},
+{
+"id": "HB-2025-41",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 41,
+"type": "QRM",
+"stem": "Parmi les propositions suivantes.\nBut-1-yne (F) → G : NaNH<sub>2</sub>\nG → H : 1) Acétone ; 2) H<sub>3</sub>O<sup>+</sup>\nH → I : H<sub>2</sub>, Palladium de Lindlar",
+"items": [
+{
+"l": "A",
+"t": "F est un alcyne vrai",
+"v": true,
+"ex": "Le but-1-yne a une triple liaison terminale (C≡C–H) : alcyne vrai."
+},
+{
+"l": "B",
+"t": "G est un alcynure",
+"v": true,
+"ex": "NaNH<sub>2</sub> arrache le H terminal : on obtient l'alcynure de sodium."
+},
+{
+"l": "C",
+"t": "la réaction de G à H est une substitution nucléophile",
+"v": false,
+"ex": "L'alcynure s'additionne sur le C=O de l'acétone : addition nucléophile."
+},
+{
+"l": "D",
+"t": "H possède une fonction alcool",
+"v": true,
+"ex": "Après hydrolyse acide on obtient un alcool tertiaire."
+},
+{
+"l": "E",
+"t": "I possède une double liaison de configuration <i>E</i>",
+"v": false,
+"ex": "Le palladium de Lindlar donne une hydrogénation partielle syn : alcène Z."
+}
+],
+"ans": "ABD",
+"status": "Équipe Atlas",
+"src": "Cours : 3 - Alcynes (partie 1) ; 8 - Aldéhydes et cétones (partie 1) ; 7 - Alcool-phénol-éther (partie 1)",
+"note": "Même question que HB-2024-30.",
+"mat": "Chimie organique",
+"ch": "8. Alcynes",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-42",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 42,
+"type": "QRM",
+"stem": "Parmi les propositions suivantes :",
+"items": [
+{
+"l": "A",
+"t": "la molécule F est de configuration <i>Z</i>",
+"v": true,
+"ex": "F = 2,4-diméthylhex-3-ène. Sur C3 : isopropyle > H ; sur C4 : éthyle > méthyle. Isopropyle et éthyle sont du même côté de la double liaison : Z."
+},
+{
+"l": "B",
+"t": "le traitement de F par HCl conduit à G",
+"v": true,
+"ex": "Addition de Markovnikov : H+ se fixe sur C3, le carbocation tertiaire se forme sur C4, qui reçoit Cl : G."
+},
+{
+"l": "C",
+"t": "la réaction de F à H fait intervenir H<sub>2</sub>O en milieu acide",
+"v": true,
+"ex": "Hydratation en milieu acide (Markovnikov) : OH sur le carbone le plus substitué, H."
+},
+{
+"l": "D",
+"t": "la réaction de F à H fait intervenir KMnO<sub>4</sub> dilué",
+"v": false,
+"ex": "KMnO<sub>4</sub> dilué donne un diol (deux OH), pas H."
+},
+{
+"l": "E",
+"t": "H présente un carbone asymétrique",
+"v": true,
+"ex": "Le carbone portant OH porte OH, CH<sub>3</sub>, éthyle et isobutyle : 4 groupes différents."
+}
+],
+"ans": "ABCE",
+"status": "Équipe Atlas",
+"src": "Cours : 2 - Alcènes (partie 1-2)",
+"note": "Les trois molécules sont des chaînes ouvertes (pas des cycles) : le côté gauche n'est pas fermé sur le sujet. Figure : scan nettoyé des annotations d'un étudiant.",
+"mat": "Chimie organique",
+"ch": "7. Alcènes",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours",
+"crop": [
+[
+"hb2025-42",
+0,
+396
+]
+],
+"pw": 1000,
+"ph": 396,
+"forceImg": true
+},
+{
+"id": "HB-2025-43",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 43,
+"type": "QRM",
+"stem": "La masse de la planète Mars est d'environ 6,4.10<sup>23</sup> kg. Quelles sont les affirmations exactes ?",
+"items": [
+{
+"l": "A",
+"t": "le kg est l'unité de masse dans le Système International",
+"v": true,
+"ex": "Le kilogramme est l'unité SI de masse."
+},
+{
+"l": "B",
+"t": "le kg fait partie des 7 unités fondamentales du Système International",
+"v": true,
+"ex": "m, kg, s, A, K, mol, cd : le kg est une unité de base."
+},
+{
+"l": "C",
+"t": "la masse de la planète Mars est d'environ 0,64 Yg (yottagramme)",
+"v": false,
+"ex": "6,4.10<sup>23</sup> kg = 6,4.10<sup>26</sup> g = 640 Yg (1 Yg = 10<sup>24</sup> g)."
+},
+{
+"l": "D",
+"t": "la masse de la planète Mars est d'environ 6,4.10<sup>20</sup> grammes",
+"v": false,
+"ex": "6,4.10<sup>23</sup> kg = 6,4.10<sup>26</sup> g."
+},
+{
+"l": "E",
+"t": "la masse de la planète Mars est d'environ 0,64.10<sup>18</sup> Gg (gigagramme)",
+"v": true,
+"ex": "6,4.10<sup>26</sup> g / 10<sup>9</sup> = 6,4.10<sup>17</sup> Gg = 0,64.10<sup>18</sup> Gg."
+}
+],
+"ans": "ABE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Biophysique (BMI)",
+"ch": "Grandeurs physiques et mesures",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-44",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 44,
+"type": "QRM",
+"stem": "A propos des transformations nucléaires et des rayonnements ionisants :",
+"items": [
+{
+"l": "A",
+"t": "la masse du positon est égale à celle du proton",
+"v": false,
+"ex": "Le positon a la masse de l'électron (environ 1 836 fois moins que le proton)."
+},
+{
+"l": "B",
+"t": "la masse de la particule alpha est égale à celle de l'atome d'hélium",
+"v": false,
+"ex": "La particule α est un noyau d'hélium (sans ses 2 électrons) : sa masse est un peu inférieure à celle de l'atome."
+},
+{
+"l": "C",
+"t": "les émetteurs de particules alpha sont utilisés en imagerie",
+"v": false,
+"ex": "Les émetteurs α sont utilisés en thérapie, pas en imagerie (voir 2025-M1-32)."
+},
+{
+"l": "D",
+"t": "la masse d'une particule β<sup>+</sup> est identique à celle de l'électron",
+"v": true,
+"ex": "La particule β+ est un positon : même masse que l'électron, charge opposée."
+},
+{
+"l": "E",
+"t": "le rayonnement ultra-violet est non-ionisant",
+"v": true,
+"ex": "Le cours classe les UV parmi les rayonnements non ionisants (énergie insuffisante pour ioniser la matière biologique)."
+}
+],
+"ans": "DE",
+"status": "Équipe Atlas",
+"src": "Cours : 3.InteractionsRay",
+"note": "E : on suit la classification du cours (UV non ionisants), même si les UV les plus durs peuvent ioniser.",
+"mat": "Biophysique (BAME)",
+"ch": "Noyaux et rayonnements",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-45",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 45,
+"type": "QRM",
+"stem": "A propos des interactions des rayonnements ionisants avec la matière :",
+"items": [
+{
+"l": "A",
+"t": "la dose d'énergie absorbée par la matière est mesurée en Sievert (Sv)",
+"v": false,
+"ex": "La dose absorbée se mesure en gray (Gy) ; le sievert sert aux doses équivalente et efficace."
+},
+{
+"l": "B",
+"t": "le rayonnement de freinage concerne les interactions d'un faisceau de photons X avec les noyaux du milieu traversé",
+"v": false,
+"ex": "Le rayonnement de freinage est émis par des particules chargées (électrons) freinées près des noyaux ; il produit des photons X."
+},
+{
+"l": "C",
+"t": "la trajectoire d'un faisceau de photons X est supérieure à celle d'un faisceau de particule alpha",
+"v": true,
+"ex": "Les photons X sont bien plus pénétrants que les particules α (quelques dizaines de µm dans les tissus)."
+},
+{
+"l": "D",
+"t": "plus une cellule est jeune plus elle est radiosensible",
+"v": true,
+"ex": "Loi de Bergonié et Tribondeau : les cellules jeunes, peu différenciées et qui se divisent sont plus radiosensibles."
+},
+{
+"l": "E",
+"t": "les effets nocifs d'un rayonnement ionisant sur les tissus biologiques s'arrêtent avec la fin de l'irradiation",
+"v": false,
+"ex": "Il existe des effets tardifs (cancers, effets stochastiques) bien après l'irradiation."
+}
+],
+"ans": "CD",
+"status": "Équipe Atlas",
+"src": "Cours : 3.InteractionsRay",
+"note": "",
+"mat": "Biophysique (BAME)",
+"ch": "Interaction rayonnements-matière",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-46",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 46,
+"type": "QRU",
+"stem": "Vous disposez d'une solution d'acide glycolique C<sub>2</sub>H<sub>4</sub>O<sub>3</sub> de concentration C = 10<sup>-3</sup> mol.L<sup>-1</sup>. Vous en placez 1 mL dans 1 L de solution tampon de pH = 3,8. A l'équilibre et à 25°C, le rapport des concentrations [C<sub>2</sub>H<sub>3</sub>O<sub>3</sub><sup>-</sup>]/[C<sub>2</sub>H<sub>4</sub>O<sub>3</sub>] sera égal à :\n<i>Données : pKa de l'acide glycolique = 3,8 ; le volume d'acide glycolique sera négligé devant le volume de solution tampon</i>",
+"items": [
+{
+"l": "A",
+"t": "0,5",
+"v": false,
+"ex": "Voir B."
+},
+{
+"l": "B",
+"t": "1",
+"v": true,
+"ex": "Le tampon impose pH = 3,8. Henderson-Hasselbalch : pH = pKa + log([A-]/[AH]), donc log(rapport) = 0 et rapport = 1."
+},
+{
+"l": "C",
+"t": "1,5",
+"v": false,
+"ex": "Voir B."
+},
+{
+"l": "D",
+"t": "2,0",
+"v": false,
+"ex": "Voir B."
+},
+{
+"l": "E",
+"t": "3,8",
+"v": false,
+"ex": "3,8 est la valeur du pH et du pKa, pas du rapport."
+}
+],
+"ans": "B",
+"status": "Cours",
+"src": "Cours : 2.ph",
+"note": "",
+"mat": "Biophysique (BMI)",
+"ch": "pH et équilibre acido-basique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-47",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 47,
+"type": "QRU",
+"stem": "Une gouttelette d'eau est en suspension dans l'air. Calculer, en Pa, la différence de pression ΔP entre l'intérieur et l'extérieur de la gouttelette.\n<i>Données : Coefficient de tension superficielle de l'interface eau/air : σ = 75.10<sup>-3</sup> N.m<sup>-1</sup> à 15°C ; Rayon de la gouttelette r = 1 mm</i>",
+"items": [
+{
+"l": "A",
+"t": "3",
+"v": false,
+"ex": "Voir D."
+},
+{
+"l": "B",
+"t": "7,5",
+"v": false,
+"ex": "Voir D."
+},
+{
+"l": "C",
+"t": "75",
+"v": false,
+"ex": "Oubli du facteur 2 : σ/r = 75 Pa."
+},
+{
+"l": "D",
+"t": "150",
+"v": true,
+"ex": "Loi de Laplace pour une goutte (une seule interface) : ΔP = 2σ/r = 2 × 75.10<sup>-3</sup> / 10<sup>-3</sup> = 150 Pa."
+},
+{
+"l": "E",
+"t": "300",
+"v": false,
+"ex": "4σ/r concerne une bulle de savon (deux interfaces), pas une goutte."
+}
+],
+"ans": "D",
+"status": "Équipe Atlas",
+"src": "",
+"note": "Même exercice que 2025-M2-60 avec d'autres valeurs.",
+"mat": "Biophysique (BMI)",
+"ch": "Propriétés mécaniques des solutions",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-48",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 48,
+"type": "QRM",
+"stem": "Concernant l'appareil urinaire :",
+"items": [
+{
+"l": "A",
+"t": "les uretères transportent l'urine vers la vessie",
+"v": true,
+"ex": "Les uretères relient les reins à la vessie."
+},
+{
+"l": "B",
+"t": "le rein participe à la régulation de la pression artérielle",
+"v": true,
+"ex": "Le rein régule la pression artérielle (volémie, système rénine-angiotensine-aldostérone)."
+},
+{
+"l": "C",
+"t": "le rein participe à l'équilibre acido-basique",
+"v": true,
+"ex": "Il réabsorbe les bicarbonates et élimine les ions H+."
+},
+{
+"l": "D",
+"t": "le rein sécrète l'aldostérone",
+"v": false,
+"ex": "L'aldostérone est sécrétée par la corticosurrénale ; le rein sécrète la rénine."
+},
+{
+"l": "E",
+"t": "la sécrétion tubulaire est le passage de substance du filtrat vers les capillaires péritubulaires",
+"v": false,
+"ex": "C'est l'inverse : la sécrétion va des capillaires péritubulaires vers le filtrat ; le sens filtrat → capillaires est la réabsorption."
+}
+],
+"ans": "ABC",
+"status": "Cours",
+"src": "Cours : 2-physiologie rénale p.97 ; 2.1-Système rénal (partie 20)",
+"note": "",
+"mat": "Physiologie",
+"ch": "Physiologie rénale",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-49",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 49,
+"type": "QRM",
+"stem": "A propos de l'organisation du Système Nerveux :",
+"items": [
+{
+"l": "A",
+"t": "les voies afférentes vont de la périphérie vers l'encéphale",
+"v": true,
+"ex": "Afférent = de la périphérie vers le système nerveux central."
+},
+{
+"l": "B",
+"t": "les réseaux neuronaux corticaux sont organisés selon un principe de divergence et convergence",
+"v": true,
+"ex": "Un neurone contacte de nombreux neurones (divergence) et en reçoit de nombreux (convergence)."
+},
+{
+"l": "C",
+"t": "le traitement de l'information se fait au niveau de la substance blanche",
+"v": false,
+"ex": "Le traitement se fait dans la substance grise (corps cellulaires, synapses) ; la substance blanche conduit l'information."
+},
+{
+"l": "D",
+"t": "les aires corticales ne sont pas connectées entre elles",
+"v": false,
+"ex": "Les aires corticales sont reliées par des fibres d'association."
+},
+{
+"l": "E",
+"t": "la surface du cortex cérébral est non plissée",
+"v": false,
+"ex": "Le cortex humain est plissé (gyri et sillons), ce qui augmente sa surface."
+}
+],
+"ans": "AB",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Physiologie",
+"ch": "Organisation générale du SNC",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-50",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 50,
+"type": "QRM",
+"stem": "A propos du fonctionnement synaptique :",
+"items": [
+{
+"l": "A",
+"t": "la synapse chimique est asymétrique",
+"v": true,
+"ex": "Élément présynaptique (vésicules) et postsynaptique (récepteurs) différents : transmission dans un seul sens."
+},
+{
+"l": "B",
+"t": "l'intégration finale des potentiels post-synaptiques est faite au niveau du cône d'implantation",
+"v": true,
+"ex": "La sommation des PPS se fait au cône d'implantation, où naît le potentiel d'action."
+},
+{
+"l": "C",
+"t": "le couplage électrique est présent dans la synapse chimique",
+"v": false,
+"ex": "Le couplage électrique (jonctions communicantes) caractérise la synapse électrique."
+},
+{
+"l": "D",
+"t": "l'exocytose des vésicules de neurotransmetteurs précède l'ouverture des canaux calciques présynaptiques voltage-dépendants",
+"v": false,
+"ex": "C'est l'inverse : l'entrée de Ca2+ par ces canaux déclenche l'exocytose."
+},
+{
+"l": "E",
+"t": "les synapses neuro-effectrices permettent la connexion entre deux neurones",
+"v": false,
+"ex": "Elles relient un neurone à un effecteur (muscle, glande) ; entre deux neurones, on parle de synapse neuro-neuronale."
+}
+],
+"ans": "AB",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Physiologie",
+"ch": "Transmission synaptique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-51",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 51,
+"type": "QRM",
+"stem": "A l'inspiration :",
+"items": [
+{
+"l": "A",
+"t": "la pression alvéolaire est supérieure à la pression atmosphérique",
+"v": false,
+"ex": "À l'inspiration, la pression alvéolaire est inférieure à la pression atmosphérique : l'air entre."
+},
+{
+"l": "B",
+"t": "le diaphragme se contracte",
+"v": true,
+"ex": "Le diaphragme est le principal muscle inspiratoire."
+},
+{
+"l": "C",
+"t": "les muscles dilatateurs du pharynx se relâchent",
+"v": false,
+"ex": "Ils se contractent à l'inspiration pour lutter contre le collapsus des voies extrathoraciques."
+},
+{
+"l": "D",
+"t": "les voies aériennes extrathoraciques diminuent de calibre",
+"v": true,
+"ex": "La pression transmurale des voies extrathoraciques devient négative à l'inspiration : leur calibre diminue."
+},
+{
+"l": "E",
+"t": "les voies aériennes intrathoraciques augmentent de calibre",
+"v": true,
+"ex": "La pression pleurale plus négative augmente leur pression transmurale : leur calibre augmente."
+}
+],
+"ans": "BDE",
+"status": "Cours",
+"src": "Cours : Respiration - PR p.25 ; Respiration - PR p.32 ; 2-Respiration 3et4 p.12",
+"note": "",
+"mat": "Physiologie",
+"ch": "Respiration",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-52",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 52,
+"type": "QRM",
+"stem": "A propos de la bioénergétique cellulaire :",
+"items": [
+{
+"l": "A",
+"t": "la glycolyse aboutit à la synthèse d'acetyl-coenzyme A",
+"v": false,
+"ex": "La glycolyse aboutit au pyruvate ; l'acétyl-CoA vient de la décarboxylation oxydative du pyruvate (mitochondrie)."
+},
+{
+"l": "B",
+"t": "la beta-oxydation des acides gras aboutit à la synthèse d'acetyl-coenzyme A",
+"v": true,
+"ex": "Comme dans le cours (voir S2-2026-15)."
+},
+{
+"l": "C",
+"t": "l'O<sub>2</sub> est consommé par le cycle de Krebs",
+"v": false,
+"ex": "L'O2 est consommé par la chaîne respiratoire (accepteur final des électrons)."
+},
+{
+"l": "D",
+"t": "le CO<sub>2</sub> est produit par la chaîne respiratoire mitochondriale",
+"v": false,
+"ex": "Le CO2 est produit par le cycle de Krebs (et la décarboxylation du pyruvate)."
+},
+{
+"l": "E",
+"t": "l'ATP est synthétisée par la chaîne respiratoire mitochondriale",
+"v": true,
+"ex": "Le cours présente la chaîne respiratoire mitochondriale comme le site majeur de synthèse de l'ATP (voir 2022-M1-1)."
+}
+],
+"ans": "BE",
+"status": "Cours",
+"src": "Cours : 1-Bioénergétique p.20",
+"note": "",
+"mat": "Physiologie",
+"ch": "Bioénergétique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-53",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 53,
+"type": "QRM",
+"stem": "Concernant les canaux ioniques membranaires :",
+"items": [
+{
+"l": "A",
+"t": "ils permettent un transport passif selon le gradient électrochimique",
+"v": true,
+"ex": "Les canaux laissent passer les ions dans le sens de leur gradient électrochimique, sans énergie."
+},
+{
+"l": "B",
+"t": "certains sont mécanosensibles",
+"v": true,
+"ex": "Il existe des canaux ouverts par l'étirement (mécanosensibles)."
+},
+{
+"l": "C",
+"t": "leur ouverture nécessite obligatoirement de l'ATP",
+"v": false,
+"ex": "Leur ouverture dépend du voltage, d'un ligand ou d'une contrainte mécanique ; pas d'ATP obligatoire."
+},
+{
+"l": "D",
+"t": "leur sélectivité dépend en partie de la taille du pore",
+"v": true,
+"ex": "La sélectivité dépend de la taille du pore et des charges du filtre de sélectivité."
+},
+{
+"l": "E",
+"t": "leur proportion ouverte détermine la perméabilité de la membrane pour un ion donné",
+"v": true,
+"ex": "Plus il y a de canaux ouverts pour un ion, plus la membrane lui est perméable."
+}
+],
+"ans": "ABDE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Physiologie",
+"ch": "Canaux ioniques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-54",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 54,
+"type": "QRU",
+"stem": "La phase de contraction isovolumique du ventricule est associée :",
+"items": [
+{
+"l": "A",
+"t": "à l'ouverture de la valve mitrale",
+"v": false,
+"ex": "Toutes les valves sont fermées pendant la contraction isovolumique."
+},
+{
+"l": "B",
+"t": "à la fermeture des valves atrio-ventriculaires",
+"v": true,
+"ex": "Elle commence à la fermeture des valves auriculo-ventriculaires (B1), valves sigmoïdes encore fermées."
+},
+{
+"l": "C",
+"t": "au remplissage ventriculaire rapide",
+"v": false,
+"ex": "Le remplissage rapide a lieu en diastole."
+},
+{
+"l": "D",
+"t": "à la systole atriale",
+"v": false,
+"ex": "La systole atriale précède, en fin de diastole ventriculaire."
+},
+{
+"l": "E",
+"t": "à la protodiastole",
+"v": false,
+"ex": "La protodiastole est le début de la diastole."
+}
+],
+"ans": "B",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Physiologie",
+"ch": "Cycle cardiaque",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "equipe"
+},
+{
+"id": "HB-2025-55",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 55,
+"type": "QRM",
+"stem": "Les principes actifs agonistes entiers",
+"items": [
+{
+"l": "A",
+"t": "se fixent sur une enzyme pour exercer leur action",
+"v": false,
+"ex": "Un agoniste agit sur un récepteur, pas sur une enzyme."
+},
+{
+"l": "B",
+"t": "se fixent sur un récepteur pour exercer leur action",
+"v": true,
+"ex": "Un agoniste se fixe sur un récepteur."
+},
+{
+"l": "C",
+"t": "induisent un effet de même nature que l'agoniste physiologique",
+"v": true,
+"ex": "L'agoniste entier mime l'agoniste physiologique."
+},
+{
+"l": "D",
+"t": "induisent un effet maximal de moindre intensité que l'agoniste physiologique",
+"v": false,
+"ex": "C'est la définition de l'agoniste partiel ; l'agoniste entier a le même effet maximal."
+},
+{
+"l": "E",
+"t": "se fixent sur le même site de liaison que l'agoniste physiologique",
+"v": true,
+"ex": "Il se fixe sur le même site que l'agoniste physiologique."
+}
+],
+"ans": "BCE",
+"status": "Cours",
+"src": "Cours : 1 - Cibles et mécanismes d'action des médicaments (diapo prof) p.3",
+"note": "Mêmes propositions que HB-2024-52 et S2-2026-32, dans un autre ordre.",
+"mat": "Initiation aux médicaments",
+"ch": "Cibles et mécanismes d’action des médicaments",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-56",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 56,
+"type": "QRM",
+"stem": "La comparaison des concentrations efficaces 50 (CE<sub>50</sub>) d'une substance active vis-à-vis de plusieurs récepteurs",
+"items": [
+{
+"l": "A",
+"t": "est possible grâce à la réalisation de courbes effet-concentration de la substance active",
+"v": true,
+"ex": "La CE50 se lit sur la courbe effet-concentration."
+},
+{
+"l": "B",
+"t": "permet de caractériser la sélectivité de cette substance active vis-à-vis de ces récepteurs",
+"v": true,
+"ex": "Comparer les CE50 sur plusieurs récepteurs renseigne sur la sélectivité."
+},
+{
+"l": "C",
+"t": "permet de déterminer que cette substance active est un agoniste partiel de ces récepteurs",
+"v": false,
+"ex": "C'est l'effet maximal (efficacité), pas la CE50, qui distingue un agoniste partiel."
+},
+{
+"l": "D",
+"t": "permet de déterminer que cette substance active est un agoniste inverse de ces récepteurs",
+"v": false,
+"ex": "La CE50 ne renseigne pas sur la nature de l'effet (agoniste inverse)."
+},
+{
+"l": "E",
+"t": "permet de déterminer que cette substance active est un antagoniste de ces récepteurs",
+"v": false,
+"ex": "Une CE50 (concentration efficace) concerne une substance qui produit un effet ; elle ne permet pas de dire qu'elle est antagoniste."
+}
+],
+"ans": "AB",
+"status": "Cours",
+"src": "Cours : 2. Pharmacodynamie(1) (partie 11)",
+"note": "A à D : mêmes propositions que 2020-M1-45.",
+"mat": "Initiation aux médicaments",
+"ch": "Caractérisation des principes actifs et de leurs cibles",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-57",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 57,
+"type": "QRM",
+"stem": "En pharmacocinétique, la distribution",
+"items": [
+{
+"l": "A",
+"t": "est le passage de la substance active depuis la circulation générale vers les urines",
+"v": false,
+"ex": "C'est l'élimination (excrétion rénale), pas la distribution."
+},
+{
+"l": "B",
+"t": "peut faire intervenir des pompes ou transporteurs",
+"v": true,
+"ex": "La distribution peut faire intervenir des transporteurs (voir 2023-M1-49)."
+},
+{
+"l": "C",
+"t": "implique les enzymes de métabolisme (comme les cytochromes P450)",
+"v": false,
+"ex": "Les cytochromes P450 relèvent du métabolisme, pas de la distribution."
+},
+{
+"l": "D",
+"t": "peut impliquer les protéines plasmatiques (comme l'albumine)",
+"v": true,
+"ex": "La fixation aux protéines plasmatiques module la distribution."
+},
+{
+"l": "E",
+"t": "peut avoir lieu lorsque la substance active est administrée par voie orale",
+"v": true,
+"ex": "Après absorption, la substance distribuée depuis la circulation générale, quelle que soit la voie."
+}
+],
+"ans": "BDE",
+"status": "Cours",
+"src": "Cours : 3- Paramètres pharmacocinétique diapo prof p.9 ; 1. Devenir des médicaments dans organisme (partie 2)",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Devenir du médicament et pharmacocinétique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-58",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 58,
+"type": "QRM",
+"stem": "Parmi les étapes suivantes, lesquelles concernent la pharmacocinétique",
+"items": [
+{
+"l": "A",
+"t": "absorption",
+"v": true,
+"ex": "ADME : absorption, distribution, métabolisme, excrétion."
+},
+{
+"l": "B",
+"t": "dissolution",
+"v": false,
+"ex": "La dissolution relève de la phase pharmaceutique (galénique)."
+},
+{
+"l": "C",
+"t": "consommation",
+"v": false,
+"ex": "Ce n'est pas une étape pharmacocinétique."
+},
+{
+"l": "D",
+"t": "métabolisme",
+"v": true,
+"ex": "Le M de ADME."
+},
+{
+"l": "E",
+"t": "excrétion",
+"v": true,
+"ex": "Le E de ADME."
+}
+],
+"ans": "ADE",
+"status": "Cours",
+"src": "Cours : 2-Devenir du médicament Diapo prof p.43 ; 3- Paramètres pharmacocinétique diapo prof p.9",
+"note": "Même question que HB-2024-54.",
+"mat": "Initiation aux médicaments",
+"ch": "Devenir du médicament et pharmacocinétique",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-59",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 59,
+"type": "QRM",
+"stem": "Les études de phase 2 du développement clinique des médicaments",
+"items": [
+{
+"l": "A",
+"t": "sont appelées \"études pivot\"",
+"v": false,
+"ex": "Les études pivot sont les études de phase 3."
+},
+{
+"l": "B",
+"t": "nécessitent d'inclure moins de patients que la phase 1",
+"v": false,
+"ex": "La phase 2 inclut plus de sujets que la phase 1."
+},
+{
+"l": "C",
+"t": "étudient l'effet de plusieurs doses du médicament",
+"v": true,
+"ex": "En phase 2, on teste en général 3 doses."
+},
+{
+"l": "D",
+"t": "étudient la relation concentration-effet",
+"v": true,
+"ex": "La phase 2 étudie les relations dose-effet et concentration-effet."
+},
+{
+"l": "E",
+"t": "étudient la tolérance à long terme du médicament chez le patient",
+"v": false,
+"ex": "La tolérance à long terme est étudiée en phase 3."
+}
+],
+"ans": "CD",
+"status": "Cours",
+"src": "Cours : DIAPO-PDF-Développement-clinique-des-médicaments p.19 ; diapo prof p.35",
+"note": "Même question que HB-2023-51.",
+"mat": "Initiation aux médicaments",
+"ch": "Développement clinique des médicaments",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-60",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 60,
+"type": "QRU",
+"stem": "Concernant le statut juridique du médicament et la réglementation afférente au médicament",
+"items": [
+{
+"l": "A",
+"t": "une spécialité pharmaceutique est fabriquée à l'avance à l'échelle industrielle",
+"v": true,
+"ex": "La spécialité est préparée à l'avance, présentée sous un conditionnement particulier, avec une dénomination spéciale : fabrication industrielle."
+},
+{
+"l": "B",
+"t": "une spécialité magistrale porte un nom commercial",
+"v": false,
+"ex": "« Spécialité magistrale » n'existe pas : une préparation magistrale est faite pour un patient donné, sans nom commercial."
+},
+{
+"l": "C",
+"t": "une préparation spéciale est préparée à l'avance à l'officine",
+"v": false,
+"ex": "C'est la préparation officinale qui est préparée à l'avance à l'officine ; « préparation spéciale » n'est pas une catégorie."
+},
+{
+"l": "D",
+"t": "une préparation magistrale nécessite l'obtention d'une autorisation de mise sur le marché (AMM) pour être dispensée à un patient",
+"v": false,
+"ex": "Les préparations magistrales ne nécessitent pas d'AMM."
+},
+{
+"l": "E",
+"t": "une spécialité princeps est une copie d'une spécialité générique",
+"v": false,
+"ex": "C'est l'inverse : le générique est la copie du princeps."
+}
+],
+"ans": "A",
+"status": "Cours",
+"src": "Cours : 1. définition et statut des médicaments (partie 1) ; DIAPO-PDF-Définition-statut-des-médicaments p.6",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Définitions, statut et description des médicaments",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "HB-2025-61",
+"y": 2025,
+"mod": "L.AS HB",
+"q": 61,
+"type": "QRM",
+"stem": "Concernant les différentes formes pharmaceutiques",
+"items": [
+{
+"l": "A",
+"t": "les pommades ophtalmiques doivent être stériles",
+"v": true,
+"ex": "Toutes les préparations ophtalmiques doivent être stériles."
+},
+{
+"l": "B",
+"t": "les excipients pulvérulents destinés à augmenter le volume de la prise d'une poudre en sachet sont appelés diluants",
+"v": true,
+"ex": "Les diluants augmentent le volume ou la masse d'une prise."
+},
+{
+"l": "C",
+"t": "le contenu d'une capsule molle est liquide ou pâteux",
+"v": true,
+"ex": "Les capsules molles contiennent un liquide ou une pâte."
+},
+{
+"l": "D",
+"t": "les suppositoires et les capsules gynécologiques sont constitués des mêmes excipients",
+"v": false,
+"ex": "Les suppositoires utilisent des bases fusibles ou hydrosolubles ; les capsules gynécologiques ont une enveloppe (gélatine) : pas les mêmes excipients."
+},
+{
+"l": "E",
+"t": "le dosage des dispositifs transdermiques est exprimé en pourcentage masse/masse (% m/m)",
+"v": false,
+"ex": "Le dosage d'un patch s'exprime en quantité libérée par unité de temps (ex. µg/h), pas en % m/m."
+}
+],
+"ans": "ABC",
+"status": "Équipe Atlas",
+"src": "Cours : 5-Introduction aux formes pharmaceutiques",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Introduction aux formes pharmaceutiques",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2025",
+"sl": "Déc. 2025",
+"par": [
+"lashb"
+],
+"exSrc": "cours"
+},
+{
+"id": "LAS21-40",
+"y": 2021,
+"mod": "L.AS",
+"q": 40,
+"type": "QCM",
+"stem": "Les études pharmacocinétiques réalisées lors de la phase 1 du développement clinique des médicaments",
+"items": [
+{
+"l": "A",
+"t": "sont le plus souvent réalisées chez des sujets malades",
+"v": false,
+"ex": "La phase 1 est en général réalisée chez des volontaires sains."
+},
+{
+"l": "B",
+"t": "sont réalisées dans des centres agréés",
+"v": true,
+"ex": "Les essais de phase 1 sont réalisés dans des centres agréés (voir LAS25-38)."
+},
+{
+"l": "C",
+"t": "mesurent les concentrations du médicament",
+"v": true,
+"ex": "La pharmacocinétique repose sur le dosage des concentrations (prises de sang)."
+},
+{
+"l": "D",
+"t": "étudient l'absorption des médicaments",
+"v": true,
+"ex": "La pharmacocinétique étudie l'absorption, la distribution, le métabolisme et l'excrétion."
+},
+{
+"l": "E",
+"t": "étudient le métabolisme des médicaments",
+"v": true,
+"ex": "Idem : le métabolisme fait partie de la pharmacocinétique."
+}
+],
+"ans": "BCDE",
+"status": "Cours",
+"src": "Cours : DIAPO-PDF-Développement-clinique-des-médicaments p.16 ; diapo prof p.14",
+"note": "",
+"mat": "Initiation aux médicaments",
+"ch": "Développement clinique des médicaments",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2021",
+"sl": "Déc. 2021",
+"par": [
+"lasbio"
+],
+"exSrc": "cours"
+},
+{
+"id": "LAS21-41",
+"y": 2021,
+"mod": "L.AS",
+"q": 41,
+"type": "QCS",
+"stem": "Les études de phase 2",
+"items": [
+{
+"l": "A",
+"t": "sont également appelée études « pivot »",
+"v": false,
+"ex": "Les études pivot sont les études de phase 3."
+},
+{
+"l": "B",
+"t": "testent différentes formes galéniques",
+"v": false,
+"ex": "Ce n'est pas l'objectif de la phase 2."
+},
+{
+"l": "C",
+"t": "étudient la relation entre dose et effet pharmacologique",
+"v": false,
+"ex": "L'effet pharmacologique est d'abord étudié en phase 1 (volontaires sains) ; la phase 2 s'intéresse à l'efficacité thérapeutique chez le malade."
+},
+{
+"l": "D",
+"t": "étudient la relation entre concentration et efficacité thérapeutique",
+"v": true,
+"ex": "La phase 2 étudie, chez le malade, la relation concentration-effet thérapeutique."
+},
+{
+"l": "E",
+"t": "étudient la tolérance à long terme",
+"v": false,
+"ex": "La tolérance à long terme relève de la phase 3."
+}
+],
+"ans": "D",
+"status": "Incertaine (équipe)",
+"src": "Cours : DIAPO-PDF-Développement-clinique-des-médicaments p.19 ; diapo prof p.35",
+"note": "Question à réponse unique : le cours attribue à la phase 2 les relations dose-effet ET concentration-effet. D est retenue car elle porte sur l'efficacité thérapeutique (propre à la phase 2), C sur l'effet pharmacologique (déjà vu en phase 1). À confirmer.",
+"mat": "Initiation aux médicaments",
+"ch": "Développement clinique des médicaments",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2021",
+"sl": "Déc. 2021",
+"par": [
+"lasbio"
+],
+"exSrc": "cours"
+},
+{
+"id": "LAS21-53",
+"y": 2021,
+"mod": "L.AS",
+"q": 53,
+"type": "QCM",
+"stem": "La naissance de la physiologie moderne repose sur :",
+"items": [
+{
+"l": "A",
+"t": "l'élaboration de la méthode expérimentale de Claude Bernard ;",
+"v": true,
+"ex": "Claude Bernard formalise la méthode expérimentale (Introduction à l'étude de la médecine expérimentale, 1865)."
+},
+{
+"l": "B",
+"t": "l'existence d'une pratique expérimentale antérieure à Claude Bernard ;",
+"v": true,
+"ex": "Il s'appuie sur une pratique expérimentale déjà existante (Magendie, son maître, notamment)."
+},
+{
+"l": "C",
+"t": "des pratiques institutionnelles nouvelles, à partir du XIXe siècle ;",
+"v": true,
+"ex": "Laboratoires, chaires et sociétés savantes nouvelles au XIXe siècle."
+},
+{
+"l": "D",
+"t": "une entreprise collective d'élaboration du savoir ;",
+"v": true,
+"ex": "La physiologie moderne naît d'un travail collectif, pas d'un seul homme."
+},
+{
+"l": "E",
+"t": "la découverte de la fonction glycogénique du foie.",
+"v": false,
+"ex": "C'est une découverte de Claude Bernard, mais ce n'est pas le fondement de la physiologie moderne."
+}
+],
+"ans": "ABCD",
+"status": "Incertaine (équipe)",
+"src": "",
+"note": "Cours de philosophie des sciences non retrouvé : réponse la plus probable, par connaissances générales.",
+"mat": "Philosophie des sciences",
+"ch": "Claude Bernard et la vivisection",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2021",
+"sl": "Déc. 2021",
+"par": [
+"lasbio"
+],
+"exSrc": "equipe"
+},
+{
+"id": "LAS21-54",
+"y": 2021,
+"mod": "L.AS",
+"q": 54,
+"type": "QCM",
+"stem": "À propos de l'objectivité dans la pratique clinique :",
+"items": [
+{
+"l": "A",
+"t": "la pratique clinique fonde l'objectivité en médecine ;",
+"v": false,
+"ex": "Réponse la plus probable : l'objectivité médicale s'appuie sur la méthode expérimentale et les instruments, pas sur la seule pratique clinique."
+},
+{
+"l": "B",
+"t": "l'objectivité en médecine permet de sortir d'un idéalisme romantique non critique ;",
+"v": true,
+"ex": "L'idéal d'objectivité du XIXe siècle s'oppose aux spéculations de la philosophie romantique de la nature."
+},
+{
+"l": "C",
+"t": "l'objectivité mécanique passe par l'usage d'instruments ;",
+"v": true,
+"ex": "L'objectivité mécanique (Daston et Galison) confie l'observation aux instruments (photographie, appareils enregistreurs)."
+},
+{
+"l": "D",
+"t": "l'objectivité mécanique implique un savoir-faire des médecins ;",
+"v": false,
+"ex": "Elle vise au contraire à effacer l'intervention et le jugement de l'observateur (le « jugement exercé » est un autre idéal)."
+},
+{
+"l": "E",
+"t": "l'objectivité mécanique insiste sur les caractéristiques normales de l'organisme.",
+"v": false,
+"ex": "Montrer le type idéal ou normal relève de la « vérité d'après nature », antérieure à l'objectivité mécanique."
+}
+],
+"ans": "BC",
+"status": "Incertaine (équipe)",
+"src": "",
+"note": "Cours de philosophie des sciences non retrouvé : réponse la plus probable (cadre de Daston et Galison), à vérifier, surtout A et B.",
+"mat": "Philosophie des sciences",
+"ch": "Objectivité en médecine",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2021",
+"sl": "Déc. 2021",
+"par": [
+"lasbio"
+],
+"exSrc": "equipe"
+},
+{
+"id": "LAS21-55",
+"y": 2021,
+"mod": "L.AS",
+"q": 55,
+"type": "QCM",
+"stem": "Pour évaluer l'intérêt du port du casque quand on fait du vélo sur la prévention des traumatismes crâniens, on se propose de réaliser une étude cas-témoin. Parmi les propositions suivantes lesquelles sont exactes ?",
+"items": [
+{
+"l": "A",
+"t": "on recrute des participants qui portent usuellement un casque et d'autres qui n'en portent pas et on comptabilise le nombre de participants qui présentent un traumatisme crânien ;",
+"v": false,
+"ex": "Partir de l'exposition (casque ou non) et compter les malades, c'est une étude de cohorte."
+},
+{
+"l": "B",
+"t": "on randomise les participants en deux groupes : dans un groupe les participants devront porter un casque, dans l'autre groupe ils ne porteront pas de casque ;",
+"v": false,
+"ex": "C'est un essai randomisé, pas une étude cas-témoin."
+},
+{
+"l": "C",
+"t": "on comparera la proportion de participants qui portent un casque entre un groupe de participants qui a eu un traumatisme crânien et un groupe de participants indemnes de traumatisme crânien ;",
+"v": true,
+"ex": "Étude cas-témoin : on part de la maladie (cas / témoins) et on compare l'exposition."
+},
+{
+"l": "D",
+"t": "il s'agit d'une étude observationnelle qui permettra une conclusion de cause à effet ;",
+"v": false,
+"ex": "Elle est observationnelle, mais ne permet pas à elle seule de conclure à une relation causale."
+},
+{
+"l": "E",
+"t": "un des intérêts d'opter pour ce schéma d'étude est la rapidité avec laquelle l'étude peut être réalisée.",
+"v": true,
+"ex": "L'étude cas-témoin est rapide et peu coûteuse (rétrospective)."
+}
+],
+"ans": "CE",
+"status": "Équipe Atlas",
+"src": "",
+"note": "",
+"mat": "Données d'évidence",
+"ch": "Études observationnelles",
+"ocr": false,
+"ok": true,
+"manual": true,
+"sk": "dec2021",
+"sl": "Déc. 2021",
+"par": [
+"lasbio"
+],
+"exSrc": "equipe"
+}
+]
