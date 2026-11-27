@@ -590,10 +590,24 @@ function annonceLAS(el){
   d.querySelector('#lasGo').onclick=()=>{state.seen['las1'+state.parcours]=Date.now();persist();fA.open='s|'+k;fA.focus='s-'+k;go('annales')};
   return true}
 
+/* ---------- annonce : niveaux par chapitre dans Statistiques ---------- */
+function annonceNiv(el){
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>Vois où tu en es, chapitre par chapitre</h3>
+    <p>Dans Statistiques, chaque chapitre a maintenant un niveau : <span class="ex">Découvert</span> <span class="ex">Fragile</span> <span class="ex">Solide</span> <span class="ex">Maîtrisé</span>. En haut, Atlas te propose les 3 chapitres à revoir en priorité avant les partiels, en une seule série.</p>
+    <div class="row"><button class="sm go" id="nivGo">Voir mes niveaux</button><button class="sm ok" id="nivOk">J'ai compris</button></div>
+    <button class="x" id="nivX" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  const ok=()=>{state.seen.niv1=Date.now();persist();render()};
+  d.querySelector('#nivX').onclick=ok;d.querySelector('#nivOk').onclick=ok;
+  d.querySelector('#nivGo').onclick=()=>{state.seen.niv1=Date.now();persist();go('stats')};
+  return true}
+
 /* annonces de l'accueil : sur téléphone, repliées sur leur titre (toucher le titre pour lire) */
 function homeExtra(el){homeExtra0(el);
   if(state.parcours==='pass'&&!state.seen.p25)annonceP25(el);
   if(state.parcours!=='pass'&&!state.seen['las1'+state.parcours])annonceLAS(el);
+  if(!state.seen.niv1)annonceNiv(el);
   if(!matchMedia('(max-width:600px)').matches)return;
   el.querySelectorAll('.annonce').forEach(a=>{a.classList.add('mini');const h=a.querySelector('h3');if(!h)return;
     h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');

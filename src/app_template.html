@@ -549,6 +549,24 @@ tbody tr[data-id]{cursor:pointer}tbody tr[data-id]:hover{background:var(--sunken
 .scroll{overflow-x:auto}
 .bar-h{display:flex;align-items:center;gap:10px}
 .bar-h .track{flex:1;min-width:60px}
+.pr-tag.r{background:#fde3e6;color:#a3283e}.pr-tag.o{background:#fff0d6;color:#8a5a06}.pr-tag.y{background:#e4e9f5;color:#1d2c5e}.pr-tag.g{background:var(--mint-soft);color:#16704f}.pr-tag.n{background:var(--sunken);color:var(--muted)}
+.pr-seg{display:flex;gap:3px;margin-top:5px}.pr-seg i{width:30px;height:6px;border-radius:3px;background:var(--sunken)}.pr-seg i.r{background:#e0566f}.pr-seg i.o{background:#e7a23a}.pr-seg i.y{background:#7d93d6}.pr-seg i.g{background:var(--mint)}
+.pr-tag{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.mtc.lv{grid-template-columns:1fr auto 14px}.mtc .pr-seg i[class=""]{background:var(--surface)}.mtc .pr-tag.n{background:var(--surface)}.fxr{display:flex;flex-direction:column;align-items:flex-end;gap:2px}.fxr small{color:var(--muted);font-size:.75rem}
+.lvleg{font-size:.78rem;margin:10px 0 0}
+.fx h3,.mt h3{margin:0 0 2px}.fxp{margin:0 0 12px;font-size:.88rem}
+.fxl{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}.fxl li{display:flex;align-items:center;gap:12px}
+.fxn{width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--navy-ink);display:grid;place-items:center;font-weight:800;font-size:.85rem;flex:none}
+.fxt{flex:1;min-width:0;line-height:1.25}.fxt small,.mtt small,.mtn small{display:block;color:var(--muted);font-size:.78rem;font-weight:400}
+.fxv{font-weight:800;font-variant-numeric:tabular-nums;padding:3px 10px;border-radius:999px;font-size:.85rem}
+.fxv.r{background:#fde3e6;color:#a3283e}.fxv.o{background:#fff0d6;color:#8a5a06}.fxv.g{background:var(--mint-soft);color:#16704f}
+.mt details{border-top:1px solid var(--line)}.mt summary{display:grid;grid-template-columns:1fr 70px 46px;gap:10px;align-items:center;padding:12px 0;cursor:pointer;list-style:none}.mt summary::-webkit-details-marker{display:none}
+.mtn{font-weight:700;line-height:1.25}.mtb{height:8px;border-radius:4px;background:var(--sunken);position:relative;overflow:hidden}.mtb i{position:absolute;inset:0 auto 0 0;border-radius:4px}
+.mtb i.r,.dot.r{background:#e0566f}.mtb i.o,.dot.o{background:#e7a23a}.mtb i.g,.dot.g{background:var(--mint)}.dot.n{background:var(--line)}
+.mtp{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}.mt details[open] summary{color:var(--navy)}
+.mtc{display:grid;grid-template-columns:12px 1fr auto 14px;gap:10px;align-items:center;width:100%;text-align:left;background:var(--sunken);border:0;border-radius:12px;padding:10px 12px;margin:0 0 6px}
+.dot{width:10px;height:10px;border-radius:50%}.mtt{line-height:1.25;font-size:.92rem}.mtv{font-weight:700;font-variant-numeric:tabular-nums}.mtc .go{color:var(--muted)}
+.mto{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:10px 2px 6px}.mt details[open]{padding-bottom:8px}
 .tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:16px}
 .tiles .panel b{display:block;font-family:var(--mono);font-size:1.6rem;font-weight:600}
 .tiles .panel span{font-size:.82rem;color:var(--muted)}
@@ -898,6 +916,36 @@ function vErreurs(el){
   if(err.length){$('#rGo').onclick=()=>startRun(err,'erreurs','Carnet d\'erreurs');$('#pdf').onclick=()=>exportPDF(err,'Carnet d\'erreurs','carnet-erreurs.pdf');
    el.querySelectorAll('tr[data-id]').forEach(tr=>tr.onclick=()=>startRun(err,'erreurs','Carnet d\'erreurs',err.findIndex(q=>q.id===tr.dataset.id)))}
 }
+/* ===== révision ciblée : niveaux par chapitre (Statistiques) ===== */
+function chapAll(){const QQ=QP().filter(q=>!q.annul),now=Date.now(),SK=new Set(QQ.map(q=>q.sk)).size||1,g={};
+  for(const q of QQ){const k=q.mat+'|'+q.ch;const c=g[k]=g[k]||{mat:q.mat,ch:q.ch,qs:[],w:0,ws:0,n:0,days:new Set()};c.qs.push(q);
+    const a=state.ans[q.id];if(a){const w=Math.pow(.5,Math.max(0,now-(a.t||now))/864e5/14);c.w+=w;c.ws+=w*a.s;c.n++;c.days.add(new Date(a.t||now).toDateString())}}
+  const L=Object.values(g);L.forEach(c=>{c.qpy=c.qs.length/SK;c.r=c.w?c.ws/c.w:null});const mx=Math.max(...L.map(c=>c.qpy),1);
+  L.forEach(c=>{c.f=c.qpy/mx;c.p=c.r==null?.35*c.f:(1-c.r)*(.6+.4*c.f);
+    c.lvl=!c.n?0:c.r<.5?1:c.r<.7?2:(c.r>=.8&&c.days.size>=2&&c.n>=Math.min(8,c.qs.length))?4:3});return L}
+const LVL=['Pas commencé','Découvert','Fragile','Solide','Maîtrisé'],LCL=['n','r','o','y','g'];
+const colOf=c=>c.r==null?'n':c.r<.5?'r':c.r<.75?'o':'g';
+function chapRun(c,label){const r=q=>state.ans[q.id];startRun([...c.qs.filter(q=>r(q)&&r(q).s<1).sort((a,b)=>r(a).s-r(b).s),...c.qs.filter(q=>!r(q)),...c.qs.filter(q=>r(q)&&r(q).s===1)],view==='accueil'?'accueil':'stats',label||c.ch)}
+function protoBind(el){const L=chapAll(),by=Object.fromEntries(L.map(c=>[c.mat+'|'+c.ch,c]));
+  el.querySelectorAll('[data-ck]').forEach(b=>b.onclick=()=>chapRun(by[b.dataset.ck]))}
+/* révision ciblée v2 : « À revoir en priorité » + matières dépliables en chapitres */
+const lvOf=c=>!c.n?0:c.n<5?-1:c.lvl;
+function tagHTML(c){const l=lvOf(c);return l<0?'<span class="pr-tag n">À confirmer</span>':`<span class="pr-tag ${LCL[l]}">${LVL[l]}</span>`}
+function segHTML(c){const l=lvOf(c);return `<span class="pr-seg">${[1,2,3,4].map(k=>`<i class="${l>0&&k<=l?LCL[l]:''}"></i>`).join('')}</span>`}
+function focusHTML(){const L=chapAll(),T=L.filter(c=>c.n>=5&&c.r<.85).sort((a,b)=>b.p-a.p).slice(0,3);
+  if(!T.length)return `<div class="panel fx"><h3>À revoir en priorité</h3><p class="muted" style="margin:0">${L.some(c=>c.n)?'Fais au moins 5 questions dans un chapitre pour qu\'Atlas puisse te dire quoi revoir.':'Fais quelques questions : Atlas te dira ensuite quels chapitres revoir en premier.'}</p></div>`;
+  const nq=T.reduce((t,c)=>t+weakList(c).slice(0,10).length,0);
+  return `<div class="panel fx"><h3>À revoir en priorité</h3><p class="muted fxp">Les chapitres où tu réussis le moins, parmi ceux qui comptent le plus au concours.</p>
+   <ol class="fxl">${T.map((c,i)=>`<li><span class="fxn">${i+1}</span><span class="fxt"><b>${esc(c.ch)}</b><small>${esc(c.mat)}</small></span><span class="fxr">${tagHTML(c)}<small>${Math.round(c.r*100)} %</small></span></li>`).join('')}</ol>
+   <button class="primary" id="fxGo" style="width:100%">Réviser ces ${T.length} chapitres · ${nq} questions</button></div>`}
+function matTreeHTML(){const L=chapAll(),M=[...new Set(L.map(c=>c.mat))].sort(matSort);
+  return `<div class="panel mt"><h3>Par matière</h3><p class="muted fxp">Touche une matière pour voir le niveau de chaque chapitre.</p>${M.map(m=>{const cs=L.filter(c=>c.mat===m),w=cs.reduce((t,c)=>t+c.w,0),r=w?cs.reduce((t,c)=>t+c.ws,0)/w:null,n=cs.reduce((t,c)=>t+c.n,0),tt=cs.reduce((t,c)=>t+c.qs.length,0);
+   const on=cs.filter(c=>c.n).sort((a,b)=>((lvOf(a)<0?9:lvOf(a))-(lvOf(b)<0?9:lvOf(b)))||a.r-b.r),off=cs.filter(c=>!c.n);
+   return `<details><summary><span class="mtn">${esc(m)}<small>${n} / ${tt} faites</small></span><span class="mtb"><i style="width:${r==null?0:Math.round(r*100)}%" class="${r==null?'':r<.5?'r':r<.75?'o':'g'}"></i></span><span class="mtp">${r==null?'–':Math.round(r*100)+' %'}</span></summary>
+    ${on.map(c=>`<button class="mtc lv" data-ck="${esc(c.mat+'|'+c.ch)}"><span class="mtt">${esc(c.ch)}<small>${c.n} / ${c.qs.length} faites · ${Math.round(c.r*100)} %</small>${segHTML(c)}</span>${tagHTML(c)}<span class="go">›</span></button>`).join('')}
+    ${off.length?`<div class="mto">Pas encore commencé</div>${off.map(c=>`<button class="mtc" data-ck="${esc(c.mat+'|'+c.ch)}"><span class="dot n"></span><span class="mtt">${esc(c.ch)}<small>${c.qs.length} questions</small></span><span class="mtv muted">–</span><span class="go">›</span></button>`).join('')}`:''}</details>`}).join('')}<p class="muted lvleg">Découvert : moins de 50 % · Fragile : 50 à 70 % · Solide : 70 % et plus · Maîtrisé : au moins 80 % sur deux jours différents. À confirmer : moins de 5 questions faites.</p></div>`}
+function v2Bind(el){if($('#fxGo'))$('#fxGo').onclick=()=>{const L=chapAll(),T=L.filter(c=>c.n>=5&&c.r<.85).sort((a,b)=>b.p-a.p).slice(0,3);startRun(T.flatMap(c=>weakList(c).slice(0,10)),'stats','À revoir en priorité')}}
+function weakList(c){const r=q=>state.ans[q.id];return [...c.qs.filter(q=>r(q)&&r(q).s<1).sort((a,b)=>r(a).s-r(b).s),...c.qs.filter(q=>!r(q))]}
 function vStats(el){
   const d=done(),QQ=QP(),m=moy(d),full=d.filter(k=>state.ans[k].s===1).length;
   const agg=(key)=>{const r={};for(const q of QQ){const g=key(q);r[g]=r[g]||{n:0,s:0,t:0};r[g].t++;if(state.ans[q.id]){r[g].n++;r[g].s+=state.ans[q.id].s}}return Object.entries(r)};
@@ -905,7 +953,8 @@ function vStats(el){
   const so=Object.fromEntries(SESS().map(([k,l],i)=>[l,i]));
   el.innerHTML=`<div class="head"><div><h2>Statistiques</h2></div></div>
   ${d.length?`<div class="tiles"><div class="panel"><b>${d.length}</b><span>questions faites sur ${QQ.length}</span></div><div class="panel"><b>${fmtMoy(m)}</b><span>moyenne sur 20</span></div><div class="panel"><b>${Math.round(full/d.length*100)} %</b><span>questions sans erreur</span></div>${state.time&&state.time.tot>=60?`<div class="panel"><b>${fmtTemps(state.time.tot)}</b><span>passées sur les questions</span></div>`:''}</div>
-  <div class="stack"><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par matière</h3>${tbl(agg(q=>q.mat).sort((a,b)=>cmp(a[0],b[0])),'Matière')}</div><div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par session</h3>${tbl(agg(q=>q.gl||sess(q)).sort((a,b)=>so[a[0]]-so[b[0]]),'Session')}</div>${progHTML()}</div>`:'<div class="empty"><b>Pas encore de statistiques</b>Fais quelques questions pour voir ta moyenne par matière et par session.</div>'}`;
+  <div class="stack">${focusHTML()}${matTreeHTML()}<div class="panel" style="padding:4px 4px 0"><h3 style="padding:14px 14px 4px">Par session</h3>${tbl(agg(q=>q.gl||sess(q)).sort((a,b)=>so[a[0]]-so[b[0]]),'Session')}</div>${progHTML()}</div>`:'<div class="empty"><b>Pas encore de statistiques</b>Fais quelques questions pour voir ta moyenne par matière et par session.</div>'}`;
+  protoBind(el);v2Bind(el);
 }
 function progHTML(){const g={};for(const h of state.hist){if(h.p&&h.p!==state.parcours)continue;(g[h.k]=g[h.k]||[]).push(h)}
   const rows=Object.values(g).map(a=>a.sort((x,y)=>x.t-y.t)).sort((a,b)=>b[b.length-1].t-a[a.length-1].t);
