@@ -603,11 +603,26 @@ function annonceNiv(el){
   d.querySelector('#nivGo').onclick=()=>{state.seen.niv1=Date.now();persist();go('stats')};
   return true}
 
+/* ---------- annonce : les questions qui retombent ont leur place dans Révisions ---------- */
+function annonceRT(el){
+  const n=retombQs().length;if(!n)return false;
+  const d=document.createElement('div');d.className='annonce';d.setAttribute('role','status');
+  d.innerHTML=`<span class="nb">Nouveau</span><h3>Les questions qui retombent restent accessibles</h3>
+    <p>La série des questions qui retombent d'une année à l'autre n'est plus une annonce qui disparaît : elle est maintenant dans l'onglet <b>Révisions</b>, à côté de tes favorites. <b>${n} questions</b> dans ton parcours, les plus fréquentes d'abord, à réviser en série ou à télécharger en PDF.</p>
+    <div class="row"><button class="sm go" id="rtGo">Aller dans Révisions</button><button class="sm ok" id="rtOk">J'ai compris</button></div>
+    <button class="x" id="rtX" aria-label="Fermer">×</button>`;
+  el.prepend(d);
+  const ok=()=>{state.seen.rt2=Date.now();persist();render()};
+  d.querySelector('#rtX').onclick=ok;d.querySelector('#rtOk').onclick=ok;
+  d.querySelector('#rtGo').onclick=()=>{state.seen.rt2=Date.now();persist();go('erreurs')};
+  return true}
+
 /* annonces de l'accueil : sur téléphone, repliées sur leur titre (toucher le titre pour lire) */
 function homeExtra(el){homeExtra0(el);
   if(state.parcours==='pass'&&!state.seen.p25)annonceP25(el);
   if(state.parcours!=='pass'&&!state.seen['las1'+state.parcours])annonceLAS(el);
   if(!state.seen.niv1)annonceNiv(el);
+  if(!state.seen.rt2)annonceRT(el);
   if(!matchMedia('(max-width:600px)').matches)return;
   el.querySelectorAll('.annonce').forEach(a=>{a.classList.add('mini');const h=a.querySelector('h3');if(!h)return;
     h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-expanded','false');
